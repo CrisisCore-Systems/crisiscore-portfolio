@@ -46,6 +46,10 @@ function date(d: string) {
   }
 }
 
+function isInternalHref(href: string) {
+  return href.startsWith("/");
+}
+
 export default async function ProjectPage({
   params,
 }: {
@@ -121,7 +125,8 @@ export default async function ProjectPage({
               <div className="mt-3 flex flex-wrap gap-2">
                 {(dossier?.proof.links ?? p.links).map((l) => (
                   <Button key={l.href} href={l.href} variant="ghost">
-                    {l.label} ↗
+                    {l.label}
+                    {isInternalHref(l.href) ? null : " ↗"}
                   </Button>
                 ))}
               </div>
@@ -204,15 +209,25 @@ export default async function ProjectPage({
             <div className="text-sm font-semibold">Links</div>
             <div className="mt-4 flex flex-col gap-2">
               {p.links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
-                >
-                  {l.label} ↗
-                </a>
+                isInternalHref(l.href) ? (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+                  >
+                    {l.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+                  >
+                    {l.label} ↗
+                  </a>
+                )
               ))}
             </div>
           </Panel>

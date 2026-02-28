@@ -58,10 +58,14 @@ export const projects: Project[] = [
     slug: "security-and-audits",
     title: "Security & Collapse Audits",
     summary:
-      "Threat modeling + remediation written to survive adversarial reality.",
+      "Threat modeling + remediation written for adversarial reality (not compliance theater).",
     description:
-      "Security audits and collapse-vector analysis focused on exploitability, incentives, and operational failure surfaces—written for action, not theater.",
-    tags: ["Security", "Threat Modeling", "Systems"],
-    links: [{ label: "GitHub profile", href: "https://github.com/CrisisCore-Systems" }],
+      "Security review for systems operating under low trust: exploitability, incentives, and failure surfaces. Output is actionable: clear risk boundaries, reproduction steps, and prioritized remediation.",
+    tags: ["Security", "Threat Modeling", "Audit", "Systems"],
+    links: [
+      { label: "Contact", href: "/contact" },
+      { label: "Proof", href: "/proof" },
+      { label: "GitHub", href: "https://github.com/CrisisCore-Systems" },
+    ],
   },
 ];

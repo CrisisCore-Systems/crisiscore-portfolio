@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070809"/>
+      <stop offset="1" stop-color="#0B0D0E"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.13  0 0 0 0 0.83  0 0 0 0 0.93  0 0 0 0.18 0" result="tint"/>
+      <feMerge>
+        <feMergeNode in="tint"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.35">
+    <path d="M0 96H1200" stroke="rgba(255,255,255,0.06)"/>
+    <path d="M0 192H1200" stroke="rgba(255,255,255,0.06)"/>
+    <path d="M0 288H1200" stroke="rgba(255,255,255,0.06)"/>
+    <path d="M0 384H1200" stroke="rgba(255,255,255,0.06)"/>
+    <path d="M0 480H1200" stroke="rgba(255,255,255,0.06)"/>
+    <path d="M0 576H1200" stroke="rgba(255,255,255,0.06)"/>
+
+    <path d="M120 0V675" stroke="rgba(255,255,255,0.05)"/>
+    <path d="M320 0V675" stroke="rgba(255,255,255,0.05)"/>
+    <path d="M520 0V675" stroke="rgba(255,255,255,0.05)"/>
+    <path d="M720 0V675" stroke="rgba(255,255,255,0.05)"/>
+    <path d="M920 0V675" stroke="rgba(255,255,255,0.05)"/>
+    <path d="M1120 0V675" stroke="rgba(255,255,255,0.05)"/>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">
+    <text x="72" y="96" fill="rgba(255,255,255,0.60)" font-size="14" letter-spacing="2">SECURITY &amp; COLLAPSE AUDITS</text>
+    <text x="72" y="124" fill="rgba(255,255,255,0.85)" font-size="22" font-weight="700">Audit pipeline (operator-grade)</text>
+    <text x="72" y="154" fill="rgba(255,255,255,0.60)" font-size="14">Scope → Threat model → Reproduce → Remediate → Verify → Harden</text>
+  </g>
+
+  <!-- pipeline cards -->
+  <g filter="url(#glow)">
+    <g>
+      <rect x="72" y="220" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(34,211,238,0.28)"/>
+      <text x="96" y="258" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">1. Boundaries + assets</text>
+      <text x="96" y="288" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Define what must not fail.</text>
+      <text x="96" y="308" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Make assumptions explicit.</text>
+    </g>
+
+    <g>
+      <rect x="436" y="220" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="460" y="258" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">2. Surface mapping</text>
+      <text x="460" y="288" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Data flows, auth, deps, keys.</text>
+      <text x="460" y="308" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Operator failure surfaces.</text>
+    </g>
+
+    <g>
+      <rect x="800" y="220" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="824" y="258" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">3. Reproduce + triage</text>
+      <text x="824" y="288" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Exploit paths + impact.</text>
+      <text x="824" y="308" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Prioritize by real risk.</text>
+    </g>
+
+    <g>
+      <rect x="72" y="382" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="96" y="420" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">4. Remediation plan</text>
+      <text x="96" y="450" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Fixes ordered by leverage.</text>
+      <text x="96" y="470" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Hard-fail guards where needed.</text>
+    </g>
+
+    <g>
+      <rect x="436" y="382" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="460" y="420" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">5. Verification</text>
+      <text x="460" y="450" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Tests / procedures that prove closure.</text>
+      <text x="460" y="470" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Evidence beats claims.</text>
+    </g>
+
+    <g>
+      <rect x="800" y="382" width="328" height="120" rx="18" fill="url(#card)" stroke="rgba(255,255,255,0.14)"/>
+      <text x="824" y="420" fill="rgba(255,255,255,0.90)" font-size="16" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">6. Hardening</text>
+      <text x="824" y="450" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Observability + rollback readiness.</text>
+      <text x="824" y="470" fill="rgba(255,255,255,0.65)" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">Reduce future regression risk.</text>
+    </g>
+  </g>
+
+  <!-- arrows -->
+  <g opacity="0.65" stroke="rgba(34,211,238,0.28)" stroke-width="2">
+    <path d="M400 280H436"/>
+    <path d="M764 280H800"/>
+    <path d="M400 442H436"/>
+    <path d="M764 442H800"/>
+  </g>
+
+  <g opacity="0.55" stroke="rgba(255,255,255,0.14)" stroke-width="2">
+    <path d="M236 340V382"/>
+    <path d="M600 340V382"/>
+    <path d="M964 340V382"/>
+  </g>
+
+  <text x="72" y="630" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">
+    Output: threat boundaries · reproducible findings · prioritized remediation · verification steps
+  </text>
+</svg>
