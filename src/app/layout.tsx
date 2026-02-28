@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/app/lib/site";
+import { cn } from "@/lib/cn";
 import "./globals.css";
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: SITE.name, template: `%s | ${SITE.name}` },
+  title: { default: SITE.name, template: `%s · ${SITE.name}` },
   description: SITE.tagline,
   alternates: { canonical: "/" },
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-  },
   openGraph: {
     title: SITE.name,
     description: SITE.tagline,
@@ -29,31 +39,24 @@ export const metadata: Metadata = {
 };
 
 function jsonLd() {
-  const org = {
+  return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE.name,
     url: SITE.url,
     sameAs: [SITE.socials.github],
   };
-
-  const site = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE.name,
-    url: SITE.url,
-  };
-
-  return [org, site];
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={cn(sans.variable, mono.variable, "font-sans antialiased")}>
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:rounded-xl focus:border focus:border-white/20 focus:bg-black focus:px-4 focus:py-2"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:rounded-xl focus:border focus:border-white/15 focus:bg-black/80 focus:px-4 focus:py-2"
         >
           Skip to content
         </a>
@@ -65,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
 
         <Nav />
-        <main id="content" className="mx-auto max-w-5xl px-4">
+        <main id="content" className="mx-auto max-w-6xl px-4">
           {children}
         </main>
         <Footer />
@@ -73,3 +76,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

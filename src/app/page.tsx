@@ -1,81 +1,113 @@
+import { ArrowUpRight, ShieldCheck, Zap, RefreshCcw } from "lucide-react";
 import Link from "next/link";
-import { projects } from "@/app/lib/content";
 import { SITE } from "@/app/lib/site";
-import { getAllWriting } from "@/app/lib/mdx";
+import { projects } from "@/app/lib/content";
+import { Panel } from "@/components/ui/Panel";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 
 export default function HomePage() {
-  const featured = projects.filter((p) => p.highlight);
-  const latest = getAllWriting().slice(0, 2);
+  const featured = projects.filter((p) => p.highlight).slice(0, 2);
 
   return (
     <div className="py-12">
-      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-        <div className="text-xs uppercase tracking-[0.2em] text-white/50">
-          CrisisCore Systems
+      <Panel className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-28 right-6 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
         </div>
 
-        <h1 className="mt-3 text-3xl font-semibold leading-tight">
-          Protective architecture for people living inside instability.
-        </h1>
-
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/70">
-          {SITE.tagline} Built around local authority, degraded-first behavior,
-          and reversibility.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/projects"
-            className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-2 text-sm transition hover:bg-white/[0.10]"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="/proof"
-            className="rounded-2xl border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/[0.06] hover:text-white"
-          >
-            Proof
-          </Link>
-          <a
-            href={SITE.socials.github}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-2xl border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/[0.06] hover:text-white"
-          >
-            GitHub ↗
-          </a>
-        </div>
-      </div>
-
-      <section className="py-10">
-        <div className="mb-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/50">
-            Active work
+        <div className="relative p-8 sm:p-10">
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge>Local-first</Badge>
+            <Badge>Degraded-first</Badge>
+            <Badge>Reversible</Badge>
           </div>
-          <h2 className="mt-2 text-xl font-semibold">Featured</h2>
+
+          <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
+            Protective architecture for people living inside instability.
+          </h1>
+
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+            {SITE.tagline} Built for low energy, low trust, partial connectivity,
+            and coercion-risk environments.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/projects">
+              View Projects <ArrowUpRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button href="/proof" variant="ghost">
+              Proof
+            </Button>
+            <Button href={SITE.socials.github} variant="ghost">
+              GitHub <ArrowUpRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                <ShieldCheck className="h-4 w-4 text-white/80" />
+                Local authority
+              </div>
+              <p className="mt-2 text-sm text-white/70">
+                Default ownership lives on-device. Cloud is optional, not assumed.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                <Zap className="h-4 w-4 text-white/80" />
+                Degraded-first
+              </div>
+              <p className="mt-2 text-sm text-white/70">
+                Designed for battery scarcity, stress, cognitive overload, and
+                partial connectivity.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                <RefreshCcw className="h-4 w-4 text-white/80" />
+                Reversible by design
+              </div>
+              <p className="mt-2 text-sm text-white/70">
+                Safe failure modes, undo paths, minimal irreversible actions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Panel>
+
+      <section className="py-12">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">
+              Active work
+            </div>
+            <h2 className="mt-2 text-xl font-semibold">Featured</h2>
+          </div>
+          <Link href="/projects" className="text-sm text-white/60 hover:text-white">
+            View all →
+          </Link>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {featured.map((p) => (
             <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
-              className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]"
+              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:bg-white/[0.06]"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="text-base font-semibold">{p.title}</div>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">
-                    {p.summary}
-                  </p>
+                  <div className="text-lg font-semibold">{p.title}</div>
+                  <p className="mt-3 text-sm text-white/70">{p.summary}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/70"
-                      >
-                        {t}
-                      </span>
+                    {p.tags.slice(0, 4).map((t) => (
+                      <Badge key={t}>{t}</Badge>
                     ))}
                   </div>
                 </div>
@@ -88,71 +120,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-10">
-        <div className="mb-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/50">
-            Doctrine
-          </div>
-          <h2 className="mt-2 text-xl font-semibold">Principles</h2>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {[
-            {
-              h: "Local authority",
-              p: "Default ownership lives on-device. Cloud is optional, not assumed.",
-            },
-            {
-              h: "Degraded-first",
-              p: "Designed for battery scarcity, stress, cognitive overload, and partial connectivity.",
-            },
-            {
-              h: "Reversible by design",
-              p: "Safe failure modes, undo paths, and minimal irreversible actions.",
-            },
-          ].map((x) => (
-            <div
-              key={x.h}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
-            >
-              <div className="font-semibold">{x.h}</div>
-              <p className="mt-2 text-sm text-white/70">{x.p}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-10">
-        <div className="mb-4 flex items-end justify-between gap-4">
+      <Panel className="p-8 sm:p-10">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-white/50">
-              Notes
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">
+              Collaboration
             </div>
-            <h2 className="mt-2 text-xl font-semibold">Latest writing</h2>
+            <h3 className="mt-2 text-xl font-semibold">
+              If you need systems that don’t collapse under pressure
+            </h3>
+            <p className="mt-2 text-sm text-white/70">
+              I build protective software, threat models, and verifiable artifacts.
+            </p>
           </div>
-          <Link href="/writing" className="text-sm text-white/60 hover:text-white">
-            View all →
-          </Link>
+          <div className="flex gap-3">
+            <Button href="/contact">Contact</Button>
+            <Button href="/proof" variant="ghost">
+              View proof
+            </Button>
+          </div>
         </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {latest.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/writing/${p.slug}`}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]"
-            >
-              <div className="text-xs text-white/50">{p.frontmatter.date}</div>
-              <div className="mt-1 text-base font-semibold">
-                {p.frontmatter.title}
-              </div>
-              <p className="mt-2 text-sm text-white/70">
-                {p.frontmatter.description}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      </Panel>
     </div>
   );
 }
