@@ -15,7 +15,6 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -bottom-28 right-6 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
         </div>
 
         <div className="relative p-8 sm:p-10">
