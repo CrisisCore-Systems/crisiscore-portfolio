@@ -1,57 +1,55 @@
 export type Project = {
+  slug: string;
   title: string;
+  summary: string;
   description: string;
   tags: string[];
-  href: string;
+  links: { label: string; href: string }[];
   highlight?: boolean;
-};
-
-export type Writing = {
-  title: string;
-  description: string;
-  date: string; // YYYY-MM-DD
-  href: string;
 };
 
 export const projects: Project[] = [
   {
+    slug: "pain-tracker",
     title: "PainTracker.ca",
+    summary:
+      "Privacy-first chronic pain tracking PWA. Local-first by default. Offline-capable.",
     description:
-      "Privacy-first chronic pain tracking PWA. Local-first by default. No accounts required. Designed for cognitive overload and degraded conditions.",
+      "A privacy-first, offline-capable pain documentation system designed for cognitive overload and degraded conditions. No accounts required. Data stays local by default.",
     tags: ["Local-first", "PWA", "Privacy", "Protective UX"],
-    href: "https://paintracker.ca",
+    links: [
+      { label: "Live app", href: "https://paintracker.ca" },
+      {
+        label: "GitHub repo",
+        href: "https://github.com/CrisisCore-Systems/pain-tracker",
+      },
+    ],
     highlight: true,
   },
   {
+    slug: "overton-framework",
     title: "The Overton Framework",
+    summary: "Protective Computing canon. DOI-backed. Operational constraints, not vibes.",
     description:
-      "Protective Computing under conditions of human vulnerability. A systems discipline for safety, containment, reversibility, and coercion resistance.",
-    tags: ["Framework", "HCI", "Safety", "Privacy"],
-    href: "https://github.com/CrisisCore-Systems", // swap to Zenodo/landing page if you prefer
+      "A systems discipline for building software that stays safe and usable when stability assumptions fail (connectivity, cognition, safety, institutional trust).",
+    tags: ["Framework", "Safety", "Privacy", "HCI"],
+    links: [
+      { label: "DOI (Zenodo)", href: "https://doi.org/10.5281/zenodo.18688516" },
+      {
+        label: "Mirror (repo)",
+        href: "https://github.com/CrisisCore-Systems/pain-tracker/blob/main/docs/engineering/overton-framework-protective-computing-v1.3.md",
+      },
+    ],
     highlight: true,
   },
   {
-    title: "Security & Protocol Collapse Audits",
+    slug: "security-and-audits",
+    title: "Security & Collapse Audits",
+    summary:
+      "Threat modeling + remediation written to survive adversarial reality.",
     description:
-      "Recursive threat modeling, economic risk surfaces, and remediation proposals—written to survive adversarial conditions, not impress dashboards.",
-    tags: ["Security", "DeFi", "Threat Modeling"],
-    href: "https://github.com/CrisisCore-Systems",
-  },
-];
-
-export const writing: Writing[] = [
-  {
-    title: "Why privacy-first health tools must be offline-capable",
-    description:
-      "Stability assumptions fail in real life. Here’s what protective architecture looks like when everything degrades.",
-    date: "2026-02-01",
-    href: "/writing",
-  },
-  {
-    title: "Protective legitimacy: building software people can trust again",
-    description:
-      "Trust is not a marketing claim. It’s an architectural property.",
-    date: "2026-01-10",
-    href: "/writing",
+      "Security audits and collapse-vector analysis focused on exploitability, incentives, and operational failure surfaces—written for action, not theater.",
+    tags: ["Security", "Threat Modeling", "Systems"],
+    links: [{ label: "GitHub profile", href: "https://github.com/CrisisCore-Systems" }],
   },
 ];
