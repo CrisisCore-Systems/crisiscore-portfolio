@@ -53,7 +53,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={cn(sans.variable, mono.variable, "font-sans antialiased")}>
+      <body
+        className={cn(
+          sans.variable,
+          mono.variable,
+          "site-noise font-sans antialiased"
+        )}
+      >
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:rounded-xl focus:border focus:border-white/15 focus:bg-black/80 focus:px-4 focus:py-2"

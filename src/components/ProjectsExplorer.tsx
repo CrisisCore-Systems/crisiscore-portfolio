@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/app/lib/content";
+import { Badge } from "@/components/ui/Badge";
 
 export function ProjectsExplorer({ items }: { items: Project[] }) {
   const [q, setQ] = useState("");
@@ -31,12 +32,12 @@ export function ProjectsExplorer({ items }: { items: Project[] }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search projects…"
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/90 placeholder:text-white/40"
+          className="cc-field"
         />
         <select
           value={tag}
           onChange={(e) => setTag(e.target.value)}
-          className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 sm:w-64"
+          className="cc-field text-white/80 sm:w-64"
         >
           <option value="">All tags</option>
           {tags.map((t) => (
@@ -52,7 +53,7 @@ export function ProjectsExplorer({ items }: { items: Project[] }) {
           <Link
             key={p.slug}
             href={`/projects/${p.slug}`}
-            className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]"
+            className="cc-card group block p-6"
           >
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -61,12 +62,9 @@ export function ProjectsExplorer({ items }: { items: Project[] }) {
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/70"
-                    >
+                    <Badge key={t} className="normal-case tracking-[0.08em]">
                       {t}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               </div>

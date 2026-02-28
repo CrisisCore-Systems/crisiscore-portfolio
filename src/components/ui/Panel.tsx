@@ -10,7 +10,7 @@ export function Panel({
   return (
     <div
       className={cn(
-        "rounded-3xl border border-white/10 bg-white/[0.03]",
+        "rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02]",
         className
       )}
     >

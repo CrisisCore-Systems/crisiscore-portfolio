@@ -1,4 +1,6 @@
 import { SITE } from "@/app/lib/site";
+import { Button } from "@/components/ui/Button";
+import { Panel } from "@/components/ui/Panel";
 
 export const metadata = {
   title: "Contact",
@@ -14,27 +16,25 @@ export default function ContactPage() {
         can add it.
       </p>
 
-      <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+      <Panel className="mt-8 p-7">
         <div className="text-sm text-white/70">Email</div>
-        <a
-          className="mt-2 inline-block rounded-xl border border-white/15 bg-white/[0.06] px-4 py-2 text-sm transition hover:bg-white/[0.10]"
-          href={`mailto:${SITE.email}?subject=${encodeURIComponent(
-            "CrisisCore Systems inquiry"
-          )}`}
-        >
-          {SITE.email}
-        </a>
+        <div className="mt-2">
+          <Button
+            href={`mailto:${SITE.email}?subject=${encodeURIComponent(
+              "CrisisCore Systems inquiry"
+            )}`}
+          >
+            {SITE.email}
+          </Button>
+        </div>
 
         <div className="mt-6 text-sm text-white/70">GitHub</div>
-        <a
-          className="mt-2 inline-block rounded-xl border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/[0.06] hover:text-white"
-          href={SITE.socials.github}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {SITE.socials.github} ↗
-        </a>
-      </div>
+        <div className="mt-2">
+          <Button href={SITE.socials.github} variant="ghost">
+            {SITE.socials.github} ↗
+          </Button>
+        </div>
+      </Panel>
     </div>
   );
 }
