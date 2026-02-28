@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#000"/>
+  <rect x="36" y="36" width="1128" height="603" rx="36" fill="url(#g)" stroke="#ffffff" stroke-opacity="0.12"/>
+
+  <text x="72" y="110" fill="#fff" fill-opacity="0.92" font-family="ui-sans-serif, system-ui" font-size="28" font-weight="700">PainTracker dossier — architecture sketch</text>
+  <text x="72" y="148" fill="#fff" fill-opacity="0.70" font-family="ui-sans-serif, system-ui" font-size="16">Local-first by default. Offline-capable. Exports are explicit.</text>
+
+  <!-- Nodes -->
+  <g font-family="ui-sans-serif, system-ui" fill="#fff">
+    <rect x="120" y="210" width="300" height="120" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="150" y="255" font-size="18" font-weight="700" fill-opacity="0.9">Client UI</text>
+    <text x="150" y="282" font-size="14" fill-opacity="0.72">Low-friction logging</text>
+    <text x="150" y="304" font-size="14" fill-opacity="0.72">Degraded-first flows</text>
+
+    <rect x="480" y="210" width="300" height="120" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="510" y="255" font-size="18" font-weight="700" fill-opacity="0.9">Local Store</text>
+    <text x="510" y="282" font-size="14" fill-opacity="0.72">On-device persistence</text>
+    <text x="510" y="304" font-size="14" fill-opacity="0.72">No account required</text>
+
+    <rect x="840" y="210" width="240" height="120" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="870" y="255" font-size="18" font-weight="700" fill-opacity="0.9">Optional Share</text>
+    <text x="870" y="282" font-size="14" fill-opacity="0.72">Export / print</text>
+    <text x="870" y="304" font-size="14" fill-opacity="0.72">User-controlled</text>
+
+    <rect x="300" y="410" width="360" height="130" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="330" y="455" font-size="18" font-weight="700" fill-opacity="0.9">Offline support</text>
+    <text x="330" y="482" font-size="14" fill-opacity="0.72">Works with partial connectivity</text>
+    <text x="330" y="504" font-size="14" fill-opacity="0.72">Resilient loading + caching</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#fff" stroke-opacity="0.35" stroke-width="2" fill="none">
+    <path d="M420 270 C450 270, 450 270, 480 270"/>
+    <path d="M780 270 C810 270, 810 270, 840 270"/>
+    <path d="M600 330 C600 360, 540 372, 480 410"/>
+  </g>
+
+  <g fill="#fff" fill-opacity="0.55" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas" font-size="12">
+    <text x="72" y="628">Artifacts in /public/projects/pain-tracker/* (lightweight SVG; no performance bloat)</text>
+  </g>
+</svg>
