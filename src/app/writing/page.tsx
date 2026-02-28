@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getAllWriting } from "@/app/lib/mdx";
 import { projects } from "@/app/lib/content";
 import { Panel } from "@/components/ui/Panel";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Writing",
@@ -14,67 +16,136 @@ export default function WritingIndexPage() {
 
   return (
     <div className="py-12">
-      <h1 className="text-3xl font-semibold">Writing</h1>
-      <p className="mt-3 max-w-2xl text-sm text-white/70">
-        Notes from the edge: protective architecture, trust boundaries, and
-        systems that refuse surveillance by default.
+      <div className="cc-kicker">Reading room</div>
+      <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
+        Writing
+      </h1>
+      <p className="mt-3 cc-lede">
+        Protective computing, privacy-first systems, and degraded-first design.
+        Notes written for low-trust reality: where incentives are misaligned and
+        “normal conditions” are optional.
       </p>
 
-      {canon ? (
-        <section className="mt-10">
-          <div className="cc-kicker">Selected writing</div>
-          <h2 className="mt-2 text-xl font-semibold">Protective Computing Canon</h2>
-          <p className="mt-3 max-w-2xl text-sm text-white/70">
-            A layered discipline for systems built under instability: theory → operations → measurement.
-          </p>
+      <div className="mt-6 flex flex-wrap gap-2">
+        {[
+          "Protective computing",
+          "Trust boundaries",
+          "Local-first",
+          "Audit / measurement",
+        ].map((t) => (
+          <Badge key={t} className="normal-case tracking-[0.08em]">
+            {t}
+          </Badge>
+        ))}
+      </div>
 
-          <Panel className="mt-5 p-7">
-            <div className="space-y-2">
-              {canon.links.slice(0, 3).map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block text-sm text-white/75 hover:text-white"
+      <div className="mt-7 flex flex-wrap gap-3">
+        <Button href="/proof">Proof</Button>
+        <Button href="/projects" variant="ghost">
+          Projects
+        </Button>
+        <Button href="/contact" variant="ghost">
+          Contact
+        </Button>
+      </div>
+
+      <div className="mt-10 grid gap-4 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">Posts</div>
+            <div className="mt-5 grid gap-3">
+              {posts.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/writing/${p.slug}`}
+                  className="cc-card p-6"
                 >
-                  › <span className="underline decoration-white/20 underline-offset-4">{l.label}</span>
-                </a>
+                  <div className="text-xs text-white/55">
+                    {p.frontmatter.date}
+                  </div>
+                  <div className="mt-1 text-base font-semibold">
+                    {p.frontmatter.title}
+                  </div>
+                  <p className="mt-2 text-sm text-white/70">
+                    {p.frontmatter.description}
+                  </p>
+                </Link>
               ))}
             </div>
 
-            <div className="mt-4 text-xs text-white/55">
-              Open access. DOI-backed. Designed to be independently testable.
+            <div className="mt-6 text-xs text-white/50">
+              Posts are short by design: clear boundaries, explicit assumptions,
+              and actionable takeaways.
             </div>
-
-            <a
-              href={canon.links[canon.links.length - 1]?.href}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-block text-sm text-white/60 hover:text-white"
-            >
-              Read the canon →
-            </a>
           </Panel>
-        </section>
-      ) : null}
+        </div>
 
-      <div className="mt-8 grid gap-4">
-        {posts.map((p) => (
-          <Link
-            key={p.slug}
-            href={`/writing/${p.slug}`}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]"
-          >
-            <div className="text-xs text-white/50">{p.frontmatter.date}</div>
-            <div className="mt-1 text-base font-semibold">
-              {p.frontmatter.title}
+        <div className="lg:col-span-5">
+          {canon ? (
+            <Panel className="p-7 sm:p-8">
+              <div className="cc-kicker">Selected writing</div>
+              <h2 className="mt-2 text-xl font-semibold">{canon.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                A layered discipline for systems built under instability:
+                theory → operations → measurement.
+              </p>
+
+              <div className="mt-5 grid gap-2">
+                {canon.links.slice(0, 3).map((l) => (
+                  <Button
+                    key={l.href}
+                    href={l.href}
+                    variant="ghost"
+                    className="justify-start"
+                  >
+                    {l.label} ↗
+                  </Button>
+                ))}
+              </div>
+
+              <div className="mt-5 text-xs text-white/55">
+                Open access. DOI-backed. Designed to be independently testable.
+              </div>
+
+              {canon.links[canon.links.length - 1] ? (
+                <div className="mt-5">
+                  <Button
+                    href={canon.links[canon.links.length - 1].href}
+                    variant="ghost"
+                    className="w-full justify-center"
+                  >
+                    Read the canon → ↗
+                  </Button>
+                </div>
+              ) : null}
+            </Panel>
+          ) : null}
+
+          <Panel className={canon ? "mt-4 p-7 sm:p-8" : "p-7 sm:p-8"}>
+            <div className="text-sm font-semibold">How to read</div>
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
+              {[
+                "If you’re new: start with the canon (Layer 1 → Layer 3).",
+                "If you’re evaluating: use Proof to validate sources of record.",
+                "If you’re building: scan Projects for dossiers and outputs.",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-[2px] text-white/40">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/proof" variant="ghost">
+                Proof
+              </Button>
+              <Button href="/projects" variant="ghost">
+                Projects
+              </Button>
             </div>
-            <p className="mt-2 text-sm text-white/70">
-              {p.frontmatter.description}
-            </p>
-          </Link>
-        ))}
+          </Panel>
+        </div>
       </div>
     </div>
   );
