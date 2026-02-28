@@ -28,16 +28,28 @@ export const projects: Project[] = [
   },
   {
     slug: "overton-framework",
-    title: "The Overton Framework",
-    summary: "Protective Computing canon. DOI-backed. Operational constraints, not vibes.",
+    title: "Protective Computing Canon (Zenodo)",
+    summary:
+      "A layered discipline for systems built under instability: theory → operations → measurement.",
     description:
-      "A systems discipline for building software that stays safe and usable when stability assumptions fail (connectivity, cognition, safety, institutional trust).",
-    tags: ["Framework", "Safety", "Privacy", "HCI"],
+      "Protective Computing is an engineered discipline for systems built under human vulnerability: foundational theory (Overton Framework), operational translation (Field Guide), and measurement & audit (PLS rubric).",
+    tags: ["Canon", "Zenodo", "Audit", "Protective Computing"],
     links: [
-      { label: "DOI (Zenodo)", href: "https://doi.org/10.5281/zenodo.18688516" },
       {
-        label: "Mirror (repo)",
-        href: "https://github.com/CrisisCore-Systems/pain-tracker/blob/main/docs/engineering/overton-framework-protective-computing-v1.3.md",
+        label: "Overton Framework v1.3 — Foundational theory",
+        href: "https://doi.org/10.5281/zenodo.18688516",
+      },
+      {
+        label: "Field Guide v0.1 — Operational translation",
+        href: "https://doi.org/10.5281/zenodo.18782339",
+      },
+      {
+        label: "PLS v1.0-rc1 — Measurement & audit (review draft)",
+        href: "https://doi.org/10.5281/zenodo.18783432",
+      },
+      {
+        label: "Read the canon →",
+        href: "https://zenodo.org/communities/protective-computing/records",
       },
     ],
     highlight: true,

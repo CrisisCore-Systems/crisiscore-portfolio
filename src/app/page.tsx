@@ -92,28 +92,79 @@ export default function HomePage() {
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {featured.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              className="cc-card group block p-7"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="text-lg font-semibold">{p.title}</div>
-                  <p className="mt-3 text-sm text-white/70">{p.summary}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.slice(0, 4).map((t) => (
-                      <Badge key={t}>{t}</Badge>
-                    ))}
+          {featured.map((p) => {
+            if (p.slug === "overton-framework") {
+              return (
+                <div key={p.slug} className="cc-card p-7">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <Link
+                        href={`/projects/${p.slug}`}
+                        className="group inline-flex items-center gap-2 text-lg font-semibold"
+                      >
+                        {p.title}
+                        <span className="text-white/40 transition group-hover:text-white/80">
+                          ↗
+                        </span>
+                      </Link>
+
+                      <p className="mt-3 text-sm text-white/70">{p.summary}</p>
+
+                      <div className="mt-4 space-y-2">
+                        {p.links.slice(0, 3).map((l) => (
+                          <a
+                            key={l.href}
+                            href={l.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block text-sm text-white/70 hover:text-white"
+                          >
+                            › <span className="underline decoration-white/20 underline-offset-4">{l.label}</span>
+                          </a>
+                        ))}
+                      </div>
+
+                      <div className="mt-4 text-xs text-white/55">
+                        Open access. DOI-backed. Designed to be independently testable.
+                      </div>
+                    </div>
+
+                    <a
+                      href={p.links[p.links.length - 1]?.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-1 text-sm text-white/60 hover:text-white"
+                    >
+                      Read →
+                    </a>
                   </div>
                 </div>
-                <div className="mt-1 text-white/40 transition group-hover:text-white/80">
-                  ↗
+              );
+            }
+
+            return (
+              <Link
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                className="cc-card group block p-7"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-lg font-semibold">{p.title}</div>
+                    <p className="mt-3 text-sm text-white/70">{p.summary}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {p.tags.slice(0, 4).map((t) => (
+                        <Badge key={t}>{t}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-1 text-white/40 transition group-hover:text-white/80">
+                    ↗
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
