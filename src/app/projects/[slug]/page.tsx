@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 
+export const dynamic = "force-dynamic";
+
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
 async function getSlug(params: ParamsLike) {
