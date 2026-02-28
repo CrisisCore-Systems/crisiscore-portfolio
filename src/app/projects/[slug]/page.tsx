@@ -7,12 +7,20 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 
+type ParamsLike = { slug: string } | Promise<{ slug: string }>;
+
+async function getSlug(params: ParamsLike) {
+  const resolved = await Promise.resolve(params);
+  return resolved.slug;
+}
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const p = projects.find((x) => x.slug === params.slug);
+export async function generateMetadata({ params }: { params: ParamsLike }) {
+  const slug = await getSlug(params);
+  const p = projects.find((x) => x.slug === slug);
   if (!p) return {};
   return {
     title: p.title,
@@ -39,12 +47,13 @@ function date(d: string) {
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: ParamsLike;
 }) {
-  const p = projects.find((x) => x.slug === params.slug);
+  const slug = await getSlug(params);
+  const p = projects.find((x) => x.slug === slug);
   if (!p) return notFound();
 
-  const dossier = DOSSIERS[params.slug];
+  const dossier = DOSSIERS[slug];
   const gh = p.links.find((l) => l.href.includes("github.com/"));
   const repoMatch = gh?.href.match(/github\.com\/([^/]+)\/([^/]+)/i);
   const repo = repoMatch ? await getRepo(repoMatch[1], repoMatch[2]) : null;
