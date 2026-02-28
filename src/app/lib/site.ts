@@ -10,7 +10,7 @@ export const SITE = {
   name: "CrisisCore Systems",
   tagline: "Protective computing. Privacy-first systems. Built for unstable days.",
   url: inferred,
-  email: "hello@crisiscore.systems",
+  email: "crisiscore.systems@proton.me",
   socials: {
     github: "https://github.com/CrisisCore-Systems",
     // add more if you want:
