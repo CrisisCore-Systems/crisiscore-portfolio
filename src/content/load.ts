@@ -29,7 +29,17 @@ export function loadProjects() {
   }
 
   const canon = loadCanon();
-  const canonLinks = canon.layers.flatMap((x) => x.links);
+  const canonLinks = canon.layers.flatMap((layer) =>
+    layer.links.map((l) => {
+      if (l.label === "DOI (Zenodo)" || l.label === "DOI") {
+        return {
+          ...l,
+          label: `DOI (${layer.title})`,
+        };
+      }
+      return l;
+    })
+  );
 
   return projectsCache
     .map((raw) => {
