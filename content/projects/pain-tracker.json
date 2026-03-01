@@ -1,0 +1,18 @@
+{
+  "slug": "pain-tracker",
+  "title": "PainTracker.ca",
+  "subtitle": "Local-first chronic pain tracking",
+  "summary": "Privacy-first chronic pain tracking PWA. Local-first by default. Offline-capable.",
+  "description": "A privacy-first, offline-capable pain documentation system designed for cognitive overload and degraded conditions. No accounts required. Data stays local by default.",
+  "tags": ["Local-first", "PWA", "Privacy", "Protective UX"],
+  "links": [
+    { "label": "Live app", "href": "https://paintracker.ca", "kind": "external" },
+    {
+      "label": "GitHub repo",
+      "href": "https://github.com/CrisisCore-Systems/pain-tracker",
+      "kind": "external"
+    }
+  ],
+  "highlight": true,
+  "status": "active"
+}

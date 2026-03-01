@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { getAllWriting } from "@/app/lib/mdx";
-import { projects } from "@/app/lib/content";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { loadCanon } from "@/content/load";
 
 export const metadata = {
   title: "Writing",
@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function WritingIndexPage() {
   const posts = getAllWriting();
-  const canon = projects.find((p) => p.slug === "overton-framework");
+  const canon = loadCanon();
 
   return (
     <div className="py-12">
@@ -86,12 +86,11 @@ export default function WritingIndexPage() {
               <div className="cc-kicker">Selected writing</div>
               <h2 className="mt-2 text-xl font-semibold">{canon.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                A layered discipline for systems built under instability:
-                theory → operations → measurement.
+                {canon.blurb}
               </p>
 
               <div className="mt-5 grid gap-2">
-                {canon.links.slice(0, 3).map((l) => (
+                {canon.layers.slice(0, 3).flatMap((x) => x.links).slice(0, 3).map((l) => (
                   <Button
                     key={l.href}
                     href={l.href}
@@ -107,10 +106,16 @@ export default function WritingIndexPage() {
                 Open access. DOI-backed. Designed to be independently testable.
               </div>
 
-              {canon.links[canon.links.length - 1] ? (
+              {canon.layers[canon.layers.length - 1]?.links?.find(
+                (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
+              ) ? (
                 <div className="mt-5">
                   <Button
-                    href={canon.links[canon.links.length - 1].href}
+                    href={
+                      canon.layers[canon.layers.length - 1].links.find(
+                        (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
+                      )!.href
+                    }
                     variant="ghost"
                     className="w-full justify-center"
                   >

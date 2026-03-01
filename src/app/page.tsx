@@ -1,12 +1,13 @@
 import { ArrowUpRight, ShieldCheck, Zap, RefreshCcw } from "lucide-react";
 import Link from "next/link";
 import { SITE } from "@/app/lib/site";
-import { projects } from "@/app/lib/content";
+import { loadProjects } from "@/content/load";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 
 export default function HomePage() {
+  const projects = loadProjects();
   const featured = projects.filter((p) => p.highlight).slice(0, 2);
 
   return (

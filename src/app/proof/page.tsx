@@ -3,7 +3,7 @@ import { getGitHubUser, getRepo } from "@/app/lib/github";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { projects } from "@/app/lib/content";
+import { loadCanon } from "@/content/load";
 
 export const metadata = {
   title: "Proof",
@@ -27,7 +27,8 @@ function date(d: string) {
 }
 
 export default async function ProofPage() {
-  const canon = projects.find((p) => p.slug === "overton-framework");
+  const canon = loadCanon();
+  const canonPrimary = canon.layers[0]?.links?.[0];
 
   const [ghUser, pain, overtonRepo] = await Promise.all([
     getGitHubUser("CrisisCore-Systems"),
@@ -55,7 +56,7 @@ export default async function ProofPage() {
 
         <div className="mt-7 flex flex-wrap gap-3">
           <Button
-            href={canon?.links?.[0]?.href ?? "https://doi.org/10.5281/zenodo.18688516"}
+            href={canonPrimary?.href ?? "https://doi.org/10.5281/zenodo.18688516"}
           >
             Canon (DOI)
             {" ↗"}
@@ -81,14 +82,29 @@ export default async function ProofPage() {
           </p>
 
           <div className="mt-4 grid gap-2">
-            {(canon?.links ?? []).slice(0, 3).map((l) => (
-              <Button key={l.href} href={l.href} variant="ghost" className="justify-start">
-                {l.label} ↗
+            {canon.layers.map((x) => (
+              <Button
+                key={x.layer}
+                href={x.links[0]?.href ?? "https://doi.org/10.5281/zenodo.18688516"}
+                variant="ghost"
+                className="justify-start"
+              >
+                Layer {x.layer} — {x.title} ↗
               </Button>
             ))}
-            {canon?.links?.[3] ? (
-              <Button href={canon.links[3].href} variant="ghost" className="justify-start">
-                {canon.links[3].label} ↗
+            {canon.layers[canon.layers.length - 1]?.links?.find(
+              (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
+            ) ? (
+              <Button
+                href={
+                  canon.layers[canon.layers.length - 1].links.find(
+                    (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
+                  )!.href
+                }
+                variant="ghost"
+                className="justify-start"
+              >
+                All canon records ↗
               </Button>
             ) : null}
           </div>

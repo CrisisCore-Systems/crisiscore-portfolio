@@ -1,0 +1,48 @@
+{
+  "title": "Protective Computing Canon (Zenodo)",
+  "blurb": "A layered discipline for systems built under instability: theory → operations → measurement.",
+  "layers": [
+    {
+      "layer": 1,
+      "name": "Foundational theory",
+      "title": "Overton Framework v1.3",
+      "links": [
+        {
+          "label": "DOI (Zenodo)",
+          "href": "https://doi.org/10.5281/zenodo.18688516",
+          "kind": "external"
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "name": "Operational translation",
+      "title": "Field Guide v0.1",
+      "links": [
+        {
+          "label": "DOI (Zenodo)",
+          "href": "https://doi.org/10.5281/zenodo.18782339",
+          "kind": "external"
+        }
+      ]
+    },
+    {
+      "layer": 3,
+      "name": "Measurement & audit",
+      "title": "Protective Legitimacy Score (PLS) v1.0-rc1",
+      "note": "Review draft",
+      "links": [
+        {
+          "label": "DOI (Zenodo)",
+          "href": "https://doi.org/10.5281/zenodo.18783432",
+          "kind": "external"
+        },
+        {
+          "label": "All canon records",
+          "href": "https://zenodo.org/communities/protective-computing/records",
+          "kind": "external"
+        }
+      ]
+    }
+  ]
+}

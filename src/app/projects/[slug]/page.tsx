@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { projects } from "@/app/lib/content";
 import { DOSSIERS } from "@/app/lib/dossiers";
 import { getRepo } from "@/app/lib/github";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
+import { loadProject, loadProjects } from "@/content/load";
 
 export const revalidate = 300;
 
@@ -17,17 +17,20 @@ async function getSlug(params: ParamsLike) {
 }
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return loadProjects().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: ParamsLike }) {
   const slug = await getSlug(params);
-  const p = projects.find((x) => x.slug === slug);
-  if (!p) return {};
-  return {
-    title: p.title,
-    description: p.summary,
-  };
+  try {
+    const p = loadProject(slug);
+    return {
+      title: p.title,
+      description: p.summary,
+    };
+  } catch {
+    return {};
+  }
 }
 
 function fmt(n: number) {
@@ -56,8 +59,12 @@ export default async function ProjectPage({
   params: ParamsLike;
 }) {
   const slug = await getSlug(params);
-  const p = projects.find((x) => x.slug === slug);
-  if (!p) return notFound();
+  let p: ReturnType<typeof loadProject>;
+  try {
+    p = loadProject(slug);
+  } catch {
+    return notFound();
+  }
 
   const dossier = DOSSIERS[slug];
   const gh = p.links.find((l) => l.href.includes("github.com/"));

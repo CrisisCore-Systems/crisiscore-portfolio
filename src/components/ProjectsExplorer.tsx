@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import type { Project } from "@/app/lib/content";
+import type { Project } from "@/types/content";
 import { Badge } from "@/components/ui/Badge";
 
 export function ProjectsExplorer({ items }: { items: Project[] }) {

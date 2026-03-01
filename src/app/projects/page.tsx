@@ -1,8 +1,8 @@
-import { projects } from "@/app/lib/content";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
+import { loadProjects } from "@/content/load";
 
 export const metadata = {
   title: "Projects",
@@ -10,6 +10,8 @@ export const metadata = {
 };
 
 export default function ProjectsPage() {
+  const projects = loadProjects();
+
   return (
     <div className="py-12">
       <div className="cc-kicker">Dossier index</div>
