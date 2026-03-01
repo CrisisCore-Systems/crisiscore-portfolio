@@ -1,0 +1,71 @@
+{
+  "slug": "overton-framework",
+  "tagline": "A layered canon for systems built under instability: foundational theory, operational translation, and measurement & audit.",
+  "problem": {
+    "title": "Problem",
+    "body": [
+      "Teams building for real-world vulnerability (coercion risk, low trust, degraded operations) often inherit security language that is compliance-shaped or too abstract to implement.",
+      "The canon exists to make protective system-building legible and testable: define the theory, translate it into operator reality, then measure outcomes with an audit-ready rubric."
+    ]
+  },
+  "constraints": {
+    "title": "Constraints",
+    "items": [
+      "Layered design: each layer stands alone, but composes cleanly.",
+      "Falsifiability: claims must be testable (not narrative-only).",
+      "Operational realism: the guidance must survive degraded conditions and incident pressure.",
+      "Citation-first: primary artifacts are DOI-backed records; links are stable and reviewable."
+    ]
+  },
+  "architecture": {
+    "title": "Architecture",
+    "body": [
+      "Layer 1 (Overton Framework): defines protective computing as an engineered discipline, with explicit threat boundaries and legitimacy requirements.",
+      "Layer 2 (Field Guide): translates the theory into field-usable practices and decision patterns under constraint.",
+      "Layer 3 (PLS rubric): turns the discipline into audit-ready measurement so systems can be assessed without hand-waving."
+    ]
+  },
+  "proof": {
+    "title": "Proof",
+    "links": [
+      {
+        "label": "DOI (Overton Framework)",
+        "href": "https://doi.org/10.5281/zenodo.18688516",
+        "kind": "external"
+      },
+      {
+        "label": "DOI (Field Guide)",
+        "href": "https://doi.org/10.5281/zenodo.18782339",
+        "kind": "external"
+      },
+      {
+        "label": "DOI (PLS rubric)",
+        "href": "https://doi.org/10.5281/zenodo.18783432",
+        "kind": "external"
+      },
+      {
+        "label": "Canon records (Zenodo)",
+        "href": "https://zenodo.org/communities/protective-computing/records",
+        "kind": "external"
+      },
+      {
+        "label": "Proof page",
+        "href": "/proof",
+        "kind": "internal"
+      },
+      {
+        "label": "Reading note",
+        "href": "/writing/overton-doi",
+        "kind": "internal"
+      }
+    ]
+  },
+  "outcomes": {
+    "title": "Outcomes",
+    "items": [
+      "A single, layered citation surface (DOIs) suitable for review and reference.",
+      "A defensible path from principles → practices → measurement, reducing security theater.",
+      "A reusable audit rubric (PLS) that makes protective claims verifiable."
+    ]
+  }
+}
