@@ -9,8 +9,22 @@ export const metadata = {
   description: "Case studies and active work from CrisisCore Systems.",
 };
 
-export default function ProjectsPage() {
+type SearchParamsLike =
+  | { q?: string | string[]; tag?: string | string[] }
+  | Promise<{ q?: string | string[]; tag?: string | string[] }>;
+
+async function getFirst(v: string | string[] | undefined) {
+  const resolved = await Promise.resolve(v);
+  return Array.isArray(resolved) ? resolved[0] : resolved;
+}
+
+export default async function ProjectsPage({
+  searchParams,
+}: Readonly<{ searchParams?: SearchParamsLike }>) {
   const projects = loadProjects();
+  const sp = await Promise.resolve(searchParams);
+  const q = (await getFirst(sp?.q)) ?? "";
+  const tag = (await getFirst(sp?.tag)) ?? "";
 
   return (
     <div className="py-12">
@@ -57,7 +71,7 @@ export default function ProjectsPage() {
               boundaries.
             </p>
             <div className="mt-5">
-              <ProjectsExplorer items={projects} />
+              <ProjectsExplorer items={projects} q={q} tag={tag} />
             </div>
           </Panel>
         </div>

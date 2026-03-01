@@ -1,42 +1,39 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/types/content";
 import { Badge } from "@/components/ui/Badge";
 
-export function ProjectsExplorer({ items }: { items: Project[] }) {
-  const [q, setQ] = useState("");
-  const [tag, setTag] = useState<string>("");
+export function ProjectsExplorer({
+  items,
+  q,
+  tag,
+}: Readonly<{ items: Project[]; q: string; tag: string }>) {
+  const tags = Array.from(
+    items.reduce((acc, p) => {
+      p.tags.forEach((t) => acc.add(t));
+      return acc;
+    }, new Set<string>())
+  ).sort((a, b) => a.localeCompare(b));
 
-  const tags = useMemo(() => {
-    const s = new Set<string>();
-    items.forEach((p) => p.tags.forEach((t) => s.add(t)));
-    return Array.from(s).sort((a, b) => a.localeCompare(b));
-  }, [items]);
-
-  const filtered = useMemo(() => {
-    const needle = q.trim().toLowerCase();
-    return items.filter((p) => {
-      const hay = `${p.title} ${p.summary} ${p.description} ${p.tags.join(" ")}`.toLowerCase();
-      const okQ = !needle || hay.includes(needle);
-      const okT = !tag || p.tags.includes(tag);
-      return okQ && okT;
-    });
-  }, [items, q, tag]);
+  const needle = q.trim().toLowerCase();
+  const filtered = items.filter((p) => {
+    const hay = `${p.title} ${p.summary} ${p.description} ${p.tags.join(" ")}`.toLowerCase();
+    const okQ = !needle || hay.includes(needle);
+    const okT = !tag || p.tags.includes(tag);
+    return okQ && okT;
+  });
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <form method="get" className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <input
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
+          name="q"
+          defaultValue={q}
           placeholder="Search projects…"
           className="cc-field"
         />
         <select
-          value={tag}
-          onChange={(e) => setTag(e.target.value)}
+          name="tag"
+          defaultValue={tag}
           className="cc-field text-white/80 sm:w-64"
         >
           <option value="">All tags</option>
@@ -46,7 +43,13 @@ export function ProjectsExplorer({ items }: { items: Project[] }) {
             </option>
           ))}
         </select>
-      </div>
+        <button
+          type="submit"
+          className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+        >
+          Apply
+        </button>
+      </form>
 
       <div className="grid gap-4">
         {filtered.map((p) => (
