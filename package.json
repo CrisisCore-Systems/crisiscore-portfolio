@@ -7,6 +7,7 @@
     "prebuild": "npm run check:content && npm run check:links",
     "build": "next build",
     "start": "next start",
+    "test:e2e": "playwright test",
     "check:content": "tsx scripts/check-content.ts",
     "check:links": "tsx scripts/check-links.ts",
     "lint": "eslint"
@@ -25,6 +26,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
