@@ -1,0 +1,100 @@
+---
+title: "PainTracker: Offline First Medical Data"
+description: "Building a chronic pain journal outside the surveillance medicine network"
+date: "2026-02-25"
+---
+
+Clinical reality is not a clean workflow.
+Pain and disability documentation is often created under stress, low energy, and low trust.
+
+Most health tracking apps assume the opposite.
+
+They assume account creation.
+They assume always on sync.
+They assume the user is willing to route intimate data through third party analytics and cloud storage.
+
+That assumption is not neutral.
+For many people it is dangerous.
+
+PainTracker is built to reverse the power dynamic.
+
+The user keeps authority.
+The system remains usable when the network is absent.
+The export is a deliberate action.
+
+## Threat model in plain language
+
+The primary threat is not a hacker fantasy.
+The primary threat is institutional and interpersonal pressure.
+
+An insurer asks for records.
+A clinician dismisses symptoms.
+A landlord demands proof of disability accommodations.
+A partner demands access to a device.
+
+A protective health journal must assume that the data can be used against the user.
+So the architecture reduces the surface area.
+
+## Design constraints
+
+Low cognition operation
+Capture the minimum useful signal with the fewest steps
+Never punish partial entries
+
+Degraded connectivity
+Function offline
+Preserve progress through interruptions
+Avoid loading spinners as a dependency
+
+Privacy as default
+No telemetry by default
+No central database requirement
+No background sharing
+
+Reversible sharing
+Exports are explicit
+A user can decide what to share and when
+
+## Architecture
+
+PainTracker uses a local first model.
+
+Entries are stored on the device.
+The app is usable without connectivity.
+The core interaction is fast logging.
+
+When the user needs a proof artifact, the system produces an export.
+
+That export can be shared with a clinician or kept for personal continuity.
+It is created by the user, not by a server.
+
+This approach is not anti cloud.
+It is pro boundary.
+
+Cloud features can be added as optional modules.
+But the base layer must remain protective.
+
+## What makes it protective
+
+A protective tool is quiet.
+
+It does not force identity.
+It does not require trust.
+It does not collapse when a server fails.
+It does not turn the body into an advertising profile.
+
+It gives the user a stable interface to their own life.
+
+## Proof surfaces
+
+The dossier is the operational summary.
+It contains the constraints and the architecture artifacts.
+
+If you want to inspect the system as an auditor, start with
+
+The project dossier at /projects/pain-tracker
+The live deployment and repository links inside that dossier
+
+If you want the doctrine behind the architecture, read
+
+The doctrine post at /writing/protective-computing-doctrine

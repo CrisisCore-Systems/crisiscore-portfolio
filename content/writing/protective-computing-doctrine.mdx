@@ -1,0 +1,113 @@
+---
+title: "The Doctrine of Protective Computing"
+description: "Why degraded first architecture is the only viable path for high threat environments"
+date: "2026-02-28"
+---
+
+Most software is engineered for a world that behaves.
+
+It assumes stable internet and stable identity.
+It assumes the user has time and safety.
+It assumes the institutions around the user are aligned with their interests.
+
+Protective computing assumes the opposite.
+
+It treats instability as the default operating condition.
+It treats coercion risk as a design input.
+It treats the browser as a contested surface.
+It treats central infrastructure as an optional convenience rather than a dependency.
+
+## The baseline claim
+
+A protective system must remain usable when the environment turns hostile.
+
+Hostile can mean low battery and low bandwidth.
+Hostile can mean an abusive partner with access to the device.
+Hostile can mean an employer or insurer demanding records.
+Hostile can mean network denial and content blocking.
+Hostile can mean a compromised browser extension.
+
+If a system fails closed under pressure, it is not protective.
+
+## Degraded first is architecture
+
+Degraded first is not a styling preference.
+It is architecture that survives loss.
+
+A degraded first system
+
+It defaults to local authority
+The user can read and act without a server round trip
+The user can preserve progress when the session is interrupted
+
+It tolerates partial observability
+Logs and proofs are designed for what you can actually capture
+
+It has safe failure modes
+A failure state is informative and reversible
+A failure does not erase user work
+
+It maintains navigability without scripts
+A script blocker should reduce polish, not remove the ability to navigate
+
+You can treat this as a simple test.
+If JavaScript is disabled and the site becomes a dead end, you have engineered a failure condition.
+
+## Local authority is the trust boundary
+
+Protective systems invert the usual control structure.
+
+In conventional apps the server is the authority.
+The user is a terminal.
+The export is an afterthought.
+
+In protective computing the user is the authority.
+The device holds the primary state.
+The export is explicit.
+Sharing is a user action, not a background process.
+
+This is why the cloud is optional.
+Sync can exist.
+Accounts can exist.
+But the core system cannot depend on them to function.
+
+## Proof beats narrative
+
+Protective computing favors verifiable artifacts.
+
+That can be a DOI backed canon.
+That can be a repository history.
+That can be a reproducible build.
+That can be a dossier with testable constraints.
+
+Narratives are easy to produce.
+Proof is expensive and therefore meaningful.
+
+This portfolio is treated as an artifact.
+
+Its content is schema validated.
+Its links are checked.
+Its core routes are smoke tested.
+Its mobile navigation and projects browsing are functional without scripts.
+
+That is not a claim.
+That is an implementation detail you can inspect.
+
+## The doctrine in one page
+
+Protective computing is the discipline of building systems for human vulnerability.
+
+Design for instability.
+Make the user the authority.
+Prefer reversible actions.
+Build for inspection.
+Make failure safe.
+Make truth checkable.
+
+If you want a concrete starting point, read the dossiers under Projects and the canon under Proof.
+
+Links
+
+The projects dossier index is at /projects.
+The reading room is at /writing.
+The canon and proof surfaces are at /proof.
