@@ -1,0 +1,5 @@
+Contact: mailto:crisiscore.systems@proton.me
+Preferred-Languages: en
+Expires: 2027-02-28T00:00:00Z
+Canonical: https://crisiscore-portfolio.vercel.app/.well-known/security.txt
+Canonical: https://crisiscore-portfolio.vercel.app/security.txt
