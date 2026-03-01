@@ -1,9 +1,10 @@
-import { loadCanon, loadDossiers, loadProjects } from "../src/content/load";
+import { loadCanon, loadDossiers, loadProjects, loadWriting } from "../src/content/load";
 
 function main() {
   const canon = loadCanon();
   const projects = loadProjects();
   const dossiers = loadDossiers();
+  const posts = loadWriting();
 
   if (!canon.layers.length) {
     throw new Error("canon.layers is empty");
@@ -28,8 +29,14 @@ function main() {
     }
   }
 
+  const postSlugs = new Set<string>();
+  for (const p of posts) {
+    if (postSlugs.has(p.slug)) throw new Error(`Duplicate writing slug: ${p.slug}`);
+    postSlugs.add(p.slug);
+  }
+
   console.log(
-    `Content OK: canon layers=${canon.layers.length}, projects=${projects.length}, dossiers=${dossiers.length}`
+    `Content OK: canon layers=${canon.layers.length}, projects=${projects.length}, dossiers=${dossiers.length}, writing=${posts.length}`
   );
 }
 

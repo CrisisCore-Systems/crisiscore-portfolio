@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import { getAllWritingSlugs, getWritingBySlug } from "@/app/lib/mdx";
+import { loadWriting, loadWritingPost } from "@/content/load";
 
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
@@ -11,13 +11,13 @@ async function getSlug(params: ParamsLike) {
 }
 
 export function generateStaticParams() {
-  return getAllWritingSlugs().map((slug) => ({ slug }));
+  return loadWriting().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: ParamsLike }) {
   try {
     const slug = await getSlug(params);
-    const p = getWritingBySlug(slug);
+    const p = loadWritingPost(slug);
     return {
       title: p.frontmatter.title,
       description: p.frontmatter.description,
@@ -29,13 +29,13 @@ export async function generateMetadata({ params }: { params: ParamsLike }) {
 
 export default async function WritingPostPage({
   params,
-}: {
+}: Readonly<{
   params: ParamsLike;
-}) {
+}>) {
   let post;
   try {
     const slug = await getSlug(params);
-    post = getWritingBySlug(slug);
+    post = loadWritingPost(slug);
   } catch {
     return notFound();
   }

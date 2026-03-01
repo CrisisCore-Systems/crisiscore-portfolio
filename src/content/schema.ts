@@ -25,6 +25,12 @@ export const ProjectSchema = z.object({
   status: z.enum(["active", "maintained", "archived"]).optional().default("active"),
 });
 
+export const WritingFrontmatterSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Must be YYYY-MM-DD"),
+});
+
 export const CanonSchema = z.object({
   title: z.string().min(1),
   blurb: z.string().min(1),
@@ -82,5 +88,11 @@ export const DossierSchema = z.object({
 
 export type Link = z.infer<typeof LinkSchema>;
 export type Project = z.infer<typeof ProjectSchema>;
+export type WritingFrontmatter = z.infer<typeof WritingFrontmatterSchema>;
+export type WritingPost = {
+  slug: string;
+  frontmatter: WritingFrontmatter;
+  content: string;
+};
 export type Canon = z.infer<typeof CanonSchema>;
 export type Dossier = z.infer<typeof DossierSchema>;

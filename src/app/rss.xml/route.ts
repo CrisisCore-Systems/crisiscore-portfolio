@@ -1,8 +1,8 @@
 import { SITE } from "@/app/lib/site";
-import { getAllWriting } from "@/app/lib/mdx";
+import { loadWriting } from "@/content/load";
 
 export async function GET() {
-  const posts = getAllWriting();
+  const posts = loadWriting();
 
   const items = posts
     .map((p) => {

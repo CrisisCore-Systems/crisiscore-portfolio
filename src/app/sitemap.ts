@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/app/lib/site";
-import { getAllWritingSlugs } from "@/app/lib/mdx";
+import { loadWriting } from "@/content/load";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = [
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/rss.xml",
   ];
-  const posts = getAllWritingSlugs().map((slug) => `/writing/${slug}`);
+  const posts = loadWriting().map((p) => `/writing/${p.slug}`);
 
   const now = new Date();
   return [...base, ...posts].map((path) => ({

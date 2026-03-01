@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { getAllWriting } from "@/app/lib/mdx";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { loadCanon } from "@/content/load";
+import { loadCanon, loadWriting } from "@/content/load";
 
 export const metadata = {
   title: "Writing",
@@ -11,7 +10,7 @@ export const metadata = {
 };
 
 export default function WritingIndexPage() {
-  const posts = getAllWriting();
+  const posts = loadWriting();
   const canon = loadCanon();
 
   return (
@@ -106,13 +105,13 @@ export default function WritingIndexPage() {
                 Open access. DOI-backed. Designed to be independently testable.
               </div>
 
-              {canon.layers[canon.layers.length - 1]?.links?.find(
+              {canon.layers.at(-1)?.links?.find(
                 (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
               ) ? (
                 <div className="mt-5">
                   <Button
                     href={
-                      canon.layers[canon.layers.length - 1].links.find(
+                      canon.layers.at(-1)!.links.find(
                         (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
                       )!.href
                     }
