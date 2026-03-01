@@ -18,10 +18,11 @@ export default function HomePage() {
         </div>
 
         <div className="relative p-8 sm:p-10">
+          <div className="cc-kicker">Protective computing</div>
           <div className="flex flex-wrap items-center gap-2">
-            <Badge>Local-first</Badge>
-            <Badge>Degraded-first</Badge>
-            <Badge>Reversible</Badge>
+            <Badge className="normal-case tracking-[0.08em]">Local-first</Badge>
+            <Badge className="normal-case tracking-[0.08em]">Degraded-first</Badge>
+            <Badge className="normal-case tracking-[0.08em]">Reversible</Badge>
           </div>
 
           <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
@@ -30,7 +31,7 @@ export default function HomePage() {
 
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
             {SITE.tagline} Built for low energy, low trust, partial connectivity,
-            and coercion-risk environments.
+            and coercion-risk environments. Proof beats narrative.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -40,13 +41,16 @@ export default function HomePage() {
             <Button href="/proof" variant="ghost">
               Proof
             </Button>
+            <Button href="/writing" variant="ghost">
+              Writing
+            </Button>
             <Button href={SITE.socials.github} variant="ghost">
               GitHub <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="cc-card p-6">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <ShieldCheck className="h-4 w-4 text-white/80" />
                 Local authority
@@ -56,7 +60,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="cc-card p-6">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <Zap className="h-4 w-4 text-white/80" />
                 Degraded-first
@@ -67,7 +71,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <div className="cc-card p-6">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <RefreshCcw className="h-4 w-4 text-white/80" />
                 Reversible by design
