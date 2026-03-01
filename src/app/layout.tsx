@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -53,6 +54,22 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV === "production" ? (
+          <>
+            {/* Privacy-friendly analytics by Plausible */}
+            <Script
+              src="https://plausible.io/js/pa-dl6_o4e_YoVvubl3sdM36.js"
+              strategy="beforeInteractive"
+            />
+            <Script id="plausible-init" strategy="beforeInteractive">{`
+window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};
+plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init();
+            `}</Script>
+          </>
+        ) : null}
+      </head>
       <body
         className={cn(
           sans.variable,
