@@ -1,0 +1,68 @@
+{
+  "slug": "pain-tracker",
+  "tagline": "Privacy-first pain documentation built for low energy, low trust, and partial connectivity.",
+  "problem": {
+    "title": "Problem",
+    "body": [
+      "People living with chronic pain need consistent documentation for themselves, clinicians, and disability processes—without turning their body into a data exhaust product.",
+      "Most trackers assume stability: always-online sync, account creation, high attention, and high trust. Those assumptions fail precisely when the user needs the tool most."
+    ]
+  },
+  "constraints": {
+    "title": "Constraints",
+    "items": [
+      "Degraded-first: low battery, low bandwidth, interrupted sessions.",
+      "Cognitive overload: reduce steps, reduce choices, preserve progress.",
+      "Privacy-first: avoid default data centralization; minimize third-party surfaces.",
+      "Reversibility: exports are explicit; user remains the authority."
+    ]
+  },
+  "architecture": {
+    "title": "Architecture",
+    "body": [
+      "Local-first by default: entries persist on-device using browser storage so the system remains usable offline and under partial connectivity.",
+      "Sharing is user-controlled: the primary proof artifact is an explicit export that can be used for clinicians or records when the user chooses."
+    ],
+    "diagram": {
+      "src": "/projects/pain-tracker/architecture.svg",
+      "alt": "PainTracker architecture sketch: client UI, local store, offline support, optional export",
+      "width": 1200,
+      "height": 675
+    }
+  },
+  "proof": {
+    "title": "Proof",
+    "links": [
+      { "label": "Live app", "href": "https://paintracker.ca", "kind": "external" },
+      {
+        "label": "GitHub repo",
+        "href": "https://github.com/CrisisCore-Systems/pain-tracker",
+        "kind": "external"
+      }
+    ]
+  },
+  "outcomes": {
+    "title": "Outcomes",
+    "items": [
+      "A working local-first PWA surface (live deployment) designed around protective UX primitives.",
+      "Measurable activity is exposed directly on the dossier via live repo stats (stars / last push), rather than narrative claims."
+    ]
+  },
+  "images": {
+    "title": "Artifacts",
+    "items": [
+      {
+        "src": "/projects/pain-tracker/ui-01.svg",
+        "alt": "PainTracker interface sketch showing fast logging",
+        "width": 1200,
+        "height": 750
+      },
+      {
+        "src": "/projects/pain-tracker/ui-02.svg",
+        "alt": "PainTracker interface sketch showing export and proof surface",
+        "width": 1200,
+        "height": 750
+      }
+    ]
+  }
+}

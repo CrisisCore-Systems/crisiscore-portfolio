@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { DOSSIERS } from "@/app/lib/dossiers";
 import { getRepo } from "@/app/lib/github";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
-import { loadProject, loadProjects } from "@/content/load";
+import { loadDossier, loadProject, loadProjects } from "@/content/load";
 
 export const revalidate = 300;
 
@@ -55,9 +54,9 @@ function isInternalHref(href: string) {
 
 export default async function ProjectPage({
   params,
-}: {
+}: Readonly<{
   params: ParamsLike;
-}) {
+}>) {
   const slug = await getSlug(params);
   let p: ReturnType<typeof loadProject>;
   try {
@@ -66,7 +65,7 @@ export default async function ProjectPage({
     return notFound();
   }
 
-  const dossier = DOSSIERS[slug];
+  const dossier = loadDossier(slug);
   const gh = p.links.find((l) => l.href.includes("github.com/"));
   const repoMatch = gh?.href.match(/github\.com\/([^/]+)\/([^/]+)/i);
   const repo = repoMatch ? await getRepo(repoMatch[1], repoMatch[2]) : null;

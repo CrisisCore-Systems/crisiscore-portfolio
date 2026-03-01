@@ -39,6 +39,48 @@ export const CanonSchema = z.object({
   ),
 });
 
+export const DossierImageSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+});
+
+export const DossierSectionSchema = z.object({
+  title: z.string().min(1),
+  body: z.array(z.string().min(1)).default([]),
+});
+
+export const DossierSchema = z.object({
+  slug: z.string().min(1),
+  tagline: z.string().min(1),
+  problem: DossierSectionSchema,
+  constraints: z.object({
+    title: z.string().min(1),
+    items: z.array(z.string().min(1)).default([]),
+  }),
+  architecture: z.object({
+    title: z.string().min(1),
+    body: z.array(z.string().min(1)).default([]),
+    diagram: DossierImageSchema.optional(),
+  }),
+  proof: z.object({
+    title: z.string().min(1),
+    links: z.array(LinkSchema).default([]),
+  }),
+  outcomes: z.object({
+    title: z.string().min(1),
+    items: z.array(z.string().min(1)).default([]),
+  }),
+  images: z
+    .object({
+      title: z.string().min(1),
+      items: z.array(DossierImageSchema).default([]),
+    })
+    .optional(),
+});
+
 export type Link = z.infer<typeof LinkSchema>;
 export type Project = z.infer<typeof ProjectSchema>;
 export type Canon = z.infer<typeof CanonSchema>;
+export type Dossier = z.infer<typeof DossierSchema>;
