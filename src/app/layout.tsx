@@ -67,6 +67,14 @@ export default function RootLayout({
           Skip to content
         </a>
 
+        <noscript>
+          <div className="mx-auto max-w-6xl px-4 pt-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-white/70">
+              JavaScript is disabled. This site is designed to remain readable and navigable without scripts.
+            </div>
+          </div>
+        </noscript>
+
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
