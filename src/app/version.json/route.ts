@@ -1,7 +1,7 @@
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
   const footerBuild = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
   const footerBuildFull = process.env.NEXT_PUBLIC_BUILD_COMMIT_FULL ?? "unknown";
   const footerBuildSource = process.env.NEXT_PUBLIC_BUILD_COMMIT_SOURCE ?? "unknown";
@@ -19,6 +19,10 @@ export async function GET() {
     env,
     region: process.env.VERCEL_REGION ?? null,
     url: process.env.VERCEL_URL ?? null,
+    requestHost: request.headers.get("host"),
+    requestForwardedHost: request.headers.get("x-forwarded-host"),
+    requestVercelId: request.headers.get("x-vercel-id"),
+    requestVercelDeploymentUrl: request.headers.get("x-vercel-deployment-url"),
     generatedAt: new Date().toISOString(),
   };
 
