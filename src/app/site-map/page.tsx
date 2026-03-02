@@ -26,13 +26,14 @@ export default function SiteMapPage() {
       <div className="mt-6 flex flex-wrap gap-3">
         <Button href="/sitemap.xml" variant="ghost">XML sitemap</Button>
         <Button href="/proof/fetchability.json" variant="ghost">Fetchability JSON</Button>
+        <Button href="/deploy-id" variant="ghost">Deploy ID</Button>
       </div>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
         <Panel className="p-7">
           <div className="text-sm font-semibold">Core routes</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            {["/", "/projects", "/writing", "/proof", "/about", "/contact", "/rss.xml"].map((route) => (
+            {["/", "/projects", "/writing", "/proof", "/about", "/contact", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
                 <Link className="hover:text-white" href={route}>{route}</Link>
               </li>

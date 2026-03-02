@@ -264,6 +264,10 @@ export default async function ProofPage() {
             <span className="text-white/55"> — machine-readable verification targets</span>
           </li>
           <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/deploy-id">/deploy-id</a>
+            <span className="text-white/55"> — plaintext no-store deployment canary</span>
+          </li>
+          <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/site-map">/site-map</a>
             <span className="text-white/55"> — HTML sitemap (primary)</span>
           </li>
