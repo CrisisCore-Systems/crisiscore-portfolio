@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Panel } from "@/components/ui/Panel";
 import { ContactFallbackForm } from "@/components/ContactFallbackForm";
+import { CopyInquiryTemplateButton } from "@/components/CopyInquiryTemplateButton";
 
 export const metadata = {
   title: "Contact",
@@ -18,6 +19,12 @@ export default function ContactPage() {
     "Links / artifacts (optional):\n\n";
 
   const mailto = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const inquiryTemplate =
+    "Context:\n- What you are building and who it serves\n\n" +
+    "Need:\n- Trust Hardening Review / Hardening Sprint / Fractional Trust Architect\n\n" +
+    "Constraints:\n- Timeline\n- Budget range\n- Security or compliance boundaries\n\n" +
+    "Artifacts:\n- Repo / docs / deployment links\n\n" +
+    "Decision target date:\n-";
 
   return (
     <div className="py-12">
@@ -81,6 +88,16 @@ export default function ContactPage() {
 
             <div className="mt-5 text-xs text-white/55">
               Tip: the email button above pre-fills a short template.
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/50">Inquiry template</div>
+              <pre className="mt-3 whitespace-pre-wrap text-xs leading-relaxed text-white/70">
+                {inquiryTemplate}
+              </pre>
+              <div className="mt-3">
+                <CopyInquiryTemplateButton template={inquiryTemplate} />
+              </div>
             </div>
           </Panel>
         </div>

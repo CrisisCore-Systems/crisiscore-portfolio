@@ -44,8 +44,10 @@
   "outcomes": {
     "title": "Outcomes",
     "items": [
-      "A working local-first PWA surface (live deployment) designed around protective UX primitives.",
-      "Measurable activity is exposed directly on the dossier via live repo stats (stars / last push), rather than narrative claims."
+      "0 account requirement for core use: users can log entries without sign-up.",
+      "0 background sharing by default: exports are user-initiated and explicit.",
+      "Core logging flow remains available offline under partial connectivity.",
+      "A working local-first PWA surface (live deployment) designed around protective UX primitives."
     ]
   },
   "images": {

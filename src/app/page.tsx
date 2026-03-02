@@ -14,7 +14,7 @@ export default function HomePage() {
         </h1>
         <p className="mt-5 text-xl font-semibold text-white">Your MVP works. Now make it defensible.</p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
-          For clinicians, activists, and people living under coercive conditions.
+          For post-MVP teams building tools for clinicians, advocates, and people under coercive pressure.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           For products handling harm-prone data, “good enough” is liability. I design local-first,
@@ -131,9 +131,12 @@ export default function HomePage() {
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">1) Trust Hardening Review (front door)</h3>
             <p className="mt-2 text-sm text-white/70">For post-MVP teams needing fast clarity.</p>
+            <p className="mt-2 text-sm text-white/80">
+              Output: <span className="font-semibold text-white">Defensibility Packet</span>
+            </p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Threat model snapshot + abuse cases</li>
-              <li>• Data flow and boundary map</li>
+              <li>• Boundary statement + data-flow trust map</li>
               <li>• Top 10 risks + quick wins + now/next/later roadmap</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
