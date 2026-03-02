@@ -6,6 +6,7 @@ export async function GET() {
   const footerBuildFull = process.env.NEXT_PUBLIC_BUILD_COMMIT_FULL ?? "unknown";
   const footerBuildSource = process.env.NEXT_PUBLIC_BUILD_COMMIT_SOURCE ?? "unknown";
   const runtimeCommit = process.env.VERCEL_GIT_COMMIT_SHA ?? null;
+  const env = process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? null;
 
   const payload = {
     reportedCommit: runtimeCommit,
@@ -14,7 +15,10 @@ export async function GET() {
     footerBuildSource,
     matchesFooterBuild: runtimeCommit ? runtimeCommit.startsWith(footerBuild) : false,
     branch: process.env.VERCEL_GIT_COMMIT_REF ?? null,
-    environment: process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? null,
+    environment: env,
+    env,
+    region: process.env.VERCEL_REGION ?? null,
+    url: process.env.VERCEL_URL ?? null,
     generatedAt: new Date().toISOString(),
   };
 
