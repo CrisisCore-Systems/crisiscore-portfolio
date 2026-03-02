@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Section } from "@/components/Section";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function HomePage() {
   return (
     <div className="py-12">

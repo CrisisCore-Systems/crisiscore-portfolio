@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 import { loadProjects } from "@/content/load";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata = {
   title: "Projects",
   description: "Case studies and active work from CrisisCore Systems.",

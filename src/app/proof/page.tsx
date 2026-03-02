@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 export const dynamic = "force-dynamic";
-export const revalidate = 21600;
+export const revalidate = 0;
 
 function fmt(n: number) {
   return new Intl.NumberFormat(undefined, { notation: "compact" }).format(n);
