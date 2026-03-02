@@ -18,7 +18,7 @@ export const ARTIFACTS: ArtifactEntry[] = [
       "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/pain-tracker/architecture.svg",
   },
   {
-    slug: "pain-tracker/ui-01",
+    slug: "pain-tracker/ui-01-fastlog",
     title: "PainTracker UI artifact (fast logging)",
     summary: "UI sketch showing low-friction entry under constraint.",
     kind: "svg",

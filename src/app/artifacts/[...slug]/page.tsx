@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { ARTIFACTS, getArtifact } from "@/app/lib/artifacts";
@@ -34,6 +34,9 @@ export default async function ArtifactPage({
   params,
 }: Readonly<{ params: ParamsLike }>) {
   const slug = await getSlug(params);
+  if (slug === "pain-tracker/ui-01") {
+    permanentRedirect("/artifacts/pain-tracker/ui-01-fastlog");
+  }
   const projectSlug = slug.split("/")[0];
   const artifact = getArtifact(slug);
   if (!artifact) return notFound();

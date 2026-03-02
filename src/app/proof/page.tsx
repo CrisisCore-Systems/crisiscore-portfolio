@@ -296,7 +296,7 @@ export default async function ProofPage() {
             <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/architecture.svg)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/ui-01")}>/artifacts/pain-tracker/ui-01</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/ui-01-fastlog")}>/artifacts/pain-tracker/ui-01-fastlog</a>
             <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/ui-01.svg)</span>
           </li>
           <li>

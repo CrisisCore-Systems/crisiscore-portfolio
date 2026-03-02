@@ -17,7 +17,7 @@ export async function GET() {
       role: "primary",
     },
     {
-      url: `${SITE.url}/artifacts/pain-tracker/ui-01`,
+      url: `${SITE.url}/artifacts/pain-tracker/ui-01-fastlog`,
       expectedStatus: 200,
       expectedContentType: "text/html",
       role: "primary",
