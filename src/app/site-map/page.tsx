@@ -17,7 +17,7 @@ export default function SiteMapPage() {
       <div className="cc-kicker">Navigation map</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Sitemap</h1>
       <p className="mt-3 max-w-3xl text-sm text-white/70">
-        Human-readable route map for auditors and operators. XML sitemap remains available for crawlers.
+        Human-readable route map for auditors and operators. XML sitemap remains available for most crawlers, though some networks may block it.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">

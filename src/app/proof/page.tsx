@@ -253,9 +253,10 @@ export default async function ProofPage() {
       <Panel className="mt-4 p-7">
         <div className="text-sm font-semibold">Fetchability diagnostics</div>
         <p className="mt-2 text-sm text-white/70">
-          Quick verifier for non-browser clients. These endpoints should return 200 with the listed content types.
+          Quick verifier for non-browser clients. Primary checks are HTML-first; mirror checks include raw endpoints that may be selectively blocked.
         </p>
 
+        <div className="mt-4 text-xs uppercase tracking-[0.2em] text-white/50">Primary checks</div>
         <ul className="mt-4 space-y-2 text-sm text-white/75">
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/proof/fetchability.json">/proof/fetchability.json</a>
@@ -265,6 +266,18 @@ export default async function ProofPage() {
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/site-map">/site-map</a>
             <span className="text-white/55"> — HTML sitemap (primary)</span>
           </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/architecture">/artifacts/pain-tracker/architecture</a>
+            <span className="text-white/55"> — HTML artifact viewer</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/security-and-audits/redacted-threat-model-excerpt">/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
+            <span className="text-white/55"> — HTML artifact viewer</span>
+          </li>
+        </ul>
+
+        <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/50">Mirror checks</div>
+        <ul className="mt-3 space-y-2 text-sm text-white/75">
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/sitemap.xml">/sitemap.xml</a>
             <span className="text-white/55"> — XML mirror for crawlers</span>
@@ -284,7 +297,7 @@ export default async function ProofPage() {
         </ul>
 
         <div className="mt-4 text-xs text-white/50">
-          Command check (GET): curl -sS -D - -o NUL -A "python-requests/2.31.0" https://crisiscore-portfolio.vercel.app/sitemap.xml
+          Command check (GET, primary): curl -sS -D - -o NUL -A "python-requests/2.31.0" https://crisiscore-portfolio.vercel.app/site-map
         </div>
       </Panel>
     </div>

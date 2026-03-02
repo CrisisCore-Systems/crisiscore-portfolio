@@ -32,6 +32,7 @@ export default async function ArtifactPage({
   params,
 }: Readonly<{ params: ParamsLike }>) {
   const slug = await getSlug(params);
+  const projectSlug = slug.split("/")[0];
   const artifact = getArtifact(slug);
   if (!artifact) return notFound();
 
@@ -49,9 +50,14 @@ export default async function ArtifactPage({
 
   return (
     <div className="py-12">
-      <Link href="/proof" className="text-sm text-white/60 hover:text-white">
-        ← Back to proof
-      </Link>
+      <div className="flex flex-wrap gap-4 text-sm text-white/60">
+        <Link href={`/projects/${projectSlug}`} className="hover:text-white">
+          ← Back to dossier
+        </Link>
+        <Link href="/proof" className="hover:text-white">
+          Back to proof
+        </Link>
+      </div>
 
       <div className="mt-6 text-xs uppercase tracking-[0.2em] text-white/45">Artifact viewer</div>
       <h1 className="mt-2 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">{artifact.title}</h1>
