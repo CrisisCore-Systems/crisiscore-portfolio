@@ -1,10 +1,10 @@
 import { SITE } from "@/app/lib/site";
 
 export function Footer() {
-  const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "local";
+  const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "unknown";
 
   return (
-    <footer className="border-t border-white/10">
+    <footer className="border-t border-white/10" data-build={commit}>
       <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-10 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
         <div>
           © {new Date().getFullYear()} {SITE.name}. Built on Next.js.
@@ -29,6 +29,9 @@ export function Footer() {
           </a>
           <a className="hover:text-white" href="/sitemap.xml">
             XML sitemap
+          </a>
+          <a className="hover:text-white" href="/version.json">
+            Version
           </a>
         </div>
       </div>

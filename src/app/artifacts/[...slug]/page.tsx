@@ -8,6 +8,8 @@ import { ARTIFACTS, getArtifact } from "@/app/lib/artifacts";
 
 type ParamsLike = { slug: string[] } | Promise<{ slug: string[] }>;
 
+export const dynamic = "force-dynamic";
+
 async function getSlug(params: ParamsLike) {
   const resolved = await Promise.resolve(params);
   return resolved.slug.join("/");

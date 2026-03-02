@@ -10,6 +10,7 @@ export const metadata = {
   description: "DOI-backed canon, live systems, and verifiable artifacts.",
 };
 
+export const dynamic = "force-dynamic";
 export const revalidate = 21600;
 
 function fmt(n: number) {

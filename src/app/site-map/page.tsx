@@ -8,6 +8,8 @@ export const metadata = {
   description: "Human-readable sitemap for key routes, dossiers, and writing.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function SiteMapPage() {
   const projects = loadProjects();
   const writing = loadWriting();
