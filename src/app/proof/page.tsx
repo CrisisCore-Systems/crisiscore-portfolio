@@ -246,6 +246,36 @@ export default async function ProofPage() {
           </div>
         </Panel>
       </div>
+
+      <Panel className="mt-4 p-7">
+        <div className="text-sm font-semibold">Fetchability diagnostics</div>
+        <p className="mt-2 text-sm text-white/70">
+          Quick verifier for non-browser clients. These endpoints should return 200 with the listed content types.
+        </p>
+
+        <ul className="mt-4 space-y-2 text-sm text-white/75">
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/sitemap.xml">/sitemap.xml</a>
+            <span className="text-white/55"> — expected: application/xml</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/pain-tracker/architecture.svg">/projects/pain-tracker/architecture.svg</a>
+            <span className="text-white/55"> — expected: image/svg+xml</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/pain-tracker/ui-01.svg">/projects/pain-tracker/ui-01.svg</a>
+            <span className="text-white/55"> — expected: image/svg+xml</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/security-and-audits/redacted-threat-model-excerpt.md">/projects/security-and-audits/redacted-threat-model-excerpt.md</a>
+            <span className="text-white/55"> — expected: text/markdown</span>
+          </li>
+        </ul>
+
+        <div className="mt-4 text-xs text-white/50">
+          Command check: curl -I https://crisiscore-portfolio.vercel.app/sitemap.xml
+        </div>
+      </Panel>
     </div>
   );
 }
