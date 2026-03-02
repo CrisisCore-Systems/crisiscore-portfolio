@@ -57,6 +57,7 @@
   "outcomes": {
     "title": "Outputs",
     "items": [
+      "A bounded risk register prioritized to top findings (typically 10) with triage order.",
       "A threat model with explicit assumptions and hard boundaries (what must not fail).",
       "Actionable findings: reproduction steps, impact, and recommended fixes.",
       "A remediation plan ordered by risk reduction per unit effort.",

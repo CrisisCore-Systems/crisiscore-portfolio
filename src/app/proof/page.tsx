@@ -126,6 +126,9 @@ export default async function ProofPage() {
           <p className="mt-2 text-sm text-white/70">
             Public repositories, commit history, issues, and published artifacts.
           </p>
+          <p className="mt-2 text-xs text-white/55">
+            Visibility stats are shown for transparency; primary proof remains artifacts (DOIs, repos, deployments, redacted packets).
+          </p>
 
           <div className="mt-6 grid grid-cols-2 gap-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">

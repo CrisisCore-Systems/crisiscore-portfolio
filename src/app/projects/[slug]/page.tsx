@@ -154,7 +154,7 @@ export default async function ProjectPage({
                     </div>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                    <div className="text-xs text-white/55">Issues</div>
+                    <div className="text-xs text-white/55">Open items</div>
                     <div className="mt-1 text-lg font-semibold">
                       {fmt(repo.open_issues_count)}
                     </div>
