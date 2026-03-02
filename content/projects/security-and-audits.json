@@ -1,13 +1,18 @@
 {
   "slug": "security-and-audits",
   "title": "Security & Collapse Audits",
-  "subtitle": "Threat modeling + remediation",
+  "subtitle": "Threat modeling + remediation (operational and organizational failure risk)",
   "summary": "Threat modeling + remediation written for adversarial reality (not compliance theater).",
   "description": "Security review for systems operating under low trust: exploitability, incentives, and failure surfaces. Output is actionable: clear risk boundaries, reproduction steps, and prioritized remediation.",
   "tags": ["Security", "Threat Modeling", "Audit", "Systems"],
   "links": [
     { "label": "Contact", "href": "/contact", "kind": "internal" },
     { "label": "Proof", "href": "/proof", "kind": "internal" },
+    {
+      "label": "Redacted audit artifact",
+      "href": "/projects/security-and-audits/redacted-threat-model-excerpt.md",
+      "kind": "internal"
+    },
     {
       "label": "GitHub",
       "href": "https://github.com/CrisisCore-Systems",

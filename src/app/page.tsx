@@ -1,197 +1,225 @@
-import { ArrowUpRight, ShieldCheck, Zap, RefreshCcw } from "lucide-react";
-import Link from "next/link";
-import { SITE } from "@/app/lib/site";
-import { loadProjects } from "@/content/load";
+import { ArrowUpRight } from "lucide-react";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { Section } from "@/components/Section";
 
 export default function HomePage() {
-  const projects = loadProjects();
-  const featured = projects.filter((p) => p.highlight).slice(0, 2);
-
   return (
     <div className="py-12">
-      <Panel className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute -bottom-28 right-6 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+      <Panel className="p-8 sm:p-10">
+        <div className="cc-kicker">Protective Computing</div>
+        <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
+          Defensible Trust Architecture for Sensitive-Data Products
+        </h1>
+        <p className="mt-5 text-xl font-semibold text-white">Your MVP works. Now make it defensible.</p>
+        <p className="mt-3 text-sm text-white/75 sm:text-base">
+          For clinicians, activists, and people living under coercive conditions.
+        </p>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
+          For products handling harm-prone data, “good enough” is liability. I design local-first,
+          reversible systems that keep people functional when power, trust, or connectivity are
+          failing.
+        </p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
+          Built for low energy, low trust, partial connectivity, and real coercion risk.
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          <Badge className="normal-case tracking-[0.08em]">Threat model → clear boundaries</Badge>
+          <Badge className="normal-case tracking-[0.08em]">Data minimization → smaller blast radius</Badge>
+          <Badge className="normal-case tracking-[0.08em]">Decision-grade handoff</Badge>
         </div>
 
-        <div className="relative p-8 sm:p-10">
-          <div className="cc-kicker">Protective computing</div>
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge className="normal-case tracking-[0.08em]">Local-first</Badge>
-            <Badge className="normal-case tracking-[0.08em]">Degraded-first</Badge>
-            <Badge className="normal-case tracking-[0.08em]">Reversible</Badge>
-          </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button href="/contact">
+            Apply for a Trust Hardening Review <ArrowUpRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button href="/proof" variant="ghost">
+            See the Redacted Proof Pack
+          </Button>
+          <Badge className="normal-case tracking-[0.08em]">Proof beats narrative</Badge>
+        </div>
 
-          <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-            Protective architecture for people living inside instability.
-          </h1>
-
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-            {SITE.tagline} Built for low energy, low trust, partial connectivity,
-            and coercion-risk environments. Proof beats narrative.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/projects">
-              View Projects <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button href="/proof" variant="ghost">
-              Proof
-            </Button>
-            <Button href="/writing" variant="ghost">
-              Writing
-            </Button>
-            <Button href={SITE.socials.github} variant="ghost">
-              GitHub <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            <div className="cc-card p-6">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <ShieldCheck className="h-4 w-4 text-white/80" />
-                Local authority
-              </div>
-              <p className="mt-2 text-sm text-white/70">
-                Default ownership lives on-device. Cloud is optional, not assumed.
-              </p>
-            </div>
-
-            <div className="cc-card p-6">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <Zap className="h-4 w-4 text-white/80" />
-                Degraded-first
-              </div>
-              <p className="mt-2 text-sm text-white/70">
-                Designed for battery scarcity, stress, cognitive overload, and
-                partial connectivity.
-              </p>
-            </div>
-
-            <div className="cc-card p-6">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <RefreshCcw className="h-4 w-4 text-white/80" />
-                Reversible by design
-              </div>
-              <p className="mt-2 text-sm text-white/70">
-                Safe failure modes, undo paths, minimal irreversible actions.
-              </p>
-            </div>
-          </div>
+        <div className="mt-6 text-sm text-white/65">
+          Default ownership lives on-device. Cloud is optional, not assumed.
         </div>
       </Panel>
 
-      <section className="py-12">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <div className="cc-kicker">Active work</div>
-            <h2 className="mt-2 text-xl font-semibold">Featured</h2>
-          </div>
-          <Link href="/projects" className="text-sm text-white/60 hover:text-white">
-            View all →
-          </Link>
+      <Section title="What I actually do" kicker="In practice">
+        <div className="cc-card p-7">
+          <ul className="space-y-3 text-sm text-white/80">
+            <li>• Architect privacy-preserving, local-first apps</li>
+            <li>• Design degraded-mode UX and recovery playbooks</li>
+            <li>• Build measurable protective criteria (scores, checklists, tests)</li>
+          </ul>
         </div>
+      </Section>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {featured.map((p) => {
-            if (p.slug === "overton-framework") {
-              return (
-                <div key={p.slug} className="cc-card p-7">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <Link
-                        href={`/projects/${p.slug}`}
-                        className="group inline-flex items-center gap-2 text-lg font-semibold"
-                      >
-                        {p.title}
-                        <span className="text-white/40 transition group-hover:text-white/80">
-                          ↗
-                        </span>
-                      </Link>
-
-                      <p className="mt-3 text-sm text-white/70">{p.summary}</p>
-
-                      <div className="mt-4 space-y-2">
-                        {p.links.slice(0, 3).map((l) => (
-                          <a
-                            key={l.href}
-                            href={l.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="block text-sm text-white/70 hover:text-white"
-                          >
-                            › <span className="underline decoration-white/20 underline-offset-4">{l.label}</span>
-                          </a>
-                        ))}
-                      </div>
-
-                      <div className="mt-4 text-xs text-white/55">
-                        Open access. DOI-backed. Designed to be independently testable.
-                      </div>
-                    </div>
-
-                    <a
-                      href={p.links[p.links.length - 1]?.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-1 text-sm text-white/60 hover:text-white"
-                    >
-                      Read →
-                    </a>
-                  </div>
-                </div>
-              );
-            }
-
-            return (
-              <Link
-                key={p.slug}
-                href={`/projects/${p.slug}`}
-                className="cc-card group block p-7"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-lg font-semibold">{p.title}</div>
-                    <p className="mt-3 text-sm text-white/70">{p.summary}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {p.tags.slice(0, 4).map((t) => (
-                        <Badge key={t}>{t}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-1 text-white/40 transition group-hover:text-white/80">
-                    ↗
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      <Panel className="p-8 sm:p-10">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">
-              Collaboration
-            </div>
-            <h3 className="mt-2 text-xl font-semibold">
-              If you need systems that don’t collapse under pressure
-            </h3>
+      <Section title="Core definitions" kicker="Semantic anchor">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Protective computing</h3>
             <p className="mt-2 text-sm text-white/70">
-              I build protective software, threat models, and verifiable artifacts.
+              Systems designed to degrade safely under instability, not just perform under ideal
+              conditions.
             </p>
           </div>
-          <div className="flex gap-3">
-            <Button href="/contact">Contact</Button>
-            <Button href="/proof" variant="ghost">
-              View proof
-            </Button>
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Local authority</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Data ownership and control remain with the user’s device by default; cloud is optional.
+            </p>
           </div>
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Reversible by design</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Critical actions include undo paths and safe failure modes so harm is harder to make
+              permanent.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="What you get" kicker="Outcomes">
+        <div className="cc-card p-7">
+          <ul className="space-y-3 text-sm text-white/80">
+            <li>• Highest-risk failure paths and abuse cases, clearly mapped</li>
+            <li>• Simpler data model with explicit boundaries and exits</li>
+            <li>• Prioritized hardening roadmap your team can ship</li>
+            <li>• Clear trust narrative for users, partners, and investors</li>
+          </ul>
+        </div>
+      </Section>
+
+      <Section title="The Protective Computing difference" kicker="Why this works">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">1) Risk-first, not feature-first</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Privacy is architectural: minimize dangerous data, or never collect it.
+            </p>
+            <p className="mt-4 text-sm font-medium text-white">
+              “We don’t add privacy later. We design the system so the dangerous data doesn’t exist.”
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">2) Built for reality, not ideal conditions</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Built for low signal, low battery, stressed users, and messy environments.
+            </p>
+            <p className="mt-4 text-sm font-medium text-white">
+              “Built for low signal, low battery, and high stress—because that’s when trust matters.”
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">3) Defensibility shipped + documented</h3>
+            <p className="mt-2 text-sm text-white/70">
+              You ship protections plus a decision trail your team can defend and maintain.
+            </p>
+            <p className="mt-4 text-sm font-medium text-white">
+              “You don’t just get a build. You get defensibility—and the receipts.”
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Services" kicker="3 offers">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">1) Trust Hardening Review (front door)</h3>
+            <p className="mt-2 text-sm text-white/70">For post-MVP teams needing fast clarity.</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <li>• Threat model snapshot + abuse cases</li>
+              <li>• Data flow and boundary map</li>
+              <li>• Top 10 risks + quick wins + now/next/later roadmap</li>
+            </ul>
+            <p className="mt-4 text-sm font-medium text-white">
+              Know where trust breaks and what to fix first.
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">2) Hardening Sprint (implementation)</h3>
+            <p className="mt-2 text-sm text-white/70">For teams ready to ship protections.</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <li>• Data minimization redesign</li>
+              <li>• Local-first/offline upgrades for critical flows</li>
+              <li>• Telemetry discipline + guardrails + handoff docs</li>
+            </ul>
+            <p className="mt-4 text-sm font-medium text-white">
+              From risk map to shipped protections, fast.
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">3) Fractional Trust Architect (retainer)</h3>
+            <p className="mt-2 text-sm text-white/70">For teams scaling features under scrutiny.</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <li>• Release gating + architecture reviews</li>
+              <li>• Threat model updates per major changes</li>
+              <li>• Continuous minimization + boundary enforcement + incident readiness</li>
+            </ul>
+            <p className="mt-4 text-sm font-medium text-white">
+              A long-term trust backbone in product decisions.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Fit filters" kicker="Premium gate">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Great fit</h3>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <li>• Post-MVP (live usage or imminent launch)</li>
+              <li>• You handle sensitive, harm-prone data</li>
+              <li>• Resourced team with implementation budget</li>
+              <li>• One decision-maker + one technical owner</li>
+              <li>• Willing to minimize data and enforce boundaries</li>
+            </ul>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Not a fit</h3>
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              <li>• Idea-stage “build my MVP cheap”</li>
+              <li>• Teams unwilling to change data collection behavior</li>
+              <li>• No ownership, no authority, committee churn</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Proof" kicker="Make the claims undeniable">
+        <div className="cc-card p-7">
+          <ul className="space-y-3 text-sm text-white/80">
+            <li>• Before/after data-flow diagrams</li>
+            <li>• Redacted trust artifacts: threat model, boundary map, decision log</li>
+            <li>• Outcome tiles: less data, better offline coverage, lower support load and risk</li>
+            <li>• Build receipts: redacted PRs, release gates, checklists</li>
+            <li>• Method-specific testimonials</li>
+          </ul>
+          <p className="mt-4 text-sm text-white/70">
+            Gives collaborators a testable vocabulary for protective design reviews and audits.
+          </p>
+        </div>
+      </Section>
+
+      <Panel className="p-8 sm:p-10">
+        <div className="text-xs uppercase tracking-[0.2em] text-white/45">Close</div>
+        <h2 className="mt-2 text-2xl font-semibold">
+          If your product handles high-stakes data, you don’t need more features. You need defensibility.
+        </h2>
+        <p className="mt-3 text-sm text-white/70">
+          Best fit: 4–12 week engagements for high-risk tools, clinics, or critical workflows.
+        </p>
+        <div className="mt-6">
+          <Button href="/contact">
+            Apply for a Trust Hardening Review <ArrowUpRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </Panel>
     </div>

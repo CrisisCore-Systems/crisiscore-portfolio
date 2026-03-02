@@ -10,6 +10,8 @@ export const metadata = {
   description: "DOI-backed canon, live systems, and verifiable artifacts.",
 };
 
+export const revalidate = 21600;
+
 function fmt(n: number) {
   return new Intl.NumberFormat(undefined, { notation: "compact" }).format(n);
 }
@@ -29,6 +31,7 @@ function date(d: string) {
 export default async function ProofPage() {
   const canon = loadCanon();
   const canonPrimary = canon.layers[0]?.links?.[0];
+  const canonLastLayer = canon.layers.at(-1);
 
   const [ghUser, pain, overtonRepo] = await Promise.all([
     getGitHubUser("CrisisCore-Systems"),
@@ -46,6 +49,9 @@ export default async function ProofPage() {
         <p className="mt-4 cc-lede">
           This page exists so claims can be checked. Links go to sources of
           record: DOI entries, repositories, and live deployments.
+        </p>
+        <p className="mt-2 text-sm text-white/70">
+          Open access. DOI-backed. Designed to be independently testable.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -92,12 +98,12 @@ export default async function ProofPage() {
                 Layer {x.layer} — {x.title} ↗
               </Button>
             ))}
-            {canon.layers[canon.layers.length - 1]?.links?.find(
+            {canonLastLayer?.links?.find(
               (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
             ) ? (
               <Button
                 href={
-                  canon.layers[canon.layers.length - 1].links.find(
+                  canonLastLayer.links.find(
                     (l) => l.label.toLowerCase().includes("all") || l.label.toLowerCase().includes("records")
                   )!.href
                 }

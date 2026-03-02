@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { loadWriting, loadWritingPost } from "@/content/load";
+import { Panel } from "@/components/ui/Panel";
+import { Button } from "@/components/ui/Button";
 
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
@@ -42,6 +45,13 @@ export default async function WritingPostPage({
 
   return (
     <div className="py-12">
+      <Link href="/writing" className="text-sm text-white/60 hover:text-white">
+        ← Back to writing
+      </Link>
+
+      <div className="mt-6 text-xs uppercase tracking-[0.2em] text-white/45">
+        Writing / Article
+      </div>
       <div className="text-xs text-white/50">{post.frontmatter.date}</div>
       <h1 className="mt-2 text-3xl font-semibold">{post.frontmatter.title}</h1>
       <p className="mt-3 max-w-3xl text-sm text-white/70">
@@ -54,6 +64,21 @@ export default async function WritingPostPage({
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
         />
       </article>
+
+      <Panel className="mt-10 max-w-3xl p-6">
+        <div className="text-sm font-semibold">Continue reading</div>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Button href="/writing" variant="ghost">
+            Writing index
+          </Button>
+          <Button href="/projects" variant="ghost">
+            Projects
+          </Button>
+          <Button href="/proof" variant="ghost">
+            Proof
+          </Button>
+        </div>
+      </Panel>
     </div>
   );
 }

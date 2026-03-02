@@ -13,14 +13,20 @@ export function Nav() {
   return (
     <header className="relative sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="text-sm font-semibold tracking-wide">
-            CrisisCore<span className="text-white/45"> Systems</span>
-          </span>
-          <span className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] text-white/60 sm:inline">
+        <div className="flex items-center gap-2">
+          <Link href="/" className="group">
+            <span className="text-sm font-semibold tracking-wide">
+              CrisisCore<span className="text-white/45"> Systems</span>
+            </span>
+          </Link>
+          <Link
+            href="/about"
+            aria-label="Learn about protective computing"
+            className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] text-white/60 transition hover:bg-white/[0.08] hover:text-white sm:inline"
+          >
             Protective Computing
-          </span>
-        </Link>
+          </Link>
+        </div>
 
         <nav className="hidden items-center gap-2 text-sm text-white/75 md:flex">
           {links.map((l) => (

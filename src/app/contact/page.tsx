@@ -2,6 +2,7 @@ import { SITE } from "@/app/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Panel } from "@/components/ui/Panel";
+import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 
 export const metadata = {
   title: "Contact",
@@ -58,6 +59,10 @@ export default function ContactPage() {
               Operational note: avoid sending sensitive personal data by email.
               If you need a higher-safety channel, say so in the first message.
             </div>
+
+            <div className="mt-5 text-xs text-white/55">
+              Direct email: <span className="font-mono text-white/80">{SITE.email}</span>
+            </div>
           </Panel>
 
           <Panel className="mt-4 p-7 sm:p-8">
@@ -110,6 +115,16 @@ export default function ContactPage() {
                 Protective computing is constraint-led. “Normal” assumptions are
                 optional.
               </p>
+            </div>
+          </Panel>
+
+          <Panel className="mt-4 p-7 sm:p-8">
+            <div className="text-sm font-semibold">Web form fallback</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              If the email button doesn’t open a client on your device, use this form to generate and send your inquiry via webmail.
+            </p>
+            <div className="mt-4">
+              <ContactFallbackForm to={SITE.email} />
             </div>
           </Panel>
         </div>

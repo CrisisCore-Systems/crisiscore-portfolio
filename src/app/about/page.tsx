@@ -23,6 +23,9 @@ export default function AboutPage() {
         operating under real instability: illness, displacement, coercion risk,
         partial connectivity, and low-trust environments.
       </p>
+      <p className="mt-2 text-sm text-white/70">
+        Independent systems designer. Based in Vernon, BC.
+      </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {[

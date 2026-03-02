@@ -46,6 +46,11 @@
         "label": "Protective Legitimacy Score (PLS) — rubric",
         "href": "https://doi.org/10.5281/zenodo.18783432",
         "kind": "external"
+      },
+      {
+        "label": "Redacted threat model excerpt",
+        "href": "/projects/security-and-audits/redacted-threat-model-excerpt.md",
+        "kind": "internal"
       }
     ]
   },
@@ -56,7 +61,8 @@
       "Actionable findings: reproduction steps, impact, and recommended fixes.",
       "A remediation plan ordered by risk reduction per unit effort.",
       "Verification steps: tests or procedures that prove the issue is closed.",
-      "Operator-ready notes: rollback guidance and failure-mode monitoring suggestions."
+      "Operator-ready notes: rollback guidance and failure-mode monitoring suggestions.",
+      "A redacted artifact sample showing assumptions, adversaries, and closure criteria."
     ]
   }
 }

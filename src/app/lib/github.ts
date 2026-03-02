@@ -21,11 +21,16 @@ const UA = { "User-Agent": "crisiscore-portfolio" };
 
 async function gh<T>(url: string): Promise<T | null> {
   try {
+    const token = process.env.GITHUB_TOKEN;
     const r = await fetch(url, {
-      headers: UA,
-      next: { revalidate: 3600 },
+      headers: token
+        ? { ...UA, Authorization: `Bearer ${token}` }
+        : UA,
+      next: { revalidate: 21600 },
     });
-    if (!r.ok) return null;
+    if (!r.ok) {
+      throw new Error(`GitHub API error: ${r.status}`);
+    }
     return (await r.json()) as T;
   } catch {
     return null;

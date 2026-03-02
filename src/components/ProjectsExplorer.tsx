@@ -6,7 +6,8 @@ export function ProjectsExplorer({
   items,
   q,
   tag,
-}: Readonly<{ items: Project[]; q: string; tag: string }>) {
+  showControls = true,
+}: Readonly<{ items: Project[]; q: string; tag: string; showControls?: boolean }>) {
   const tags = Array.from(
     items.reduce((acc, p) => {
       p.tags.forEach((t) => acc.add(t));
@@ -24,32 +25,34 @@ export function ProjectsExplorer({
 
   return (
     <div className="space-y-4">
-      <form method="get" className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <input
-          name="q"
-          defaultValue={q}
-          placeholder="Search projects…"
-          className="cc-field"
-        />
-        <select
-          name="tag"
-          defaultValue={tag}
-          className="cc-field text-white/80 sm:w-64"
-        >
-          <option value="">All tags</option>
-          {tags.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-        <button
-          type="submit"
-          className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
-        >
-          Apply
-        </button>
-      </form>
+      {showControls ? (
+        <form method="get" className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <input
+            name="q"
+            defaultValue={q}
+            placeholder="Search projects…"
+            className="cc-field"
+          />
+          <select
+            name="tag"
+            defaultValue={tag}
+            className="cc-field text-white/80 sm:w-64"
+          >
+            <option value="">All tags</option>
+            {tags.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+          <button
+            type="submit"
+            className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+          >
+            Apply
+          </button>
+        </form>
+      ) : null}
 
       <div className="grid gap-4">
         {filtered.map((p) => (

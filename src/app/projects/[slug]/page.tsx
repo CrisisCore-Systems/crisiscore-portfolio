@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 import { loadDossier, loadProject, loadProjects } from "@/content/load";
 
-export const revalidate = 300;
+export const revalidate = 21600;
 
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
@@ -83,9 +83,17 @@ export default async function ProjectPage({
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
           {p.title}
         </h1>
+        {p.subtitle ? (
+          <p className="mt-2 text-sm text-white/65">{p.subtitle}</p>
+        ) : null}
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? p.description}
         </p>
+        {p.slug === "overton-framework" ? (
+          <p className="mt-2 max-w-3xl text-xs text-white/55">
+            Disambiguation: this is a protective computing framework, not the political science Overton Window concept.
+          </p>
+        ) : null}
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
