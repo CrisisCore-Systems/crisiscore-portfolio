@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 import { loadDossier, loadProject, loadProjects } from "@/content/load";
+import { getArtifactByRawPath } from "@/app/lib/artifacts";
 
 export const revalidate = 21600;
 
@@ -187,16 +188,20 @@ export default async function ProjectPage({
             </div>
 
             {dossier?.architecture.diagram ? (
-              <div className="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
-                <img
-                  src={dossier.architecture.diagram.src}
-                  alt={dossier.architecture.diagram.alt}
-                  width={dossier.architecture.diagram.width}
-                  height={dossier.architecture.diagram.height}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-auto w-full"
-                />
+              <div className="mt-6">
+                {getArtifactByRawPath(dossier.architecture.diagram.src) ? (
+                  <Button
+                    href={`/artifacts/${getArtifactByRawPath(dossier.architecture.diagram.src)!.slug}`}
+                    variant="ghost"
+                    className="w-full justify-center"
+                  >
+                    View architecture artifact
+                  </Button>
+                ) : (
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/65">
+                    Architecture artifact available in proof links.
+                  </div>
+                )}
               </div>
             ) : null}
           </Panel>
@@ -249,26 +254,27 @@ export default async function ProjectPage({
           {dossier?.images ? (
             <Panel className="mt-4 p-7">
               <div className="text-sm font-semibold">{dossier.images.title}</div>
-              <div className="mt-4 grid gap-3">
-                {dossier.images.items.map((img) => (
-                  <div
-                    key={img.src}
-                    className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]"
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      width={img.width}
-                      height={img.height}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-auto w-full"
-                    />
-                  </div>
-                ))}
+              <div className="mt-4 grid gap-2">
+                {dossier.images.items.map((img) => {
+                  const artifact = getArtifactByRawPath(img.src);
+                  return artifact ? (
+                    <Button
+                      key={img.src}
+                      href={`/artifacts/${artifact.slug}`}
+                      variant="ghost"
+                      className="justify-start"
+                    >
+                      {artifact.title}
+                    </Button>
+                  ) : (
+                    <div key={img.src} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/65">
+                      {img.alt}
+                    </div>
+                  );
+                })}
               </div>
               <div className="mt-4 text-xs text-white/50">
-                These are lightweight SVG sketches stored under <span className="font-mono text-white/70">/public/projects/{p.slug}</span>.
+                Viewer-first links are primary; raw files are available as mirrors from each artifact page.
               </div>
             </Panel>
           ) : null}

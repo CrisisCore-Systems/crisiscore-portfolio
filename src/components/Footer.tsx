@@ -22,6 +22,9 @@ export function Footer() {
           <a className="hover:text-white" href="/site-map">
             Sitemap
           </a>
+          <a className="hover:text-white" href="/sitemap.xml">
+            XML sitemap
+          </a>
         </div>
       </div>
     </footer>

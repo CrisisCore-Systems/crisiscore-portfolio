@@ -262,8 +262,12 @@ export default async function ProofPage() {
             <span className="text-white/55"> — machine-readable verification targets</span>
           </li>
           <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/site-map">/site-map</a>
+            <span className="text-white/55"> — HTML sitemap (primary)</span>
+          </li>
+          <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/sitemap.xml">/sitemap.xml</a>
-            <span className="text-white/55"> — expected: application/xml</span>
+            <span className="text-white/55"> — XML mirror for crawlers</span>
           </li>
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/architecture">/artifacts/pain-tracker/architecture</a>

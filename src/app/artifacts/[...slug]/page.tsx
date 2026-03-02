@@ -36,9 +36,15 @@ export default async function ArtifactPage({
   if (!artifact) return notFound();
 
   let markdownSource = "";
+  let svgSource = "";
+  const diskPath = path.join(process.cwd(), "public", artifact.rawPath.replace(/^\//, ""));
+
   if (artifact.kind === "markdown") {
-    const diskPath = path.join(process.cwd(), "public", artifact.rawPath.replace(/^\//, ""));
     markdownSource = fs.readFileSync(diskPath, "utf8");
+  }
+
+  if (artifact.kind === "svg") {
+    svgSource = fs.readFileSync(diskPath, "utf8");
   }
 
   return (
@@ -54,7 +60,12 @@ export default async function ArtifactPage({
       <Panel className="mt-8 p-6 sm:p-8">
         {artifact.kind === "svg" ? (
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
-            <img src={artifact.rawPath} alt={artifact.title} className="h-auto w-full" />
+            <div
+              className="h-auto w-full"
+              aria-label={artifact.title}
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: svgSource }}
+            />
           </div>
         ) : (
           <pre className="overflow-x-auto whitespace-pre-wrap rounded-2xl border border-white/10 bg-black/30 p-4 text-xs text-white/75">

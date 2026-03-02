@@ -27,6 +27,15 @@ export const ARTIFACTS: ArtifactEntry[] = [
       "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/pain-tracker/ui-01.svg",
   },
   {
+    slug: "pain-tracker/ui-02",
+    title: "PainTracker UI artifact (export and proof surface)",
+    summary: "UI sketch showing export controls and verification surface.",
+    kind: "svg",
+    rawPath: "/projects/pain-tracker/ui-02.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/pain-tracker/ui-02.svg",
+  },
+  {
     slug: "security-and-audits/audit-pipeline",
     title: "Security audit pipeline diagram",
     summary: "Scope → model → reproduce → remediate → verify workflow.",
@@ -48,4 +57,8 @@ export const ARTIFACTS: ArtifactEntry[] = [
 
 export function getArtifact(slug: string) {
   return ARTIFACTS.find((x) => x.slug === slug);
+}
+
+export function getArtifactByRawPath(rawPath: string) {
+  return ARTIFACTS.find((x) => x.rawPath === rawPath);
 }
