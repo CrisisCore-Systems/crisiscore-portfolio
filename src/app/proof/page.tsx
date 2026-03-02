@@ -30,6 +30,10 @@ function date(d: string) {
 }
 
 export default async function ProofPage() {
+  const buildStamp = process.env.NEXT_PUBLIC_BUILD_COMMIT;
+  const buildSuffix = buildStamp && buildStamp !== "unknown" ? `?v=${buildStamp}` : "";
+  const withBuild = (path: string) => `${path}${buildSuffix}`;
+
   const canon = loadCanon();
   const canonPrimary = canon.layers[0]?.links?.[0];
   const canonLastLayer = canon.layers.at(-1);
@@ -260,23 +264,23 @@ export default async function ProofPage() {
         <div className="mt-4 text-xs uppercase tracking-[0.2em] text-white/50">Primary checks</div>
         <ul className="mt-4 space-y-2 text-sm text-white/75">
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/proof/fetchability.json">/proof/fetchability.json</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/proof/fetchability.json")}>/proof/fetchability.json</a>
             <span className="text-white/55"> — machine-readable verification targets</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/deploy-id">/deploy-id</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/deploy-id")}>/deploy-id</a>
             <span className="text-white/55"> — plaintext no-store deployment canary</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/site-map">/site-map</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/site-map")}>/site-map</a>
             <span className="text-white/55"> — HTML sitemap (primary)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/architecture">/artifacts/pain-tracker/architecture</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/architecture")}>/artifacts/pain-tracker/architecture</a>
             <span className="text-white/55"> — HTML artifact viewer</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/security-and-audits/redacted-threat-model-excerpt">/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
             <span className="text-white/55"> — HTML artifact viewer</span>
           </li>
         </ul>
@@ -284,19 +288,19 @@ export default async function ProofPage() {
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/50">Mirror checks</div>
         <ul className="mt-3 space-y-2 text-sm text-white/75">
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/sitemap.xml">/sitemap.xml</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/sitemap.xml")}>/sitemap.xml</a>
             <span className="text-white/55"> — XML mirror for crawlers</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/architecture">/artifacts/pain-tracker/architecture</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/architecture")}>/artifacts/pain-tracker/architecture</a>
             <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/architecture.svg)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/ui-01">/artifacts/pain-tracker/ui-01</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/ui-01")}>/artifacts/pain-tracker/ui-01</a>
             <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/ui-01.svg)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/security-and-audits/redacted-threat-model-excerpt">/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
             <span className="text-white/55"> — HTML viewer (raw: /projects/security-and-audits/redacted-threat-model-excerpt.md)</span>
           </li>
         </ul>

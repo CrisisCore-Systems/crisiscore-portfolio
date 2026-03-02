@@ -12,6 +12,10 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export default function SiteMapPage() {
+  const buildStamp = process.env.NEXT_PUBLIC_BUILD_COMMIT;
+  const buildSuffix = buildStamp && buildStamp !== "unknown" ? `?v=${buildStamp}` : "";
+  const withBuild = (path: string) => `${path}${buildSuffix}`;
+
   const projects = loadProjects();
   const writing = loadWriting();
 
@@ -24,9 +28,9 @@ export default function SiteMapPage() {
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button href="/sitemap.xml" variant="ghost">XML sitemap</Button>
-        <Button href="/proof/fetchability.json" variant="ghost">Fetchability JSON</Button>
-        <Button href="/deploy-id" variant="ghost">Deploy ID</Button>
+        <Button href={withBuild("/sitemap.xml")} variant="ghost">XML sitemap</Button>
+        <Button href={withBuild("/proof/fetchability.json")} variant="ghost">Fetchability JSON</Button>
+        <Button href={withBuild("/deploy-id")} variant="ghost">Deploy ID</Button>
       </div>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
@@ -35,7 +39,7 @@ export default function SiteMapPage() {
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {["/", "/projects", "/writing", "/proof", "/about", "/contact", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
-                <Link className="hover:text-white" href={route}>{route}</Link>
+                <Link className="hover:text-white" href={withBuild(route)}>{route}</Link>
               </li>
             ))}
           </ul>
@@ -46,7 +50,7 @@ export default function SiteMapPage() {
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {projects.map((project) => (
               <li key={project.slug}>
-                <Link className="hover:text-white" href={`/projects/${project.slug}`}>
+                <Link className="hover:text-white" href={withBuild(`/projects/${project.slug}`)}>
                   /projects/{project.slug}
                 </Link>
               </li>
@@ -59,7 +63,7 @@ export default function SiteMapPage() {
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {writing.map((post) => (
               <li key={post.slug}>
-                <Link className="hover:text-white" href={`/writing/${post.slug}`}>
+                <Link className="hover:text-white" href={withBuild(`/writing/${post.slug}`)}>
                   /writing/{post.slug}
                 </Link>
               </li>
