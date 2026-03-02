@@ -12,6 +12,11 @@ const securityHeaders = [
   { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
 ];
 
+const noStoreHeaders = [
+  ...securityHeaders,
+  { key: "Cache-Control", value: "no-store, max-age=0" },
+];
+
 const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BUILD_COMMIT:
@@ -24,6 +29,30 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/artifacts/:path*",
+        headers: noStoreHeaders,
+      },
+      {
+        source: "/proof",
+        headers: noStoreHeaders,
+      },
+      {
+        source: "/proof/:path*",
+        headers: noStoreHeaders,
+      },
+      {
+        source: "/site-map",
+        headers: noStoreHeaders,
+      },
+      {
+        source: "/version.json",
+        headers: noStoreHeaders,
+      },
+      {
+        source: "/deploy-id",
+        headers: noStoreHeaders,
+      },
       {
         source: "/(.*)",
         headers: securityHeaders,
