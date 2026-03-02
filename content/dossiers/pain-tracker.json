@@ -33,6 +33,8 @@
   "proof": {
     "title": "Proof",
     "links": [
+      { "label": "Architecture artifact", "href": "/artifacts/pain-tracker/architecture", "kind": "internal" },
+      { "label": "UI artifact", "href": "/artifacts/pain-tracker/ui-01", "kind": "internal" },
       { "label": "Live app", "href": "https://paintracker.ca", "kind": "external" },
       {
         "label": "GitHub repo",

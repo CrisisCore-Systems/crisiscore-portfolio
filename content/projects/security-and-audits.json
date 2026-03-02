@@ -10,7 +10,7 @@
     { "label": "Proof", "href": "/proof", "kind": "internal" },
     {
       "label": "Redacted audit artifact",
-      "href": "/projects/security-and-audits/redacted-threat-model-excerpt.md",
+      "href": "/artifacts/security-and-audits/redacted-threat-model-excerpt",
       "kind": "internal"
     },
     {

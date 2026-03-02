@@ -19,7 +19,7 @@ export function Footer() {
           >
             GitHub
           </a>
-          <a className="hover:text-white" href="/sitemap.xml">
+          <a className="hover:text-white" href="/site-map">
             Sitemap
           </a>
         </div>

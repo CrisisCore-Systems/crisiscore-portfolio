@@ -266,16 +266,16 @@ export default async function ProofPage() {
             <span className="text-white/55"> — expected: application/xml</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/pain-tracker/architecture.svg">/projects/pain-tracker/architecture.svg</a>
-            <span className="text-white/55"> — expected: image/svg+xml</span>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/architecture">/artifacts/pain-tracker/architecture</a>
+            <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/architecture.svg)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/pain-tracker/ui-01.svg">/projects/pain-tracker/ui-01.svg</a>
-            <span className="text-white/55"> — expected: image/svg+xml</span>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/pain-tracker/ui-01">/artifacts/pain-tracker/ui-01</a>
+            <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/ui-01.svg)</span>
           </li>
           <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/projects/security-and-audits/redacted-threat-model-excerpt.md">/projects/security-and-audits/redacted-threat-model-excerpt.md</a>
-            <span className="text-white/55"> — expected: text/markdown</span>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/artifacts/security-and-audits/redacted-threat-model-excerpt">/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
+            <span className="text-white/55"> — HTML viewer (raw: /projects/security-and-audits/redacted-threat-model-excerpt.md)</span>
           </li>
         </ul>
 
