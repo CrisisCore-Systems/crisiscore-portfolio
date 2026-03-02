@@ -1,7 +1,7 @@
 import { SITE } from "@/app/lib/site";
 
 export function Footer() {
-  const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "unknown";
+  const commit = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
 
   return (
     <footer className="border-t border-white/10" data-build={commit}>

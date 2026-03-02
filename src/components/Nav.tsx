@@ -10,6 +10,8 @@ const links = [
 ];
 
 export function Nav() {
+  const build = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
+
   return (
     <header className="relative sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -38,6 +40,12 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/version.json"
+            className="rounded-xl px-3 py-2 text-xs text-white/55 transition hover:bg-white/[0.06] hover:text-white"
+          >
+            Build: {build}
+          </Link>
         </nav>
 
         <details className="group md:hidden">

@@ -13,6 +13,15 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BUILD_COMMIT:
+      process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "unknown",
+    NEXT_PUBLIC_BUILD_COMMIT_FULL:
+      process.env.VERCEL_GIT_COMMIT_SHA ?? "unknown",
+    NEXT_PUBLIC_BUILD_COMMIT_SOURCE: process.env.VERCEL_GIT_COMMIT_SHA
+      ? "VERCEL_GIT_COMMIT_SHA"
+      : "fallback",
+  },
   async headers() {
     return [
       {
