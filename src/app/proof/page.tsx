@@ -258,6 +258,10 @@ export default async function ProofPage() {
 
         <ul className="mt-4 space-y-2 text-sm text-white/75">
           <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/proof/fetchability.json">/proof/fetchability.json</a>
+            <span className="text-white/55"> — machine-readable verification targets</span>
+          </li>
+          <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href="/sitemap.xml">/sitemap.xml</a>
             <span className="text-white/55"> — expected: application/xml</span>
           </li>
@@ -276,7 +280,7 @@ export default async function ProofPage() {
         </ul>
 
         <div className="mt-4 text-xs text-white/50">
-          Command check: curl -I https://crisiscore-portfolio.vercel.app/sitemap.xml
+          Command check (GET): curl -sS -D - -o NUL -A "python-requests/2.31.0" https://crisiscore-portfolio.vercel.app/sitemap.xml
         </div>
       </Panel>
     </div>
