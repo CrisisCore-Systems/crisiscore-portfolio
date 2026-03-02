@@ -23,9 +23,8 @@ export default function ContactPage() {
     <div className="py-12">
       <h1 className="text-3xl font-semibold">Contact</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">
-        Email-first. If you’re building under instability (low trust, partial
-        connectivity, coercion risk, cognitive overload), I can help you ship
-        systems that stay usable and safe.
+        Email-first. Engagements typically map to: Trust Hardening Review,
+        Hardening Sprint, or Fractional Trust Architect support.
       </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
@@ -49,10 +48,9 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <Badge className="normal-case tracking-[0.08em]">Protective architecture</Badge>
-              <Badge className="normal-case tracking-[0.08em]">Local-first systems</Badge>
-              <Badge className="normal-case tracking-[0.08em]">Threat modeling</Badge>
-              <Badge className="normal-case tracking-[0.08em]">Audit / rubric review</Badge>
+              <Badge className="normal-case tracking-[0.08em]">Trust Hardening Review</Badge>
+              <Badge className="normal-case tracking-[0.08em]">Hardening Sprint</Badge>
+              <Badge className="normal-case tracking-[0.08em]">Fractional Trust Architect</Badge>
             </div>
 
             <div className="mt-6 text-xs text-white/55">

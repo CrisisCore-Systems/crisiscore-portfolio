@@ -36,7 +36,7 @@ export default function HomePage() {
             Apply for a Trust Hardening Review <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
           <Button href="/proof" variant="ghost">
-            See the Redacted Proof Pack
+            Proof & Artifacts
           </Button>
           <Badge className="normal-case tracking-[0.08em]">Proof beats narrative</Badge>
         </div>

@@ -38,6 +38,7 @@ export default async function ProofPage() {
     getRepo("CrisisCore-Systems", "pain-tracker"),
     getRepo("CrisisCore-Systems", "overton-framework"),
   ]);
+  const statsUnavailable = !ghUser || !pain || !overtonRepo;
 
   return (
     <div className="py-12">
@@ -147,9 +148,11 @@ export default async function ProofPage() {
             </Button>
           </div>
 
-          <div className="mt-3 text-xs text-white/50">
-            If stats show “—”, GitHub API may be rate-limited for anonymous requests. Still verifiable via the link.
-          </div>
+          {statsUnavailable ? (
+            <div className="mt-3 text-xs text-white/50">
+              Some stats are temporarily unavailable. Source links remain the authoritative proof surface.
+            </div>
+          ) : null}
         </Panel>
 
         <Panel className="p-7">
