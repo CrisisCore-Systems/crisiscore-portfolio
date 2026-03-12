@@ -11,80 +11,146 @@ export default function HomePage() {
   return (
     <div className="py-12">
       <Panel className="p-8 sm:p-10">
-        <div className="cc-kicker">Protective Computing</div>
+        <div className="cc-kicker">Protective Computing for Post-MVP Teams</div>
         <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
           Defensible Trust Architecture for Sensitive-Data Products
         </h1>
-        <p className="mt-5 text-xl font-semibold text-white">Your MVP works. Now make it defensible.</p>
+        <p className="mt-5 text-xl font-semibold text-white">
+          Two-week Trust Hardening Review for products that cannot afford trust failure.
+        </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
-          For post-MVP teams building tools for clinicians, advocates, and people under coercive pressure.
+          For post-MVP teams building tools for clinicians, advocates, operators, and people under coercive pressure.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          For products handling harm-prone data, “good enough” is liability. I design local-first,
-          reversible systems that keep people functional when power, trust, or connectivity are
-          failing.
+          If your product handles harm-prone data, the question is no longer whether the MVP works.
+          The question is whether the system stays usable, bounded, and defensible when power,
+          trust, connectivity, or operator confidence start to fail.
         </p>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          Built for low energy, low trust, partial connectivity, and real coercion risk.
+          I help teams reduce dangerous data collection, harden critical flows, and leave with a
+          decision-grade roadmap instead of another vague security memo.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          <Badge className="normal-case tracking-[0.08em]">Threat model → clear boundaries</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Data minimization → smaller blast radius</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Decision-grade handoff</Badge>
+          <Badge className="normal-case tracking-[0.08em]">2-week front-door review</Badge>
+          <Badge className="normal-case tracking-[0.08em]">Post-MVP teams only</Badge>
+          <Badge className="normal-case tracking-[0.08em]">Sensitive-data products</Badge>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact">
-            Apply for a Trust Hardening Review <ArrowUpRight className="ml-2 h-4 w-4" />
+            Send repo + context for fit check <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
           <Button href="/proof" variant="ghost">
             Proof & Artifacts
           </Button>
-          <Badge className="normal-case tracking-[0.08em]">Proof beats narrative</Badge>
+          <Button href="/case-study/pain-tracker" variant="ghost">
+            Read flagship case study
+          </Button>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Front door</div>
+            <div className="mt-2 text-base font-semibold">Trust Hardening Review</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Fixed-scope diagnostic for teams that need fast clarity before a larger hardening push.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you leave with</div>
+            <div className="mt-2 text-base font-semibold">Defensibility Packet</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Threat model snapshot, abuse cases, trust boundaries, quick wins, and a now/next/later roadmap.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best fit</div>
+            <div className="mt-2 text-base font-semibold">Decision-ready teams</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              You already have users or an imminent launch, plus the authority and budget to act on findings.
+            </p>
+          </div>
         </div>
 
         <div className="mt-6 text-sm text-white/65">
-          Default ownership lives on-device. Cloud is optional, not assumed.
+          Default ownership lives on-device. Cloud is optional, not assumed. Pricing is shared during fit check rather than guessed in public.
         </div>
       </Panel>
 
-      <Section title="What I actually do" kicker="In practice">
-        <div className="cc-card p-7">
-          <ul className="space-y-3 text-sm text-white/80">
-            <li>• Architect privacy-preserving, local-first apps</li>
-            <li>• Design degraded-mode UX and recovery playbooks</li>
-            <li>• Build measurable protective criteria (scores, checklists, tests)</li>
-          </ul>
-        </div>
-      </Section>
-
-      <Section title="Core definitions" kicker="Semantic anchor">
+      <Section title="Who hires me and when" kicker="Fit first">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Protective computing</h3>
+            <h3 className="text-base font-semibold">Who hires me</h3>
             <p className="mt-2 text-sm text-white/70">
-              Systems designed to degrade safely under instability, not just perform under ideal
-              conditions.
+              Founders, technical leads, and operators responsible for products that handle sensitive,
+              high-consequence data.
             </p>
           </div>
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Local authority</h3>
+            <h3 className="text-base font-semibold">When they call</h3>
             <p className="mt-2 text-sm text-white/70">
-              Data ownership and control remain with the user’s device by default; cloud is optional.
+              After MVP, before audit pain, before a launch with trust gaps, or after a near-miss that exposed weak boundaries.
             </p>
           </div>
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Reversible by design</h3>
+            <h3 className="text-base font-semibold">What they need</h3>
             <p className="mt-2 text-sm text-white/70">
-              Critical actions include undo paths and safe failure modes so harm is harder to make
-              permanent.
+              Clear risk prioritization, fewer dangerous assumptions, and implementation guidance a product team can actually ship.
             </p>
           </div>
         </div>
       </Section>
 
-      <Section title="What you get" kicker="Outcomes">
+      <Section title="Outcome snapshots" kicker="Plain-English proof">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Reduced dangerous data collection</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Replace default collection with explicit boundaries, local authority, and user-initiated sharing paths.
+            </p>
+          </div>
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Kept critical flows usable offline</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Core actions still work under partial connectivity, degraded infrastructure, and attention collapse.
+            </p>
+          </div>
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">Replaced silent failure with visible recovery</h3>
+            <p className="mt-2 text-sm text-white/70">
+              Teams leave with clearer recovery states, safer fallbacks, and a decision trail they can defend.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="What happens in week one" kicker="Process without mystery">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">1. Boundary read</h3>
+            <p className="mt-2 text-sm text-white/70">
+              I review the product surface, repo, docs, and stated constraints to find where trust currently depends on hope.
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">2. Risk compression</h3>
+            <p className="mt-2 text-sm text-white/70">
+              The highest-risk failure paths, abuse cases, and dangerous collection patterns get reduced into a prioritized map.
+            </p>
+          </div>
+
+          <div className="cc-card p-6">
+            <h3 className="text-base font-semibold">3. Actionable handoff</h3>
+            <p className="mt-2 text-sm text-white/70">
+              You get a packet your team can use immediately: boundaries, quick wins, and a roadmap aligned to product reality.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="What you get" kicker="Deliverables">
         <div className="cc-card p-7">
           <ul className="space-y-3 text-sm text-white/80">
             <li>• Highest-risk failure paths and abuse cases, clearly mapped</li>
@@ -95,45 +161,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="The Protective Computing difference" kicker="Why this works">
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">1) Risk-first, not feature-first</h3>
-            <p className="mt-2 text-sm text-white/70">
-              Privacy is architectural: minimize dangerous data, or never collect it.
-            </p>
-            <p className="mt-4 text-sm font-medium text-white">
-              “We don’t add privacy later. We design the system so the dangerous data doesn’t exist.”
-            </p>
-          </div>
-
-          <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">2) Built for reality, not ideal conditions</h3>
-            <p className="mt-2 text-sm text-white/70">
-              Built for low signal, low battery, stressed users, and messy environments.
-            </p>
-            <p className="mt-4 text-sm font-medium text-white">
-              “Built for low signal, low battery, and high stress—because that’s when trust matters.”
-            </p>
-          </div>
-
-          <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">3) Defensibility shipped + documented</h3>
-            <p className="mt-2 text-sm text-white/70">
-              You ship protections plus a decision trail your team can defend and maintain.
-            </p>
-            <p className="mt-4 text-sm font-medium text-white">
-              “You don’t just get a build. You get defensibility—and the receipts.”
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Services" kicker="3 offers">
+      <Section title="Services" kicker="3 engagement paths">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">1) Trust Hardening Review (front door)</h3>
-            <p className="mt-2 text-sm text-white/70">For post-MVP teams needing fast clarity.</p>
+            <p className="mt-2 text-sm text-white/70">For post-MVP teams needing fast clarity in a defined review window.</p>
             <p className="mt-2 text-sm text-white/80">
               Output: <span className="font-semibold text-white">Defensibility Packet</span>
             </p>
@@ -143,7 +175,7 @@ export default function HomePage() {
               <li>• Top 10 risks + quick wins + now/next/later roadmap</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
-              Know where trust breaks and what to fix first.
+              Best first move if you need to know where trust breaks and what to fix first.
             </p>
           </div>
 
@@ -175,7 +207,59 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Fit filters" kicker="Premium gate">
+      <Section title="Flagship walkthrough" kicker="Case-style proof">
+        <div className="grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
+          <div className="cc-card p-7">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker.ca</div>
+            <h3 className="mt-2 text-xl font-semibold">Before, risk, intervention, outcome</h3>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <div>
+                <div className="text-sm font-semibold text-white">Before</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Pain documentation tools often assume accounts, always-on sync, and high user energy.
+                </p>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-white">Risk</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Sensitive health data becomes centralized exhaust, while the tool fails exactly when stress and connectivity get worse.
+                </p>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-white">Intervention</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Local-first storage, offline-capable logging, explicit exports, and a reduced-friction flow designed for cognitive overload.
+                </p>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-white">Outcome</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Core use without sign-up, no background sharing by default, and a live PWA that keeps working under degraded conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="cc-card p-7">
+            <div className="text-sm font-semibold">Check the source surface</div>
+            <ul className="mt-4 space-y-3 text-sm text-white/70">
+              <li>• Live deployment</li>
+              <li>• Public repository</li>
+              <li>• Architecture and UI artifacts</li>
+              <li>• Dossier with problem → constraints → method → proof → outputs</li>
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/case-study/pain-tracker">Open case study</Button>
+              <Button href="/proof" variant="ghost">
+                Open proof surface
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Fit filters" kicker="Qualification">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">Great fit</h3>
@@ -217,14 +301,17 @@ export default function HomePage() {
       <Panel className="p-8 sm:p-10">
         <div className="text-xs uppercase tracking-[0.2em] text-white/45">Close</div>
         <h2 className="mt-2 text-2xl font-semibold">
-          If your product handles high-stakes data, you don’t need more features. You need defensibility.
+          If your product handles high-stakes data, start with the review that shows where trust breaks.
         </h2>
         <p className="mt-3 text-sm text-white/70">
-          Best fit: 4–12 week engagements for high-risk tools, clinics, or critical workflows.
+          Best fit: 4–12 week engagements for high-risk tools, clinics, or critical workflows. First step: send repo, context, constraints, and your decision timeline.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap gap-3">
           <Button href="/contact">
-            Apply for a Trust Hardening Review <ArrowUpRight className="ml-2 h-4 w-4" />
+            Send repo + context for fit check <ArrowUpRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button href="/proof" variant="ghost">
+            Review proof first
           </Button>
         </div>
       </Panel>

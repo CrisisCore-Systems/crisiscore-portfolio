@@ -38,10 +38,10 @@ export default function ContactPage() {
         <div className="lg:col-span-7">
           <Panel className="p-7 sm:p-8">
             <div className="cc-kicker">Start here</div>
-            <h2 className="mt-2 text-xl font-semibold">Send an inquiry</h2>
+            <h2 className="mt-2 text-xl font-semibold">Send repo + context for fit check</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Fastest path: email. Include context + constraints; I’ll reply with
-              next steps.
+              Fastest path: email. Include context, constraints, and any repo or deployment links;
+              I’ll reply with next steps and whether the engagement looks like a fit.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -87,7 +87,7 @@ export default function ContactPage() {
             </ul>
 
             <div className="mt-5 text-xs text-white/55">
-              Tip: the email button above pre-fills a short template.
+              Tip: the email button above pre-fills a short template. A concise artifact-first note beats a polished pitch.
             </div>
 
             <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">

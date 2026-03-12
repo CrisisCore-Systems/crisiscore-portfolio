@@ -5,6 +5,7 @@ import { loadWriting } from "@/content/load";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = [
     "",
+    "/case-study/pain-tracker",
     "/projects",
     "/writing",
     "/proof",

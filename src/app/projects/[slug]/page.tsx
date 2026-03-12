@@ -103,6 +103,12 @@ export default async function ProjectPage({
         ))}
       </div>
 
+      {p.slug === "pain-tracker" ? (
+        <div className="mt-6">
+          <Button href="/case-study/pain-tracker">Read the flagship case study</Button>
+        </div>
+      ) : null}
+
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <Panel className="p-7 sm:p-8">
