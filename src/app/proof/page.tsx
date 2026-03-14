@@ -11,6 +11,10 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export default async function ProofPage() {
+  const buildStamp = process.env.NEXT_PUBLIC_BUILD_COMMIT;
+  const buildSuffix = buildStamp && buildStamp !== "unknown" ? `?v=${buildStamp}` : "";
+  const withBuild = (path: string) => `${path}${buildSuffix}`;
+
   const canon = loadCanon();
   const painDossier = loadDossier("pain-tracker");
   const proofVaultDossier = loadDossier("proofvault");
