@@ -1,5 +1,4 @@
 import { SITE } from "@/app/lib/site";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 
@@ -27,19 +26,9 @@ export default function AboutPage() {
         Independent systems designer. Based in Vernon, BC.
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {[
-          "Local-first",
-          "Threat modeling",
-          "Security audits",
-          "Degraded-first UX",
-          "Operational reliability",
-        ].map((t) => (
-          <Badge key={t} className="normal-case tracking-[0.08em]">
-            {t}
-          </Badge>
-        ))}
-      </div>
+      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
+        I work across local-first architecture, threat modeling, security review, degraded-mode UX, and operational reliability.
+      </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-7">
@@ -57,9 +46,8 @@ export default function AboutPage() {
                 the environment is adversarial.
               </p>
               <p className="text-white/60">
-                If you want an enterprise growth narrative, this isn’t it. If
-                you want systems that keep functioning when the world doesn’t,
-                you’re in the right place.
+                I’m not here to sell growth theater. I build systems that stay
+                legible and usable when conditions turn hostile.
               </p>
             </div>
 
@@ -144,9 +132,9 @@ export default function AboutPage() {
                 context + constraints + links beats a meeting.
               </p>
               <p>
-                If your environment includes coercion risk, compromised devices,
-                or legal exposure, say so early. Threat boundaries become
-                first-class.
+                If coercion risk, compromised devices, or legal exposure are in
+                play, say so early. Those conditions change the trust boundary
+                from the start.
               </p>
             </div>
 

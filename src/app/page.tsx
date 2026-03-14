@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { Section } from "@/components/Section";
 
 export const dynamic = "force-dynamic";
@@ -28,14 +27,12 @@ export default function HomePage() {
         </p>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           I help teams reduce dangerous data collection, harden critical flows, and leave with a
-          decision-grade roadmap instead of another vague security memo.
+          roadmap a product team can actually act on.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          <Badge className="normal-case tracking-[0.08em]">2-week front-door review</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Post-MVP teams only</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Sensitive-data products</Badge>
-        </div>
+        <p className="mt-6 text-sm font-medium text-white/85 sm:text-base">
+          A two-week front-door review for post-MVP teams building sensitive-data products.
+        </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact">
@@ -74,7 +71,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-6 text-sm text-white/65">
-          Default ownership lives on-device. Cloud is optional, not assumed. Pricing is shared during fit check rather than guessed in public.
+          Default ownership stays on-device. Cloud is optional, not assumed. Pricing is discussed after fit is established.
         </div>
       </Panel>
 
@@ -304,7 +301,7 @@ export default function HomePage() {
           If your product handles high-stakes data, start with the review that shows where trust breaks.
         </h2>
         <p className="mt-3 text-sm text-white/70">
-          Best fit: 4–12 week engagements for high-risk tools, clinics, or critical workflows. First step: send repo, context, constraints, and your decision timeline.
+          Best fit: 4–12 week engagements for high-risk tools, clinician-adjacent products, and critical workflows. First step: send repo, context, constraints, and your decision timeline.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button href="/contact">

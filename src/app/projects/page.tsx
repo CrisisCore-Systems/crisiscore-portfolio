@@ -1,11 +1,7 @@
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 import { loadProjects } from "@/content/load";
-
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
 
 export const metadata = {
   title: "Projects",
@@ -25,7 +21,6 @@ export default async function ProjectsPage({
   searchParams,
 }: Readonly<{ searchParams?: SearchParamsLike }>) {
   const projects = loadProjects();
-  const showFilterControls = projects.length >= 6;
   const sp = await Promise.resolve(searchParams);
   const q = (await getFirst(sp?.q)) ?? "";
   const tag = (await getFirst(sp?.tag)) ?? "";
@@ -37,24 +32,14 @@ export default async function ProjectsPage({
         Projects
       </h1>
       <p className="mt-3 cc-lede">
-        Each entry links to a dossier surface (problem → constraints → method →
-        proof → outputs). Built for real conditions: instability, coercion risk,
-        low trust, low bandwidth, and low energy.
+        Case studies and active work designed for real conditions: instability,
+        coercion risk, low trust, low bandwidth, low energy. Each entry links to
+        a dossier surface (problem → constraints → method → proof → outputs).
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {[
-          "Local-first",
-          "Privacy-first",
-          "Threat modeling",
-          "Audit outputs",
-          "Degraded-first",
-        ].map((t) => (
-          <Badge key={t} className="normal-case tracking-[0.08em]">
-            {t}
-          </Badge>
-        ))}
-      </div>
+      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
+        Local-first systems, privacy-sensitive architecture, threat modeling, audit outputs, and degraded-mode design.
+      </p>
 
       <div className="mt-7 flex flex-wrap gap-3">
         <Button href="/proof">Proof</Button>
@@ -71,23 +56,12 @@ export default async function ProjectsPage({
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Browse</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              {showFilterControls
-                ? "Use search + tags to find relevant operating conditions and threat boundaries."
-                : "Current dossiers are shown directly; filtering appears as the catalog expands."}
+              Use search + tags to find relevant operating conditions and threat
+              boundaries.
             </p>
             <div className="mt-5">
-              <ProjectsExplorer
-                items={projects}
-                q={q}
-                tag={tag}
-                showControls={showFilterControls}
-              />
+              <ProjectsExplorer items={projects} q={q} tag={tag} />
             </div>
-            {projects.length < 6 ? (
-              <div className="mt-5 text-xs text-white/50">
-                More dossiers are being added. Contact for unlisted work.
-              </div>
-            ) : null}
           </Panel>
         </div>
 

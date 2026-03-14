@@ -1,8 +1,5 @@
-import { SITE } from "@/app/lib/site";
-import { getGitHubUser, getRepo } from "@/app/lib/github";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { loadCanon, loadDossier } from "@/content/load";
 
 export const metadata = {
@@ -13,40 +10,13 @@ export const metadata = {
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-function fmt(n: number) {
-  return new Intl.NumberFormat(undefined, { notation: "compact" }).format(n);
-}
-
-function date(d: string) {
-  try {
-    return new Date(d).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-    });
-  } catch {
-    return d;
-  }
-}
-
 export default async function ProofPage() {
-  const buildStamp = process.env.NEXT_PUBLIC_BUILD_COMMIT;
-  const buildSuffix = buildStamp && buildStamp !== "unknown" ? `?v=${buildStamp}` : "";
-  const withBuild = (path: string) => `${path}${buildSuffix}`;
-
   const canon = loadCanon();
   const painDossier = loadDossier("pain-tracker");
   const proofVaultDossier = loadDossier("proofvault");
   const auditDossier = loadDossier("security-and-audits");
   const canonPrimary = canon.layers[0]?.links?.[0];
   const canonLastLayer = canon.layers.at(-1);
-
-  const [ghUser, pain, overtonRepo] = await Promise.all([
-    getGitHubUser("CrisisCore-Systems"),
-    getRepo("CrisisCore-Systems", "pain-tracker"),
-    getRepo("CrisisCore-Systems", "overton-framework"),
-  ]);
-  const statsUnavailable = !ghUser || !pain || !overtonRepo;
 
   return (
     <div className="py-12">
@@ -56,19 +26,19 @@ export default async function ProofPage() {
           Evidence a buyer can evaluate without taking my word for it.
         </h1>
         <p className="mt-4 cc-lede">
-          This page is for operators deciding whether the work is credible,
-          applicable, and worth contacting about. It shows what changed, what
-          risks were reduced, and where the source record lives.
+          This page is for founders, technical leads, and operators deciding
+          whether the work is credible, relevant, and worth bringing into a
+          live product. It shows what changed, what risks were reduced, and
+          where the source record lives.
         </p>
         <p className="mt-2 text-sm text-white/70">
-          Open access. DOI-backed where relevant. Repo-visible. Live where public.
+          Open where possible, DOI-backed where relevant, and tied to public
+          repos, artifacts, or live systems when those surfaces exist.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          <Badge className="normal-case tracking-[0.08em]">Outcome evidence</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Repo-visible</Badge>
-          <Badge className="normal-case tracking-[0.08em]">Low-trust verifiable</Badge>
-        </div>
+        <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
+          Evidence built for skeptical review: outcome-oriented, repo-visible, and verifiable under low-trust conditions.
+        </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
           <Button href="/case-study/pain-tracker">
@@ -242,7 +212,7 @@ export default async function ProofPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why it matters</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Hosted CI became the release gate, so provenance follows the exact final non-debug commit instead of a locally-green approximation.
+                Hosted CI became the release gate, so the public trust case is tied to the exact final non-debug commit, not a locally-green approximation.
               </p>
             </div>
           </div>
@@ -323,35 +293,14 @@ export default async function ProofPage() {
             Public repositories, commit history, issues, and published artifacts.
           </p>
           <p className="mt-2 text-xs text-white/55">
-            Visibility stats are shown for transparency; primary proof remains artifacts (DOIs, repos, deployments, redacted packets).
+            Primary proof is artifact-based: DOIs, repositories, deployments, and bounded deliverables.
           </p>
 
-          <div className="mt-6 grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Followers</div>
-              <div className="mt-1 text-xl font-semibold">
-                {ghUser ? fmt(ghUser.followers) : "—"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Public repos</div>
-              <div className="mt-1 text-xl font-semibold">
-                {ghUser ? fmt(ghUser.public_repos) : "—"}
-              </div>
-            </div>
-          </div>
-
           <div className="mt-5">
-            <Button href={SITE.socials.github} variant="ghost" className="w-full justify-center">
+            <Button href="https://github.com/CrisisCore-Systems" variant="ghost" className="w-full justify-center">
               Open GitHub profile ↗
             </Button>
           </div>
-
-          {statsUnavailable ? (
-            <div className="mt-3 text-xs text-white/50">
-              Some stats are temporarily unavailable. Source links remain the authoritative proof surface.
-            </div>
-          ) : null}
         </Panel>
 
         <Panel className="p-7">
@@ -359,21 +308,6 @@ export default async function ProofPage() {
           <p className="mt-2 text-sm text-white/70">
             PainTracker.ca — privacy-first pain tracking PWA, local-first by default.
           </p>
-
-          <div className="mt-6 grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Stars</div>
-              <div className="mt-1 text-xl font-semibold">
-                {pain ? fmt(pain.stargazers_count) : "—"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Last push</div>
-              <div className="mt-1 text-sm font-semibold">
-                {pain ? date(pain.pushed_at) : "—"}
-              </div>
-            </div>
-          </div>
 
           <div className="mt-4 grid gap-2">
             <Button href="https://paintracker.ca" variant="ghost" className="w-full justify-center">
@@ -418,27 +352,6 @@ export default async function ProofPage() {
           <p className="mt-2 text-sm text-white/70">
             Versioned framework workstream and canonical text iteration.
           </p>
-
-          <div className="mt-6 grid grid-cols-3 gap-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Stars</div>
-              <div className="mt-1 text-lg font-semibold">
-                {overtonRepo ? fmt(overtonRepo.stargazers_count) : "—"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Forks</div>
-              <div className="mt-1 text-lg font-semibold">
-                {overtonRepo ? fmt(overtonRepo.forks_count) : "—"}
-              </div>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-              <div className="text-xs text-white/55">Issues</div>
-              <div className="mt-1 text-lg font-semibold">
-                {overtonRepo ? fmt(overtonRepo.open_issues_count) : "—"}
-              </div>
-            </div>
-          </div>
 
           <div className="mt-5">
             <Button

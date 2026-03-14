@@ -50,11 +50,9 @@ export default async function PainTrackerCaseStudyPage() {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <Badge key={tag} className="normal-case tracking-[0.08em]">
-            {tag}
-          </Badge>
-        ))}
+        <Badge className="normal-case tracking-[0.08em]">
+          Local-first PWA built around protective UX.
+        </Badge>
       </div>
 
       <div className="mt-7 flex flex-wrap gap-3">
@@ -76,11 +74,8 @@ export default async function PainTrackerCaseStudyPage() {
             <div className="text-sm font-semibold">Starting condition</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                Most pain tracking tools assume a stable user, stable connectivity, and willingness to centralize intimate health data.
+                Most pain tracking tools assume stable connectivity, high attention, and willingness to centralize intimate health data. For people living with chronic pain, those assumptions fail precisely when continuity matters most.
               </p>
-              {(dossier?.problem.body ?? []).map((line) => (
-                <p key={line}>{line}</p>
-              ))}
             </div>
           </Panel>
 
@@ -135,7 +130,7 @@ export default async function PainTrackerCaseStudyPage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">Interaction design</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Flows are reduced for low energy and cognitive overload, preserving progress rather than demanding ideal user conditions.
+                  Flows are simplified for low energy and cognitive overload, so users can keep going without needing ideal conditions.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
