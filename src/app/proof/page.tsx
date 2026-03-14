@@ -36,6 +36,7 @@ export default async function ProofPage() {
 
   const canon = loadCanon();
   const painDossier = loadDossier("pain-tracker");
+  const proofVaultDossier = loadDossier("proofvault");
   const auditDossier = loadDossier("security-and-audits");
   const canonPrimary = canon.layers[0]?.links?.[0];
   const canonLastLayer = canon.layers.at(-1);
@@ -219,6 +220,58 @@ export default async function ProofPage() {
             <Button href="/artifacts/pain-tracker/architecture" variant="ghost" className="w-full justify-center">
               Open architecture artifact
             </Button>
+          </div>
+        </Panel>
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_1fr]">
+        <Panel className="p-7 sm:p-8">
+          <div className="cc-kicker">Release-bound trust case</div>
+          <h2 className="mt-2 text-2xl font-semibold">ProofVault: reproducible trust evidence tied to the hosted-green release</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
+            {proofVaultDossier?.tagline ?? "Trust made legible, reproducible, and release-bound through a pinned specimen, drift enforcement, and hosted-CI provenance."}
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">What changed</div>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                A trust dossier, pinned specimen, verifier path, regeneration flow, and drift checks now live in the repo as part of the proof burden.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why it matters</div>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                Hosted CI became the release gate, so provenance follows the exact final non-debug commit instead of a locally-green approximation.
+              </p>
+            </div>
+          </div>
+        </Panel>
+
+        <Panel className="p-7 sm:p-8">
+          <div className="text-sm font-semibold">Inspect the path</div>
+          <p className="mt-2 text-sm text-white/70">
+            Start with the short case, then inspect the dossier and long-form walkthrough.
+          </p>
+
+          <div className="mt-6 grid gap-2">
+            <Button href="/case-study/proofvault" variant="ghost" className="w-full justify-center">
+              Open case study
+            </Button>
+            <Button href="/projects/proofvault" variant="ghost" className="w-full justify-center">
+              Open trust dossier
+            </Button>
+            <Button href="/writing/proofvault-trust-case-v1-0-1" variant="ghost" className="w-full justify-center">
+              Open article walkthrough
+            </Button>
+          </div>
+
+          <div className="mt-6 grid gap-3">
+            {(proofVaultDossier?.outcomes.items ?? []).slice(0, 3).map((item) => (
+              <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
+                {item}
+              </div>
+            ))}
           </div>
         </Panel>
       </div>

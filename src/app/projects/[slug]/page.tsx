@@ -9,6 +9,11 @@ import { getArtifactByRawPath } from "@/app/lib/artifacts";
 
 export const revalidate = 21600;
 
+const caseStudyPathBySlug: Record<string, string> = {
+  "pain-tracker": "/case-study/pain-tracker",
+  proofvault: "/case-study/proofvault",
+};
+
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
 async function getSlug(params: ParamsLike) {
@@ -103,9 +108,9 @@ export default async function ProjectPage({
         ))}
       </div>
 
-      {p.slug === "pain-tracker" ? (
+      {caseStudyPathBySlug[p.slug] ? (
         <div className="mt-6">
-          <Button href="/case-study/pain-tracker">Read the flagship case study</Button>
+          <Button href={caseStudyPathBySlug[p.slug]}>Read the case study</Button>
         </div>
       ) : null}
 

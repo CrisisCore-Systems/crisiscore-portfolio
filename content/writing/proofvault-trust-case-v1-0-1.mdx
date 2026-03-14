@@ -1,0 +1,79 @@
+---
+title: "ProofVault Trust Case v1.0.1"
+description: "A reproducible trust case for an offline-first encrypted evidence app, stabilized across hosted CI and bound to an exact public release."
+date: "2026-03-13"
+---
+
+ProofVault now carries part of its own proof burden in the repository.
+
+I built a trust dossier, a pinned specimen, automated regeneration and drift detection, and a hosted-CI-enforced release path that makes trust claims inspectable instead of aspirational.
+
+## Subhead
+
+A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
+
+## What I built
+
+- bounded trust case and threat model
+- pinned demo specimen with observed outputs
+- verifier path showing valid and tampered behavior
+- local and hosted-CI specimen regeneration
+- drift detection that fails when trust-critical output changes
+- public release tags preserving provenance across `v1.0` and `v1.0.1`
+
+## What made this hard
+
+Local success was not enough.
+
+GitHub's hosted runner exposed cross-environment drift that did not appear on the initial local path.
+
+The specimen had to be stabilized without weakening the invariant.
+
+That required fixing the cause of the mismatch rather than teaching the checks to ignore it.
+
+## What I fixed
+
+- host-local timestamp rendering
+- archive metadata drift across environments
+- pinned specimen metadata incorrectly stamping the live Node patch version
+
+## How the trust case works
+
+The trust dossier defines the guarantee boundary and the threat model.
+
+The specimen gives the repository a pinned thing to prove against.
+
+The verifier path shows both sides of the claim: expected behavior for a valid specimen and visible failure for a tampered one.
+
+Regeneration keeps the specimen reproducible.
+
+Drift enforcement makes trust-critical change explicit instead of silent.
+
+Hosted CI closes the loop by validating the final non-debug release tree before the public cut is accepted.
+
+## Why the hosted path mattered
+
+This release would have been weaker if it stopped at a local green run.
+
+The hosted runner surfaced drift that the local path did not show.
+
+That difference mattered because the trust claim was not just "the code can pass on one machine."
+
+The claim was that the public release itself could be inspected, reproduced, and tied to the exact hosted-green commit that produced it.
+
+## Outcome
+
+- trust specimen is reproducible and release-bound
+- hosted CI validates the final non-debug release tree
+- `proofvault-trust-case-v1.0` remains immutable
+- `proofvault-trust-case-v1.0.1` publishes the corrected hosted-stable release
+
+## Impact line
+
+Trust made legible, reproducible, and release-bound.
+
+## Where to inspect next
+
+- Read the portfolio case study at /case-study/proofvault
+- Inspect the trust dossier at /projects/proofvault
+- Review the public proof surface at /proof
