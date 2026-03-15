@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import { absoluteUrl } from "@/app/lib/site";
 import { loadWriting, loadWritingPost } from "@/content/load";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
@@ -21,9 +22,18 @@ export async function generateMetadata({ params }: { params: ParamsLike }) {
   try {
     const slug = await getSlug(params);
     const p = loadWritingPost(slug);
+    const socialImageBySlug: Record<string, string> = {
+      "proofvault-trust-case-v1-0-1": "/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg",
+      "protective-computing-doctrine": "/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg",
+      "overton-doi": "/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
+    };
+    const socialImage = socialImageBySlug[slug];
+
     return {
       title: p.frontmatter.title,
       description: p.frontmatter.description,
+      openGraph: socialImage ? { images: [{ url: absoluteUrl(socialImage) }] } : undefined,
+      twitter: socialImage ? { images: [absoluteUrl(socialImage)] } : undefined,
     };
   } catch {
     return {};

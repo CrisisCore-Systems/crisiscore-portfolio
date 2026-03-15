@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ARTIFACTS } from "@/app/lib/artifacts";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { loadProjects, loadWriting } from "@/content/load";
@@ -65,6 +66,19 @@ export default function SiteMapPage() {
               <li key={post.slug}>
                 <Link className="hover:text-white" href={withBuild(`/writing/${post.slug}`)}>
                   /writing/{post.slug}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+
+        <Panel className="p-7 lg:col-span-3">
+          <div className="text-sm font-semibold">Artifact routes</div>
+          <ul className="mt-4 grid gap-2 text-sm text-white/75 sm:grid-cols-2 lg:grid-cols-3">
+            {ARTIFACTS.map((artifact) => (
+              <li key={artifact.slug}>
+                <Link className="hover:text-white" href={withBuild(`/artifacts/${artifact.slug}`)}>
+                  /artifacts/{artifact.slug}
                 </Link>
               </li>
             ))}

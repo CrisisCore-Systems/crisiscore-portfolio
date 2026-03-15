@@ -66,6 +66,24 @@ a:hover { color: var(--acc); }
   --tw-prose-pre-bg: rgba(255,255,255,0.06);
 }
 
+.prose figure {
+  margin: 2rem 0;
+}
+
+.prose img {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+
+.prose figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.58);
+}
+
 /* --- “AAA” component classes (plain CSS, no @apply) --- */
 .cc-kicker {
   font-family: var(--font-mono);

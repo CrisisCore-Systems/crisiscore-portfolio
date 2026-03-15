@@ -10,25 +10,17 @@ const links = [
 ];
 
 export function Nav() {
-  const build = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
-
   return (
     <header className="relative sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="group">
-            <span className="text-sm font-semibold tracking-wide">
-              CrisisCore<span className="text-white/45"> Systems</span>
-            </span>
-          </Link>
-          <Link
-            href="/about"
-            aria-label="Learn about protective computing"
-            className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] text-white/60 transition hover:bg-white/[0.08] hover:text-white sm:inline"
-          >
+        <Link href="/" className="group flex items-center gap-2">
+          <span className="text-sm font-semibold tracking-wide">
+            CrisisCore<span className="text-white/45"> Systems</span>
+          </span>
+          <span className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] text-white/60 sm:inline">
             Protective Computing
-          </Link>
-        </div>
+          </span>
+        </Link>
 
         <nav className="hidden items-center gap-2 text-sm text-white/75 md:flex">
           {links.map((l) => (
@@ -40,12 +32,6 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/version.json"
-            className="rounded-xl px-3 py-2 text-xs text-white/55 transition hover:bg-white/[0.06] hover:text-white"
-          >
-            Build: {build}
-          </Link>
         </nav>
 
         <details className="group md:hidden">

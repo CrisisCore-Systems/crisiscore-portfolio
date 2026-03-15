@@ -51,6 +51,16 @@
         "label": "Redacted threat model excerpt",
         "href": "/artifacts/security-and-audits/redacted-threat-model-excerpt",
         "kind": "internal"
+      },
+      {
+        "label": "Threat boundary map",
+        "href": "/artifacts/security-and-audits/threat-boundary-map",
+        "kind": "internal"
+      },
+      {
+        "label": "Defensibility packet flow",
+        "href": "/artifacts/security-and-audits/defensibility-packet-flow",
+        "kind": "internal"
       }
     ]
   },
@@ -64,6 +74,23 @@
       "Verification steps: tests or procedures that prove the issue is closed.",
       "Operator-ready notes: rollback guidance and failure-mode monitoring suggestions.",
       "A redacted artifact sample showing assumptions, adversaries, and closure criteria."
+    ]
+  },
+  "images": {
+    "title": "Supporting diagrams",
+    "items": [
+      {
+        "src": "/assets/diagram_plates/diagram_03_threat_boundary_map.svg",
+        "alt": "Threat boundary map showing asset classes, adversaries, and control edges",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/assets/diagram_plates/diagram_06_defensibility_packet_flow.svg",
+        "alt": "Defensibility packet flow showing how findings and evidence become a review-ready handoff",
+        "width": 1600,
+        "height": 900
+      }
     ]
   }
 }

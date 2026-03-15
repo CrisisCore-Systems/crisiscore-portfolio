@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getRepo } from "@/app/lib/github";
+import { absoluteUrl } from "@/app/lib/site";
+import { AssetFigure } from "@/components/AssetFigure";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
@@ -29,9 +31,17 @@ export async function generateMetadata({ params }: { params: ParamsLike }) {
   const slug = await getSlug(params);
   try {
     const p = loadProject(slug);
+    const dossier = loadDossier(slug);
+    const socialImage =
+      slug === "proofvault"
+        ? "/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
+        : dossier?.architecture.diagram?.src ?? dossier?.images?.items?.[0]?.src;
+
     return {
       title: p.title,
       description: p.summary,
+      openGraph: socialImage ? { images: [{ url: absoluteUrl(socialImage) }] } : undefined,
+      twitter: socialImage ? { images: [absoluteUrl(socialImage)] } : undefined,
     };
   } catch {
     return {};
@@ -199,7 +209,14 @@ export default async function ProjectPage({
             </div>
 
             {dossier?.architecture.diagram ? (
-              <div className="mt-6">
+              <div className="mt-6 space-y-4">
+                <AssetFigure
+                  src={dossier.architecture.diagram.src}
+                  alt={dossier.architecture.diagram.alt}
+                  title="Architecture diagram"
+                  body="Visual context for the operating boundary and system shape described in this dossier."
+                />
+
                 {getArtifactByRawPath(dossier.architecture.diagram.src) ? (
                   <Button
                     href={`/artifacts/${getArtifactByRawPath(dossier.architecture.diagram.src)!.slug}`}
@@ -210,7 +227,7 @@ export default async function ProjectPage({
                   </Button>
                 ) : (
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/65">
-                    Architecture artifact available in proof links.
+                    Diagram is rendered inline here; dedicated artifact page is not configured for this asset.
                   </div>
                 )}
               </div>

@@ -53,6 +53,42 @@ export const ARTIFACTS: ArtifactEntry[] = [
     githubMirror:
       "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/security-and-audits/redacted-threat-model-excerpt.md",
   },
+  {
+    slug: "overton-framework/protective-computing-lifecycle",
+    title: "Protective computing lifecycle diagram",
+    summary: "Diagram plate showing the discipline from baseline doctrine through operational translation and audit measurement.",
+    kind: "svg",
+    rawPath: "/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
+  },
+  {
+    slug: "overton-framework/local-authority-vs-cloud-dependence",
+    title: "Local authority vs cloud dependence diagram",
+    summary: "Trust-boundary comparison between user authority and infrastructure dependence.",
+    kind: "svg",
+    rawPath: "/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg",
+  },
+  {
+    slug: "security-and-audits/threat-boundary-map",
+    title: "Threat boundary map",
+    summary: "Diagram plate showing assets, adversaries, trust edges, and where protective assumptions stop.",
+    kind: "svg",
+    rawPath: "/assets/diagram_plates/diagram_03_threat_boundary_map.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/diagram_plates/diagram_03_threat_boundary_map.svg",
+  },
+  {
+    slug: "security-and-audits/defensibility-packet-flow",
+    title: "Defensibility packet flow diagram",
+    summary: "Diagram plate showing how findings, evidence, and decision support turn into a review-ready packet.",
+    kind: "svg",
+    rawPath: "/assets/diagram_plates/diagram_06_defensibility_packet_flow.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/diagram_plates/diagram_06_defensibility_packet_flow.svg",
+  },
 ];
 
 export function getArtifact(slug: string) {

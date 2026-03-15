@@ -1,4 +1,5 @@
-import { SITE } from "@/app/lib/site";
+import { absoluteUrl, SITE } from "@/app/lib/site";
+import { AssetFigure } from "@/components/AssetFigure";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 
@@ -6,6 +7,12 @@ export const metadata = {
   title: "About",
   description:
     "Protective computing: privacy-first systems built for low-trust and unstable conditions.",
+  openGraph: {
+    images: [{ url: absoluteUrl("/assets/founder-banners/about_mission_plate.svg") }],
+  },
+  twitter: {
+    images: [absoluteUrl("/assets/founder-banners/about_mission_plate.svg")],
+  },
 };
 
 export default function AboutPage() {
@@ -124,6 +131,13 @@ export default function AboutPage() {
         </div>
 
         <div className="lg:col-span-5">
+          <AssetFigure
+            src="/assets/founder-banners/about_mission_plate.svg"
+            alt="About mission plate graphic for CrisisCore Systems"
+            title="Mission plate"
+            body="This fits the about page best because it reinforces the positioning and gives the right column a visible anchor."
+          />
+
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Engagement</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">

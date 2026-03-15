@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { absoluteUrl } from "@/app/lib/site";
+import { AssetFigure } from "@/components/AssetFigure";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
@@ -8,6 +10,12 @@ export const metadata = {
   title: "ProofVault Trust Case v1.0.1",
   description:
     "A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and hosted-CI-backed release provenance.",
+  openGraph: {
+    images: [{ url: absoluteUrl("/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg") }],
+  },
+  twitter: {
+    images: [absoluteUrl("/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg")],
+  },
 };
 
 export const revalidate = 21600;
@@ -66,6 +74,21 @@ export default function ProofVaultCaseStudyPage() {
               </p>
             </div>
           </Panel>
+
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <AssetFigure
+              src="/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
+              alt="ProofVault trust case excerpt proof card"
+              title="Bounded claim"
+              body="Best placed immediately after the summary because it visualizes the exact trust case the page is describing."
+            />
+            <AssetFigure
+              src="/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg"
+              alt="ProofVault release-bound artifact hash proof card"
+              title="Hosted-green release binding"
+              body="Fits beside the bounded claim because the case study keeps returning to reproducibility and release provenance."
+            />
+          </div>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Panel className="p-7">

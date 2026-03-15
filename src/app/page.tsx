@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { AssetFigure } from "@/components/AssetFigure";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
@@ -46,28 +47,37 @@ export default function HomePage() {
           </Button>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Front door</div>
-            <div className="mt-2 text-base font-semibold">Trust Hardening Review</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Fixed-scope diagnostic for teams that need fast clarity before a larger hardening push.
-            </p>
+        <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)] lg:items-start">
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Front door</div>
+              <div className="mt-2 text-base font-semibold">Trust Hardening Review</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                Fixed-scope diagnostic for teams that need fast clarity before a larger hardening push.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you leave with</div>
+              <div className="mt-2 text-base font-semibold">Defensibility Packet</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                Threat model snapshot, abuse cases, trust boundaries, quick wins, and a now/next/later roadmap.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best fit</div>
+              <div className="mt-2 text-base font-semibold">Decision-ready teams</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                You already have users or an imminent launch, plus the authority and budget to act on findings.
+              </p>
+            </div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you leave with</div>
-            <div className="mt-2 text-base font-semibold">Defensibility Packet</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Threat model snapshot, abuse cases, trust boundaries, quick wins, and a now/next/later roadmap.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best fit</div>
-            <div className="mt-2 text-base font-semibold">Decision-ready teams</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              You already have users or an imminent launch, plus the authority and budget to act on findings.
-            </p>
-          </div>
+
+          <AssetFigure
+            src="/assets/founder-banners/site_hero_banner.svg"
+            alt="CrisisCore site hero banner showing protective computing positioning"
+            title="Hero surface"
+            body="This banner now anchors the front-door pitch instead of leaving the home hero text-only."
+          />
         </div>
 
         <div className="mt-6 text-sm text-white/65">
@@ -149,12 +159,29 @@ export default function HomePage() {
 
       <Section title="What you get" kicker="Deliverables">
         <div className="cc-card p-7">
-          <ul className="space-y-3 text-sm text-white/80">
-            <li>• Highest-risk failure paths and abuse cases, clearly mapped</li>
-            <li>• Simpler data model with explicit boundaries and exits</li>
-            <li>• Prioritized hardening roadmap your team can ship</li>
-            <li>• Clear trust narrative for users, partners, and investors</li>
-          </ul>
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>• Highest-risk failure paths and abuse cases, clearly mapped</li>
+              <li>• Simpler data model with explicit boundaries and exits</li>
+              <li>• Prioritized hardening roadmap your team can ship</li>
+              <li>• Clear trust narrative for users, partners, and investors</li>
+            </ul>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <AssetFigure
+                src="/assets/service-panels/trust_hardening_review.svg"
+                alt="Trust Hardening Review service panel"
+                title="Front-door review"
+                body="Best fit for the page's core offer: a fixed-scope trust hardening review for post-MVP teams."
+              />
+              <AssetFigure
+                src="/assets/service-panels/defensibility_packet.svg"
+                alt="Defensibility Packet service panel"
+                title="Primary deliverable"
+                body="Matches the handoff language already used across the site for the artifact-first output."
+              />
+            </div>
+          </div>
         </div>
       </Section>
 

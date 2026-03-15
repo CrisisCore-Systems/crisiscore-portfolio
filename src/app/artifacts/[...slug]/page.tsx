@@ -40,6 +40,9 @@ export default async function ArtifactPage({
   const projectSlug = slug.split("/")[0];
   const artifact = getArtifact(slug);
   if (!artifact) return notFound();
+  const relatedArtifacts = ARTIFACTS.filter(
+    (entry) => entry.slug !== artifact.slug && entry.slug.startsWith(`${projectSlug}/`)
+  ).slice(0, 4);
 
   let markdownSource = "";
   let svgSource = "";
@@ -93,6 +96,45 @@ export default async function ArtifactPage({
           </Button>
         </div>
       </Panel>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <Panel className="p-6 sm:p-8">
+          <div className="text-sm font-semibold">Continue inspection</div>
+          <p className="mt-2 text-sm text-white/70">
+            Move from the single artifact back to the surrounding proof surface, dossier, and writing trail.
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button href={`/projects/${projectSlug}`} variant="ghost">
+              Open dossier
+            </Button>
+            <Button href="/proof" variant="ghost">
+              Open proof
+            </Button>
+            <Button href="/site-map" variant="ghost">
+              Open sitemap
+            </Button>
+          </div>
+        </Panel>
+
+        {relatedArtifacts.length > 0 ? (
+          <Panel className="p-6 sm:p-8">
+            <div className="text-sm font-semibold">Related artifacts</div>
+            <div className="mt-4 grid gap-2">
+              {relatedArtifacts.map((entry) => (
+                <Button
+                  key={entry.slug}
+                  href={`/artifacts/${entry.slug}`}
+                  variant="ghost"
+                  className="justify-start"
+                >
+                  {entry.title}
+                </Button>
+              ))}
+            </div>
+          </Panel>
+        ) : null}
+      </div>
     </div>
   );
 }

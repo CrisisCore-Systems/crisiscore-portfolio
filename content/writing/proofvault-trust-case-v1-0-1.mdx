@@ -12,6 +12,16 @@ I built a trust dossier, a pinned specimen, automated regeneration and drift det
 
 A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
 
+<figure>
+	<img
+		src="/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
+		alt="Proof artifact card showing the trust case excerpt, evidence, verification path, and residual risk"
+	/>
+	<figcaption>
+		The short version of the claim: what is being promised, what evidence exists in the repo, how it is verified, and what residual risk remains outside the guarantee boundary.
+	</figcaption>
+</figure>
+
 ## What I built
 
 - bounded trust case and threat model
@@ -50,6 +60,16 @@ Regeneration keeps the specimen reproducible.
 Drift enforcement makes trust-critical change explicit instead of silent.
 
 Hosted CI closes the loop by validating the final non-debug release tree before the public cut is accepted.
+
+<figure>
+	<img
+		src="/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg"
+		alt="Proof artifact card showing release-bound artifact hash and hosted-green provenance"
+	/>
+	<figcaption>
+		The release-binding surface: the specimen, tree, hash, and drift state are made legible enough to inspect quickly under skepticism.
+	</figcaption>
+</figure>
 
 ## Why the hosted path mattered
 

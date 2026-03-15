@@ -23,7 +23,13 @@
       "Layer 1 (Overton Framework): defines protective computing as an engineered discipline, with explicit threat boundaries and legitimacy requirements.",
       "Layer 2 (Field Guide): translates the theory into field-usable practices and decision patterns under constraint.",
       "Layer 3 (PLS rubric): turns the discipline into audit-ready measurement so systems can be assessed without hand-waving."
-    ]
+    ],
+    "diagram": {
+      "src": "/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
+      "alt": "Protective computing lifecycle diagram showing the discipline from theory through operational translation and measurement",
+      "width": 1600,
+      "height": 900
+    }
   },
   "proof": {
     "title": "Proof",
@@ -57,6 +63,16 @@
         "label": "Reading note",
         "href": "/writing/overton-doi",
         "kind": "internal"
+      },
+      {
+        "label": "Lifecycle diagram",
+        "href": "/artifacts/overton-framework/protective-computing-lifecycle",
+        "kind": "internal"
+      },
+      {
+        "label": "Local authority diagram",
+        "href": "/artifacts/overton-framework/local-authority-vs-cloud-dependence",
+        "kind": "internal"
       }
     ]
   },
@@ -67,6 +83,23 @@
       "A single, layered citation surface suitable for external review and reference.",
       "A defensible path from principles → practices → measurement, reducing security theater.",
       "A reusable audit rubric (PLS) that makes protective claims verifiable."
+    ]
+  },
+  "images": {
+    "title": "Reference diagrams",
+    "items": [
+      {
+        "src": "/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
+        "alt": "Protective computing lifecycle diagram",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg",
+        "alt": "Local authority versus cloud dependence diagram",
+        "width": 1600,
+        "height": 900
+      }
     ]
   }
 }
