@@ -138,7 +138,7 @@ export default function AboutPage() {
             body="This fits the about page best because it reinforces the positioning and gives the right column a visible anchor."
           />
 
-          <Panel className="p-7 sm:p-8">
+          <Panel className="mt-4 p-7 sm:p-8">
             <div className="text-sm font-semibold">Engagement</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
