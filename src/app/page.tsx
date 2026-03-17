@@ -75,13 +75,7 @@ export default function HomePage() {
           <AssetFigure
             src="/assets/founder-banners/site_hero_banner.svg"
             alt="CrisisCore site hero banner showing protective computing positioning"
-            title="Hero surface"
-            body="This banner now anchors the front-door pitch instead of leaving the home hero text-only."
           />
-        </div>
-
-        <div className="mt-6 text-sm text-white/65">
-          Default ownership stays on-device. Cloud is optional, not assumed. Pricing is discussed after fit is established.
         </div>
       </Panel>
 
@@ -171,14 +165,10 @@ export default function HomePage() {
               <AssetFigure
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
-                title="Front-door review"
-                body="Best fit for the page's core offer: a fixed-scope trust hardening review for post-MVP teams."
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
-                title="Primary deliverable"
-                body="Matches the handoff language already used across the site for the artifact-first output."
               />
             </div>
           </div>
