@@ -271,25 +271,27 @@ export default function HomePage() {
 
       <Section title="What you get" kicker="Deliverables">
         <div className="cc-card p-7">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
-            <ul className="space-y-3 text-sm text-white/80">
+          <div className="grid gap-6">
+            <ul className="max-w-3xl space-y-3 text-sm text-white/80">
               <li>• Data inventory + purpose map for sensitive categories and flows</li>
               <li>• Collection defaults audit showing what is reduced, refused, or made explicit</li>
               <li>• Retention and deletion plan with concrete boundary decisions</li>
               <li>• User-initiated sharing design plus a prioritized hardening roadmap</li>
             </ul>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="grid gap-5 lg:grid-cols-2">
               <AssetFigure
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
                 title="Front-door review"
+                mediaClassName="aspect-[16/10]"
                 imageClassName="object-contain p-0"
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
                 title="Primary deliverable"
+                mediaClassName="aspect-[16/10]"
                 imageClassName="object-contain p-0"
               />
             </div>
