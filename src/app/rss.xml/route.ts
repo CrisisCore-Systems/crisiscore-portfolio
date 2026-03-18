@@ -1,6 +1,13 @@
 import { SITE } from "@/app/lib/site";
 import { loadWriting } from "@/content/load";
 
+export const runtime = "nodejs";
+export const revalidate = 300;
+
+function cdata(value: string) {
+  return value.replaceAll("]]>", "]]]]><![CDATA[>");
+}
+
 export async function GET() {
   const posts = loadWriting();
 
@@ -9,11 +16,11 @@ export async function GET() {
       const url = `${SITE.url}/writing/${p.slug}`;
       return `
 <item>
-  <title><![CDATA[${p.frontmatter.title}]]></title>
+  <title><![CDATA[${cdata(p.frontmatter.title)}]]></title>
   <link>${url}</link>
   <guid>${url}</guid>
   <pubDate>${new Date(p.frontmatter.date).toUTCString()}</pubDate>
-  <description><![CDATA[${p.frontmatter.description}]]></description>
+  <description><![CDATA[${cdata(p.frontmatter.description)}]]></description>
 </item>`;
     })
     .join("");
@@ -29,6 +36,9 @@ export async function GET() {
 </rss>`;
 
   return new Response(xml, {
-    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
+    headers: {
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=0, s-maxage=300, stale-while-revalidate=600",
+    },
   });
 }
