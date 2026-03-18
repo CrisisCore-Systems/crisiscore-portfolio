@@ -90,7 +90,6 @@ export default function HomePage() {
             src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
             alt="Redacted Defensibility Packet preview showing packet outline, measurable endpoints, and required access"
             title="Redacted packet specimen"
-            className="h-full"
             imageClassName="object-cover p-0"
           />
 
