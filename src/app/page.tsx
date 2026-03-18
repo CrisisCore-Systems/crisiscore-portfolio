@@ -279,19 +279,19 @@ export default function HomePage() {
               <li>• User-initiated sharing design plus a prioritized hardening roadmap</li>
             </ul>
 
-            <div className="grid gap-5 lg:grid-cols-2">
+            <div className="grid gap-5">
               <AssetFigure
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
                 title="Front-door review"
-                mediaClassName="aspect-[16/10]"
+                mediaClassName="aspect-[16/9]"
                 imageClassName="object-contain p-0"
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
                 title="Primary deliverable"
-                mediaClassName="aspect-[16/10]"
+                mediaClassName="aspect-[16/9]"
                 imageClassName="object-contain p-0"
               />
             </div>
