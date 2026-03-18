@@ -1,0 +1,92 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="90" x2="1480" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101723"/>
+      <stop offset="1" stop-color="#06080D"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="240" y1="168" x2="1360" y2="736" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121A29"/>
+      <stop offset="1" stop-color="#0A111C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="278" y1="214" x2="1322" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="shadow" x="190" y="128" width="1220" height="644" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.36 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="40" fill="url(#bg)"/>
+  <circle cx="1330" cy="124" r="240" fill="#38BDF8" fill-opacity="0.08"/>
+  <circle cx="260" cy="806" r="220" fill="#F59E0B" fill-opacity="0.06"/>
+
+  <text x="140" y="118" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">REDACTED DELIVERABLE SPECIMEN</text>
+  <text x="140" y="172" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">Defensibility Packet Preview</text>
+  <text x="140" y="214" fill="#A8B3C7" font-family="Arial, Helvetica, sans-serif" font-size="24">A decision-ready handoff showing boundary decisions, ranked risks, offline findings, and explicit next actions.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="238" y="168" width="1124" height="556" rx="28" fill="url(#panel)" stroke="#1F2A3A" stroke-width="2"/>
+  </g>
+
+  <rect x="278" y="206" width="1044" height="8" rx="4" fill="url(#accent)"/>
+  <text x="278" y="248" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Packet outline</text>
+  <text x="1158" y="248" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="end">REDACTED / REVIEW COPY</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#CBD5E1">
+    <text x="302" y="308">01</text>
+    <text x="302" y="374">02</text>
+    <text x="302" y="440">03</text>
+    <text x="302" y="506">04</text>
+    <text x="302" y="572">05</text>
+    <text x="302" y="638">06</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#F8FAFC">
+    <text x="360" y="308">Boundary statement</text>
+    <text x="360" y="374">Data inventory + purpose map</text>
+    <text x="360" y="440">Collection defaults audit</text>
+    <text x="360" y="506">Critical path offline findings</text>
+    <text x="360" y="572">Top 10 risks + closure criteria</text>
+    <text x="360" y="638">Now / next / later roadmap</text>
+  </g>
+
+  <g fill="#94A3B8">
+    <rect x="790" y="282" width="488" height="12" rx="6"/>
+    <rect x="790" y="300" width="432" height="12" rx="6" fill-opacity="0.72"/>
+
+    <rect x="790" y="348" width="466" height="12" rx="6"/>
+    <rect x="790" y="366" width="410" height="12" rx="6" fill-opacity="0.72"/>
+
+    <rect x="790" y="414" width="452" height="12" rx="6"/>
+    <rect x="790" y="432" width="436" height="12" rx="6" fill-opacity="0.72"/>
+
+    <rect x="790" y="480" width="480" height="12" rx="6"/>
+    <rect x="790" y="498" width="392" height="12" rx="6" fill-opacity="0.72"/>
+
+    <rect x="790" y="546" width="504" height="12" rx="6"/>
+    <rect x="790" y="564" width="418" height="12" rx="6" fill-opacity="0.72"/>
+
+    <rect x="790" y="612" width="446" height="12" rx="6"/>
+    <rect x="790" y="630" width="384" height="12" rx="6" fill-opacity="0.72"/>
+  </g>
+
+  <rect x="278" y="680" width="492" height="1" fill="#223047"/>
+  <rect x="830" y="680" width="492" height="1" fill="#223047"/>
+
+  <text x="278" y="724" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="2">MEASURABLE ENDPOINTS</text>
+  <text x="830" y="724" fill="#FBBF24" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="2">REQUIRED ACCESS</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#D7E0EC">
+    <text x="278" y="766">Top risks ranked by severity, blast radius, and fix effort</text>
+    <text x="278" y="804">Explicit before / after collection decisions and boundary sign-off</text>
+    <text x="830" y="766">Repo, docs, deployment links, and critical-flow context</text>
+    <text x="830" y="804">One technical owner, one decision-maker, limited working sessions</text>
+  </g>
+</svg>

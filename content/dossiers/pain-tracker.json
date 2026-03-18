@@ -1,6 +1,6 @@
 {
   "slug": "pain-tracker",
-  "tagline": "Privacy-first pain documentation built for low energy, low trust, and partial connectivity.",
+  "tagline": "Minimization-first pain documentation built to reduce dangerous collection, keep core use on-device, and stay usable under degraded conditions.",
   "problem": {
     "title": "Problem",
     "body": [
@@ -14,14 +14,17 @@
       "Degraded-first: low battery, low bandwidth, interrupted sessions.",
       "Cognitive overload: reduce steps, reduce choices, preserve progress.",
       "Privacy-first: avoid default data centralization; minimize third-party surfaces.",
-      "Reversibility: exports are explicit; user remains the authority."
+      "Reversibility: exports are explicit; user remains the authority.",
+      "Collection discipline: each stored category needs a clear purpose, local default, and user-visible exit."
     ]
   },
   "architecture": {
     "title": "Architecture",
     "body": [
       "Local-first by default: entries persist on-device using browser storage so the system remains usable offline and under partial connectivity.",
-      "Sharing is user-controlled: the primary proof artifact is an explicit export that can be used for clinicians or records when the user chooses."
+      "Collection is bounded to the categories needed for day-to-day pain logging, with the working record staying under local user control instead of default account capture.",
+      "Sharing is user-controlled: the primary proof artifact is an explicit export that can be used for clinicians or records when the user chooses.",
+      "Retention follows the same boundary: day-to-day records persist locally until the user edits, exports, or removes them through explicit action."
     ],
     "diagram": {
       "src": "/projects/pain-tracker/architecture.svg",
@@ -33,8 +36,9 @@
   "proof": {
     "title": "Proof",
     "links": [
-      { "label": "Architecture artifact", "href": "/artifacts/pain-tracker/architecture", "kind": "internal" },
-      { "label": "UI artifact", "href": "/artifacts/pain-tracker/ui-01-fastlog", "kind": "internal" },
+      { "label": "Boundary statement + architecture artifact", "href": "/artifacts/pain-tracker/architecture", "kind": "internal" },
+      { "label": "Collection defaults audit (fast-log UI)", "href": "/artifacts/pain-tracker/ui-01-fastlog", "kind": "internal" },
+      { "label": "User-initiated sharing design (export UI)", "href": "/artifacts/pain-tracker/ui-02", "kind": "internal" },
       { "label": "Live app", "href": "https://paintracker.ca", "kind": "external" },
       {
         "label": "GitHub repo",
@@ -46,8 +50,9 @@
   "outcomes": {
     "title": "Outcomes",
     "items": [
-      "0 account requirement for core use: users can log entries without sign-up.",
+      "0 account requirement for core use: users can log entries without sign-up or default account capture.",
       "0 background sharing by default: exports are user-initiated and explicit.",
+      "A clear minimization boundary: sensitive day-to-day records stay local unless the user deliberately exports them.",
       "Core logging flow remains available offline under partial connectivity.",
       "A working local-first PWA surface (live deployment) designed around protective UX primitives."
     ]

@@ -6,7 +6,7 @@ import { loadCanon, loadWriting } from "@/content/load";
 
 export const metadata = {
   title: "Writing",
-  description: "Protective computing, privacy-first systems, degraded-first design.",
+  description: "Protective computing, minimization-first systems, and degraded-first design.",
 };
 
 export default function WritingIndexPage() {
@@ -20,7 +20,7 @@ export default function WritingIndexPage() {
         Writing
       </h1>
       <p className="mt-3 cc-lede">
-        Protective computing, privacy-first systems, and degraded-first design.
+        Protective computing, minimization-first systems, and degraded-first design.
         Notes written for low-trust reality: where incentives are misaligned and
         “normal conditions” are optional.
       </p>

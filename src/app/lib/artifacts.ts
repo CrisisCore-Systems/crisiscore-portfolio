@@ -54,6 +54,15 @@ export const ARTIFACTS: ArtifactEntry[] = [
       "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/security-and-audits/redacted-threat-model-excerpt.md",
   },
   {
+    slug: "security-and-audits/defensibility-packet-preview",
+    title: "Defensibility Packet preview",
+    summary: "Redacted specimen showing the packet outline, measurable endpoints, and required access boundary.",
+    kind: "svg",
+    rawPath: "/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg",
+  },
+  {
     slug: "overton-framework/protective-computing-lifecycle",
     title: "Protective computing lifecycle diagram",
     summary: "Diagram plate showing the discipline from baseline doctrine through operational translation and audit measurement.",

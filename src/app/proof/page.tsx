@@ -38,10 +38,7 @@ export default async function ProofPage() {
           Evidence a buyer can evaluate without taking my word for it.
         </h1>
         <p className="mt-4 cc-lede">
-          This page is for founders, technical leads, and operators deciding
-          whether the work is credible, relevant, and worth bringing into a
-          live product. It shows what changed, what risks were reduced, and
-          where the source record lives.
+          For founders, technical leads, and operators deciding whether the work is credible, relevant, and worth bringing into a live product. It shows what changed, what risks were reduced, and where the source record lives.
         </p>
         <p className="mt-2 text-sm text-white/70">
           Open where possible, DOI-backed where relevant, and tied to public
@@ -49,12 +46,15 @@ export default async function ProofPage() {
         </p>
 
         <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
-          Evidence built for skeptical review: outcome-oriented, repo-visible, and verifiable under low-trust conditions.
+          Outcome-oriented, repo-visible, and verifiable under low-trust conditions.
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
           <Button href="/case-study/pain-tracker">
             Review flagship case
+          </Button>
+          <Button href="/artifacts/security-and-audits/defensibility-packet-preview" variant="ghost">
+            Open packet preview
           </Button>
           <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost">
             Open redacted audit artifact
@@ -76,7 +76,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">What changed</div>
           <p className="mt-2 text-sm text-white/70">
-            The proof surface is strongest when it shows operating change, not just principles.
+            Operating change matters more than principles alone.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li>• Reduced default collection of dangerous data</li>
@@ -102,7 +102,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">What kind of product this applies to</div>
           <p className="mt-2 text-sm text-white/70">
-            Best fit is post-MVP software where trust failure harms users or operations.
+            Post-MVP software where trust failure harms users or operations.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li>• Health, advocacy, or clinician-adjacent tools</li>
@@ -116,34 +116,36 @@ export default async function ProofPage() {
       <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_0.95fr]">
         <Panel className="p-7 sm:p-8">
           <div className="cc-kicker">Flagship case</div>
-          <h2 className="mt-2 text-2xl font-semibold">PainTracker: from trust-sensitive workflow to defensible operating posture</h2>
+          <h2 className="mt-2 text-2xl font-semibold">PainTracker: minimization-first redesign for a trust-sensitive workflow</h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
             {painDossier?.tagline ?? "Privacy-first pain documentation built for low energy, low trust, and partial connectivity."}
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Starting condition</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Before</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Most pain tracking products assume accounts, high attention, stable connectivity, and willingness to centralize intimate health data.
+                Most pain tracking products assume accounts, high attention, stable connectivity, and willingness to centralize intimate health data by default.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Trust risks</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">After</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                When those assumptions break, the user loses continuity, privacy boundaries blur, and the system becomes least reliable when it is most needed.
+                Core logging stays local by default, primary use does not require sign-up, and sharing is routed through explicit exports instead of background sync assumptions.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Hardening moves</div>
-              <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Local-first storage, offline-capable logging, explicit export paths, and a reduced-friction interface designed for cognitive overload.
-              </p>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Minimization delta</div>
+              <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/70">
+                <li>• Removed default collection paths that centralize sensitive symptom history</li>
+                <li>• Moved day-to-day ownership to on-device storage by default</li>
+                <li>• Replaced ambient sharing assumptions with explicit user-initiated export</li>
+              </ul>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Resulting posture</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Proof you can inspect</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                A live PWA that supports core use without sign-up, avoids background sharing by default, and remains usable under degraded conditions.
+                Boundary statement, data inventory, retention posture, and export behavior are visible.
               </p>
             </div>
           </div>
@@ -160,7 +162,7 @@ export default async function ProofPage() {
         <Panel className="p-7 sm:p-8">
           <div className="text-sm font-semibold">Check the evidence path</div>
           <p className="mt-2 text-sm text-white/70">
-            This is the order a skeptical buyer should use.
+            Suggested inspection order.
           </p>
 
           <div className="mt-5 space-y-4 text-sm text-white/75">
@@ -174,7 +176,7 @@ export default async function ProofPage() {
             </div>
             <div>
               <div className="font-semibold text-white">3. Inspect the dossier and artifacts</div>
-              <p className="mt-1 text-white/65">Problem, constraints, method, proof, and outputs are shown as operating evidence.</p>
+              <p className="mt-1 text-white/65">Problem, constraints, minimization decisions, proof, and outputs are shown as operating evidence.</p>
             </div>
             <div>
               <div className="font-semibold text-white">4. Inspect the canon</div>
@@ -209,22 +211,22 @@ export default async function ProofPage() {
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_1fr]">
         <Panel className="p-7 sm:p-8">
           <div className="cc-kicker">Release-bound trust case</div>
-          <h2 className="mt-2 text-2xl font-semibold">ProofVault: reproducible trust evidence tied to the hosted-green release</h2>
+          <h2 className="mt-2 text-2xl font-semibold">ProofVault: bounded trust evidence tied to the hosted-green release</h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
-            {proofVaultDossier?.tagline ?? "Trust made legible, reproducible, and release-bound through a pinned specimen, drift enforcement, and hosted-CI provenance."}
+            {proofVaultDossier?.tagline ?? "A deliberately bounded trust case that reduces unearned claim surface through a pinned specimen, drift enforcement, and hosted-CI provenance."}
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">What changed</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                A trust dossier, pinned specimen, verifier path, regeneration flow, and drift checks now live in the repo as part of the proof burden.
+                A trust dossier, pinned specimen, verifier path, regeneration flow, and drift checks now live in the repo as part of the proof burden, and the guarantee surface is narrowed to what those artifacts can actually prove.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why it matters</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Hosted CI became the release gate, so the public trust case is tied to the exact final non-debug commit, not a locally-green approximation.
+                Hosted CI became the release gate, so the public trust case is tied to the exact final non-debug commit, not a locally-green approximation or an oversized claim.
               </p>
             </div>
           </div>
@@ -234,13 +236,11 @@ export default async function ProofPage() {
               src="/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
               alt="ProofVault trust case excerpt proof card"
               title="Trust case excerpt"
-              body="Strong fit for the proof surface because it compresses the bounded claim into a single inspectable visual."
             />
             <AssetFigure
               src="/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg"
               alt="ProofVault release-bound artifact hash proof card"
               title="Release-bound provenance"
-              body="Pairs directly with the hosted-green release claim and makes the provenance story scannable."
             />
           </div>
         </Panel>
@@ -248,7 +248,7 @@ export default async function ProofPage() {
         <Panel className="p-7 sm:p-8">
           <div className="text-sm font-semibold">Inspect the path</div>
           <p className="mt-2 text-sm text-white/70">
-            Start with the short case, then inspect the dossier and long-form walkthrough.
+            Short case, then dossier, then long-form walkthrough.
           </p>
 
           <div className="mt-6 grid gap-2">
@@ -310,7 +310,7 @@ export default async function ProofPage() {
           </div>
 
           <div className="mt-5 text-xs text-white/55">
-            If you need a single anchor, start at Layer 1 (Overton Framework).
+            Start at Layer 1 (Overton Framework).
           </div>
 
           <div className="mt-5 grid gap-2">
@@ -342,7 +342,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Flagship system</div>
           <p className="mt-2 text-sm text-white/70">
-            PainTracker.ca — privacy-first pain tracking PWA, local-first by default.
+            PainTracker.ca — minimization-first pain tracking PWA, local-first by default.
           </p>
 
           <div className="mt-4 grid gap-2">
@@ -374,6 +374,9 @@ export default async function ProofPage() {
           </ul>
 
           <div className="mt-5 grid gap-2">
+            <Button href="/artifacts/security-and-audits/defensibility-packet-preview" variant="ghost" className="w-full justify-center">
+              Open defensibility packet preview
+            </Button>
             <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost" className="w-full justify-center">
               Open redacted threat model excerpt
             </Button>
@@ -407,18 +410,21 @@ export default async function ProofPage() {
         </Panel>
       </div>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+      <div className="mt-4 grid gap-4 lg:grid-cols-3">
+        <AssetFigure
+          src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
+          alt="Defensibility Packet preview artifact"
+          title="Defensibility Packet preview"
+        />
         <AssetFigure
           src="/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg"
           alt="Local authority versus cloud dependence diagram"
           title="Trust boundary reference"
-          body="A good buyer-side shortcut: this makes the control inversion legible before reading the longer doctrine and dossier material."
         />
         <AssetFigure
           src="/assets/diagram_plates/diagram_03_threat_boundary_map.svg"
           alt="Threat boundary map diagram"
           title="Audit boundary reference"
-          body="Useful on the proof page because it shows what audit work is actually bounding instead of leaving the audit surface purely textual."
         />
       </div>
 
@@ -498,6 +504,10 @@ export default async function ProofPage() {
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
             <span className="text-white/55"> — HTML artifact viewer</span>
           </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/defensibility-packet-preview")}>/artifacts/security-and-audits/defensibility-packet-preview</a>
+            <span className="text-white/55"> — HTML artifact viewer</span>
+          </li>
         </ul>
 
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/50">Mirror checks</div>
@@ -517,6 +527,10 @@ export default async function ProofPage() {
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
             <span className="text-white/55"> — HTML viewer (raw: /projects/security-and-audits/redacted-threat-model-excerpt.md)</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/defensibility-packet-preview")}>/artifacts/security-and-audits/defensibility-packet-preview</a>
+            <span className="text-white/55"> — HTML viewer (raw: /assets/proof-cards/defensibility_packet_preview_wide_16x9.svg)</span>
           </li>
         </ul>
 

@@ -1,16 +1,20 @@
 ---
 title: "ProofVault Trust Case v1.0.1"
-description: "A reproducible trust case for an offline-first encrypted evidence app, stabilized across hosted CI and bound to an exact public release."
+description: "A reproducible trust case for an offline-first encrypted evidence app, with a deliberately bounded guarantee surface tied to an exact hosted-green release."
 date: "2026-03-13"
 ---
 
 ProofVault now carries part of its own proof burden in the repository.
 
-I built a trust dossier, a pinned specimen, automated regeneration and drift detection, and a hosted-CI-enforced release path that makes trust claims inspectable instead of aspirational.
+I built a trust dossier, a pinned specimen, automated regeneration and drift detection, and a hosted-CI-enforced release path that narrows the public claim to what the evidence can actually support.
+
+The goal was not to claim more trust.
+
+The goal was to reduce the amount of trust a reviewer has to grant without evidence.
 
 ## Subhead
 
-A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
+A reproducible trust case for an offline-first encrypted evidence app, with a deliberately bounded guarantee surface, pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
 
 <figure>
 	<img
@@ -25,6 +29,7 @@ A reproducible trust case for an offline-first encrypted evidence app, with a pi
 ## What I built
 
 - bounded trust case and threat model
+- reduced claim surface: the repository only promises what the specimen and release path can prove
 - pinned demo specimen with observed outputs
 - verifier path showing valid and tampered behavior
 - local and hosted-CI specimen regeneration
@@ -41,6 +46,8 @@ The specimen had to be stabilized without weakening the invariant.
 
 That required fixing the cause of the mismatch rather than teaching the checks to ignore it.
 
+It also required shrinking the guarantee boundary until every remaining claim could survive hostile inspection.
+
 ## What I fixed
 
 - host-local timestamp rendering
@@ -50,6 +57,10 @@ That required fixing the cause of the mismatch rather than teaching the checks t
 ## How the trust case works
 
 The trust dossier defines the guarantee boundary and the threat model.
+
+That boundary is part of the point.
+
+ProofVault minimizes not user data collection, but unearned trust claims.
 
 The specimen gives the repository a pinned thing to prove against.
 
@@ -81,16 +92,19 @@ That difference mattered because the trust claim was not just "the code can pass
 
 The claim was that the public release itself could be inspected, reproduced, and tied to the exact hosted-green commit that produced it.
 
+That is a narrower claim surface than "trust us, it passed somewhere once," and therefore a stronger one.
+
 ## Outcome
 
 - trust specimen is reproducible and release-bound
+- guarantee surface is smaller and more defensible
 - hosted CI validates the final non-debug release tree
 - `proofvault-trust-case-v1.0` remains immutable
 - `proofvault-trust-case-v1.0.1` publishes the corrected hosted-stable release
 
 ## Impact line
 
-Trust made legible, reproducible, and release-bound.
+Trust claims narrowed, legible, reproducible, and release-bound.
 
 ## Where to inspect next
 

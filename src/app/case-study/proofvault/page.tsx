@@ -9,7 +9,7 @@ import { loadDossier, loadProject } from "@/content/load";
 export const metadata = {
   title: "ProofVault Trust Case v1.0.1",
   description:
-    "A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and hosted-CI-backed release provenance.",
+    "A reproducible trust case for an offline-first encrypted evidence app, with a bounded guarantee surface, pinned specimen, drift enforcement, and hosted-CI-backed release provenance.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg") }],
   },
@@ -36,7 +36,7 @@ export default function ProofVaultCaseStudyPage() {
           ProofVault Trust Case v1.0.1
         </h1>
         <p className="mt-3 max-w-4xl text-base text-white/80 sm:text-lg">
-          A reproducible trust case for an offline-first encrypted evidence app, with a pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
+          A reproducible trust case for an offline-first encrypted evidence app, with a bounded guarantee surface, pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? project.description}
@@ -70,7 +70,10 @@ export default function ProofVaultCaseStudyPage() {
                 ProofVault now carries part of its own proof burden in the repository.
               </p>
               <p>
-                I built a trust dossier, a pinned specimen, automated regeneration and drift detection, and a hosted-CI-enforced release path that makes trust claims inspectable instead of aspirational.
+                I built a trust dossier, a pinned specimen, automated regeneration and drift detection, and a hosted-CI-enforced release path that narrows the public claim to what the evidence can actually support.
+              </p>
+              <p>
+                The guarantee boundary was narrowed until the remaining claims could survive skeptical review.
               </p>
             </div>
           </Panel>
@@ -80,13 +83,11 @@ export default function ProofVaultCaseStudyPage() {
               src="/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
               alt="ProofVault trust case excerpt proof card"
               title="Bounded claim"
-              body="Best placed immediately after the summary because it visualizes the exact trust case the page is describing."
             />
             <AssetFigure
               src="/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg"
               alt="ProofVault release-bound artifact hash proof card"
               title="Hosted-green release binding"
-              body="Fits beside the bounded claim because the case study keeps returning to reproducibility and release provenance."
             />
           </div>
 
@@ -96,6 +97,7 @@ export default function ProofVaultCaseStudyPage() {
               <ul className="mt-4 space-y-2 text-sm text-white/70">
                 {[
                   "Bounded trust case and threat model.",
+                  "Reduced claim surface so the public guarantee matches what the evidence can actually support.",
                   "Pinned demo specimen with observed outputs.",
                   "Verifier path showing valid and tampered behavior.",
                   "Local and hosted-CI specimen regeneration.",
@@ -161,7 +163,7 @@ export default function ProofVaultCaseStudyPage() {
             </ul>
 
             <p className="mt-6 text-base font-semibold text-white">
-              Trust made legible, reproducible, and release-bound.
+              Trust claims narrowed, legible, reproducible, and release-bound.
             </p>
           </Panel>
         </div>
@@ -201,7 +203,7 @@ export default function ProofVaultCaseStudyPage() {
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li className="flex gap-2">
                 <span className="mt-[2px] text-white/40">•</span>
-                <span>Trust claims are inspectable instead of rhetorical.</span>
+                <span>Trust claims are narrowed and inspectable instead of rhetorical.</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-[2px] text-white/40">•</span>

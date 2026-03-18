@@ -7,7 +7,7 @@ import { loadDossier, loadProject } from "@/content/load";
 
 export const metadata = {
   title: "PainTracker Case Study",
-  description: "How PainTracker reduced trust risk with local-first architecture, offline-capable flows, and explicit proof surfaces.",
+  description: "How PainTracker reduced dangerous data collection with a minimization-first redesign, local-first architecture, and explicit proof surfaces.",
 };
 
 export const revalidate = 21600;
@@ -42,7 +42,7 @@ export default async function PainTrackerCaseStudyPage() {
       <div className="mt-6">
         <div className="cc-kicker">Flagship case study</div>
         <h1 className="mt-3 max-w-4xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          PainTracker: reducing trust risk in a chronic-pain workflow without forcing users into accounts or always-on sync
+          PainTracker: minimization-first redesign for a chronic-pain workflow without forced accounts or always-on sync
         </h1>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           {dossier?.tagline ?? project.description}
@@ -71,11 +71,46 @@ export default async function PainTrackerCaseStudyPage() {
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <Panel className="p-7 sm:p-8">
-            <div className="text-sm font-semibold">Starting condition</div>
-            <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
-              <p>
-                Most pain tracking tools assume stable connectivity, high attention, and willingness to centralize intimate health data. For people living with chronic pain, those assumptions fail precisely when continuity matters most.
-              </p>
+            <div className="text-sm font-semibold">Minimization delta</div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Before</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Most pain tracking tools assume stable connectivity, high attention, accounts, and willingness to centralize intimate health data as a default operating condition.
+                </p>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">After</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  Core logging stays on-device by default, primary use does not require sign-up, and sharing moves through explicit export instead of background collection or ambient sync.
+                </p>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Removed by default</div>
+                <ul className="mt-2 space-y-2 text-sm text-white/70">
+                  <li className="flex gap-2">
+                    <span className="mt-[2px] text-white/40">•</span>
+                    <span>Default account capture for core symptom logging.</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-[2px] text-white/40">•</span>
+                    <span>Background sharing assumptions that turn records into centralized exhaust.</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Preserved without the extra collection</div>
+                <ul className="mt-2 space-y-2 text-sm text-white/70">
+                  <li className="flex gap-2">
+                    <span className="mt-[2px] text-white/40">•</span>
+                    <span>Offline-capable logging during low bandwidth, low battery, or interrupted sessions.</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-[2px] text-white/40">•</span>
+                    <span>User-initiated export for clinicians, records, or advocacy workflows when needed.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Panel>
 
@@ -113,30 +148,30 @@ export default async function PainTrackerCaseStudyPage() {
           </div>
 
           <Panel className="mt-4 p-7 sm:p-8">
-            <div className="text-sm font-semibold">Hardening moves</div>
+            <div className="text-sm font-semibold">Proof you can inspect</div>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Data posture</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Boundary statement</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Default ownership stays on-device. Core use does not require an account, and sharing is user-initiated rather than ambient.
+                  Core use refuses account-first collection and keeps day-to-day ownership on-device by default.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Degraded-mode behavior</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Data inventory + purpose</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Logging remains available offline so the product continues working when connectivity is partial or absent.
+                  Stored categories are bounded to the working record needed for pain logging, not open-ended behavioral exhaust.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Interaction design</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Retention + deletion posture</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Flows are simplified for low energy and cognitive overload, so users can keep going without needing ideal conditions.
+                  The working record persists locally until the user edits, exports, or removes it through explicit action.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Proof surface</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Export and sharing</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  The system is backed by a live deployment, repository, dossier, and artifact viewers so claims can be independently checked.
+                  Sharing is explicit and user-initiated, replacing silent sync assumptions with deliberate export behavior the buyer can inspect.
                 </p>
               </div>
             </div>
@@ -169,10 +204,13 @@ export default async function PainTrackerCaseStudyPage() {
                 Full dossier
               </Button>
               <Button href="/artifacts/pain-tracker/architecture" variant="ghost" className="justify-start">
-                Architecture artifact
+                Boundary statement + architecture artifact
               </Button>
               <Button href="/artifacts/pain-tracker/ui-01-fastlog" variant="ghost" className="justify-start">
-                Fast-log UI artifact
+                Collection defaults audit
+              </Button>
+              <Button href="/artifacts/pain-tracker/ui-02" variant="ghost" className="justify-start">
+                User-initiated sharing design
               </Button>
             </div>
           </Panel>

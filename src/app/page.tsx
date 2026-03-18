@@ -16,7 +16,7 @@ export default function HomePage() {
           Defensible Trust Architecture for Sensitive-Data Products
         </h1>
         <p className="mt-5 text-xl font-semibold text-white">
-          Two-week Trust Hardening Review for products that cannot afford trust failure.
+          Two-week Trust Hardening Review that cuts dangerous data collection, makes boundaries explicit, and leaves you with a roadmap your team can ship.
         </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
           For post-MVP teams building tools for clinicians, advocates, operators, and people under coercive pressure.
@@ -60,7 +60,7 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you leave with</div>
               <div className="mt-2 text-base font-semibold">Defensibility Packet</div>
               <p className="mt-2 text-sm leading-relaxed text-white/70">
-                Threat model snapshot, abuse cases, trust boundaries, quick wins, and a now/next/later roadmap.
+                Boundary statement, data inventory and purpose map, collection defaults audit, retention and deletion plan, and a now/next/later roadmap.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -76,7 +76,6 @@ export default function HomePage() {
             src="/assets/founder-banners/site_hero_banner.svg"
             alt="CrisisCore site hero banner showing protective computing positioning"
             title="Hero surface"
-            body="This banner now anchors the front-door pitch instead of leaving the home hero text-only."
           />
         </div>
 
@@ -84,6 +83,120 @@ export default function HomePage() {
           Default ownership stays on-device. Cloud is optional, not assumed. Pricing is discussed after fit is established.
         </div>
       </Panel>
+
+      <Section title="Defensibility Packet Preview" kicker="What you actually get">
+        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <AssetFigure
+            src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
+            alt="Redacted Defensibility Packet preview showing packet outline, measurable endpoints, and required access"
+            title="Redacted packet specimen"
+            className="h-full"
+            imageClassName="object-cover p-0"
+          />
+
+          <div className="grid gap-4">
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">What this preview makes concrete</h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/75">
+                <li>• The packet is a real deliverable shape, not a vague consulting promise</li>
+                <li>• The end state is measurable: ranked risks, explicit boundaries, offline findings</li>
+                <li>• The access boundary is visible, so the two-week scope reads as bounded</li>
+              </ul>
+            </div>
+
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">Open the artifact</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                Inspect the preview directly.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Button href="/artifacts/security-and-audits/defensibility-packet-preview" variant="ghost">
+                  Open packet preview
+                </Button>
+                <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost">
+                  Open redacted artifact
+                </Button>
+                <Button href="/proof" variant="ghost">
+                  See proof surface
+                </Button>
+              </div>
+            </div>
+
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">What gets proved by the end</h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/75">
+                <li>• Boundary statement your team can review and accept</li>
+                <li>• Top 10 risks ranked by severity, blast radius, and fix effort</li>
+                <li>• Data inventory before/after decisions called out explicitly</li>
+                <li>• Offline critical-path findings for the flows that matter most</li>
+              </ul>
+            </div>
+
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">What I need from you</h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/75">
+                <li>• Repo, docs, and deployment links</li>
+                <li>• One technical owner and one decision-maker</li>
+                <li>• A small number of working sessions, not a meeting-heavy process</li>
+                <li>• Enough access to inspect the critical flows without blocking on procurement churn</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Fast Fit" kicker="Qualify early">
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">Great fit</h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/75">
+                <li>• Post-MVP product with live usage or an imminent launch</li>
+                <li>• Sensitive, harm-prone, or coercion-sensitive data</li>
+                <li>• One technical owner and one decision-maker available</li>
+                <li>• Team is willing to reduce collection and enforce boundaries</li>
+              </ul>
+            </div>
+
+            <div className="cc-card p-6">
+              <h3 className="text-base font-semibold">Not for</h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/75">
+                <li>• Idea-stage MVP builds or generic staff augmentation</li>
+                <li>• Checkbox compliance shopping without product changes</li>
+                <li>• Generic pentest replacement expectations</li>
+                <li>• Teams with no owner, no authority, or meeting-heavy churn</li>
+              </ul>
+            </div>
+          </div>
+
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">Works well with</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Product-facing trust work where architecture, defaults, and degraded-mode behavior matter more than a generic audit checklist.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
+                Web apps, PWAs, and mobile-adjacent products with critical user flows
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
+                Clinician-adjacent, HIPAA-adjacent, and trust-sensitive startup products
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
+                SOC2-bound teams that need product reality, not compliance theater
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
+                Internal operator systems with incident pressure, degraded conditions, or coercion risk
+              </div>
+            </div>
+
+            <div className="mt-5 text-sm text-white/70">
+              Not a generic pentest. Not a paper-only audit. The focus is product-facing trust boundaries, minimization decisions, offline resilience, and a ship-ready roadmap.
+            </div>
+          </Panel>
+        </div>
+      </Section>
 
       <Section title="Who hires me and when" kicker="Fit first">
         <div className="grid gap-4 md:grid-cols-3">
@@ -161,10 +274,10 @@ export default function HomePage() {
         <div className="cc-card p-7">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
             <ul className="space-y-3 text-sm text-white/80">
-              <li>• Highest-risk failure paths and abuse cases, clearly mapped</li>
-              <li>• Simpler data model with explicit boundaries and exits</li>
-              <li>• Prioritized hardening roadmap your team can ship</li>
-              <li>• Clear trust narrative for users, partners, and investors</li>
+              <li>• Data inventory + purpose map for sensitive categories and flows</li>
+              <li>• Collection defaults audit showing what is reduced, refused, or made explicit</li>
+              <li>• Retention and deletion plan with concrete boundary decisions</li>
+              <li>• User-initiated sharing design plus a prioritized hardening roadmap</li>
             </ul>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -172,13 +285,11 @@ export default function HomePage() {
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
                 title="Front-door review"
-                body="Best fit for the page's core offer: a fixed-scope trust hardening review for post-MVP teams."
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
                 title="Primary deliverable"
-                body="Matches the handoff language already used across the site for the artifact-first output."
               />
             </div>
           </div>
@@ -195,11 +306,11 @@ export default function HomePage() {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Threat model snapshot + abuse cases</li>
-              <li>• Boundary statement + data-flow trust map</li>
-              <li>• Top 10 risks + quick wins + now/next/later roadmap</li>
+              <li>• Boundary statement + data inventory + purpose map</li>
+              <li>• Collection defaults audit + retention/deletion plan + roadmap</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
-              Best first move if you need to know where trust breaks and what to fix first.
+              Use this when you need to know where trust breaks and what to fix first.
             </p>
           </div>
 
@@ -235,31 +346,66 @@ export default function HomePage() {
         <div className="grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
           <div className="cc-card p-7">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker.ca</div>
-            <h3 className="mt-2 text-xl font-semibold">Before, risk, intervention, outcome</h3>
+            <h3 className="mt-2 text-xl font-semibold">Minimization-first redesign</h3>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
+              Reduce collection by default, keep core use on-device, and make sharing explicit.
+            </p>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               <div>
                 <div className="text-sm font-semibold text-white">Before</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Pain documentation tools often assume accounts, always-on sync, and high user energy.
+                  Pain documentation tools often collect intimate symptom history into centralized accounts, assume always-on sync, and persist records beyond the user&apos;s immediate control.
                 </p>
               </div>
               <div>
-                <div className="text-sm font-semibold text-white">Risk</div>
+                <div className="text-sm font-semibold text-white">After</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Sensitive health data becomes centralized exhaust, while the tool fails exactly when stress and connectivity get worse.
+                  Core logging stays local by default, no sign-up is required for primary use, and sharing happens through explicit user-initiated export paths.
                 </p>
               </div>
               <div>
-                <div className="text-sm font-semibold text-white">Intervention</div>
-                <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Local-first storage, offline-capable logging, explicit exports, and a reduced-friction flow designed for cognitive overload.
-                </p>
+                <div className="text-sm font-semibold text-white">Minimization delta</div>
+                <ul className="mt-2 space-y-2 text-sm leading-relaxed text-white/70">
+                  <li>• Removed default collection paths that push sensitive entries into centralized account systems</li>
+                  <li>• Moved symptom logging and day-to-day ownership to on-device storage by default</li>
+                  <li>• Replaced background sharing assumptions with explicit export the user initiates when needed</li>
+                </ul>
               </div>
               <div>
-                <div className="text-sm font-semibold text-white">Outcome</div>
+                <div className="text-sm font-semibold text-white">Why it matters</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  Core use without sign-up, no background sharing by default, and a live PWA that keeps working under degraded conditions.
+                  The product stays usable under degraded conditions without expanding collection surface area just to preserve convenience.
                 </p>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="text-sm font-semibold text-white">Proof you can inspect</div>
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/45">Boundary statement</div>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                    Core use refuses account-first collection and avoids background sharing as the default operating model.
+                  </p>
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/45">Data inventory</div>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                    Sensitive categories and their purpose are mapped so collection is justified, bounded, and inspectable.
+                  </p>
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/45">Retention and deletion</div>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                    Retention follows user-controlled local ownership by default, with deletion posture kept legible instead of implied.
+                  </p>
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/45">Export and sharing</div>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                    Sharing paths are explicit and user-initiated, replacing silent sync assumptions with deliberate export behavior.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -269,8 +415,8 @@ export default function HomePage() {
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li>• Live deployment</li>
               <li>• Public repository</li>
-              <li>• Architecture and UI artifacts</li>
-              <li>• Dossier with problem → constraints → method → proof → outputs</li>
+              <li>• Boundary statement, architecture, and UI artifacts</li>
+              <li>• Dossier with problem → constraints → minimization decisions → proof → outputs</li>
             </ul>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -283,26 +429,44 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Fit filters" kicker="Qualification">
+      <Section title="More Proof Snapshots" kicker="Beyond one flagship">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Great fit</h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• Post-MVP (live usage or imminent launch)</li>
-              <li>• You handle sensitive, harm-prone data</li>
-              <li>• Resourced team with implementation budget</li>
-              <li>• One decision-maker + one technical owner</li>
-              <li>• Willing to minimize data and enforce boundaries</li>
-            </ul>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault</div>
+            <h3 className="mt-2 text-base font-semibold">Bounded trust evidence for a release path</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              ProofVault narrows the public claim to what a pinned specimen, verifier path, drift enforcement, and hosted-green release provenance can prove.
+            </p>
+            <div className="mt-4 text-sm text-white/80">
+              Output: smaller claim surface, reproducible specimen, release-bound provenance.
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button href="/case-study/proofvault" variant="ghost">
+                Open case study
+              </Button>
+              <Button href="/writing/proofvault-trust-case-v1-0-1" variant="ghost">
+                Open article
+              </Button>
+            </div>
           </div>
 
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Not a fit</h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• Idea-stage “build my MVP cheap”</li>
-              <li>• Teams unwilling to change data collection behavior</li>
-              <li>• No ownership, no authority, committee churn</li>
-            </ul>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Security and audits</div>
+            <h3 className="mt-2 text-base font-semibold">Audit output shaped for operators, not theater</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              This work turns threat boundaries, reproduction paths, and remediation evidence into a bounded risk register and verification plan.
+            </p>
+            <div className="mt-4 text-sm text-white/80">
+              Output: top findings, explicit assumptions, verification steps, operator-ready next actions.
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button href="/proof" variant="ghost">
+                Open proof page
+              </Button>
+              <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost">
+                Open redacted artifact
+              </Button>
+            </div>
           </div>
         </div>
       </Section>

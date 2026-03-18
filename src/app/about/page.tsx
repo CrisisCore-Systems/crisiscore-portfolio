@@ -135,7 +135,6 @@ export default function AboutPage() {
             src="/assets/founder-banners/about_mission_plate.svg"
             alt="About mission plate graphic for CrisisCore Systems"
             title="Mission plate"
-            body="This fits the about page best because it reinforces the positioning and gives the right column a visible anchor."
           />
 
           <Panel className="mt-4 p-7 sm:p-8">

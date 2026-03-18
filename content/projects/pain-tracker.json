@@ -1,9 +1,9 @@
 {
   "slug": "pain-tracker",
   "title": "PainTracker.ca",
-  "subtitle": "Local-first chronic pain tracking",
-  "summary": "Privacy-first chronic pain tracking PWA. Local-first by default. Offline-capable.",
-  "description": "A privacy-first, offline-capable pain documentation system designed for cognitive overload and degraded conditions. No accounts required. Data stays local by default.",
+  "subtitle": "Minimization-first chronic pain tracking",
+  "summary": "Minimization-first chronic pain tracking PWA. Local-first by default. Explicit export instead of ambient sharing.",
+  "description": "A minimization-first, offline-capable pain documentation system designed for cognitive overload and degraded conditions. No accounts required for core use. Data stays local by default and sharing is explicit.",
   "tags": ["Local-first", "PWA", "Privacy", "Protective UX"],
   "links": [
     { "label": "Live app", "href": "https://paintracker.ca", "kind": "external" },

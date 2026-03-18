@@ -1,17 +1,18 @@
 {
   "slug": "proofvault",
-  "tagline": "Trust made legible, reproducible, and release-bound through a pinned specimen, drift enforcement, and hosted-CI provenance.",
+  "tagline": "A deliberately bounded trust case that reduces unearned claim surface through a pinned specimen, drift enforcement, and hosted-CI provenance.",
   "problem": {
     "title": "Problem",
     "body": [
       "Security-sensitive products routinely make trust claims that cannot be independently checked after the fact. A release says the right words, but the evidence chain is incomplete.",
-      "For ProofVault, local success was not enough. The trust case had to survive hosted CI, bind to a final non-debug release tree, and fail loudly when trust-critical output drifted."
+      "For ProofVault, local success was not enough. The trust case had to survive hosted CI, bind to a final non-debug release tree, fail loudly when trust-critical output drifted, and refuse claims the repository could not actually prove."
     ]
   },
   "constraints": {
     "title": "Constraints",
     "items": [
       "Bound the guarantees: define exactly what the trust case proves and where the threat model stops.",
+      "Reduce the claim surface: promise less, but make every remaining claim inspectable.",
       "Keep the specimen pinned and inspectable without weakening the invariant when drift appears.",
       "Make hosted CI authoritative so a release cannot rely on a locally-green but cross-environment-brittle path.",
       "Preserve provenance across v1.0 and v1.0.1 with immutable public tags."
@@ -21,6 +22,7 @@
     "title": "Method",
     "body": [
       "The repository now carries part of its own proof burden: a trust dossier, a pinned demo specimen, observed outputs, a verifier path for valid and tampered behavior, and automation for regeneration.",
+      "The point is not to inflate the trust story, but to narrow it to claims that can survive skeptical review.",
       "Drift detection enforces the invariant by failing when trust-critical output changes, while hosted CI validates the final non-debug release tree before the public tagged cut is accepted.",
       "Cross-environment instability was fixed at source by normalizing timestamp rendering, eliminating archive metadata drift, and pinning specimen metadata independently from the live Node patch version."
     ]
@@ -37,6 +39,7 @@
   "outcomes": {
     "title": "Outcomes",
     "items": [
+      "Claim surface is deliberately narrowed: the public guarantee is limited to what the specimen, verifier path, and hosted release can prove.",
       "Pinned specimen is reproducible across local and hosted CI execution paths.",
       "Verifier path demonstrates both valid and tampered behavior against the same specimen.",
       "Hosted CI now validates the final non-debug release tree instead of a debug-adjacent surrogate.",

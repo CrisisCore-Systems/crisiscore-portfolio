@@ -1,9 +1,9 @@
 {
   "slug": "proofvault",
   "title": "ProofVault Trust Case v1.0.1",
-  "subtitle": "Release-bound trust evidence for an offline-first encrypted evidence app",
-  "summary": "A reproducible trust case with a pinned specimen, drift detection, verifier coverage, and a hosted-green release path.",
-  "description": "ProofVault turns trust claims into inspectable release evidence: bounded guarantees, a pinned specimen, regeneration and drift checks, and public provenance tied to an exact hosted-green non-debug commit.",
+  "subtitle": "Release-bound evidence with a deliberately bounded guarantee surface",
+  "summary": "A reproducible trust case that reduces unearned claim surface through a pinned specimen, drift detection, verifier coverage, and a hosted-green release path.",
+  "description": "ProofVault turns trust claims into inspectable release evidence by narrowing the guarantee boundary: a pinned specimen, regeneration and drift checks, and public provenance tied to an exact hosted-green non-debug commit.",
   "tags": ["Trust case", "Release integrity", "CI", "Reproducibility"],
   "links": [
     { "label": "Case study", "href": "/case-study/proofvault", "kind": "internal" },

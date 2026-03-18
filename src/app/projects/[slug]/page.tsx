@@ -214,7 +214,6 @@ export default async function ProjectPage({
                   src={dossier.architecture.diagram.src}
                   alt={dossier.architecture.diagram.alt}
                   title="Architecture diagram"
-                  body="Visual context for the operating boundary and system shape described in this dossier."
                 />
 
                 {getArtifactByRawPath(dossier.architecture.diagram.src) ? (
