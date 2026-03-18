@@ -33,35 +33,42 @@ export async function GET() {
       expectedStatus: 200,
       expectedContentType: "application/xml",
       role: "mirror",
-      note: "May be selectively blocked for some crawler networks.",
+      note: "XML mirror for non-browser clients; verify from a second network when auditing.",
+    },
+    {
+      url: `${SITE.url}/rss.xml`,
+      expectedStatus: 200,
+      expectedContentType: "application/rss+xml",
+      role: "mirror",
+      note: "RSS mirror for non-browser clients; some extractors will not render the body.",
     },
     {
       url: `${SITE.url}/projects/pain-tracker/architecture.svg`,
       expectedStatus: 200,
       expectedContentType: "image/svg+xml",
       role: "mirror",
-      note: "May be selectively blocked for some crawler networks.",
+      note: "Raw mirror; verify from a second network when auditing.",
     },
     {
       url: `${SITE.url}/projects/pain-tracker/ui-01.svg`,
       expectedStatus: 200,
       expectedContentType: "image/svg+xml",
       role: "mirror",
-      note: "May be selectively blocked for some crawler networks.",
+      note: "Raw mirror; verify from a second network when auditing.",
     },
     {
       url: `${SITE.url}/projects/security-and-audits/redacted-threat-model-excerpt.md`,
       expectedStatus: 200,
       expectedContentType: "text/markdown",
       role: "mirror",
-      note: "May be selectively blocked for some crawler networks.",
+      note: "Raw mirror; verify from a second network when auditing.",
     },
   ];
 
   return Response.json(
     {
       generatedAt: new Date().toISOString(),
-      note: "Expected fetchability targets for non-browser verification.",
+      note: "Expected fetchability targets for non-browser verification, including cross-network mirror checks.",
       checks,
     },
     {

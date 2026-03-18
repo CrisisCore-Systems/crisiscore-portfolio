@@ -489,7 +489,7 @@ export default async function ProofPage() {
       <Panel className="mt-4 p-7">
         <div className="text-sm font-semibold">Fetchability diagnostics</div>
         <p className="mt-2 text-sm text-white/70">
-          Quick verifier for non-browser clients. Primary checks are HTML-first; mirror checks include raw endpoints that may be selectively blocked.
+          Quick verifier for non-browser clients. Primary checks are HTML-first; mirror checks cover XML, RSS, and raw mirrors that should also be verified from a second network.
         </p>
 
         <div className="mt-4 text-xs uppercase tracking-[0.2em] text-white/50">Primary checks</div>
@@ -525,6 +525,10 @@ export default async function ProofPage() {
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/sitemap.xml")}>/sitemap.xml</a>
             <span className="text-white/55"> — XML mirror for crawlers</span>
+          </li>
+          <li>
+            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/rss.xml")}>/rss.xml</a>
+            <span className="text-white/55"> — RSS mirror for non-browser readers</span>
           </li>
           <li>
             • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/architecture")}>/artifacts/pain-tracker/architecture</a>

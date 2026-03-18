@@ -1,0 +1,53 @@
+name: Fetchability Check
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  verify-live-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live proof surface
+        env:
+          BASE_URL: https://crisiscore-portfolio.vercel.app
+        run: |
+          set -euo pipefail
+
+          check_headers() {
+            url="$1"
+            expected_status="$2"
+            expected_type="$3"
+
+            headers=$(curl -sS -D - -o /dev/null "$url")
+            echo "$headers"
+
+            status=$(printf '%s\n' "$headers" | awk 'toupper($1) ~ /^HTTP\// { print $2; exit }')
+            content_type=$(printf '%s\n' "$headers" | awk 'BEGIN { IGNORECASE = 1 } /^content-type:/ { sub(/\r$/, "", $0); sub(/^content-type:[[:space:]]*/, "", $0); print; exit }')
+
+            test "$status" = "$expected_status"
+            printf '%s' "$content_type" | grep -F "$expected_type" >/dev/null
+          }
+
+          check_body() {
+            url="$1"
+            expected_fragment="$2"
+            body=$(curl -sS "$url")
+            printf '%s\n' "$body" | head -n 12
+            printf '%s' "$body" | grep -F "$expected_fragment" >/dev/null
+          }
+
+          check_headers "$BASE_URL/site-map" 200 "text/html"
+          check_headers "$BASE_URL/artifacts/pain-tracker/architecture" 200 "text/html"
+          check_headers "$BASE_URL/artifacts/pain-tracker/ui-01-fastlog" 200 "text/html"
+          check_headers "$BASE_URL/artifacts/security-and-audits/redacted-threat-model-excerpt" 200 "text/html"
+          check_headers "$BASE_URL/sitemap.xml" 200 "application/xml"
+          check_headers "$BASE_URL/rss.xml" 200 "application/rss+xml"
+          check_headers "$BASE_URL/projects/pain-tracker/architecture.svg" 200 "image/svg+xml"
+          check_headers "$BASE_URL/projects/pain-tracker/ui-01.svg" 200 "image/svg+xml"
+          check_headers "$BASE_URL/projects/security-and-audits/redacted-threat-model-excerpt.md" 200 "text/markdown"
+
+          check_body "$BASE_URL/sitemap.xml" '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          check_body "$BASE_URL/rss.xml" '<rss version="2.0">'
