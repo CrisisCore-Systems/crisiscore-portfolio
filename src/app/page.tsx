@@ -47,8 +47,8 @@ export default function HomePage() {
           </Button>
         </div>
 
-        <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)] lg:items-start">
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4">
+          <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Front door</div>
               <div className="mt-2 text-base font-semibold">Trust Hardening Review</div>
@@ -75,7 +75,9 @@ export default function HomePage() {
           <AssetFigure
             src="/assets/founder-banners/site_hero_banner.svg"
             alt="CrisisCore site hero banner showing protective computing positioning"
-            title="Hero surface"
+            title="Engineered under unstable conditions"
+            mediaClassName="aspect-[16/8]"
+            imageClassName="object-contain p-0"
           />
         </div>
 
@@ -85,15 +87,16 @@ export default function HomePage() {
       </Panel>
 
       <Section title="Defensibility Packet Preview" kicker="What you actually get">
-        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div className="grid gap-4">
           <AssetFigure
             src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
             alt="Redacted Defensibility Packet preview showing packet outline, measurable endpoints, and required access"
             title="Redacted packet specimen"
+            mediaClassName="aspect-[16/8]"
             imageClassName="object-cover p-0"
           />
 
-          <div className="grid gap-4">
+          <div className="grid gap-4 lg:grid-cols-2">
             <div className="cc-card p-6">
               <h3 className="text-base font-semibold">What this preview makes concrete</h3>
               <ul className="mt-4 space-y-2 text-sm text-white/75">

@@ -208,7 +208,7 @@ export default async function ProofPage() {
         </Panel>
       </div>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_1fr]">
+      <div className="mt-4 grid gap-4">
         <Panel className="p-7 sm:p-8">
           <div className="cc-kicker">Release-bound trust case</div>
           <h2 className="mt-2 text-2xl font-semibold">ProofVault: bounded trust evidence tied to the hosted-green release</h2>
@@ -231,16 +231,20 @@ export default async function ProofPage() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 grid gap-5">
             <AssetFigure
               src="/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
               alt="ProofVault trust case excerpt proof card"
               title="Trust case excerpt"
+              mediaClassName="aspect-[16/9]"
+              imageClassName="object-contain p-0"
             />
             <AssetFigure
               src="/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg"
               alt="ProofVault release-bound artifact hash proof card"
               title="Release-bound provenance"
+              mediaClassName="aspect-[16/9]"
+              imageClassName="object-contain p-0"
             />
           </div>
         </Panel>
@@ -410,21 +414,27 @@ export default async function ProofPage() {
         </Panel>
       </div>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-3">
+      <div className="mt-4 grid gap-4">
         <AssetFigure
           src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
           alt="Defensibility Packet preview artifact"
           title="Defensibility Packet preview"
+          mediaClassName="aspect-[16/9]"
+          imageClassName="object-contain p-0"
         />
         <AssetFigure
           src="/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg"
           alt="Local authority versus cloud dependence diagram"
           title="Trust boundary reference"
+          mediaClassName="aspect-[16/9]"
+          imageClassName="object-contain p-0"
         />
         <AssetFigure
           src="/assets/diagram_plates/diagram_03_threat_boundary_map.svg"
           alt="Threat boundary map diagram"
           title="Audit boundary reference"
+          mediaClassName="aspect-[16/9]"
+          imageClassName="object-contain p-0"
         />
       </div>
 
