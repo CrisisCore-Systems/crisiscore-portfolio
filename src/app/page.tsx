@@ -271,7 +271,7 @@ export default function HomePage() {
 
       <Section title="What you get" kicker="Deliverables">
         <div className="cc-card p-7">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
             <ul className="space-y-3 text-sm text-white/80">
               <li>• Data inventory + purpose map for sensitive categories and flows</li>
               <li>• Collection defaults audit showing what is reduced, refused, or made explicit</li>
@@ -284,11 +284,13 @@ export default function HomePage() {
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
                 title="Front-door review"
+                imageClassName="object-contain p-0"
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
                 title="Primary deliverable"
+                imageClassName="object-contain p-0"
               />
             </div>
           </div>
