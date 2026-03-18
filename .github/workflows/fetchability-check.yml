@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '17 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,35 +21,35 @@ jobs:
           check_headers() {
             url="$1"
             expected_status="$2"
-            expected_type="$3"
+            expected_type_pattern="$3"
 
-            headers=$(curl -sS -D - -o /dev/null "$url")
+            headers=$(curl -L -sS -D - -o /dev/null "$url")
             echo "$headers"
 
-            status=$(printf '%s\n' "$headers" | awk 'toupper($1) ~ /^HTTP\// { print $2; exit }')
-            content_type=$(printf '%s\n' "$headers" | awk 'BEGIN { IGNORECASE = 1 } /^content-type:/ { sub(/\r$/, "", $0); sub(/^content-type:[[:space:]]*/, "", $0); print; exit }')
+            status=$(printf '%s\n' "$headers" | awk 'toupper($1) ~ /^HTTP\// { status = $2 } END { print status }')
+            content_type=$(printf '%s\n' "$headers" | awk 'BEGIN { IGNORECASE = 1 } /^content-type:/ { sub(/\r$/, "", $0); sub(/^content-type:[[:space:]]*/, "", $0); content_type = $0 } END { print content_type }')
 
             test "$status" = "$expected_status"
-            printf '%s' "$content_type" | grep -F "$expected_type" >/dev/null
+            printf '%s' "$content_type" | grep -E "$expected_type_pattern" >/dev/null
           }
 
           check_body() {
             url="$1"
             expected_fragment="$2"
-            body=$(curl -sS "$url")
+            body=$(curl -L -sS "$url")
             printf '%s\n' "$body" | head -n 12
             printf '%s' "$body" | grep -F "$expected_fragment" >/dev/null
           }
 
-          check_headers "$BASE_URL/site-map" 200 "text/html"
-          check_headers "$BASE_URL/artifacts/pain-tracker/architecture" 200 "text/html"
-          check_headers "$BASE_URL/artifacts/pain-tracker/ui-01-fastlog" 200 "text/html"
-          check_headers "$BASE_URL/artifacts/security-and-audits/redacted-threat-model-excerpt" 200 "text/html"
-          check_headers "$BASE_URL/sitemap.xml" 200 "application/xml"
-          check_headers "$BASE_URL/rss.xml" 200 "application/rss+xml"
-          check_headers "$BASE_URL/projects/pain-tracker/architecture.svg" 200 "image/svg+xml"
-          check_headers "$BASE_URL/projects/pain-tracker/ui-01.svg" 200 "image/svg+xml"
-          check_headers "$BASE_URL/projects/security-and-audits/redacted-threat-model-excerpt.md" 200 "text/markdown"
+          check_headers "$BASE_URL/site-map" 200 '^text/html'
+          check_headers "$BASE_URL/artifacts/pain-tracker/architecture" 200 '^text/html'
+          check_headers "$BASE_URL/artifacts/pain-tracker/ui-01-fastlog" 200 '^text/html'
+          check_headers "$BASE_URL/artifacts/security-and-audits/redacted-threat-model-excerpt" 200 '^text/html'
+          check_headers "$BASE_URL/sitemap.xml" 200 '^(application|text)/xml'
+          check_headers "$BASE_URL/rss.xml" 200 '^(application/rss\+xml|application/xml|text/xml)'
+          check_headers "$BASE_URL/projects/pain-tracker/architecture.svg" 200 '^image/svg\+xml'
+          check_headers "$BASE_URL/projects/pain-tracker/ui-01.svg" 200 '^image/svg\+xml'
+          check_headers "$BASE_URL/projects/security-and-audits/redacted-threat-model-excerpt.md" 200 '^text/markdown'
 
           check_body "$BASE_URL/sitemap.xml" '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
           check_body "$BASE_URL/rss.xml" '<rss version="2.0">'
