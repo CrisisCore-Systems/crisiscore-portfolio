@@ -1,5 +1,8 @@
+import fs from "node:fs";
+import path from "node:path";
 import { SITE } from "@/app/lib/site";
-import { loadWriting } from "@/content/load";
+import { ARTIFACTS } from "@/app/lib/artifacts";
+import { loadProjects, loadWriting } from "@/content/load";
 
 export const runtime = "nodejs";
 export const revalidate = 300;
@@ -13,25 +16,88 @@ function xmlEscape(value: string) {
     .replaceAll("'", "&apos;");
 }
 
+type SitemapEntry = {
+  path: string;
+  lastmod: string;
+};
+
+function toIsoOrNow(filePath?: string) {
+  if (!filePath) {
+    return new Date().toISOString();
+  }
+
+  try {
+    return fs.statSync(filePath).mtime.toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+}
+
+function publicPath(relativePath: string) {
+  return path.join(process.cwd(), "public", relativePath.replace(/^\//, ""));
+}
+
+function contentPath(...parts: string[]) {
+  return path.join(process.cwd(), "content", ...parts);
+}
+
+function uniqueEntries(entries: SitemapEntry[]) {
+  const seen = new Set<string>();
+
+  return entries.filter((entry) => {
+    if (seen.has(entry.path)) {
+      return false;
+    }
+
+    seen.add(entry.path);
+    return true;
+  });
+}
+
 export async function GET() {
-  const basePaths = [
-    "",
-    "/case-study/pain-tracker",
-    "/projects",
-    "/writing",
-    "/proof",
-    "/about",
-    "/contact",
-    "/rss.xml",
+  const staticEntries: SitemapEntry[] = [
+    { path: "", lastmod: toIsoOrNow() },
+    { path: "/projects", lastmod: toIsoOrNow() },
+    { path: "/writing", lastmod: toIsoOrNow() },
+    { path: "/proof", lastmod: toIsoOrNow() },
+    { path: "/about", lastmod: toIsoOrNow() },
+    { path: "/contact", lastmod: toIsoOrNow() },
+    { path: "/site-map", lastmod: toIsoOrNow() },
+    { path: "/rss.xml", lastmod: toIsoOrNow() },
+    {
+      path: "/case-study/pain-tracker",
+      lastmod: toIsoOrNow(contentPath("dossiers", "pain-tracker.json")),
+    },
+    {
+      path: "/case-study/proofvault",
+      lastmod: toIsoOrNow(contentPath("dossiers", "proofvault.json")),
+    },
   ];
 
-  const postPaths = loadWriting().map((post) => `/writing/${post.slug}`);
-  const now = new Date().toISOString();
+  const projectEntries: SitemapEntry[] = loadProjects().map((project) => ({
+    path: `/projects/${project.slug}`,
+    lastmod: toIsoOrNow(contentPath("projects", `${project.slug}.json`)),
+  }));
 
-  const urls = [...basePaths, ...postPaths]
-    .map((path) => {
-      const loc = xmlEscape(`${SITE.url}${path}`);
-      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n  </url>`;
+  const postEntries: SitemapEntry[] = loadWriting().map((post) => ({
+    path: `/writing/${post.slug}`,
+    lastmod: toIsoOrNow(contentPath("writing", `${post.slug}.mdx`)),
+  }));
+
+  const artifactEntries: SitemapEntry[] = ARTIFACTS.map((artifact) => ({
+    path: `/artifacts/${artifact.slug}`,
+    lastmod: toIsoOrNow(publicPath(artifact.rawPath)),
+  }));
+
+  const urls = uniqueEntries([
+    ...staticEntries,
+    ...projectEntries,
+    ...postEntries,
+    ...artifactEntries,
+  ])
+    .map((entry) => {
+      const loc = xmlEscape(`${SITE.url}${entry.path}`);
+      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${entry.lastmod}</lastmod>\n  </url>`;
     })
     .join("\n");
 
