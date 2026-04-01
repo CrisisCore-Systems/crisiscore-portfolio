@@ -66,6 +66,50 @@ a:hover { color: var(--acc); }
   --tw-prose-pre-bg: rgba(255,255,255,0.06);
 }
 
+.prose p {
+  margin: 1rem 0;
+  line-height: 1.9;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  display: block;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+  color: rgba(255,255,255,0.94);
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.prose h4 {
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin: 0.45rem 0;
+}
+
+.prose hr {
+  margin: 2rem 0;
+}
+
 .prose figure {
   margin: 2rem 0;
 }
