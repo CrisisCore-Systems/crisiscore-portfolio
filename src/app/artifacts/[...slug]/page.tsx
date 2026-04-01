@@ -73,7 +73,7 @@ export default async function ArtifactPage({
 
       <Panel className="mt-8 p-6 sm:p-8">
         {artifact.kind === "svg" ? (
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="artifact-svg overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
             <div
               className="h-auto w-full"
               aria-label={artifact.title}
