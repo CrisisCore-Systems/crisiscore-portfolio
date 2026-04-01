@@ -49,7 +49,7 @@ export default function WritingIndexPage() {
       </div>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-7">
+        <div className="order-2 lg:order-1 lg:col-span-7">
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Posts</div>
             <div className="mt-5 grid gap-3">
@@ -57,17 +57,21 @@ export default function WritingIndexPage() {
                 <Link
                   key={p.slug}
                   href={`/writing/${p.slug}`}
-                  className="cc-card p-6"
+                  className="cc-card group p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
                 >
                   <div className="text-xs text-white/55">
                     {p.frontmatter.date}
                   </div>
-                  <div className="mt-1 text-base font-semibold">
+                  <div className="mt-1 text-base font-semibold underline-offset-4 transition group-hover:underline">
                     {p.frontmatter.title}
                   </div>
                   <p className="mt-2 text-sm text-white/70">
                     {p.frontmatter.description}
                   </p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white/65 transition group-hover:text-white">
+                    <span>Read</span>
+                    <span className="transition group-hover:translate-x-0.5">→</span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -79,7 +83,7 @@ export default function WritingIndexPage() {
           </Panel>
         </div>
 
-        <div className="lg:col-span-5">
+        <div className="order-1 lg:order-2 lg:col-span-5">
           {canon ? (
             <Panel className="p-7 sm:p-8">
               <div className="cc-kicker">Selected writing</div>
@@ -89,16 +93,26 @@ export default function WritingIndexPage() {
               </p>
 
               <div className="mt-5 grid gap-2">
-                {canon.layers.slice(0, 3).flatMap((x) => x.links).slice(0, 3).map((l) => (
-                  <Button
-                    key={l.href}
-                    href={l.href}
-                    variant="ghost"
-                    className="justify-start"
-                  >
-                    {l.label} ↗
-                  </Button>
-                ))}
+                {canon.layers.slice(0, 3).map((layer) => {
+                  const primaryLink = layer.links.find(
+                    (link) => link.label === "DOI (Zenodo)" || link.label === "DOI"
+                  );
+
+                  if (!primaryLink) {
+                    return null;
+                  }
+
+                  return (
+                    <Button
+                      key={primaryLink.href}
+                      href={primaryLink.href}
+                      variant="ghost"
+                      className="justify-start"
+                    >
+                      {`DOI (${layer.title})`} ↗
+                    </Button>
+                  );
+                })}
               </div>
 
               <div className="mt-5 text-xs text-white/55">

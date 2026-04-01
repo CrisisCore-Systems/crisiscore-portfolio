@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
@@ -6,6 +5,15 @@ import { Section } from "@/components/Section";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+const HOME_SECTIONS = [
+  { href: "#proof-preview", label: "Packet preview", number: "01" },
+  { href: "#fast-fit", label: "Fast fit", number: "02" },
+  { href: "#services", label: "Services", number: "03" },
+  { href: "#framework", label: "Framework", number: "04" },
+  { href: "#flagship", label: "Flagship case", number: "05" },
+  { href: "#get-started", label: "Get started", number: "06" },
+];
 
 export default function HomePage() {
   return (
@@ -20,6 +28,9 @@ export default function HomePage() {
         </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
           For post-MVP teams building tools for clinicians, advocates, operators, and people under coercive pressure.
+        </p>
+        <p className="mt-2 text-sm text-white/70 sm:text-base">
+          Especially relevant for Canadian healthcare-adjacent and rural-serving products where low connectivity, intermittent infrastructure, and operator stress are part of the real deployment environment.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           If your product handles harm-prone data, the question is no longer whether the MVP works.
@@ -37,7 +48,7 @@ export default function HomePage() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact">
-            Send repo + context for fit check <ArrowUpRight className="ml-2 h-4 w-4" />
+            Send repo + context for fit check
           </Button>
           <Button href="/proof" variant="ghost">
             Proof & Artifacts
@@ -86,7 +97,26 @@ export default function HomePage() {
         </div>
       </Panel>
 
-      <Section title="Defensibility Packet Preview" kicker="What you actually get">
+      <nav
+        aria-label="Home page sections"
+        className="sticky top-16 z-20 mt-6 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 backdrop-blur"
+      >
+        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+          <div className="mr-2 text-[11px] uppercase tracking-[0.18em] text-white/45">Jump to</div>
+          {HOME_SECTIONS.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/70 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
+            >
+              <span className="font-mono text-white/45">{item.number}</span>
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <Section id="proof-preview" title="Defensibility Packet Preview" kicker="What you actually get">
         <div className="grid gap-4">
           <AssetFigure
             src="/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg"
@@ -119,9 +149,16 @@ export default function HomePage() {
                 <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost">
                   Open redacted artifact
                 </Button>
+                <Button href="/writing/proofvault-trust-case-v1-0-1" variant="ghost">
+                  Read technical trust case
+                </Button>
                 <Button href="/proof" variant="ghost">
                   See proof surface
                 </Button>
+              </div>
+
+              <div className="mt-4 text-xs text-white/55">
+                Technical evidence: pair the packet specimen with the trust-case article and the live version and deploy endpoints on the proof surface.
               </div>
             </div>
 
@@ -148,7 +185,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Fast Fit" kicker="Qualify early">
+      <Section id="fast-fit" title="Fast Fit" kicker="Qualify early">
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="cc-card p-6">
@@ -183,13 +220,13 @@ export default function HomePage() {
                 Web apps, PWAs, and mobile-adjacent products with critical user flows
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-                Clinician-adjacent, HIPAA-adjacent, and trust-sensitive startup products
+                Clinician-adjacent, Canadian healthcare-adjacent, and trust-sensitive startup products
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
                 SOC2-bound teams that need product reality, not compliance theater
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-                Internal operator systems with incident pressure, degraded conditions, or coercion risk
+                Internal operator systems with incident pressure, degraded conditions, rural connectivity constraints, or coercion risk
               </div>
             </div>
 
@@ -287,22 +324,22 @@ export default function HomePage() {
                 src="/assets/service-panels/trust_hardening_review.svg"
                 alt="Trust Hardening Review service panel"
                 title="Front-door review"
-                mediaClassName="aspect-[16/9]"
-                imageClassName="object-contain p-0"
+                mediaClassName="aspect-[16/9] bg-[radial-gradient(circle_at_top,rgba(210,241,255,0.2),rgba(157,223,255,0.1)_36%,rgba(8,12,18,0.9)_75%)]"
+                imageClassName="object-contain p-0 opacity-95 mix-blend-screen contrast-125 saturate-125 drop-shadow-[0_0_40px_rgba(157,223,255,0.18)]"
               />
               <AssetFigure
                 src="/assets/service-panels/defensibility_packet.svg"
                 alt="Defensibility Packet service panel"
                 title="Primary deliverable"
-                mediaClassName="aspect-[16/9]"
-                imageClassName="object-contain p-0"
+                mediaClassName="aspect-[16/9] bg-[radial-gradient(circle_at_top,rgba(255,179,71,0.16),rgba(210,241,255,0.1)_34%,rgba(8,12,18,0.9)_75%)]"
+                imageClassName="object-contain p-0 opacity-95 mix-blend-screen contrast-125 saturate-125 drop-shadow-[0_0_40px_rgba(210,241,255,0.16)]"
               />
             </div>
           </div>
         </div>
       </Section>
 
-      <Section title="Services" kicker="3 engagement paths">
+      <Section id="services" title="Services" kicker="3 engagement paths">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">1) Trust Hardening Review (front door)</h3>
@@ -348,7 +385,43 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Flagship walkthrough" kicker="Case-style proof">
+      <Section id="framework" title="Overton Framework at a glance" kicker="Methodology">
+        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <AssetFigure
+            src="/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg"
+            alt="Protective computing lifecycle diagram for the Overton Framework"
+            title="Protective computing lifecycle"
+            body="A compact visual of the discipline: doctrine, operational translation, and measurable audit surface."
+            mediaClassName="aspect-[16/9]"
+            imageClassName="object-contain p-0"
+          />
+
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">Why it matters</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              This is the operating model behind the work on this site. It gives non-technical buyers a fast picture of how protective computing moves from principle to implementation to auditable evidence.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <li>• Layer 1: doctrine and boundary assumptions</li>
+              <li>• Layer 2: operational translation into product decisions</li>
+              <li>• Layer 3: measurement and proof surfaces buyers can inspect</li>
+            </ul>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button href="/artifacts/overton-framework/protective-computing-lifecycle" variant="ghost">
+                Open lifecycle diagram
+              </Button>
+              <Button href="/writing/the-overton-framework" variant="ghost">
+                Read framework article
+              </Button>
+              <Button href="/projects/overton-framework" variant="ghost">
+                Open framework dossier
+              </Button>
+            </div>
+          </Panel>
+        </div>
+      </Section>
+
+      <Section id="flagship" title="Flagship walkthrough" kicker="Case-style proof">
         <div className="grid gap-4 lg:grid-cols-[1.4fr_0.9fr]">
           <div className="cc-card p-7">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker.ca</div>
@@ -483,17 +556,30 @@ export default function HomePage() {
             <li>• Before/after data-flow diagrams</li>
             <li>• Redacted trust artifacts: threat model, boundary map, decision log</li>
             <li>• Outcome tiles: less data, better offline coverage, lower support load and risk</li>
-            <li>• Build receipts: redacted PRs, release gates, checklists</li>
+            <li>• Build receipts: release identifiers, environment evidence, and linked technical walkthroughs</li>
             <li>• Method-specific testimonials</li>
           </ul>
           <p className="mt-4 text-sm text-white/70">
             Gives collaborators a testable vocabulary for protective design reviews and audits.
           </p>
+
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button href="/writing/proofvault-trust-case-v1-0-1" variant="ghost">
+              Build and trust-case article
+            </Button>
+            <Button href="/version.json" variant="ghost">
+              Live version metadata
+            </Button>
+            <Button href="/deploy-id" variant="ghost">
+              Live deploy ID
+            </Button>
+          </div>
         </div>
       </Section>
 
-      <Panel className="p-8 sm:p-10">
-        <div className="text-xs uppercase tracking-[0.2em] text-white/45">Close</div>
+      <div id="get-started" className="scroll-mt-28">
+        <Panel className="p-8 sm:p-10">
+        <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
         <h2 className="mt-2 text-2xl font-semibold">
           If your product handles high-stakes data, start with the review that shows where trust breaks.
         </h2>
@@ -502,13 +588,14 @@ export default function HomePage() {
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button href="/contact">
-            Send repo + context for fit check <ArrowUpRight className="ml-2 h-4 w-4" />
+            Send repo + context for fit check
           </Button>
           <Button href="/proof" variant="ghost">
             Review proof first
           </Button>
         </div>
-      </Panel>
+        </Panel>
+      </div>
     </div>
   );
 }

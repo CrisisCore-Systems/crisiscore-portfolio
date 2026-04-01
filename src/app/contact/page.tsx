@@ -1,6 +1,5 @@
 import { SITE } from "@/app/lib/site";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { Panel } from "@/components/ui/Panel";
 import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 import { CopyInquiryTemplateButton } from "@/components/CopyInquiryTemplateButton";
@@ -54,10 +53,22 @@ export default function ContactPage() {
               </Button>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              <Badge className="normal-case tracking-[0.08em]">Trust Hardening Review</Badge>
-              <Badge className="normal-case tracking-[0.08em]">Hardening Sprint</Badge>
-              <Badge className="normal-case tracking-[0.08em]">Fractional Trust Architect</Badge>
+            <div className="mt-6">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Typical engagement types</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {[
+                  "Trust Hardening Review",
+                  "Hardening Sprint",
+                  "Fractional Trust Architect",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md bg-white/[0.03] px-3 py-1.5 text-xs font-mono tracking-[0.08em] text-white/65"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="mt-6 text-xs text-white/55">
@@ -136,7 +147,7 @@ export default function ContactPage() {
           <Panel className="mt-4 p-7 sm:p-8">
             <div className="text-sm font-semibold">Web form fallback</div>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              If the email button doesn’t open a client on your device, use this form to generate and send your inquiry via webmail.
+              The most reliable path across devices is: generate the message, copy the inquiry text, and paste it into whatever mail client or secure channel you actually use. Gmail and Outlook shortcuts are optional convenience paths.
             </p>
             <div className="mt-4">
               <ContactFallbackForm to={SITE.email} />

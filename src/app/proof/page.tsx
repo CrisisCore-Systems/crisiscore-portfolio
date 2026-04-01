@@ -49,26 +49,41 @@ export default async function ProofPage() {
           Outcome-oriented, repo-visible, and verifiable under low-trust conditions.
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-3">
+        <div className="mt-7 flex flex-col items-start gap-3">
           <Button href="/case-study/pain-tracker">
             Review flagship case
           </Button>
-          <Button href="/artifacts/security-and-audits/defensibility-packet-preview" variant="ghost">
-            Open packet preview
-          </Button>
-          <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost">
-            Open redacted audit artifact
-          </Button>
-          <Button
-            href={canonPrimary?.href ?? "https://doi.org/10.5281/zenodo.18688516"}
-            variant="ghost"
-          >
-            Canon (DOI)
-            {" ↗"}
-          </Button>
-          <Button href="/contact" variant="ghost">
-            Send fit-check inquiry
-          </Button>
+          <div className="flex flex-wrap gap-2.5">
+            <Button
+              href="/artifacts/security-and-audits/defensibility-packet-preview"
+              variant="ghost"
+              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+            >
+              Open packet preview
+            </Button>
+            <Button
+              href="/artifacts/security-and-audits/redacted-threat-model-excerpt"
+              variant="ghost"
+              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+            >
+              Open redacted audit artifact
+            </Button>
+            <Button
+              href={canonPrimary?.href ?? "https://doi.org/10.5281/zenodo.18688516"}
+              variant="ghost"
+              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+            >
+              Canon (DOI)
+              {" ↗"}
+            </Button>
+            <Button
+              href="/contact"
+              variant="ghost"
+              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+            >
+              Send fit-check inquiry
+            </Button>
+          </div>
         </div>
       </Panel>
 
@@ -549,7 +564,7 @@ export default async function ProofPage() {
         </ul>
 
         <div className="mt-4 text-xs text-white/50">
-          Command check (GET, primary): curl -sS -D - -o NUL -A &quot;python-requests/2.31.0&quot; https://crisiscore-portfolio.vercel.app/site-map
+          Command check (GET, primary): curl -sS -D - -o NUL -A &quot;python-requests/2.31.0&quot; https://crisiscore-systems.ca/site-map
         </div>
       </Panel>
     </div>

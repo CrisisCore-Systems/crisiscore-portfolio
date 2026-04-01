@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Check live proof surface
         env:
-          BASE_URL: https://crisiscore-portfolio.vercel.app
+          BASE_URL: https://crisiscore-systems.ca
         run: |
           set -euo pipefail
 

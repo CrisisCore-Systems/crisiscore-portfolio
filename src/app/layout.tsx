@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { SITE } from "@/app/lib/site";
+import { PRIMARY_SITE_URL, SITE } from "@/app/lib/site";
 import { cn } from "@/lib/cn";
 import "./globals.css";
 
@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(PRIMARY_SITE_URL),
   title: { default: SITE.name, template: `%s · ${SITE.name}` },
   description: SITE.tagline,
   verification: {

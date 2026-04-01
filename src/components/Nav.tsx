@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -10,6 +13,8 @@ const links = [
 ];
 
 export function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="relative sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -34,7 +39,10 @@ export function Nav() {
           ))}
         </nav>
 
-        <details className="group md:hidden">
+        <details
+          className="group md:hidden"
+          onToggle={(event) => setMenuOpen(event.currentTarget.open)}
+        >
           <summary
             className="cursor-pointer list-none rounded-xl border border-white/10 bg-white/[0.04] p-2 text-white/80 hover:bg-white/[0.07] [&::-webkit-details-marker]:hidden"
             aria-label="Toggle menu"
@@ -49,6 +57,8 @@ export function Nav() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  tabIndex={menuOpen ? 0 : -1}
+                  aria-hidden={menuOpen ? undefined : true}
                   className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/80 hover:bg-white/[0.06] hover:text-white"
                 >
                   {l.label}

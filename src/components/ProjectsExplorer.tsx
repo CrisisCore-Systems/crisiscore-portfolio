@@ -56,7 +56,7 @@ export function ProjectsExplorer({
           <Link
             key={p.slug}
             href={`/projects/${p.slug}`}
-            className="cc-card group block p-6"
+            className="cc-card group block p-6 transition hover:border-white/20 hover:bg-white/[0.06]"
           >
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -69,6 +69,11 @@ export function ProjectsExplorer({
                       {t}
                     </Badge>
                   ))}
+                </div>
+
+                <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition group-hover:text-white">
+                  <span>View dossier</span>
+                  <span className="transition group-hover:translate-x-0.5">→</span>
                 </div>
               </div>
 

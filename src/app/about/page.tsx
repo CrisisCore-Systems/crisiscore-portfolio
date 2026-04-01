@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { absoluteUrl, SITE } from "@/app/lib/site";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Button } from "@/components/ui/Button";
@@ -132,10 +133,34 @@ export default function AboutPage() {
 
         <div className="lg:col-span-5">
           <AssetFigure
-            src="/assets/founder-banners/about_mission_plate.svg"
-            alt="About mission plate graphic for CrisisCore Systems"
-            title="Mission plate"
+            src="/assets/founder-banners/dev_profile_header.svg"
+            alt="Founder identity banner for CrisisCore Systems"
+            title="Founder profile"
+            body="Independent protective-computing practitioner focused on local authority, degraded-mode behavior, and evidence a buyer can actually inspect."
+            mediaClassName="aspect-[15/5]"
+            imageClassName="object-cover p-0"
           />
+
+          <Panel className="mt-4 p-7 sm:p-8">
+            <div className="text-sm font-semibold">Founder profile</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              Independent consultant, based in Vernon, BC. The work centers on trust-sensitive software, low-connectivity conditions, explicit failure boundaries, and evidence a buyer can inspect without a sales call.
+            </p>
+          </Panel>
+
+          <Link href="/proof" className="group mt-4 block">
+            <AssetFigure
+              src="/assets/founder-banners/about_mission_plate.svg"
+              alt="About mission plate graphic for CrisisCore Systems"
+              title="Mission plate"
+              body="Open the proof surface to inspect the artifacts, source records, and operating claims behind this practice."
+              className="transition group-hover:border-white/20 group-hover:bg-white/[0.04]"
+            />
+            <div className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition group-hover:text-white">
+              <span>Open proof surface</span>
+              <span className="transition group-hover:translate-x-0.5">→</span>
+            </div>
+          </Link>
 
           <Panel className="mt-4 p-7 sm:p-8">
             <div className="text-sm font-semibold">Engagement</div>

@@ -4,9 +4,10 @@ export function Section(props: {
   title: string;
   children: ReactNode;
   kicker?: string;
+  id?: string;
 }) {
   return (
-    <section className="py-10">
+    <section id={props.id} className="scroll-mt-28 py-10">
       <div className="mb-4">
         {props.kicker ? (
           <div className="text-xs uppercase tracking-[0.2em] text-white/50">
