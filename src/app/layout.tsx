@@ -23,23 +23,24 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(PRIMARY_SITE_URL),
   title: { default: SITE.name, template: `%s · ${SITE.name}` },
-  description: SITE.tagline,
+  description: SITE.socialHeadline,
+  applicationName: SITE.name,
   verification: {
     google: "4eHlyB9okddZukiL9tsUhCxTp2aE9E0atJhSA9xaVcM",
   },
   alternates: { canonical: "/" },
   openGraph: {
     title: SITE.name,
-    description: SITE.tagline,
+    description: SITE.socialSubline,
     url: SITE.url,
     siteName: SITE.name,
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: SITE.tagline }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: SITE.socialHeadline }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE.name,
-    description: SITE.tagline,
+    description: SITE.socialSubline,
     images: ["/twitter-image"],
   },
   robots: { index: true, follow: true },
@@ -48,10 +49,44 @@ export const metadata: Metadata = {
 function jsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE.name,
-    url: SITE.url,
-    sameAs: [SITE.socials.github],
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE.url}#organization`,
+        name: SITE.name,
+        url: SITE.url,
+        email: SITE.email,
+        sameAs: [SITE.socials.github],
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${SITE.url}#service`,
+        name: SITE.name,
+        url: SITE.url,
+        description: SITE.socialSubline,
+        email: SITE.email,
+        areaServed: "CA",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: SITE.email,
+            contactType: "sales",
+            availableLanguage: ["en"],
+            url: `${SITE.url}/contact`,
+          },
+        ],
+        serviceType: [
+          "Trust hardening",
+          "Privacy architecture",
+          "Structural risk review",
+          "Software audit consulting",
+        ],
+        sameAs: [SITE.socials.github],
+        provider: {
+          "@id": `${SITE.url}#organization`,
+        },
+      },
+    ],
   };
 }
 

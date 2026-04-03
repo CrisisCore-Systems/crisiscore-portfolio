@@ -5,9 +5,9 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE.name,
     short_name: "CrisisCore",
-    description: SITE.tagline,
+    description: SITE.socialSubline,
     start_url: "/",
-    display: "standalone",
+    display: "minimal-ui",
     background_color: "#000000",
     theme_color: "#000000",
     icons: [

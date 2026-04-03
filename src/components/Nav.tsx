@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/projects", label: "Projects" },
-  { href: "/writing", label: "Writing" },
+  { href: "/services", label: "Services" },
   { href: "/proof", label: "Proof" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -23,7 +22,7 @@ export function Nav() {
             CrisisCore<span className="text-white/45"> Systems</span>
           </span>
           <span className="hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] text-white/60 sm:inline">
-            Protective Computing
+            Trust Hardening
           </span>
         </Link>
 

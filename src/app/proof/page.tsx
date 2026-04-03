@@ -6,7 +6,7 @@ import { loadCanon, loadDossier } from "@/content/load";
 
 export const metadata = {
   title: "Proof",
-  description: "Outcome proof, source records, and verifiable artifacts for protective computing work.",
+  description: "Proof-backed trust hardening work: case studies, redacted audit artifacts, source records, and public evidence buyers can inspect.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/proof-cards/trust_case_excerpt_wide_16x9.svg") }],
   },
@@ -35,25 +35,26 @@ export default async function ProofPage() {
       <Panel className="p-7 sm:p-8">
         <div className="cc-kicker">Proof</div>
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Evidence a buyer can evaluate without taking my word for it.
+          Proof that this work reduces trust risk in real products.
         </h1>
         <p className="mt-4 cc-lede">
-          For founders, technical leads, and operators deciding whether the work is credible, relevant, and worth bringing into a live product. It shows what changed, what risks were reduced, and where the source record lives.
+          If you are deciding whether to hire me, start here. This page shows what changed, what risks were reduced, and where the source record lives across public repos, artifacts, case studies, and live systems.
         </p>
         <p className="mt-2 text-sm text-white/70">
-          Open where possible, DOI-backed where relevant, and tied to public
-          repos, artifacts, or live systems when those surfaces exist.
+          Open where possible, DOI-backed where relevant, and tied to public repos, artifacts, or live systems when those surfaces exist.
         </p>
 
         <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
-          Outcome-oriented, repo-visible, and verifiable under low-trust conditions.
+          Review the flagship case first, then the artifacts, then the services page if the work looks relevant to your product.
         </p>
 
-        <div className="mt-7 flex flex-col items-start gap-3">
-          <Button href="/case-study/pain-tracker">
-            Review flagship case
-          </Button>
-          <div className="flex flex-wrap gap-2.5">
+        <div className="mt-7 flex flex-wrap gap-3">
+          <Button href="/case-study/pain-tracker">Review flagship case</Button>
+          <Button href="/services" variant="ghost">See services</Button>
+          <Button href="/contact" variant="ghost">Book a review</Button>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2.5">
             <Button
               href="/artifacts/security-and-audits/defensibility-packet-preview"
               variant="ghost"
@@ -76,20 +77,33 @@ export default async function ProofPage() {
               Canon (DOI)
               {" ↗"}
             </Button>
-            <Button
-              href="/contact"
-              variant="ghost"
-              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
-            >
-              Send fit-check inquiry
-            </Button>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What buyers want to verify</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              That the work is real, technically grounded, and relevant to a live product with meaningful trust exposure.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What this page shows</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Outcome change, bounded artifacts, public source records, and the inspection path behind the claims.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best next step</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              If this looks like your risk surface, go to services or send the app, stack, and concern.
+            </p>
           </div>
         </div>
       </Panel>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
         <Panel className="p-7">
-          <div className="text-sm font-semibold">What changed</div>
+          <div className="text-sm font-semibold">What changed in the product</div>
           <p className="mt-2 text-sm text-white/70">
             Operating change matters more than principles alone.
           </p>
@@ -115,7 +129,7 @@ export default async function ProofPage() {
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">What kind of product this applies to</div>
+          <div className="text-sm font-semibold">What kind of product this fits</div>
           <p className="mt-2 text-sm text-white/70">
             Post-MVP software where trust failure harms users or operations.
           </p>
@@ -177,7 +191,7 @@ export default async function ProofPage() {
         <Panel className="p-7 sm:p-8">
           <div className="text-sm font-semibold">Check the evidence path</div>
           <p className="mt-2 text-sm text-white/70">
-            Suggested inspection order.
+            Suggested inspection order for a buyer evaluating fit.
           </p>
 
           <div className="mt-5 space-y-4 text-sm text-white/75">
@@ -195,7 +209,7 @@ export default async function ProofPage() {
             </div>
             <div>
               <div className="font-semibold text-white">4. Inspect the canon</div>
-              <p className="mt-1 text-white/65">Use the DOI-backed framework if you want theory, methodology, and audit vocabulary.</p>
+              <p className="mt-1 text-white/65">Use the DOI-backed framework if you want the deeper theory, methodology, and audit vocabulary behind the work.</p>
             </div>
           </div>
 
@@ -218,6 +232,9 @@ export default async function ProofPage() {
             </Button>
             <Button href="/artifacts/pain-tracker/architecture" variant="ghost" className="w-full justify-center">
               Open architecture artifact
+            </Button>
+            <Button href="/services" variant="ghost" className="w-full justify-center">
+              See matching services
             </Button>
           </div>
         </Panel>
@@ -294,10 +311,9 @@ export default async function ProofPage() {
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
         <Panel className="p-7">
-          <div className="text-sm font-semibold">Canonical reference</div>
+          <div className="text-sm font-semibold">Method and sources</div>
           <p className="mt-2 text-sm text-white/70">
-            A layered canon with sources of record (DOIs): foundational theory →
-            operational translation → measurement &amp; audit.
+            If you want the deeper method behind the service work, the canon shows the doctrine, operational translation, and audit language behind the artifacts.
           </p>
 
           <div className="mt-4 grid gap-2">
@@ -329,7 +345,7 @@ export default async function ProofPage() {
           </div>
 
           <div className="mt-5 text-xs text-white/55">
-            Start at Layer 1 (Overton Framework).
+            Optional for buyers. Start at Layer 1 if you want the theory behind the practice.
           </div>
 
           <div className="mt-5 grid gap-2">
@@ -359,7 +375,7 @@ export default async function ProofPage() {
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">Flagship system</div>
+          <div className="text-sm font-semibold">Flagship system in the open</div>
           <p className="mt-2 text-sm text-white/70">
             PainTracker.ca — minimization-first pain tracking PWA, local-first by default.
           </p>
@@ -408,22 +424,31 @@ export default async function ProofPage() {
             <Button href="https://doi.org/10.5281/zenodo.18783432" variant="ghost" className="w-full justify-center">
               Open PLS rubric ↗
             </Button>
+            <Button href="/contact" className="w-full justify-center">
+              Book a review
+            </Button>
           </div>
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">Framework repo</div>
+          <div className="text-sm font-semibold">If you are comparing options</div>
           <p className="mt-2 text-sm text-white/70">
-            Versioned framework workstream and canonical text iteration.
+            The fastest buyer path is simple: review the flagship case, inspect one redacted audit artifact, then check services and send your product details.
           </p>
 
-          <div className="mt-5">
+          <div className="mt-5 grid gap-2">
+            <Button href="/services" variant="ghost" className="w-full justify-center">
+              See services
+            </Button>
+            <Button href="/contact" className="w-full justify-center">
+              Send the app, stack, and concern
+            </Button>
             <Button
               href="https://github.com/CrisisCore-Systems/overton-framework"
               variant="ghost"
               className="w-full justify-center"
             >
-              Open repo ↗
+              Open method repo ↗
             </Button>
           </div>
         </Panel>
@@ -493,9 +518,12 @@ export default async function ProofPage() {
             </p>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 grid gap-2">
             <Button href="/contact" className="w-full justify-center">
-              Send fit-check inquiry
+              Book a review
+            </Button>
+            <Button href="/services" variant="ghost" className="w-full justify-center">
+              See services
             </Button>
           </div>
         </Panel>

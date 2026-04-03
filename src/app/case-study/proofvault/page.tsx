@@ -31,7 +31,7 @@ export default function ProofVaultCaseStudyPage() {
       </Link>
 
       <div className="mt-6">
-        <div className="cc-kicker">Portfolio case study</div>
+        <div className="cc-kicker">Case study</div>
         <h1 className="mt-3 max-w-4xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
           ProofVault Trust Case v1.0.1
         </h1>
@@ -40,6 +40,9 @@ export default function ProofVaultCaseStudyPage() {
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? project.description}
+        </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
+          This shows the kind of structural review and bounded-evidence work behind release-critical trust claims.
         </p>
       </div>
 
@@ -52,9 +55,12 @@ export default function ProofVaultCaseStudyPage() {
       </div>
 
       <div className="mt-7 flex flex-wrap gap-3">
-        <Button href="/writing/proofvault-trust-case-v1-0-1">Read the case study</Button>
+        <Button href="/writing/proofvault-trust-case-v1-0-1">Read full article walkthrough</Button>
         <Button href="/projects/proofvault" variant="ghost">
           Inspect the trust dossier
+        </Button>
+        <Button href="/services" variant="ghost">
+          See services
         </Button>
         <Button href="/proof" variant="ghost">
           Review the proof surface
@@ -214,6 +220,15 @@ export default function ProofVaultCaseStudyPage() {
                 <span>Drift becomes a visible failure condition instead of hidden uncertainty.</span>
               </li>
             </ul>
+
+            <div className="mt-6 grid gap-2">
+              <Button href="/services" variant="ghost" className="w-full justify-center">
+                See services
+              </Button>
+              <Button href="/contact" className="w-full justify-center">
+                Book a review
+              </Button>
+            </div>
           </Panel>
         </div>
       </div>

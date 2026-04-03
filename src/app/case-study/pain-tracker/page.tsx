@@ -7,7 +7,7 @@ import { loadDossier, loadProject } from "@/content/load";
 
 export const metadata = {
   title: "PainTracker Case Study",
-  description: "How PainTracker reduced dangerous data collection with a minimization-first redesign, local-first architecture, and explicit proof surfaces.",
+  description: "Flagship case study: how PainTracker reduced dangerous data collection with minimization-first redesign, local-first architecture, and explicit proof surfaces.",
 };
 
 export const revalidate = 21600;
@@ -47,6 +47,9 @@ export default async function PainTrackerCaseStudyPage() {
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           {dossier?.tagline ?? project.description}
         </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
+          This is the clearest public example of the kind of trust hardening, privacy architecture, and boundary review work sold through CrisisCore Systems.
+        </p>
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -63,8 +66,11 @@ export default async function PainTrackerCaseStudyPage() {
         <Button href="/artifacts/pain-tracker/architecture" variant="ghost">
           Architecture artifact
         </Button>
+        <Button href="/services" variant="ghost">
+          See services
+        </Button>
         <Button href="/contact" variant="ghost">
-          Send fit-check inquiry
+          Book a review
         </Button>
       </div>
 
@@ -187,6 +193,13 @@ export default async function PainTrackerCaseStudyPage() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/services">See services</Button>
+              <Button href="/contact" variant="ghost">
+                Book a review
+              </Button>
+            </div>
           </Panel>
         </div>
 
@@ -255,9 +268,12 @@ export default async function PainTrackerCaseStudyPage() {
               </li>
             </ul>
 
-            <div className="mt-6">
+            <div className="mt-6 grid gap-2">
+              <Button href="/services" variant="ghost" className="w-full justify-center">
+                See matching services
+              </Button>
               <Button href="/contact" className="w-full justify-center">
-                Send repo + context for fit check
+                Send the app, stack, and concern
               </Button>
             </div>
           </Panel>

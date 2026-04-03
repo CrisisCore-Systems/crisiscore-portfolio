@@ -94,7 +94,7 @@ export default async function ProjectPage({
 
       <div className="mt-6">
         <div className="text-xs uppercase tracking-[0.2em] text-white/45">
-          Project dossier
+          Evidence dossier
         </div>
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
           {p.title}
@@ -104,6 +104,9 @@ export default async function ProjectPage({
         ) : null}
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? p.description}
+        </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
+          Use this dossier as supporting evidence for the service work on this site: problem, constraints, proof surface, and outputs.
         </p>
         {p.slug === "overton-framework" ? (
           <p className="mt-2 max-w-3xl text-xs text-white/55">
@@ -119,8 +122,10 @@ export default async function ProjectPage({
       </div>
 
       {caseStudyPathBySlug[p.slug] ? (
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap gap-3">
           <Button href={caseStudyPathBySlug[p.slug]}>Read the case study</Button>
+          <Button href="/services" variant="ghost">See services</Button>
+          <Button href="/contact" variant="ghost">Book a review</Button>
         </div>
       ) : null}
 
@@ -275,6 +280,15 @@ export default async function ProjectPage({
                   </a>
                 )
               ))}
+            </div>
+
+            <div className="mt-6 grid gap-2">
+              <Button href="/services" className="w-full justify-center">
+                See services
+              </Button>
+              <Button href="/contact" variant="ghost" className="w-full justify-center">
+                Send the app, stack, and concern
+              </Button>
             </div>
           </Panel>
 

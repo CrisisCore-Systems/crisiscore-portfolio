@@ -16,6 +16,15 @@ export function Footer() {
           </div>
         </div>
         <div className="flex gap-4">
+          <a className="hover:text-white" href="/services">
+            Services
+          </a>
+          <a className="hover:text-white" href="/proof">
+            Proof
+          </a>
+          <a className="hover:text-white" href="/contact">
+            Contact
+          </a>
           <a
             className="hover:text-white"
             href={SITE.socials.github}
@@ -23,9 +32,6 @@ export function Footer() {
             rel="noreferrer"
           >
             GitHub
-          </a>
-          <a className="hover:text-white" href="/site-map">
-            Sitemap
           </a>
           <a className="hover:text-white" href="/sitemap.xml">
             XML sitemap

@@ -6,7 +6,7 @@ import { loadProjects, loadWriting } from "@/content/load";
 
 export const metadata = {
   title: "Sitemap",
-  description: "Human-readable sitemap for key routes, dossiers, and writing.",
+  description: "Human-readable sitemap for CrisisCore Systems core service pages, proof surfaces, dossiers, and writing.",
 };
 
 export const dynamic = "force-dynamic";
@@ -25,10 +25,11 @@ export default function SiteMapPage() {
       <div className="cc-kicker">Navigation map</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Sitemap</h1>
       <p className="mt-3 max-w-3xl text-sm text-white/70">
-        Human-readable route map for auditors and operators. XML sitemap remains available for most crawlers, though some networks may block it.
+        Human-readable route map for buyers, auditors, and operators. The main conversion path is home, services, proof, about, and contact; the rest supports evaluation.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
+        <Button href={withBuild("/services")}>Services</Button>
         <Button href={withBuild("/sitemap.xml")} variant="ghost">XML sitemap</Button>
         <Button href={withBuild("/proof/fetchability.json")} variant="ghost">Fetchability JSON</Button>
         <Button href={withBuild("/deploy-id")} variant="ghost">Deploy ID</Button>
@@ -38,7 +39,7 @@ export default function SiteMapPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Core routes</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            {["/", "/projects", "/writing", "/proof", "/about", "/contact", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
+            {["/", "/services", "/proof", "/about", "/contact", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
                 <Link className="hover:text-white" href={withBuild(route)}>{route}</Link>
               </li>
@@ -47,7 +48,7 @@ export default function SiteMapPage() {
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">Project dossiers</div>
+          <div className="text-sm font-semibold">Evidence dossiers</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {projects.map((project) => (
               <li key={project.slug}>

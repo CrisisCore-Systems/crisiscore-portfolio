@@ -5,7 +5,7 @@ import { loadProjects } from "@/content/load";
 
 export const metadata = {
   title: "Projects",
-  description: "Case studies and active work from CrisisCore Systems.",
+  description: "Project dossiers and case-style evidence for CrisisCore Systems trust hardening, privacy architecture, and structural risk review work.",
 };
 
 type SearchParamsLike =
@@ -27,27 +27,25 @@ export default async function ProjectsPage({
 
   return (
     <div className="py-12">
-      <div className="cc-kicker">Dossier index</div>
+      <div className="cc-kicker">Evidence dossiers</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
         Projects
       </h1>
       <p className="mt-3 cc-lede">
-        Case studies and active work designed for real conditions: instability,
-        coercion risk, low trust, low bandwidth, low energy. Each entry links to
-        a dossier surface (problem → constraints → method → proof → outputs).
+        Case-style evidence for the kind of trust, privacy, and structural risk work sold on this site. Each entry links to a dossier surface showing problem, constraints, method, proof, and outputs.
       </p>
 
       <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-        Local-first systems, privacy-sensitive architecture, threat modeling, audit outputs, and degraded-mode design.
+        Use this page when you want deeper evidence after the homepage or proof page, not as the first stop.
       </p>
 
       <div className="mt-7 flex flex-wrap gap-3">
-        <Button href="/proof">Proof</Button>
-        <Button href="/writing" variant="ghost">
-          Writing
+        <Button href="/services">Services</Button>
+        <Button href="/proof" variant="ghost">
+          Proof
         </Button>
         <Button href="/contact" variant="ghost">
-          Contact
+          Book a review
         </Button>
       </div>
 
@@ -56,8 +54,7 @@ export default async function ProjectsPage({
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Browse</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Use search + tags to find relevant operating conditions and threat
-              boundaries.
+              Use search and tags to find work relevant to your product category, operating conditions, and trust boundary concerns.
             </p>
             <div className="mt-5">
               <ProjectsExplorer items={projects} q={q} tag={tag} />
@@ -67,12 +64,13 @@ export default async function ProjectsPage({
 
         <div className="lg:col-span-4">
           <Panel className="p-7 sm:p-8">
-            <div className="text-sm font-semibold">How to evaluate</div>
+            <div className="text-sm font-semibold">How to use this page</div>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               {[
+                "Start with a dossier that matches your product or risk surface.",
                 "Look for explicit constraints and trust boundaries.",
-                "Prefer verifiable artifacts (DOI, repo, deployment).",
-                "Treat outputs as deliverables, not marketing claims.",
+                "Prefer verifiable artifacts such as repos, deployments, and bounded outputs.",
+                "If the work looks relevant, go to Services or send an inquiry.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>
@@ -81,12 +79,15 @@ export default async function ProjectsPage({
               ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/proof" variant="ghost">
-                Proof
+            <div className="mt-6 grid gap-2">
+              <Button href="/services" className="w-full justify-center">
+                See services
               </Button>
-              <Button href="/contact" variant="ghost">
-                Inquiry
+              <Button href="/proof" variant="ghost" className="w-full justify-center">
+                Open proof
+              </Button>
+              <Button href="/contact" variant="ghost" className="w-full justify-center">
+                Send the app, stack, and concern
               </Button>
             </div>
           </Panel>

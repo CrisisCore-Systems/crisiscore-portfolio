@@ -6,7 +6,7 @@ import { loadCanon, loadWriting } from "@/content/load";
 
 export const metadata = {
   title: "Writing",
-  description: "Protective computing, minimization-first systems, and degraded-first design.",
+  description: "Technical writing, doctrine, and essays supporting CrisisCore Systems trust hardening and privacy architecture work.",
 };
 
 export default function WritingIndexPage() {
@@ -15,14 +15,16 @@ export default function WritingIndexPage() {
 
   return (
     <div className="py-12">
-      <div className="cc-kicker">Reading room</div>
+      <div className="cc-kicker">Technical writing</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
         Writing
       </h1>
       <p className="mt-3 cc-lede">
-        Protective computing, minimization-first systems, and degraded-first design.
-        Notes written for low-trust reality: where incentives are misaligned and
-        “normal conditions” are optional.
+        Essays and doctrine behind the service work on this site: trust boundaries, privacy architecture, minimization-first systems, and degraded-condition design.
+      </p>
+
+      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
+        This is supporting depth for buyers who want to inspect the thinking. Most visitors should start with Services or Proof.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -39,12 +41,12 @@ export default function WritingIndexPage() {
       </div>
 
       <div className="mt-7 flex flex-wrap gap-3">
-        <Button href="/proof">Proof</Button>
-        <Button href="/projects" variant="ghost">
-          Projects
+        <Button href="/services">Services</Button>
+        <Button href="/proof" variant="ghost">
+          Proof
         </Button>
         <Button href="/contact" variant="ghost">
-          Contact
+          Book a review
         </Button>
       </div>
 
@@ -140,12 +142,13 @@ export default function WritingIndexPage() {
           ) : null}
 
           <Panel className={canon ? "mt-4 p-7 sm:p-8" : "p-7 sm:p-8"}>
-            <div className="text-sm font-semibold">How to read</div>
+            <div className="text-sm font-semibold">How to use this section</div>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               {[
-                "If you’re new: start with the canon (Layer 1 → Layer 3).",
-                "If you’re evaluating: use Proof to validate sources of record.",
-                "If you’re building: scan Projects for dossiers and outputs.",
+                "If you are evaluating the service, start with Proof before going deep here.",
+                "Read the canon if you want the method and vocabulary behind the work.",
+                "Use Projects for dossiers and implementation-facing evidence.",
+                "If the thinking matches your product risk, go to Services or Contact.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>
@@ -154,12 +157,15 @@ export default function WritingIndexPage() {
               ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/proof" variant="ghost">
-                Proof
+            <div className="mt-6 grid gap-2">
+              <Button href="/services" className="w-full justify-center">
+                See services
               </Button>
-              <Button href="/projects" variant="ghost">
-                Projects
+              <Button href="/proof" variant="ghost" className="w-full justify-center">
+                Open proof
+              </Button>
+              <Button href="/projects" variant="ghost" className="w-full justify-center">
+                Open projects
               </Button>
             </div>
           </Panel>
