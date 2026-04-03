@@ -103,41 +103,41 @@ export default async function ProofPage() {
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
         <Panel className="p-7">
-          <div className="text-sm font-semibold">What changed in the product</div>
+          <div className="text-sm font-semibold">PainTracker</div>
           <p className="mt-2 text-sm text-white/70">
-            Operating change matters more than principles alone.
+            Reduced default centralization of sensitive health-adjacent data and kept core use local by default.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li>• Reduced default collection of dangerous data</li>
             <li>• Kept critical flows usable under partial connectivity</li>
             <li>• Replaced silent failure with explicit recovery paths</li>
-            <li>• Produced decision-grade artifacts teams can act on</li>
+            <li>• Made sharing explicit instead of background-assumed</li>
           </ul>
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">What risks get reduced</div>
+          <div className="text-sm font-semibold">ProofVault</div>
           <p className="mt-2 text-sm text-white/70">
-            This work is aimed at trust failures that become operationally expensive.
+            Turned trust claims into release-bound evidence with a narrower, more defensible guarantee surface.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            <li>• Sensitive data turning into centralized exhaust</li>
-            <li>• Critical paths failing in offline or degraded conditions</li>
-            <li>• Ambiguous boundaries during incidents, audits, or launch pressure</li>
-            <li>• Findings that cannot be reproduced, verified, or handed off cleanly</li>
+            <li>• Tied public claims to hosted-green release evidence</li>
+            <li>• Reduced unearned claim surface</li>
+            <li>• Made drift a visible failure condition</li>
+            <li>• Left a clearer inspection path for skeptical buyers</li>
           </ul>
         </Panel>
 
         <Panel className="p-7">
-          <div className="text-sm font-semibold">What kind of product this fits</div>
+          <div className="text-sm font-semibold">Why this matters to a buyer</div>
           <p className="mt-2 text-sm text-white/70">
-            Post-MVP software where trust failure harms users or operations.
+            You are not buying doctrine. You are buying clearer risk, fewer bad assumptions, and a faster path to trust-relevant fixes.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            <li>• Health, advocacy, or clinician-adjacent tools</li>
-            <li>• Internal operator systems with incident or coercion pressure</li>
-            <li>• Products storing sensitive personal or behavioral data</li>
-            <li>• Teams shipping into low-trust, low-bandwidth, or unstable conditions</li>
+            <li>• Less risky default collection</li>
+            <li>• Fewer hidden trust failures near launch</li>
+            <li>• Clearer boundaries for product and engineering teams</li>
+            <li>• Proof a buyer can inspect without a long sales call</li>
           </ul>
         </Panel>
       </div>

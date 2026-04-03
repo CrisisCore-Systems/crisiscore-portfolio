@@ -16,9 +16,9 @@ const inferred = inferSiteUrl();
 
 export const SITE = {
   name: "CrisisCore Systems",
-  tagline: "Trust hardening, privacy architecture, and structural risk review for real products.",
-  socialHeadline: "Trust hardening for products handling sensitive user reality.",
-  socialSubline: "Audits, fix sprints, and privacy architecture for founders shipping real software.",
+  tagline: "Privacy teardown and trust review for health and sensitive-data apps.",
+  socialHeadline: "Privacy teardown for health and sensitive-data apps.",
+  socialSubline: "48-hour risk reads, full trust reviews, and fix sprints before launch problems become trust problems.",
   url: inferred,
   email: "crisiscore.systems@proton.me",
   socials: {

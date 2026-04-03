@@ -6,39 +6,37 @@ import { CopyInquiryTemplateButton } from "@/components/CopyInquiryTemplateButto
 
 export const metadata = {
   title: "Contact",
-  description: "Book a review with CrisisCore Systems for trust hardening, privacy architecture, and fix sprint work.",
+  description: "Get a 3-point risk read for a health or sensitive-data product. Send the link, concern, and deadline.",
 };
 
 export default function ContactPage() {
-  const subject = "CrisisCore Systems review inquiry";
+  const subject = "CrisisCore Systems risk read inquiry";
   const body =
-    "Context:\n\n" +
-    "What you need:\n\n" +
+    "Product link:\n\n" +
     "Primary concern:\n\n" +
-    "Constraints (time/budget/security):\n\n" +
-    "Links / artifacts (optional):\n\n";
+    "Deadline:\n\n" +
+    "Optional context:\n\n";
 
   const mailto = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const inquiryTemplate =
-    "Context:\n- What you are building and who it serves\n\n" +
-    "Need:\n- Fast Teardown / Full Trust Hardening Review / Fix Sprint\n\n" +
-    "Constraints:\n- Timeline\n- Budget range\n- Security or compliance boundaries\n\n" +
-    "Artifacts:\n- Repo / docs / deployment links\n\n" +
-    "Decision target date:\n-";
+    "Product link:\n- \n\n" +
+    "Primary concern:\n- \n\n" +
+    "Deadline:\n- \n\n" +
+    "Optional context:\n- Stack / repo / constraints if helpful";
 
   return (
     <div className="py-12">
       <div className="cc-kicker">Contact</div>
       <h1 className="text-3xl font-semibold">Contact</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">
-        Email-first. Send the app, stack, and concern. I&apos;ll reply with fit, recommended package, and next step.
+        Email-first. Send the product link, your concern, and your deadline. I&apos;ll reply with fit, recommended package, and next step.
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best first message</div>
           <p className="mt-2 text-sm leading-relaxed text-white/70">
-            Short, direct, and artifact-first. A repo link and a real concern beat a polished pitch.
+            Short and direct. A product link and a real concern beat a polished pitch.
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -59,9 +57,9 @@ export default function ContactPage() {
         <div className="lg:col-span-7">
           <Panel className="p-7 sm:p-8">
             <div className="cc-kicker">Start here</div>
-            <h2 className="mt-2 text-xl font-semibold">Book a review</h2>
+            <h2 className="mt-2 text-xl font-semibold">Get a 3-point risk read</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Fastest path: email. Include context, constraints, and any repo or deployment links. I&apos;ll reply with next steps and whether the work looks like a fit for a fast teardown, full review, or fix sprint.
+              Fastest path: email. Send the product link, your main concern, and your deadline. I&apos;ll reply with whether this looks like a fit for the 48-hour teardown, a deeper review, or not a fit.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -81,8 +79,8 @@ export default function ContactPage() {
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Typical engagement types</div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {[
-                  "Fast Teardown",
-                  "Full Trust Hardening Review",
+                  "48-hour Trust Teardown",
+                  "Full Trust Review",
                   "Fix Sprint",
                 ].map((item) => (
                   <span
@@ -109,11 +107,10 @@ export default function ContactPage() {
             <div className="text-sm font-semibold">What to include</div>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               {[
-                "What you’re building (or auditing) and for whom.",
-                "The privacy, trust, or risk concern you want reviewed.",
-                "Your operating reality: instability factors, threat model, and constraints.",
-                "Timeline + decision point (what would 'done' look like).",
-                "Links to artifacts: repo, docs, screenshots, DOI, or deployment.",
+                "Product link.",
+                "The main privacy, trust, or launch concern.",
+                "Your deadline.",
+                "Optional: repo, stack, or constraints if useful.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>
@@ -123,7 +120,7 @@ export default function ContactPage() {
             </ul>
 
             <div className="mt-5 text-xs text-white/55">
-              Tip: the email button above pre-fills a short template. A concise artifact-first note beats a polished pitch.
+              Tip: the email button above pre-fills a short template. Keep it short.
             </div>
 
             <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -149,7 +146,7 @@ export default function ContactPage() {
               </p>
               <p>
                 I prefer verifiable artifacts over long calls: a short description,
-                constraints, and links beat a meeting.
+                deadline, and link beat a meeting.
               </p>
             </div>
 

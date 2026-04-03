@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata = {
   title: "Services",
-  description: "Fast teardown reviews, full trust hardening reviews, and fix sprints for sensitive-data products.",
+  description: "48-hour trust teardown, full trust reviews, and fix sprints for health and sensitive-data products.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/service-panels/trust_hardening_review.svg") }],
   },
@@ -35,7 +35,7 @@ function servicesJsonLd() {
             priceCurrency: "CAD",
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: 300,
+              price: 250,
               priceCurrency: "CAD",
               valueAddedTaxIncluded: false,
             },
@@ -45,9 +45,9 @@ function servicesJsonLd() {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Full Trust Hardening Review",
+              name: "Full Trust Review",
               description:
-                "A flagship structural review covering threat model snapshot, privacy and coercion risk review, trust boundaries, and a prioritized roadmap.",
+                "A flagship structural review covering threat model snapshot, privacy risk review, trust boundaries, and a prioritized roadmap.",
             },
             priceCurrency: "CAD",
             priceSpecification: {
@@ -103,26 +103,26 @@ export default function ServicesPage() {
       <Panel className="p-8 sm:p-10">
         <div className="cc-kicker">Services</div>
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Clear offers for founders shipping trust-sensitive products.
+          Simple offers for founders shipping health and sensitive-data products.
         </h1>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-          The goal is simple: find structural trust failures, prioritize the highest-value fixes, and harden the parts of the product that will hurt you if they stay vague.
+          Start small if you want. The front-door offer is a 48-hour teardown that tells you whether there is a real trust problem and whether a deeper review is worth it.
         </p>
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need speed? Start with Fast Teardown.
+            Need speed? Start with the 48-hour Trust Teardown.
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need the full map? Choose the Full Trust Hardening Review.
+            Need the full map? Choose the Full Trust Review.
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
             Need implementation help? Move into a Fix Sprint.
           </div>
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button href="/contact">Book a review</Button>
+          <Button href="/contact">Get a 3-point risk read</Button>
           <Button href="/proof" variant="ghost">
-            See proof
+            See outcomes
           </Button>
         </div>
       </Panel>
@@ -130,37 +130,38 @@ export default function ServicesPage() {
       <Section title="Packages" kicker="Starting points">
         <div className="grid gap-4 lg:grid-cols-3">
           <Panel className="p-7 sm:p-8">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Fast Teardown</div>
-            <h2 className="mt-2 text-xl font-semibold">Starting at CA$300</h2>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">48-hour Trust Teardown</div>
+            <h2 className="mt-2 text-xl font-semibold">Starting at CA$250</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              A focused review for founders who need sharp eyes on a live product before a launch, demo, or decision window.
+              A low-risk first step for founders who want to know quickly whether privacy or trust risk is real.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• 48 hour turnaround</li>
-              <li>• Architecture and trust risk findings</li>
-              <li>• Concrete priority fixes</li>
-              <li>• Short written packet</li>
+              <li>• Top 3 trust risks</li>
+              <li>• 3 fixes worth making first</li>
+              <li>• Recommendation on whether a deeper review is worth it</li>
+              <li>• Short written readout</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
-              Best for: founders who need clarity quickly and do not want to wait for a larger engagement to spot obvious structural weakness.
+              Best for: cold leads who want a useful first step without buying a bigger engagement up front.
             </div>
           </Panel>
 
           <Panel className="p-7 sm:p-8">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Full Trust Hardening Review</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Full Trust Review</div>
             <h2 className="mt-2 text-xl font-semibold">Starting at CA$1,200</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              The flagship offer for products handling sensitive, personal, legal, health, or high-risk data.
+              The flagship offer when you need a serious review of how your product collects, stores, and handles sensitive user reality.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• Threat model snapshot</li>
-              <li>• Privacy and coercion risk review</li>
+              <li>• Privacy risk review</li>
               <li>• Structural weakness analysis</li>
               <li>• Product trust boundary review</li>
               <li>• Prioritized roadmap</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
-              Best for: teams with live product pressure who need a serious review they can act on, not a vague audit summary.
+              Best for: teams with real launch or operational pressure who need a full picture and a fix order they can act on.
             </div>
           </Panel>
 
@@ -200,7 +201,7 @@ export default function ServicesPage() {
               Final scope depends on product surface area, access available, and whether the ask is diagnostic, roadmap-focused, or implementation-heavy. The listed prices are starting points so buyers do not have to guess whether the work is accessible.
             </p>
             <div className="mt-5 text-sm text-white/70">
-              If you are unsure, send the app, stack, and concern and I&apos;ll point you to the smallest useful starting point.
+              If you are unsure, send the link, concern, and deadline and I&apos;ll point you to the smallest useful starting point.
             </div>
           </Panel>
         </div>
@@ -209,12 +210,12 @@ export default function ServicesPage() {
       <Section title="How To Hire" kicker="Simple intake">
         <Panel className="p-8 sm:p-10">
           <p className="max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-            Send the app, stack, and concern. Include repo or deployment links if you have them, plus your decision timeline. I&apos;ll reply with fit, likely package, and next step.
+            Send the product link, your main concern, and your deadline. Add repo or stack details only if they help. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/contact">Book a review</Button>
+            <Button href="/contact">Get a 3-point risk read</Button>
             <Button href="/proof" variant="ghost">
-              Review proof first
+              Review outcomes first
             </Button>
           </div>
         </Panel>
