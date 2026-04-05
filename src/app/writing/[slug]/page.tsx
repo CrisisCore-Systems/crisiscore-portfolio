@@ -59,6 +59,36 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     contactHref: "/contact",
     contactLabel: "Send your product URL for a fit check",
   },
+  "pre-launch-privacy-review-checklist-health-wellness-apps": {
+    prompt:
+      "If your health or wellness product is close to launch and nobody has forced the privacy boundary into plain language yet, start with the pre-launch review path.",
+    serviceHref: "/services/pre-launch-privacy-audit",
+    serviceLabel: "See the pre-launch privacy audit path",
+    proofHref: "/case-study/pain-tracker",
+    proofLabel: "Inspect the PainTracker case study",
+    contactHref: "/contact",
+    contactLabel: "Send your product URL for a fit check",
+  },
+  "what-founders-miss-before-launching-sensitive-data-products": {
+    prompt:
+      "If launch is close and the concern is still vague, use a launch-readiness review to force the trust, privacy, and failure-state risks into a ranked list before users do it for you.",
+    serviceHref: "/services/launch-readiness-review-for-sensitive-data-products",
+    serviceLabel: "See the launch-readiness review path",
+    proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
+    proofLabel: "Inspect a redacted trust artifact",
+    contactHref: "/contact",
+    contactLabel: "Send your product URL for a fit check",
+  },
+  "data-minimization-checklist-sensitive-apps": {
+    prompt:
+      "If the product needs a smaller default collection boundary before launch, a minimization review is the fastest way to separate required data from inherited convenience.",
+    serviceHref: "/services/data-minimization-review-for-apps",
+    serviceLabel: "See the data minimization review path",
+    proofHref: "/writing/reduce-data-collection-risk-before-launch",
+    proofLabel: "Read the collection-risk article",
+    contactHref: "/contact",
+    contactLabel: "Send your product URL for a fit check",
+  },
 };
 
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;

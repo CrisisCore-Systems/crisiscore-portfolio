@@ -1,0 +1,75 @@
+---
+title: "Data minimization checklist for sensitive apps"
+description: "A founder-friendly data minimization checklist for sensitive apps before launch."
+date: "2026-04-04"
+---
+
+If your app handles sensitive user reality, data minimization is not a policy adjective.
+
+It is a product design decision.
+
+The question is simple:
+
+Can the app still do its job if you narrow the default collection boundary?
+
+If the answer is no, the product may be collecting for convenience rather than necessity.
+
+## The checklist
+
+Before launch, ask:
+
+- What data is required for the core workflow to function?
+- What data exists only because it is useful to product, analytics, or debugging?
+- What leaves the device or session by default?
+- What is retained longer than the user would likely expect?
+- What third-party tools can see more than they need?
+- What logs contain payloads that should never have been stored in the first place?
+- What sharing or export paths happen without a deliberate user action?
+- What collection would be hardest to defend to a skeptical buyer or user?
+
+## What teams miss
+
+They often think minimization means cutting useful features.
+
+That is not the first move.
+
+The first move is usually narrower defaults.
+
+- fewer payloads in logs
+- less context in analytics
+- shorter retention
+- explicit export instead of background sharing
+- local or session-bound state where possible
+
+That is often enough to materially reduce risk without flattening the product.
+
+## Why this matters commercially
+
+Sensitive apps lose trust when the collection story feels bigger than the product job.
+
+That is true even before a user reads a privacy page.
+
+People can feel when the product is asking for too much.
+
+So can buyers.
+
+## What a review should hand back
+
+A useful minimization review should produce:
+
+- a clear split between required and inherited collection
+- the riskiest default paths to narrow first
+- a practical fix order
+- a smaller boundary the team can actually defend
+
+If you do not have that, the product is still relying on habit.
+
+## If you need a practical next step
+
+If the product already feels too broad in what it captures, review the collection model before launch instead of trying to justify it after launch.
+
+Related links:
+
+- [Data minimization review for apps](/services/data-minimization-review-for-apps)
+- [How to reduce data collection risk before launch](/writing/reduce-data-collection-risk-before-launch)
+- [Proof surface](/proof)
