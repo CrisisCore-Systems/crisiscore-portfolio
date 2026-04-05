@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getRepo } from "@/app/lib/github";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { FitCheckCta } from "@/components/FitCheckCta";
 import { Panel } from "@/components/ui/Panel";
 import { loadDossier, loadProject } from "@/content/load";
 
@@ -52,6 +53,27 @@ export default async function PainTrackerCaseStudyPage() {
         </p>
       </div>
 
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-white/45">What changed</div>
+          <p className="mt-2 text-sm leading-relaxed text-white/70">
+            Core logging stayed on-device by default, sign-up stopped being required for core use, and sharing moved to explicit export.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why a buyer cares</div>
+          <p className="mt-2 text-sm leading-relaxed text-white/70">
+            The product reduced risky default collection without making the workflow unusable for people in low-attention or low-connectivity conditions.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best fit</div>
+          <p className="mt-2 text-sm leading-relaxed text-white/70">
+            Founders shipping health or sensitive-data products who need fewer trust-breaking assumptions before launch or partner scrutiny.
+          </p>
+        </div>
+      </div>
+
       <div className="mt-6 flex flex-wrap gap-2">
         <Badge className="normal-case tracking-[0.08em]">
           Local-first PWA built around protective UX.
@@ -70,9 +92,15 @@ export default async function PainTrackerCaseStudyPage() {
           See services
         </Button>
         <Button href="/contact" variant="ghost">
-          Book a review
+          Get a 3-point risk read
         </Button>
       </div>
+
+      <FitCheckCta
+        className="mt-8"
+        title="If your product feels exposed in a similar way, send the URL."
+        description="I&apos;ll tell you whether your situation looks like a 48-hour teardown, a deeper review, or something else entirely."
+      />
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
@@ -197,7 +225,7 @@ export default async function PainTrackerCaseStudyPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">See services</Button>
               <Button href="/contact" variant="ghost">
-                Book a review
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -273,7 +301,7 @@ export default async function PainTrackerCaseStudyPage() {
                 See matching services
               </Button>
               <Button href="/contact" className="w-full justify-center">
-                Send the app, stack, and concern
+                Send the product URL and concern
               </Button>
             </div>
           </Panel>

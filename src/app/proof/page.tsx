@@ -2,6 +2,7 @@ import { absoluteUrl } from "@/app/lib/site";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
+import { FitCheckCta } from "@/components/FitCheckCta";
 import { loadCanon, loadDossier } from "@/content/load";
 
 export const metadata = {
@@ -48,13 +49,36 @@ export default async function ProofPage() {
           Review the flagship case first, then the artifacts, then the services page if the work looks relevant to your product.
         </p>
 
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Health workflow result</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Sensitive usage stayed usable without forcing more data collection or more background dependence than the workflow needed.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Buyer-proof result</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Trust claims were reduced to what could actually be verified from releases, artifacts, and public inspection paths.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you buy</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Clearer product risk, fewer hidden trust failures, and a faster path to the fixes that matter first.
+            </p>
+          </div>
+        </div>
+
         <div className="mt-7 flex flex-wrap gap-3">
           <Button href="/case-study/pain-tracker">Review flagship case</Button>
           <Button href="/services" variant="ghost">See services</Button>
-          <Button href="/contact" variant="ghost">Book a review</Button>
+          <Button href="/contact" variant="ghost">Get a 3-point risk read</Button>
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-2.5">
+        <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
+
+        <div className="mt-3 flex flex-wrap gap-2.5">
             <Button
               href="/artifacts/security-and-audits/defensibility-packet-preview"
               variant="ghost"
@@ -95,10 +119,16 @@ export default async function ProofPage() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best next step</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              If this looks like your risk surface, go to services or send the app, stack, and concern.
+              If this looks like your risk surface, go to services or send the product URL and concern.
             </p>
           </div>
         </div>
+
+        <FitCheckCta
+          className="mt-8"
+          title="If this feels close to your situation, send the URL."
+          description="I can tell you whether your product looks like a teardown, full review, or not a fit before you commit to anything larger."
+        />
       </Panel>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
