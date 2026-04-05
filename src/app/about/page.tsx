@@ -142,6 +142,22 @@ export default function AboutPage() {
             </p>
           </Panel>
 
+          <Panel className="mt-4 p-7 sm:p-8">
+            <div className="text-sm font-semibold">Canonical profiles</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              Use these when verifying the public identity surface for CrisisCore Systems across code and DOI-backed records.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={SITE.socials.github} variant="ghost">
+                GitHub ↗
+              </Button>
+              <Button href={SITE.socials.zenodo} variant="ghost">
+                Zenodo canon ↗
+              </Button>
+            </div>
+          </Panel>
+
           <Link href="/proof" className="group mt-4 block">
             <AssetFigure
               src="/assets/founder-banners/about_mission_plate.svg"

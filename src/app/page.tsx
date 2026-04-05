@@ -1,6 +1,8 @@
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
+import { FitCheckCta } from "@/components/FitCheckCta";
+import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -49,27 +51,33 @@ export default function HomePage() {
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What I do</div>
-            <div className="mt-2 text-base font-semibold">Privacy teardowns, full reviews, and fix sprints</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Health workflow result</div>
+            <div className="mt-2 text-base font-semibold">Risky default collection reduced before launch</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              I find the product choices most likely to create trust problems before users, partners, or auditors do.
+              Recent work moved sensitive logging toward local-first defaults, explicit export, and fewer background assumptions.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Who hires me</div>
-            <div className="mt-2 text-base font-semibold">Founders shipping sensitive workflows</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Trust proof result</div>
+            <div className="mt-2 text-base font-semibold">Security claims turned into inspectable release evidence</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Small teams with real users, real launch pressure, and no patience for vague security theater.
+              Public trust language was narrowed, tied to hosted release checks, and made easier for skeptical buyers to verify.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">How to start</div>
-            <div className="mt-2 text-base font-semibold">Send the link, concern, and deadline</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why founders hire me</div>
+            <div className="mt-2 text-base font-semibold">Catch trust-breaking product decisions before users do</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              No long brief required. Send the product link, one sentence on the concern, and your deadline.
+              The value is not theory. It is a faster path to the few fixes most likely to reduce launch friction and user doubt.
             </p>
           </div>
         </div>
+
+        <FitCheckCta
+          className="mt-8"
+          title="Paste the product URL and the thing that feels off."
+          description="That is enough for a first pass. If there is a real trust problem, I will tell you the smallest useful next step."
+        />
 
         <div className="mt-6 text-sm text-white/65">
           Founder of CrisisCore Systems. I review fragile software systems for trust, privacy, and structural risk.
@@ -153,26 +161,50 @@ export default function HomePage() {
         </div>
       </Section>
 
+      <Section title="Common Founder Queries" kicker="Search-entry pages">
+        <div className="grid gap-4 md:grid-cols-3">
+          {BUYER_INTENT_PAGES.map((page) => (
+            <Panel key={page.slug} className="p-6">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">{page.query}</div>
+              <h3 className="mt-3 text-lg font-semibold">{page.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">{page.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <Button href={`/services/${page.slug}`} variant="ghost" className="justify-center">
+                  Open page
+                </Button>
+                <Button href={page.proofHref} variant="ghost" className="justify-center">
+                  See proof
+                </Button>
+              </div>
+            </Panel>
+          ))}
+        </div>
+
+        <div className="mt-5 text-sm text-white/65">
+          These are written for the plain-English problems founders actually search when trust or privacy feels off.
+        </div>
+      </Section>
+
       <Section id="proof" title="Proof" kicker="Why believe this">
         <div className="grid gap-4 lg:grid-cols-[1.25fr_0.95fr]">
           <Panel className="p-7 sm:p-8">
-            <div className="cc-kicker">Flagship evidence path</div>
-            <h3 className="mt-2 text-xl font-semibold">PainTracker, ProofVault, redacted audit artifacts, and technical essays</h3>
+            <div className="cc-kicker">Plain-English outcomes</div>
+            <h3 className="mt-2 text-xl font-semibold">Real product work that reduced trust risk instead of just describing it</h3>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              The proof surface already shows the kind of work buyers need to inspect: minimization decisions, trust boundary design, release-bound evidence, public repos, and long-form technical reasoning.
+              The proof surface shows concrete changes buyers care about: less risky data handling, clearer product boundaries, and trust claims backed by release evidence instead of vague posture.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Privacy-first redesign work for a sensitive health-adjacent workflow, with local-first defaults and explicit sharing.
+                  Sensitive health-adjacent logging stayed local by default, sharing became explicit, and failure states became easier to recover from.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Bounded trust evidence tied to a hosted-green release path, with a smaller and more defensible claim surface.
+                  Trust claims were narrowed to what the release process could actually prove, making the product easier to defend to skeptical buyers.
                 </p>
               </div>
             </div>

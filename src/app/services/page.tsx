@@ -1,7 +1,9 @@
 import { absoluteUrl, SITE } from "@/app/lib/site";
+import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { Section } from "@/components/Section";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
+import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
   title: "Services",
@@ -125,6 +127,12 @@ export default function ServicesPage() {
             See outcomes
           </Button>
         </div>
+
+        <FitCheckCta
+          className="mt-8"
+          title="Want to know if this is worth paying for yet?"
+          description="Send the product URL and an optional concern. I will tell you whether this looks like a teardown, a full review, or not a fit."
+        />
       </Panel>
 
       <Section title="Packages" kicker="Starting points">
@@ -207,10 +215,30 @@ export default function ServicesPage() {
         </div>
       </Section>
 
+      <Section title="Start From The Query" kicker="Buyer-intent pages">
+        <div className="grid gap-4 md:grid-cols-3">
+          {BUYER_INTENT_PAGES.map((page) => (
+            <Panel key={page.slug} className="p-7 sm:p-8">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">{page.query}</div>
+              <h2 className="mt-2 text-xl font-semibold">{page.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">{page.summary}</p>
+              <div className="mt-6 grid gap-2">
+                <Button href={`/services/${page.slug}`} variant="ghost" className="w-full justify-center">
+                  Open query page
+                </Button>
+                <Button href={page.proofHref} variant="ghost" className="w-full justify-center">
+                  See matching proof
+                </Button>
+              </div>
+            </Panel>
+          ))}
+        </div>
+      </Section>
+
       <Section title="How To Hire" kicker="Simple intake">
         <Panel className="p-8 sm:p-10">
           <p className="max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-            Send the product link, your main concern, and your deadline. Add repo or stack details only if they help. I&apos;ll reply with fit, likely package, and next step.
+            Send the product URL and, if useful, the main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact">Get a 3-point risk read</Button>

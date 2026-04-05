@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { SITE } from "@/app/lib/site";
 import { ARTIFACTS } from "@/app/lib/artifacts";
+import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { loadProjects, loadWriting } from "@/content/load";
 
 export const runtime = "nodejs";
@@ -72,6 +73,10 @@ export async function GET() {
       path: "/case-study/proofvault",
       lastmod: toIsoOrNow(contentPath("dossiers", "proofvault.json")),
     },
+    ...BUYER_INTENT_PAGES.map((page) => ({
+      path: `/services/${page.slug}`,
+      lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "services", "[slug]", "page.tsx")),
+    })),
   ];
 
   const projectEntries: SitemapEntry[] = loadProjects().map((project) => ({

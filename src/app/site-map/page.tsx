@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ARTIFACTS } from "@/app/lib/artifacts";
+import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { loadProjects, loadWriting } from "@/content/load";
@@ -42,6 +43,19 @@ export default function SiteMapPage() {
             {["/", "/services", "/proof", "/about", "/contact", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
                 <Link className="hover:text-white" href={withBuild(route)}>{route}</Link>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+
+        <Panel className="p-7">
+          <div className="text-sm font-semibold">Buyer-intent pages</div>
+          <ul className="mt-4 space-y-2 text-sm text-white/75">
+            {BUYER_INTENT_PAGES.map((page) => (
+              <li key={page.slug}>
+                <Link className="hover:text-white" href={withBuild(`/services/${page.slug}`)}>
+                  /services/{page.slug}
+                </Link>
               </li>
             ))}
           </ul>

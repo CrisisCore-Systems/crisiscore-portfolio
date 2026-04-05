@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { PRIMARY_SITE_URL, SITE } from "@/app/lib/site";
+import { absoluteUrl, PRIMARY_SITE_URL, SITE } from "@/app/lib/site";
 import { cn } from "@/lib/cn";
 import "./globals.css";
 
@@ -47,6 +47,8 @@ export const metadata: Metadata = {
 };
 
 function jsonLd() {
+  const sameAs = Object.values(SITE.socials);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -55,8 +57,9 @@ function jsonLd() {
         "@id": `${SITE.url}#organization`,
         name: SITE.name,
         url: SITE.url,
+        logo: absoluteUrl("/icon-192"),
         email: SITE.email,
-        sameAs: [SITE.socials.github],
+        sameAs,
       },
       {
         "@type": "ProfessionalService",
@@ -81,7 +84,7 @@ function jsonLd() {
           "Structural risk review",
           "Software audit consulting",
         ],
-        sameAs: [SITE.socials.github],
+        sameAs,
         provider: {
           "@id": `${SITE.url}#organization`,
         },

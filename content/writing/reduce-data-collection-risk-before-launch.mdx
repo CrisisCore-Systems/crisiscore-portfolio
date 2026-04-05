@@ -1,0 +1,107 @@
+---
+title: "How to reduce data collection risk before launch"
+description: "A plain-English guide for founders whose product is collecting more user data than it needs."
+date: "2026-04-04"
+---
+
+Most teams do not say, "let's build a risky data collection model."
+
+They get there by increments.
+
+One analytics event.
+One debugging log.
+One convenience export.
+One third-party tool.
+One growth feature that quietly becomes part of the default path.
+
+Then launch gets close and the team feels it.
+
+Something is off.
+
+The product may work, but it now collects more than the core job actually needs.
+That creates trust risk before anyone has even written a better privacy paragraph.
+
+## The blunt test
+
+Ask five questions.
+
+- What user data is required for the product to do its core job?
+- What data is only there because it is convenient for the team?
+- What data leaves the device or browser by default?
+- What data is retained longer than the user would reasonably expect?
+- What logs, analytics, or third-party tools can see more than they need?
+
+If the answers are fuzzy, you do not have a collection policy problem.
+You have a product boundary problem.
+
+## Where teams usually go wrong
+
+The common pattern looks like this:
+
+- Product assumes more data means better future optionality.
+- Engineering adds logs and events before anyone defines a minimization boundary.
+- Third-party tools inherit visibility because they are quick to install.
+- Copy promises privacy while the product still routes too much data through the wrong places.
+
+This is how trust debt accumulates.
+
+The risk is not abstract.
+The risk is that users, buyers, or partners eventually ask a simple question:
+
+Why does your product need this data at all?
+
+If the team cannot answer clearly, the trust boundary is already weak.
+
+## What to cut first
+
+Start with the collection that is least defensible and least necessary.
+
+Usually that means:
+
+- analytics that capture more context than product decisions require
+- logs that retain sensitive payloads by default
+- account-first flows for jobs that should work before sign-up
+- retention windows nobody intentionally chose
+- background sync or sharing behavior users did not explicitly trigger
+
+Cutting these first matters because they reduce risk without forcing a full rewrite.
+
+## What a better default looks like
+
+A safer product boundary usually has four properties:
+
+- local or session-bound state where possible
+- explicit export instead of background sharing
+- narrower logs and analytics
+- retention that matches a real product need instead of inertia
+
+This is not about making the product useless.
+It is about proving that the product can still do its job without collecting extra user reality by default.
+
+## The founder version of the decision
+
+You do not need to solve every privacy or security question before launch.
+
+You do need to know:
+
+- what the product truly needs
+- what it is collecting out of habit
+- which defaults are most likely to create distrust later
+
+That is the useful pre-launch question.
+
+Not "are we perfect?"
+
+The question is:
+
+What should we narrow now while it is still cheap?
+
+## If you need a practical next step
+
+If your product handles health, legal, workplace, family, or other sensitive user reality, start with a minimization review before launch instead of waiting for a bigger failure.
+
+Related links:
+
+- [Reduce data collection risk review](/services/reduce-data-collection-risk-before-launch)
+- [Services](/services)
+- [Proof surface](/proof)

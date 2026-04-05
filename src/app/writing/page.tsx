@@ -6,7 +6,7 @@ import { loadCanon, loadWriting } from "@/content/load";
 
 export const metadata = {
   title: "Writing",
-  description: "Technical writing, doctrine, and essays supporting CrisisCore Systems trust hardening and privacy architecture work.",
+  description: "Founder-facing problem posts, technical writing, and doctrine supporting CrisisCore Systems trust hardening and privacy architecture work.",
 };
 
 export default function WritingIndexPage() {
@@ -20,15 +20,16 @@ export default function WritingIndexPage() {
         Writing
       </h1>
       <p className="mt-3 cc-lede">
-        Essays and doctrine behind the service work on this site: trust boundaries, privacy architecture, minimization-first systems, and degraded-condition design.
+        Founder-facing problem posts, essays, and doctrine behind the service work on this site: trust boundaries, privacy architecture, minimization-first systems, and degraded-condition design.
       </p>
 
       <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-        This is supporting depth for buyers who want to inspect the thinking. Most visitors should start with Services or Proof.
+        This section now does two jobs: plain-English demand capture for founders with an immediate problem, and deeper doctrine for buyers who want to inspect the reasoning. Most visitors should still start with Services or Proof.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {[
+          "Founder problems",
           "Protective computing",
           "Trust boundaries",
           "Local-first",
