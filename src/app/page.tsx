@@ -23,7 +23,7 @@ export default function HomePage() {
         <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
           Find product and privacy issues before they become launch problems.
         </h1>
-        <p className="mt-5 text-xl font-semibold text-white">
+        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
           I review sensitive-data products for risky defaults, confusing consent, and avoidable data collection.
         </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
@@ -43,9 +43,6 @@ export default function HomePage() {
           <Button href="/contact">Get a 3-point risk read</Button>
           <Button href="/services" variant="ghost">
             See services
-          </Button>
-          <Button href="/proof" variant="ghost">
-            See outcomes
           </Button>
         </div>
 
@@ -86,7 +83,7 @@ export default function HomePage() {
 
       <nav
         aria-label="Home page sections"
-        className="sticky top-16 z-20 mt-6 rounded-2xl border border-white/10 bg-black/45 px-4 py-3 backdrop-blur"
+        className="sticky top-16 z-20 mt-6 rounded-2xl border border-[color:var(--line)] bg-[color:var(--panel)]/90 px-4 py-3 backdrop-blur"
       >
         <div className="flex flex-wrap items-center gap-2 md:gap-3">
           <div className="mr-2 text-[11px] uppercase tracking-[0.18em] text-white/45">Jump to</div>
@@ -155,9 +152,6 @@ export default function HomePage() {
 
         <div className="mt-5 flex flex-wrap gap-3">
           <Button href="/services">See service details</Button>
-          <Button href="/contact" variant="ghost">
-            Get a 3-point risk read
-          </Button>
         </div>
       </Section>
 
@@ -171,9 +165,6 @@ export default function HomePage() {
               <div className="mt-5 flex flex-wrap gap-2">
                 <Button href={`/services/${page.slug}`} variant="ghost" className="justify-center">
                   Open page
-                </Button>
-                <Button href={page.proofHref} variant="ghost" className="justify-center">
-                  See proof
                 </Button>
               </div>
             </Panel>
@@ -221,14 +212,8 @@ export default function HomePage() {
 
             <div className="mt-6 grid gap-2">
               <Button href="/case-study/pain-tracker">Read flagship case study</Button>
-              <Button href="/services" variant="ghost" className="justify-center">
-                See services
-              </Button>
               <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost" className="justify-center">
                 Open redacted artifact
-              </Button>
-              <Button href="/contact" variant="ghost" className="justify-center">
-                Get a 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -297,9 +282,6 @@ export default function HomePage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact">Get a 3-point risk read</Button>
-            <Button href="/services" variant="ghost">
-              See services
-            </Button>
             <Button href="mailto:crisiscore.systems@proton.me" variant="ghost">
               Email directly
             </Button>

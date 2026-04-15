@@ -23,7 +23,7 @@ type Props = LinkProps | ButtonProps;
 
 export function Button({ variant = "solid", className, ...props }: Props) {
   const base =
-    "cc-button inline-flex items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-mono tracking-[0.02em] transition will-change-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/10";
+    "cc-button inline-flex items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-medium tracking-[0.01em] transition will-change-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/10";
   const solid =
     "cc-button-solid border text-[color:var(--text)] hover:-translate-y-0.5 active:translate-y-0";
   const ghost =

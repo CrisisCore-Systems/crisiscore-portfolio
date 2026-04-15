@@ -7,14 +7,14 @@ export function Section(props: {
   id?: string;
 }) {
   return (
-    <section id={props.id} className="scroll-mt-28 py-9 sm:py-11">
+    <section id={props.id} className="scroll-mt-28 py-10 sm:py-12">
       <div className="mb-6 max-w-2xl">
         {props.kicker ? (
-          <div className="text-xs uppercase tracking-[0.2em] text-white/50">
+          <div className="text-[11px] uppercase tracking-[0.2em] text-white/50">
             {props.kicker}
           </div>
         ) : null}
-        <h2 className="mt-2 text-xl font-semibold leading-tight sm:text-2xl">{props.title}</h2>
+        <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.01em] sm:text-3xl">{props.title}</h2>
       </div>
       {props.children}
     </section>
