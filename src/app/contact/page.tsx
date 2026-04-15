@@ -5,7 +5,7 @@ import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
   title: "Contact",
-  description: "Get a quick fit check for a health or sensitive-data product. Send the link and, if useful, the concern.",
+  description: "Get a quick fit check for a sensitive-data product. Send the product URL, launch stage, and one concrete concern.",
 };
 
 export default function ContactPage() {
@@ -14,14 +14,14 @@ export default function ContactPage() {
       <div className="cc-kicker">Contact</div>
       <h1 className="text-3xl font-semibold">Contact</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70">
-        Email-first. Send the product URL and, if useful, the concern. I&apos;ll reply with fit, recommended package, and next step.
+        Email-first. Send the product URL, launch stage, and one concrete concern. I&apos;ll reply with fit, recommended package, and next step.
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best first message</div>
           <p className="mt-2 text-sm leading-relaxed text-white/70">
-            Short and direct. A product link and one real concern beat a polished pitch.
+            Keep it short and direct. Product link, stage, and one real concern beat a polished pitch.
           </p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -44,13 +44,13 @@ export default function ContactPage() {
             <div className="cc-kicker">Start here</div>
             <h2 className="mt-2 text-xl font-semibold">Get a quick fit check</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Fastest path: paste the product URL and the concern if you have one. I&apos;ll reply with whether this looks like a fit for the 48-hour teardown, a deeper review, or not a fit.
+              Fastest path: send product URL, launch stage, and the issue you want checked first. I&apos;ll reply with whether this looks like a fit for a 48-hour teardown, deeper review, or not a fit.
             </p>
 
             <FitCheckCta
               className="mt-6"
-              title="Paste the URL. Add the concern if you want."
-              description="No deck or long brief required. This is meant to be the lowest-friction first pass."
+              title="Send the URL, launch stage, and one specific issue."
+              description="No deck or long brief required. This is the fastest way to get a useful first answer."
             />
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -67,8 +67,8 @@ export default function ContactPage() {
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Typical engagement types</div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {[
-                  "48-hour Trust Teardown",
-                  "Full Trust Review",
+                  "48-hour Teardown",
+                  "Full Review",
                   "Fix Sprint",
                 ].map((item) => (
                   <span
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
             <div className="mt-6 text-xs text-white/55">
               Operational note: avoid sending sensitive personal data by email.
-              If you need a higher-safety channel, say so in the first message.
+              If you need a safer channel, say so in the first message.
             </div>
 
             <div className="mt-5 text-xs text-white/55">
@@ -96,8 +96,8 @@ export default function ContactPage() {
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               {[
                 "Product URL.",
-                "The main privacy, trust, or launch concern if you have one.",
-                "Optional: deadline if timing matters.",
+                "Launch stage or deadline.",
+                "The main privacy, product, or launch concern.",
                 "Optional: repo, stack, or constraints if they change the answer.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
@@ -142,10 +142,10 @@ export default function ContactPage() {
             <div className="text-sm font-semibold">For operators</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                If your environment includes coercion risk, compromised devices, legal exposure, or sensitive health-adjacent data, say so early. We&apos;ll treat threat boundaries as first-class.
+                If your environment includes coercion risk, compromised devices, legal exposure, or sensitive health-adjacent data, say so early.
               </p>
               <p>
-                Trust review is constraint-led. "Normal" assumptions are optional.
+                I can scope around non-standard constraints and threat boundaries.
               </p>
             </div>
           </Panel>

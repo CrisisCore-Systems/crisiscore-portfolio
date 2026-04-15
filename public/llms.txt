@@ -1,0 +1,79 @@
+# CrisisCore Systems
+
+> CrisisCore Systems provides authoritative, evergreen guidance on privacy teardown, trust review, launch-readiness hardening, and security-minded product assessment for health and sensitive-data applications. The site is written for founders, operators, buyers, and reviewers who need clear explanations of risky defaults, hidden collection, trust boundaries, and concrete fixes before launch or procurement.
+
+CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, and review work for products that handle sensitive user data. The site combines service pages, proof surfaces, case studies, redacted artifacts, project dossiers, and technical writing about local-first architecture, data minimization, degraded-condition design, and defensible trust claims.
+
+## Core Content
+
+[Home](https://crisiscore-systems.ca/)
+> Overview of the firm, core offers, who the work fits, proof summaries, and the primary path for founders shipping health and sensitive-data products.
+
+[Services Overview](https://crisiscore-systems.ca/services)
+> Main services page covering the 48-hour Trust Teardown, Full Trust Review, and Fix Sprint, with guidance on which engagement fits which situation.
+
+[Privacy Review for Health Apps](https://crisiscore-systems.ca/services/privacy-review-for-health-apps)
+> Buyer-intent page for founders who need a plain-English review of collection paths, risky defaults, trust boundaries, and minimization opportunities in health or health-adjacent apps.
+
+[Pre-Launch Privacy Audit](https://crisiscore-systems.ca/services/pre-launch-privacy-audit)
+> Launch-focused privacy audit content for sensitive-data products that need ranked findings, boundary review, and a concrete pre-launch fix order.
+
+[Trust Review for AI Products Handling Sensitive Data](https://crisiscore-systems.ca/services/ai-trust-review-sensitive-data-products)
+> Review framework for AI-assisted products where prompts, logs, outputs, retention, and public claims create trust exposure.
+
+[Local-First Health App Architecture Review](https://crisiscore-systems.ca/services/local-first-health-app-architecture)
+> Guidance on local-first defaults, explicit export, degraded-mode resilience, and reducing dangerous cloud assumptions in health workflows.
+
+[Security Review Before Launch for Sensitive Apps](https://crisiscore-systems.ca/services/security-review-before-launch-sensitive-apps)
+> Product-level security and trust review focused on launch-relevant failures, weak boundaries, misleading copy, and fragile defaults.
+
+[Data Minimization Review for Apps](https://crisiscore-systems.ca/services/data-minimization-review-for-apps)
+> Review content for reducing unnecessary collection, narrowing retention and logging, and producing a buyer-defensible minimization story.
+
+## Proof And Evidence
+
+[Proof](https://crisiscore-systems.ca/proof)
+> Central proof surface showing outcome changes, trust-risk reduction, public inspection paths, case studies, and links to artifacts and source records.
+
+[PainTracker Case Study](https://crisiscore-systems.ca/case-study/pain-tracker)
+> Flagship case study on a minimization-first, local-first redesign for a trust-sensitive health workflow.
+
+[ProofVault Case Study](https://crisiscore-systems.ca/case-study/proofvault)
+> Case study showing how broad trust claims were narrowed into release-bound, inspectable evidence.
+
+[Redacted Threat Model Excerpt](https://crisiscore-systems.ca/artifacts/security-and-audits/redacted-threat-model-excerpt)
+> Redacted audit artifact that demonstrates how trust and security findings are documented.
+
+[Defensibility Packet Preview](https://crisiscore-systems.ca/artifacts/security-and-audits/defensibility-packet-preview)
+> Example packet showing the evidence path behind defensible trust and security claims.
+
+[Projects](https://crisiscore-systems.ca/projects)
+> Dossiers and implementation-facing evidence for project work, including PainTracker, ProofVault, Security and Audits, and the Overton Framework.
+
+## Writing And Doctrine
+
+[Writing](https://crisiscore-systems.ca/writing)
+> Index of founder-facing problem posts, technical essays, and doctrine covering privacy architecture, trust boundaries, minimization-first systems, and degraded-condition design.
+
+[Reduce Data Collection Risk Before Launch](https://crisiscore-systems.ca/writing/reduce-data-collection-risk-before-launch)
+> Founder-facing article on reducing risky collection defaults before launch exposure grows.
+
+[Privacy-First Pain Tracking](https://crisiscore-systems.ca/writing/privacy-first-pain-tracking)
+> Writing on health-adjacent product design, privacy-first defaults, and trust-sensitive workflow architecture.
+
+[PainTracker Architecture](https://crisiscore-systems.ca/writing/paintracker-architecture)
+> Technical walkthrough of local-first architecture decisions, explicit export, and degraded-condition support.
+
+[Protective Computing Doctrine](https://crisiscore-systems.ca/writing/protective-computing-doctrine)
+> Higher-level doctrine describing the reasoning and vocabulary behind the site's trust and privacy review approach.
+
+## Supporting Pages
+
+[About](https://crisiscore-systems.ca/about)
+> Background on the founder, review posture, and the kind of structural product risk this work is designed to address.
+
+[Contact](https://crisiscore-systems.ca/contact)
+> Intake guidance for founders seeking a quick fit check, recommended package, and next step.
+
+[Sitemap](https://crisiscore-systems.ca/site-map)
+> Human-readable route map for core pages, buyer-intent service pages, dossiers, writing, and artifacts.

@@ -7,7 +7,7 @@ import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
   title: "Services",
-  description: "48-hour trust teardown, full trust reviews, and fix sprints for health and sensitive-data products.",
+  description: "48-hour teardowns, full reviews, and fix sprints for sensitive-data products.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/service-panels/trust_hardening_review.svg") }],
   },
@@ -105,20 +105,20 @@ export default function ServicesPage() {
       <Panel className="p-8 sm:p-10">
         <div className="cc-kicker">Services</div>
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Simple offers for founders shipping health and sensitive-data products.
+          Three ways to get a clear read on a sensitive-data product.
         </h1>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-          Start small if you want. The front-door offer is a 48-hour teardown that tells you whether there is a real trust problem and whether a deeper review is worth it.
+          Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
         </p>
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need speed? Start with the 48-hour Trust Teardown.
+            Need a quick answer? Start with the 48-hour teardown.
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need the full map? Choose the Full Trust Review.
+            Need the full picture? Choose the full review.
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need implementation help? Move into a Fix Sprint.
+            Need help shipping corrections? Move into a fix sprint.
           </div>
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
@@ -130,46 +130,46 @@ export default function ServicesPage() {
 
         <FitCheckCta
           className="mt-8"
-          title="Want to know if this is worth paying for yet?"
-          description="Send the product URL and an optional concern. I will tell you whether this looks like a teardown, a full review, or not a fit."
+          title="Send three details: URL, launch stage, and one concrete concern."
+          description="I will tell you whether this looks like a teardown, full review, or not a fit before you commit to anything larger."
         />
       </Panel>
 
       <Section title="Packages" kicker="Starting points">
         <div className="grid gap-4 lg:grid-cols-3">
           <Panel className="p-7 sm:p-8">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">48-hour Trust Teardown</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">48-hour teardown</div>
             <h2 className="mt-2 text-xl font-semibold">Starting at CA$250</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              A low-risk first step for founders who want to know quickly whether privacy or trust risk is real.
+              A fast first pass for teams that need to know if a real product problem exists.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• 48 hour turnaround</li>
-              <li>• Top 3 trust risks</li>
+              <li>• Top 3 issues to address first</li>
               <li>• 3 fixes worth making first</li>
               <li>• Recommendation on whether a deeper review is worth it</li>
               <li>• Short written readout</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
-              Best for: cold leads who want a useful first step without buying a bigger engagement up front.
+              Best for: teams that want a quick signal without starting a larger engagement.
             </div>
           </Panel>
 
           <Panel className="p-7 sm:p-8">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Full Trust Review</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Full review</div>
             <h2 className="mt-2 text-xl font-semibold">Starting at CA$1,200</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              The flagship offer when you need a serious review of how your product collects, stores, and handles sensitive user reality.
+              The full option when you need a review of collection, storage, and product behavior around sensitive data.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• Threat model snapshot</li>
               <li>• Privacy risk review</li>
               <li>• Structural weakness analysis</li>
-              <li>• Product trust boundary review</li>
+              <li>• Product boundary review</li>
               <li>• Prioritized roadmap</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
-              Best for: teams with real launch or operational pressure who need a full picture and a fix order they can act on.
+              Best for: teams under launch pressure or real user exposure that need a full picture and practical fix order.
             </div>
           </Panel>
 
@@ -177,16 +177,16 @@ export default function ServicesPage() {
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">Fix Sprint</div>
             <h2 className="mt-2 text-xl font-semibold">Starting at CA$1,500</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Implementation support for the highest-value corrections once the trust failures are already known.
+              Implementation support for the highest-value corrections once the problems are already known.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• Deploy issues</li>
-              <li>• Trust boundary cleanup</li>
-              <li>• Copy and UX trust fixes</li>
+              <li>• Data boundary cleanup</li>
+              <li>• Copy and UX fixes</li>
               <li>• Architectural hardening</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
-              Best for: teams that already know what hurts and want the hardest, highest-leverage corrections shipped quickly.
+              Best for: teams that already know the issues and want the hardest fixes shipped quickly.
             </div>
           </Panel>
         </div>
@@ -196,20 +196,20 @@ export default function ServicesPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Every package is built to leave you with:</div>
-            <ul className="space-y-2 text-sm text-white/75">
-              <li>• Ranked findings instead of vague concern lists</li>
-              <li>• Explicit trust boundaries and architectural weak points</li>
-              <li>• Concrete fixes your team can implement in priority order</li>
-              <li>• Written notes that survive after the call ends</li>
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <li>• Ranked findings instead of a vague concern list</li>
+              <li>• Clear boundaries and weak points</li>
+              <li>• Concrete fixes in priority order</li>
+              <li>• Written notes the team can keep using after the call</li>
             </ul>
           </Panel>
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">How engagement sizing works</div>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Final scope depends on product surface area, access available, and whether the ask is diagnostic, roadmap-focused, or implementation-heavy. The listed prices are starting points so buyers do not have to guess whether the work is accessible.
+              Final scope depends on product surface area, access, and whether the work is diagnostic, roadmap-focused, or implementation-heavy. Listed prices are starting points so buyers do not have to guess whether the work is accessible.
             </p>
             <div className="mt-5 text-sm text-white/70">
-              If you are unsure, send the link, concern, and deadline and I&apos;ll point you to the smallest useful starting point.
+              If you are unsure, send the link, launch stage, and deadline and I&apos;ll point you to the smallest useful starting point.
             </div>
           </Panel>
         </div>
@@ -238,7 +238,7 @@ export default function ServicesPage() {
       <Section title="How To Hire" kicker="Simple intake">
         <Panel className="p-8 sm:p-10">
           <p className="max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-            Send the product URL and, if useful, the main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
+            Send the product URL, launch stage, and main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact">Get a 3-point risk read</Button>

@@ -21,16 +21,16 @@ export default function HomePage() {
       <Panel className="p-8 sm:p-10">
         <div className="cc-kicker">For health and sensitive-data apps</div>
         <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-          Pre-launch privacy teardown for health and sensitive-data apps.
+          Find product and privacy issues before they become launch problems.
         </h1>
         <p className="mt-5 text-xl font-semibold text-white">
-          I help founders catch the risky defaults, privacy gaps, and trust-breaking flows most likely to become launch friction or user distrust.
+          I review sensitive-data products for risky defaults, confusing consent, and avoidable data collection.
         </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
-          Best fit: health-adjacent, wellness, case-management, AI, or other products handling sensitive user data where the wrong architecture can quietly create trust risk.
+          Best fit: teams near launch or already live.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          If you are close to launch, already live, or uneasy about what your product is collecting, storing, or assuming in the background, this is the point of entry.
+          You get a prioritized list of what is wrong, what matters now, and what to fix first.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/70 sm:text-sm">
@@ -51,32 +51,32 @@ export default function HomePage() {
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Health workflow result</div>
-            <div className="mt-2 text-base font-semibold">Risky default collection reduced before launch</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What this catches</div>
+            <div className="mt-2 text-base font-semibold">Over-collection, weak consent, and brittle flows</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Recent work moved sensitive logging toward local-first defaults, explicit export, and fewer background assumptions.
+              I focus on the few product choices most likely to create legal, reputational, or buyer-facing trouble.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Trust proof result</div>
-            <div className="mt-2 text-base font-semibold">Security claims turned into inspectable release evidence</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you get back</div>
+            <div className="mt-2 text-base font-semibold">A short list of issues, fixes, and next moves</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Public trust language was narrowed, tied to hosted release checks, and made easier for skeptical buyers to verify.
+              No padded report. Just clear problems, priority order, and the smallest useful way forward.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why founders hire me</div>
-            <div className="mt-2 text-base font-semibold">Catch trust-breaking product decisions before users do</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why teams use this</div>
+            <div className="mt-2 text-base font-semibold">To avoid expensive cleanup after launch</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              The value is not theory. It is a faster path to the few fixes most likely to reduce launch friction and user doubt.
+              This is for teams that want direct correction, not an audit slide deck with no product change.
             </p>
           </div>
         </div>
 
         <FitCheckCta
           className="mt-8"
-          title="Paste the product URL and the thing that feels off."
-          description="That is enough for a first pass. If there is a real trust problem, I will tell you the smallest useful next step."
+          title="Start with three details: product URL, launch window, and one concrete concern."
+          description="I reply with a clear fit call, top problem areas to check first, and the package that makes the most sense."
         />
 
         <div className="mt-6 text-sm text-white/65">
@@ -106,34 +106,34 @@ export default function HomePage() {
       <Section id="services" title="Services" kicker="3 engagement paths">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">48-hour Trust Teardown</h3>
-            <p className="mt-2 text-sm text-white/70">A low-friction first step for founders who want a fast read on whether trust risk is real.</p>
+            <h3 className="text-base font-semibold">48-hour teardown</h3>
+            <p className="mt-2 text-sm text-white/70">A fast first pass for teams that need a clear answer on whether a real product problem exists.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$250</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• 48 hour turnaround</li>
-              <li>• Top 3 trust risks</li>
-              <li>• 3 concrete fixes</li>
+              <li>• Top 3 issues to address first</li>
+              <li>• Concrete fixes you can act on</li>
               <li>• Recommendation on whether deeper review is worth it</li>
               <li>• Short written readout</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
-              Use this when you want a small first step instead of a full engagement.
+              Use this when you need signal quickly and do not want to start with a full engagement.
             </p>
           </div>
 
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">Full Trust Review</h3>
-            <p className="mt-2 text-sm text-white/70">The flagship review for products where sensitive data and user trust are central to the product.</p>
+            <h3 className="text-base font-semibold">Full review</h3>
+            <p className="mt-2 text-sm text-white/70">The deeper audit for products where data handling, product behavior, and buyer scrutiny all matter.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,200</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Threat model snapshot</li>
               <li>• Privacy risk review</li>
               <li>• Structural weakness analysis</li>
-              <li>• Product trust boundary review</li>
+              <li>• Product boundary review</li>
               <li>• Prioritized roadmap</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
-              Use this when you need the full map of what could break trust and what to fix first.
+              Use this when you need the full map of what is risky, what is sloppy, and what to fix first.
             </p>
           </div>
 
@@ -143,8 +143,8 @@ export default function HomePage() {
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,500</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Deploy issues</li>
-              <li>• Trust boundary cleanup</li>
-              <li>• Copy and UX trust fixes</li>
+              <li>• Data boundary cleanup</li>
+              <li>• Copy and UX fixes</li>
               <li>• Architectural hardening</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5 text-sm text-white/65">
-          These are written for the plain-English problems founders actually search when trust or privacy feels off.
+          These pages are built around plain-language problems founders actually search for.
         </div>
       </Section>
 
@@ -189,22 +189,22 @@ export default function HomePage() {
         <div className="grid gap-4 lg:grid-cols-[1.25fr_0.95fr]">
           <Panel className="p-7 sm:p-8">
             <div className="cc-kicker">Plain-English outcomes</div>
-            <h3 className="mt-2 text-xl font-semibold">Real product work that reduced trust risk instead of just describing it</h3>
+            <h3 className="mt-2 text-xl font-semibold">Real product changes, not hand-wavy claims</h3>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              The proof surface shows concrete changes buyers care about: less risky data handling, clearer product boundaries, and trust claims backed by release evidence instead of vague posture.
+              Proof shows concrete changes in product behavior, data handling, and public claims that can be defended.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">PainTracker result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Sensitive health-adjacent logging stayed local by default, sharing became explicit, and failure states became easier to recover from.
+                  Sensitive logging stayed local by default, sharing became explicit, and failure states became easier for users to recover from.
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Trust claims were narrowed to what the release process could actually prove, making the product easier to defend to skeptical buyers.
+                  Security claims were narrowed to what the release process could actually prove, making the product easier to defend to skeptical buyers.
                 </p>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function HomePage() {
             <ul className="mt-4 space-y-2 text-sm text-white/75">
               <li>• Post-MVP products with live users or a near-term launch</li>
               <li>• Sensitive personal, legal, health, or operator data</li>
-              <li>• Founders who want concrete fixes instead of posture language</li>
+              <li>• Founders who want concrete fixes instead of vague reassurance</li>
               <li>• Teams willing to reduce collection and tighten boundaries</li>
             </ul>
           </Panel>
@@ -259,22 +259,22 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5 text-sm text-white/65">
-          If you are not sure which package fits, start with the 48-hour Trust Teardown.
+          If you are unsure which package fits, start with the 48-hour teardown.
         </div>
       </Section>
 
       <Section id="process" title="How It Starts" kicker="Simple process">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">1. Send the link, concern, and deadline</h3>
+            <h3 className="text-base font-semibold">1. Send the link, stage, and deadline</h3>
             <p className="mt-2 text-sm text-white/70">
-              The first message can be tiny. Product link, one-sentence concern, and deadline is enough.
+              Keep it short: product link, launch stage, and one clear concern.
             </p>
           </div>
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">2. I identify the highest-risk issues</h3>
             <p className="mt-2 text-sm text-white/70">
-              I look for risky defaults, privacy gaps, misleading flows, and trust-breaking assumptions that matter most.
+              I look for risky defaults, privacy gaps, misleading product behavior, and weak operational assumptions.
             </p>
           </div>
           <div className="cc-card p-6">
@@ -290,10 +290,10 @@ export default function HomePage() {
         <Panel className="p-8 sm:p-10">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
           <h2 className="mt-2 text-2xl font-semibold">
-            Want a quick read on whether your product has a trust problem?
+            Need a straight answer on whether your product has a real problem?
           </h2>
           <p className="mt-3 text-sm text-white/70">
-            Send the link, your main concern, and your deadline. I&apos;ll tell you whether a 48-hour teardown or a deeper review makes sense.
+            Send the link, deadline, and main concern. I&apos;ll tell you whether a 48-hour teardown, deeper review, or no engagement makes sense.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/contact">Get a 3-point risk read</Button>

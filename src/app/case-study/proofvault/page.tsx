@@ -36,13 +36,13 @@ export default function ProofVaultCaseStudyPage() {
           ProofVault Trust Case v1.0.1
         </h1>
         <p className="mt-3 max-w-4xl text-base text-white/80 sm:text-lg">
-          A reproducible trust case for an offline-first encrypted evidence app, with a bounded guarantee surface, pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
+          A reproducible trust case for an offline-first encrypted evidence app, with a bounded guarantee surface, a pinned specimen, drift enforcement, and a public release tied to an exact hosted-green commit.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? project.description}
         </p>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
-          This shows the kind of structural review and bounded-evidence work behind release-critical trust claims.
+          This shows the kind of structural review and bounded-evidence work behind release-critical product claims.
         </p>
       </div>
 
@@ -169,7 +169,7 @@ export default function ProofVaultCaseStudyPage() {
             </ul>
 
             <p className="mt-6 text-base font-semibold text-white">
-              Trust claims narrowed, legible, reproducible, and release-bound.
+              Claims narrowed, legible, reproducible, and release-bound.
             </p>
           </Panel>
         </div>
@@ -209,7 +209,7 @@ export default function ProofVaultCaseStudyPage() {
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li className="flex gap-2">
                 <span className="mt-[2px] text-white/40">•</span>
-                <span>Trust claims are narrowed and inspectable instead of rhetorical.</span>
+                <span>Claims are narrowed and inspectable instead of rhetorical.</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-[2px] text-white/40">•</span>
@@ -226,7 +226,7 @@ export default function ProofVaultCaseStudyPage() {
                 See services
               </Button>
               <Button href="/contact" className="w-full justify-center">
-                Book a review
+                Send your product URL
               </Button>
             </div>
           </Panel>

@@ -19,7 +19,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "privacy review for health apps",
     title: "Privacy Review for Health Apps",
     description:
-      "Plain-English privacy review for health and health-adjacent apps before risky defaults, hidden collection, or trust-breaking flows reach users.",
+      "Plain-English privacy review for health and health-adjacent apps before risky defaults, hidden collection, or confusing product behavior reaches users.",
     summary:
       "This is for founders with a live or near-launch health app who need a hard look at where the product collects too much, assumes too much, or quietly routes intimate user data through the wrong systems.",
     painPoints: [
@@ -49,7 +49,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "pre launch privacy audit",
     title: "Pre-Launch Privacy Audit",
     description:
-      "Pre-launch privacy audit for sensitive-data products that need the risky defaults, trust gaps, and launch-blocking assumptions found before release.",
+      "Pre-launch privacy audit for sensitive-data products that need risky defaults, product gaps, and launch-blocking assumptions found before release.",
     summary:
       "A pre-launch privacy audit is useful when the product is nearly ready, but nobody has yet forced the system to justify its collection paths, recovery behavior, and trust claims under real conditions.",
     painPoints: [
@@ -59,13 +59,13 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Nobody has converted the risk picture into a small, ranked shipping plan.",
     ],
     reviewIncludes: [
-      "A ranked readout of the few privacy and trust failures most likely to matter first.",
+      "A ranked readout of the few privacy and product failures most likely to matter first.",
       "Boundary review across product behavior, copy, exports, logging, and fallback states.",
       "A launch-facing fix order that makes clear what to ship now versus later.",
       "A written output that survives after the call ends.",
     ],
     bestFit: [
-      "Products with launch pressure, stakeholder scrutiny, or buyer trust risk.",
+      "Products with launch pressure, stakeholder scrutiny, or buyer-facing risk.",
       "Teams that need a diagnostic first pass before deciding on a larger engagement.",
       "Founders who want an explicit privacy audit path without compliance theater.",
     ],
@@ -81,17 +81,17 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     description:
       "Trust review for AI products that handle sensitive user data and need clearer boundaries, narrower claims, and inspectable proof before launch or sales exposure.",
     summary:
-      "If an AI product touches health, legal, workplace, or other sensitive user reality, the risk is usually not the model alone. It is the surrounding product surface: logging, retention, prompts, exports, fallback states, and claims the team cannot actually defend.",
+      "If an AI product touches health, legal, workplace, or other sensitive user reality, the problem is usually not the model alone. It is the surrounding product surface: logging, retention, prompts, exports, fallback states, and claims the team cannot actually defend.",
     painPoints: [
       "The product makes broad safety or privacy claims that are not tied to verifiable release evidence.",
       "Sensitive prompts, outputs, or logs may be retained longer or shared more widely than intended.",
-      "Model workflows create trust drift between what the product says and what it can prove.",
+      "Model workflows create drift between what the product says and what it can prove.",
       "The team needs narrower, more defensible boundaries before buyers or users test the claims.",
     ],
     reviewIncludes: [
       "A trust-boundary read across prompts, outputs, storage, logging, and recovery paths.",
       "Claim narrowing so the public promise matches what the release can actually prove.",
-      "A concrete fix order for the highest-leverage trust failures.",
+      "A concrete fix order for the highest-leverage failures.",
       "An inspection path the team can show to skeptical buyers without hand-waving.",
     ],
     bestFit: [
@@ -111,7 +111,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     description:
       "Architecture review for health apps that want local-first defaults, explicit export, and fewer dangerous cloud assumptions in the core workflow.",
     summary:
-      "This is for teams building health or wellness products that should stay useful under low trust, low attention, or partial connectivity, but still need a practical architecture review before launch.",
+      "This is for teams building health or wellness products that should stay useful under low attention or partial connectivity, but still need a practical architecture review before launch.",
     painPoints: [
       "The app still assumes always-on connectivity for a workflow that should survive offline or degraded conditions.",
       "Sensitive records are centralized by default even though daily use does not require it.",
@@ -121,7 +121,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     reviewIncludes: [
       "A clear read on which parts of the workflow should stay local by default.",
       "Boundary review across storage, export, sign-up, sync, and degraded-mode behavior.",
-      "A ranked set of architectural corrections that reduce trust risk without breaking the product job.",
+      "A ranked set of architectural corrections that reduce risk without breaking the product job.",
       "A practical recommendation on whether the next move is teardown, full review, or implementation support.",
     ],
     bestFit: [
@@ -141,10 +141,10 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     description:
       "Pre-launch review for products collecting more user data than they need, with a concrete plan to reduce risky defaults before launch exposure grows.",
     summary:
-      "If the uneasy feeling is that the product collects too much, logs too much, or keeps too much by default, this review turns that vague concern into a clear minimization plan before launch makes the problem more expensive.",
+      "If the uneasy feeling is that the product collects too much, logs too much, or keeps too much by default, this review turns that concern into a clear minimization plan before launch makes the problem more expensive.",
     painPoints: [
       "Product and engineering both suspect the app is collecting more than the core workflow actually needs.",
-      "Logging, analytics, exports, or third-party tools expanded faster than the trust model did.",
+      "Logging, analytics, exports, or third-party tools expanded faster than the product boundary did.",
       "Nobody has separated required collection from convenience collection.",
       "The team needs a defensible minimization story before users, buyers, or partners ask harder questions.",
     ],
@@ -169,7 +169,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "privacy architecture for wellness apps",
     title: "Privacy Architecture for Wellness Apps",
     description:
-      "Privacy architecture review for wellness apps that need safer defaults, clearer trust boundaries, and fewer silent assumptions before growth adds exposure.",
+      "Privacy architecture review for wellness apps that need safer defaults, clearer product boundaries, and fewer silent assumptions before growth adds exposure.",
     summary:
       "Wellness products often look low-stakes until they begin collecting intimate patterns, habits, symptoms, or relationship data. This review is for teams that want those boundaries fixed before trust debt piles up.",
     painPoints: [
@@ -180,7 +180,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     ],
     reviewIncludes: [
       "A product-boundary read across onboarding, collection, retention, export, and sharing paths.",
-      "Identification of the privacy defaults most likely to break user trust.",
+      "Identification of the privacy defaults most likely to make users hesitate or opt out.",
       "A simple roadmap for tightening minimization and expectation-setting.",
       "Guidance on whether the product needs a quick teardown or a full review.",
     ],
@@ -199,14 +199,14 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "trust review for mental health apps",
     title: "Trust Review for Mental Health Apps",
     description:
-      "Trust review for mental health apps that need safer defaults, clearer boundaries, and fewer harmful assumptions around sensitive user states.",
+      "Review for mental health apps that need safer defaults, clearer boundaries, and fewer harmful assumptions around sensitive user states.",
     summary:
-      "Mental health products create trust risk quickly because user context is often fragile, low-energy, and high-consequence. This review focuses on the product decisions most likely to break trust before users or clinicians do.",
+      "Mental health products create risk quickly because user context is often fragile, low-energy, and high-consequence. This review focuses on the product decisions most likely to fail users before users or clinicians do.",
     painPoints: [
       "The app handles emotionally sensitive workflows but still assumes high attention and stable conditions.",
       "Collection, retention, or sharing defaults are broader than the product actually needs.",
       "The user experience says support and privacy while the architecture says surveillance and dependency.",
-      "The team needs a sharper trust boundary before launch, pilots, or referrals.",
+      "The team needs a sharper product boundary before launch, pilots, or referrals.",
     ],
     reviewIncludes: [
       "A review of the defaults most likely to feel unsafe or coercive in practice.",
@@ -229,9 +229,9 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "security review before launch for sensitive apps",
     title: "Security Review Before Launch for Sensitive Apps",
     description:
-      "Pre-launch security and trust review for sensitive apps that need risky defaults, weak boundaries, and misleading claim surfaces identified before release.",
+      "Pre-launch security and product review for sensitive apps that need risky defaults, weak boundaries, and misleading claim surfaces identified before release.",
     summary:
-      "This is for teams that know a generic penetration test is not the whole answer. The goal is to find the launch-relevant security and trust failures inside the product model itself, not only perimeter weaknesses.",
+      "This is for teams that know a generic penetration test is not the whole answer. The goal is to find the launch-relevant security and product failures inside the product model itself, not only perimeter weaknesses.",
     painPoints: [
       "The team wants a launch review that goes deeper than infrastructure scanning.",
       "Product behavior, copy, and data handling have not been checked as one system.",
@@ -259,9 +259,9 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "data minimization review for apps",
     title: "Data Minimization Review for Apps",
     description:
-      "Data minimization review for apps that need a smaller collection boundary, clearer retention posture, and fewer trust-breaking defaults.",
+      "Data minimization review for apps that need a smaller collection boundary, clearer retention posture, and fewer risky defaults.",
     summary:
-      "When a product collects more than it needs, every other trust discussion gets harder. This review is for founders who want a practical minimization pass that reduces risk without flattening the product into nothing.",
+      "When a product collects more than it needs, every other privacy discussion gets harder. This review is for founders who want a practical minimization pass that reduces risk without flattening the product into nothing.",
     painPoints: [
       "The current data model grew around convenience instead of necessity.",
       "Retention and export behavior are not obviously justified by the core job.",
@@ -289,11 +289,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "launch readiness review for sensitive data products",
     title: "Launch Readiness Review for Sensitive-Data Products",
     description:
-      "Launch readiness review for sensitive-data products that need a clear view of trust risk, privacy gaps, and boundary failures before going live.",
+      "Launch readiness review for sensitive-data products that need a clear view of product risk, privacy gaps, and boundary failures before going live.",
     summary:
-      "Some teams do not need a theory discussion. They need to know whether the product is about to launch with silent trust failures that will become expensive once users, buyers, or partners begin inspecting it.",
+      "Some teams do not need a theory discussion. They need to know whether the product is about to launch with silent failures that will become expensive once users, buyers, or partners begin inspecting it.",
     painPoints: [
-      "Launch is close but nobody has forced the product to justify its trust boundary.",
+      "Launch is close but nobody has forced the product to justify its core boundary.",
       "Privacy, security, and UX decisions have not been reviewed as one system.",
       "The team needs a smaller, sharper launch-risk picture right now.",
       "There is pressure to ship, but not enough confidence in the defaults.",
@@ -301,7 +301,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     reviewIncludes: [
       "A fast launch-facing read of the defaults most likely to create friction or distrust.",
       "A short prioritized roadmap for what to fix before launch versus after launch.",
-      "A plain-English explanation of where the trust boundary currently breaks.",
+      "A plain-English explanation of where the product boundary currently breaks.",
       "A recommendation on whether to stop at the teardown or move into a deeper review.",
     ],
     bestFit: [

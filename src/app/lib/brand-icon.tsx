@@ -12,8 +12,8 @@ export function renderBrandIcon(size: number) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#05080C",
-        color: "#EEF2F5",
+        backgroundColor: "#120f0d",
+        color: "#f7f0e8",
         borderRadius: outerRadius,
         position: "relative",
         overflow: "hidden",
@@ -25,8 +25,8 @@ export function renderBrandIcon(size: number) {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(72% 62% at 18% 12%, rgba(157,223,255,0.18), transparent 62%)," +
-            "radial-gradient(60% 50% at 82% 24%, rgba(255,255,255,0.08), transparent 64%)," +
+            "radial-gradient(72% 62% at 18% 12%, rgba(201,139,71,0.22), transparent 62%)," +
+            "radial-gradient(60% 50% at 82% 24%, rgba(255,230,199,0.08), transparent 64%)," +
             "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0))",
         }}
       />
@@ -45,8 +45,8 @@ export function renderBrandIcon(size: number) {
           width: innerSize,
           height: innerSize,
           borderRadius: innerRadius,
-          border: `${lineWidth}px solid rgba(157,223,255,0.28)`,
-          background: "linear-gradient(180deg, rgba(12,18,24,0.98), rgba(10,15,20,0.92))",
+          border: `${lineWidth}px solid rgba(201,139,71,0.34)`,
+          background: "linear-gradient(180deg, rgba(36,27,22,0.98), rgba(24,18,15,0.94))",
           boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
           display: "flex",
           flexDirection: "column",
@@ -82,7 +82,7 @@ export function renderBrandIcon(size: number) {
           style={{
             width: Math.round(innerSize * 0.58),
             height: lineWidth,
-            background: "rgba(157,223,255,0.55)",
+            background: "rgba(201,139,71,0.62)",
             position: "relative",
           }}
         />

@@ -114,8 +114,8 @@ export default async function BuyerIntentServicePage({
 
         <FitCheckCta
           className="mt-8"
-          title="Paste the product URL and the one thing that feels risky."
-          description="That is enough for a first pass. I will tell you whether this looks like a teardown, a full review, or not a fit."
+          title="Send the product URL, stage, and one concrete concern."
+          description="That is enough for a first pass. I will tell you whether this looks like a teardown, full review, or not a fit."
         />
       </Panel>
 
@@ -134,6 +134,10 @@ export default async function BuyerIntentServicePage({
               <li key={item}>• {item}</li>
             ))}
           </ul>
+
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm text-white/72">
+            The output is designed to be useful fast: what is wrong, what matters first, and the smallest reasonable next step.
+          </div>
         </Panel>
 
         <Panel className="p-7 sm:p-8">
@@ -158,7 +162,7 @@ export default async function BuyerIntentServicePage({
           </div>
 
           <div className="mt-6 text-xs text-white/55">
-            This is a search-entry page. If the problem feels close to your product, the fastest next move is still the smallest useful first message.
+            This is a search-entry page. If the problem sounds close to your product, send a short first message with URL, stage, and concern.
           </div>
         </Panel>
       </div>

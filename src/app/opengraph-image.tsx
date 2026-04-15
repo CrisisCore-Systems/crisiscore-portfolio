@@ -18,8 +18,8 @@ export default function Image() {
           justifyContent: "space-between",
           overflow: "hidden",
           background:
-            "radial-gradient(circle at top left, rgba(110,217,255,0.24), transparent 34%), radial-gradient(circle at bottom right, rgba(255,176,92,0.16), transparent 28%), linear-gradient(135deg, #06090d 0%, #0d1620 56%, #050608 100%)",
-          color: "#f4fbff",
+            "radial-gradient(circle at top left, rgba(201,139,71,0.24), transparent 34%), radial-gradient(circle at bottom right, rgba(255,205,145,0.16), transparent 28%), linear-gradient(135deg, #120f0d 0%, #1c1512 56%, #100d0b 100%)",
+          color: "#f7f0e8",
           padding: "54px 58px",
         }}
       >
@@ -44,7 +44,7 @@ export default function Image() {
                 fontSize: 24,
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
-                color: "rgba(244,251,255,0.62)",
+                color: "rgba(247,240,232,0.62)",
               }}
             >
               CrisisCore Systems
@@ -66,7 +66,7 @@ export default function Image() {
                 display: "flex",
                 fontSize: 29,
                 lineHeight: 1.28,
-                color: "rgba(244,251,255,0.78)",
+                color: "rgba(247,240,232,0.78)",
                 maxWidth: "760px",
               }}
             >
@@ -87,10 +87,10 @@ export default function Image() {
                 display: "flex",
                 padding: "14px 18px",
                 borderRadius: "999px",
-                border: "1px solid rgba(244,251,255,0.12)",
+                border: "1px solid rgba(247,240,232,0.14)",
                 background: "rgba(255,255,255,0.05)",
                 fontSize: 21,
-                color: "rgba(244,251,255,0.82)",
+                color: "rgba(247,240,232,0.84)",
               }}
             >
               crisiscore-systems.ca
@@ -117,10 +117,10 @@ export default function Image() {
                 display: "flex",
                 padding: "14px 18px",
                 borderRadius: "18px",
-                border: "1px solid rgba(244,251,255,0.1)",
+                border: "1px solid rgba(247,240,232,0.12)",
                 background: "rgba(255,255,255,0.04)",
                 fontSize: 22,
-                color: "rgba(244,251,255,0.86)",
+                color: "rgba(247,240,232,0.88)",
               }}
             >
               {item}

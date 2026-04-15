@@ -7,7 +7,7 @@ import { loadCanon, loadDossier } from "@/content/load";
 
 export const metadata = {
   title: "Proof",
-  description: "Proof-backed trust hardening work: case studies, redacted audit artifacts, source records, and public evidence buyers can inspect.",
+  description: "Evidence-backed work: case studies, redacted audit artifacts, source records, and public proof buyers can inspect.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/proof-cards/trust_case_excerpt_wide_16x9.svg") }],
   },
@@ -36,36 +36,36 @@ export default async function ProofPage() {
       <Panel className="p-7 sm:p-8">
         <div className="cc-kicker">Proof</div>
         <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Proof that this work reduces trust risk in real products.
+          Evidence from real products, not abstract claims.
         </h1>
         <p className="mt-4 cc-lede">
-          If you are deciding whether to hire me, start here. This page shows what changed, what risks were reduced, and where the source record lives across public repos, artifacts, case studies, and live systems.
+          Start here if you want to verify the work. This page shows what changed, what got safer or clearer, and where to inspect the source record.
         </p>
         <p className="mt-2 text-sm text-white/70">
-          Open where possible, DOI-backed where relevant, and tied to public repos, artifacts, or live systems when those surfaces exist.
+          Claims resolve to a public repo, a live system, a redacted artifact, or a DOI-backed record.
         </p>
 
         <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
-          Review the flagship case first, then the artifacts, then the services page if the work looks relevant to your product.
+          Best path: review the flagship case, inspect one artifact, then check services if the work looks relevant to your product.
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">Health workflow result</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Sensitive usage stayed usable without forcing more data collection or more background dependence than the workflow needed.
+              Sensitive workflows stayed usable without forcing extra data collection or unnecessary cloud dependence.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">Buyer-proof result</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Trust claims were reduced to what could actually be verified from releases, artifacts, and public inspection paths.
+              Public claims were narrowed to what could be verified from releases, artifacts, and inspection paths.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you buy</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Clearer product risk, fewer hidden trust failures, and a faster path to the fixes that matter first.
+              Clearer product risk, fewer hidden failures, and a faster path to the fixes that matter first.
             </p>
           </div>
         </div>
@@ -107,26 +107,26 @@ export default async function ProofPage() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">What buyers want to verify</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              That the work is real, technically grounded, and relevant to a live product with meaningful trust exposure.
+              That the work is real, technically grounded, and relevant to a live product with meaningful exposure.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">What this page shows</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Outcome change, bounded artifacts, public source records, and the inspection path behind the claims.
+              Outcome change, bounded artifacts, public records, and the inspection path behind the claims.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best next step</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              If this looks like your risk surface, go to services or send the product URL and concern.
+              If this looks like your problem space, go to services or send the product URL and concern.
             </p>
           </div>
         </div>
 
         <FitCheckCta
           className="mt-8"
-          title="If this feels close to your situation, send the URL."
+          title="If this looks close to your situation, send URL, stage, and concern."
           description="I can tell you whether your product looks like a teardown, full review, or not a fit before you commit to anything larger."
         />
       </Panel>
@@ -161,7 +161,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Why this matters to a buyer</div>
           <p className="mt-2 text-sm text-white/70">
-            You are not buying doctrine. You are buying clearer risk, fewer bad assumptions, and a faster path to trust-relevant fixes.
+            You are not buying theory. You are buying a clearer risk picture, fewer bad assumptions, and a faster path to practical fixes.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             <li>• Less risky default collection</li>
@@ -184,13 +184,13 @@ export default async function ProofPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Before</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Most pain tracking products assume accounts, high attention, stable connectivity, and willingness to centralize intimate health data by default.
+                Most pain tracking products assume accounts, stable connectivity, and default centralization of intimate health data.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">After</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Core logging stays local by default, primary use does not require sign-up, and sharing is routed through explicit exports instead of background sync assumptions.
+                Core logging stays local by default, primary use does not require sign-up, and sharing happens through explicit exports instead of background sync.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
@@ -204,7 +204,7 @@ export default async function ProofPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Proof you can inspect</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Boundary statement, data inventory, retention posture, and export behavior are visible.
+                Boundary statements, data inventory, retention posture, and export behavior are all visible.
               </p>
             </div>
           </div>
@@ -227,7 +227,7 @@ export default async function ProofPage() {
           <div className="mt-5 space-y-4 text-sm text-white/75">
             <div>
               <div className="font-semibold text-white">1. Inspect the live system</div>
-              <p className="mt-1 text-white/65">See whether the product behavior matches the trust claims.</p>
+              <p className="mt-1 text-white/65">See whether the product behavior matches the public claims.</p>
             </div>
             <div>
               <div className="font-semibold text-white">2. Inspect the repository</div>
@@ -235,11 +235,11 @@ export default async function ProofPage() {
             </div>
             <div>
               <div className="font-semibold text-white">3. Inspect the dossier and artifacts</div>
-              <p className="mt-1 text-white/65">Problem, constraints, minimization decisions, proof, and outputs are shown as operating evidence.</p>
+              <p className="mt-1 text-white/65">Problem, constraints, decisions, and outputs are shown as evidence.</p>
             </div>
             <div>
               <div className="font-semibold text-white">4. Inspect the canon</div>
-              <p className="mt-1 text-white/65">Use the DOI-backed framework if you want the deeper theory, methodology, and audit vocabulary behind the work.</p>
+              <p className="mt-1 text-white/65">Use the DOI-backed framework if you want the deeper method behind the work.</p>
             </div>
           </div>
 
@@ -282,13 +282,13 @@ export default async function ProofPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">What changed</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                A trust dossier, pinned specimen, verifier path, regeneration flow, and drift checks now live in the repo as part of the proof burden, and the guarantee surface is narrowed to what those artifacts can actually prove.
+                A trust dossier, pinned specimen, verifier path, regeneration flow, and drift checks now live in the repo. The guarantee surface is narrowed to what those artifacts can prove.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why it matters</div>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Hosted CI became the release gate, so the public trust case is tied to the exact final non-debug commit, not a locally-green approximation or an oversized claim.
+                Hosted CI became the release gate, so the public trust case is tied to the exact final non-debug commit, not a locally-green approximation.
               </p>
             </div>
           </div>
@@ -314,7 +314,7 @@ export default async function ProofPage() {
         <Panel className="p-7 sm:p-8">
           <div className="text-sm font-semibold">Inspect the path</div>
           <p className="mt-2 text-sm text-white/70">
-            Short case, then dossier, then long-form walkthrough.
+            Short case first, then dossier, then long-form walkthrough.
           </p>
 
           <div className="mt-6 grid gap-2">
@@ -343,7 +343,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Method and sources</div>
           <p className="mt-2 text-sm text-white/70">
-            If you want the deeper method behind the service work, the canon shows the doctrine, operational translation, and audit language behind the artifacts.
+            If you want the deeper method behind the service work, the canon shows the operating model behind the artifacts.
           </p>
 
           <div className="mt-4 grid gap-2">
@@ -429,7 +429,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Redacted audit surface</div>
           <p className="mt-2 text-sm text-white/70">
-            Audit and security work is evidenced through bounded outputs, remediation structure, and a redacted artifact sample.
+            Audit and security work is shown through bounded outputs, remediation structure, and a redacted artifact sample.
           </p>
 
           <ul className="mt-4 space-y-2 text-sm text-white/75">
@@ -463,7 +463,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">If you are comparing options</div>
           <p className="mt-2 text-sm text-white/70">
-            The fastest buyer path is simple: review the flagship case, inspect one redacted audit artifact, then check services and send your product details.
+            Fastest path: review the flagship case, inspect one redacted artifact, then check services and send your product details.
           </p>
 
           <div className="mt-5 grid gap-2">
@@ -536,8 +536,7 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Integrity stance</div>
           <p className="mt-2 text-sm text-white/70">
-            The work is designed for adversarial environments: low trust, coercion risk, degraded infrastructure.
-            Verification beats narrative.
+            The work is designed for adversarial environments: low trust, coercion risk, degraded infrastructure. Verification beats narrative.
           </p>
 
           <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">

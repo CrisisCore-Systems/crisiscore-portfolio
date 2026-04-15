@@ -49,7 +49,7 @@ export default async function PainTrackerCaseStudyPage() {
           {dossier?.tagline ?? project.description}
         </p>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          This is the clearest public example of the kind of trust hardening, privacy architecture, and boundary review work sold through CrisisCore Systems.
+          This is the clearest public example of the kind of product review, privacy correction, and boundary work sold through CrisisCore Systems.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export default async function PainTrackerCaseStudyPage() {
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best fit</div>
           <p className="mt-2 text-sm leading-relaxed text-white/70">
-            Founders shipping health or sensitive-data products who need fewer trust-breaking assumptions before launch or partner scrutiny.
+            Founders shipping health or sensitive-data products who need fewer risky assumptions before launch or partner scrutiny.
           </p>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default async function PainTrackerCaseStudyPage() {
 
       <FitCheckCta
         className="mt-8"
-        title="If your product feels exposed in a similar way, send the URL."
+        title="If your product has a similar exposure, send the URL and stage."
         description="I&apos;ll tell you whether your situation looks like a 48-hour teardown, a deeper review, or something else entirely."
       />
 
@@ -150,7 +150,7 @@ export default async function PainTrackerCaseStudyPage() {
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Panel className="p-7">
-              <div className="text-sm font-semibold">Trust risks and failure surfaces</div>
+              <div className="text-sm font-semibold">Risk points and failure surfaces</div>
               <ul className="mt-4 space-y-2 text-sm text-white/70">
                 <li className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>
@@ -225,7 +225,7 @@ export default async function PainTrackerCaseStudyPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">See services</Button>
               <Button href="/contact" variant="ghost">
-                Get a 3-point risk read
+                Send your product URL
               </Button>
             </div>
           </Panel>
@@ -292,7 +292,7 @@ export default async function PainTrackerCaseStudyPage() {
               </li>
               <li className="flex gap-2">
                 <span className="mt-[2px] text-white/40">•</span>
-                <span>Founders or technical leads who need a practical model for reducing risk before a wider hardening engagement.</span>
+                <span>Founders or technical leads who need a practical model for reducing risk before a wider engagement.</span>
               </li>
             </ul>
 
@@ -301,7 +301,7 @@ export default async function PainTrackerCaseStudyPage() {
                 See matching services
               </Button>
               <Button href="/contact" className="w-full justify-center">
-                Send the product URL and concern
+                Send the product URL, stage, and concern
               </Button>
             </div>
           </Panel>

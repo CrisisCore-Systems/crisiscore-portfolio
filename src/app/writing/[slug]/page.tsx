@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/Button";
 
 const DEFAULT_CTA = {
   prompt:
-    "If this article is close to your product risk, the next move is not more doctrine. It is a scoped review, one inspectable proof path, and a short fit-check note.",
+    "If this article is close to your product, the next move is not more theory. It is a scoped review, one inspectable proof path, and a short first note.",
   serviceHref: "/services",
-  serviceLabel: "See the full trust review for sensitive-data products",
+  serviceLabel: "See the review options for sensitive-data products",
   proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
-  proofLabel: "Inspect a redacted trust artifact",
+  proofLabel: "Inspect a redacted review artifact",
   contactHref: "/contact",
-  contactLabel: "Send your product URL for a fit check",
+  contactLabel: "Send your product URL, stage, and concern",
 };
 
 const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
@@ -27,7 +27,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
     contactHref: "/contact",
-    contactLabel: "Send your health product URL for a fit check",
+    contactLabel: "Send your health product URL, stage, and concern",
   },
   "paintracker-architecture": {
     prompt:
@@ -37,7 +37,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/pain-tracker/architecture",
     proofLabel: "Open the PainTracker architecture artifact",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
   "proofvault-trust-case-v1-0-1": {
     prompt:
@@ -47,7 +47,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/proofvault",
     proofLabel: "Inspect the ProofVault trust case",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
   "reduce-data-collection-risk-before-launch": {
     prompt:
@@ -57,7 +57,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted review artifact",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
   "pre-launch-privacy-review-checklist-health-wellness-apps": {
     prompt:
@@ -67,7 +67,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
   "what-founders-miss-before-launching-sensitive-data-products": {
     prompt:
@@ -77,7 +77,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted trust artifact",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
   "data-minimization-checklist-sensitive-apps": {
     prompt:
@@ -87,7 +87,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the collection-risk article",
     contactHref: "/contact",
-    contactLabel: "Send your product URL for a fit check",
+    contactLabel: "Send your product URL, stage, and concern",
   },
 };
 
@@ -182,7 +182,7 @@ export default async function WritingPostPage({
         />
       </article>
 
-      <Panel className="mt-10 max-w-3xl p-6">
+      <Panel className="mt-10 max-w-3xl p-6 sm:p-7">
         <div className="text-sm font-semibold">If this maps to your product</div>
         <p className="mt-3 text-sm leading-relaxed text-white/70">{cta.prompt}</p>
         <div className="mt-5 flex flex-wrap gap-3">
@@ -195,6 +195,10 @@ export default async function WritingPostPage({
           <Button href={cta.contactHref}>
             {cta.contactLabel}
           </Button>
+        </div>
+
+        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/68">
+          Start with the shortest useful note: product URL, launch stage, and the main concern.
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
