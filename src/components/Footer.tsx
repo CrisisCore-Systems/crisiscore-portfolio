@@ -13,30 +13,21 @@ export function Footer() {
               No ad-tech trackers; only minimal privacy-respecting analytics.
             </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a className="hover:text-white" href="/services">
-              Services
-            </a>
-            <a className="hover:text-white" href="/proof">
-              Proof
-            </a>
+          <div className="flex flex-wrap items-center gap-4">
             <a className="hover:text-white" href="/about">
               About
             </a>
-            <a className="hover:text-white" href="/contact">
-              Contact
+            <a className="hover:text-white" href="/proof">
+              Proof
             </a>
           </div>
         </div>
 
         <div className="mt-5 rounded-2xl border border-[color:var(--line)] bg-[rgba(255,245,233,0.025)] px-4 py-3">
-          <div className="text-sm text-white/72">Need a starting point? Send the product URL, launch stage, and the main concern.</div>
+          <div className="text-sm text-white/72">Need a starting point? Send URL + stage + one concern.</div>
           <div className="mt-2 flex flex-wrap gap-3 text-sm">
             <a className="text-white/78 hover:text-white" href="/contact">
-              Open contact
-            </a>
-            <a className="text-white/62 hover:text-white" href="/services">
-              Review services
+              Start here
             </a>
           </div>
         </div>

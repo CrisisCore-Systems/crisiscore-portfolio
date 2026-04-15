@@ -10,7 +10,7 @@ export function Panel({
   return (
     <div
       className={cn(
-        "rounded-3xl border border-[color:var(--line)] bg-[color:var(--panel)] shadow-[0_16px_40px_rgba(0,0,0,0.16)] backdrop-blur-sm",
+        "rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(255,245,233,0.035),rgba(255,245,233,0.01))] shadow-[0_18px_42px_rgba(0,0,0,0.2)] backdrop-blur-md",
         className
       )}
     >

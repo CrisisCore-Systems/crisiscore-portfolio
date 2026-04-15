@@ -2,18 +2,9 @@ import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
-import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const HOME_SECTIONS = [
-  { href: "#services", label: "Services", number: "01" },
-  { href: "#proof", label: "Proof", number: "02" },
-  { href: "#fit", label: "Fit", number: "03" },
-  { href: "#process", label: "Process", number: "04" },
-  { href: "#contact", label: "Contact", number: "05" },
-];
 
 export default function HomePage() {
   return (
@@ -81,25 +72,6 @@ export default function HomePage() {
         </div>
       </Panel>
 
-      <nav
-        aria-label="Home page sections"
-        className="sticky top-16 z-20 mt-6 rounded-2xl border border-[color:var(--line)] bg-[color:var(--panel)]/90 px-4 py-3 backdrop-blur"
-      >
-        <div className="flex flex-wrap items-center gap-2 md:gap-3">
-          <div className="mr-2 text-[11px] uppercase tracking-[0.18em] text-white/45">Jump to</div>
-          {HOME_SECTIONS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/70 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
-            >
-              <span className="font-mono text-white/45">{item.number}</span>
-              <span>{item.label}</span>
-            </a>
-          ))}
-        </div>
-      </nav>
-
       <Section id="services" title="Services" kicker="3 engagement paths">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
@@ -110,7 +82,6 @@ export default function HomePage() {
               <li>• 48 hour turnaround</li>
               <li>• Top 3 issues to address first</li>
               <li>• Concrete fixes you can act on</li>
-              <li>• Recommendation on whether deeper review is worth it</li>
               <li>• Short written readout</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
@@ -125,7 +96,6 @@ export default function HomePage() {
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Threat model snapshot</li>
               <li>• Privacy risk review</li>
-              <li>• Structural weakness analysis</li>
               <li>• Product boundary review</li>
               <li>• Prioritized roadmap</li>
             </ul>
@@ -142,7 +112,6 @@ export default function HomePage() {
               <li>• Deploy issues</li>
               <li>• Data boundary cleanup</li>
               <li>• Copy and UX fixes</li>
-              <li>• Architectural hardening</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when the problems are already known and you want them fixed fast.
@@ -152,27 +121,9 @@ export default function HomePage() {
 
         <div className="mt-5 flex flex-wrap gap-3">
           <Button href="/services">See service details</Button>
-        </div>
-      </Section>
-
-      <Section title="Common Founder Queries" kicker="Search-entry pages">
-        <div className="grid gap-4 md:grid-cols-3">
-          {BUYER_INTENT_PAGES.map((page) => (
-            <Panel key={page.slug} className="p-6">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">{page.query}</div>
-              <h3 className="mt-3 text-lg font-semibold">{page.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/70">{page.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Button href={`/services/${page.slug}`} variant="ghost" className="justify-center">
-                  Open page
-                </Button>
-              </div>
-            </Panel>
-          ))}
-        </div>
-
-        <div className="mt-5 text-sm text-white/65">
-          These pages are built around plain-language problems founders actually search for.
+          <Button href="/contact" variant="ghost">
+            Start here
+          </Button>
         </div>
       </Section>
 

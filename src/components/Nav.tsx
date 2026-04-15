@@ -8,7 +8,6 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/proof", label: "Proof" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -39,6 +38,12 @@ export function Nav() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className="ml-1 rounded-full border border-[color:var(--acc-line)] bg-[rgba(207,149,86,0.18)] px-3 py-2 text-white transition hover:bg-[rgba(207,149,86,0.28)]"
+          >
+            Start
+          </Link>
         </nav>
 
         <details
@@ -55,6 +60,14 @@ export function Nav() {
 
           <div className="absolute left-0 right-0 top-full border-t border-[color:var(--line)] bg-[rgba(18,15,13,0.92)] backdrop-blur-xl">
             <div className="mx-auto grid max-w-6xl gap-2 px-4 py-3">
+              <Link
+                href="/contact"
+                tabIndex={menuOpen ? 0 : -1}
+                aria-hidden={menuOpen ? undefined : true}
+                className="rounded-2xl border border-[color:var(--acc-line)] bg-[rgba(207,149,86,0.18)] px-4 py-3 text-sm font-medium text-white hover:bg-[rgba(207,149,86,0.28)]"
+              >
+                Start here
+              </Link>
               {links.map((l) => (
                 <Link
                   key={l.href}

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { absoluteUrl, PRIMARY_SITE_URL, SITE } from "@/app/lib/site";
 import { cn } from "@/lib/cn";
 import "./globals.css";
 
-const sans = Inter({
+const sans = Sora({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
