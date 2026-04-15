@@ -12,28 +12,28 @@ export default function HomePage() {
       <Panel className="p-8 sm:p-10">
         <div className="cc-kicker">For health and sensitive-data apps</div>
         <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-          Find product and privacy issues before they become launch problems.
+          Catch risky defaults, weak consent, and data-collection mistakes before launch.
         </h1>
         <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
-          I review sensitive-data products for risky defaults, confusing consent, and avoidable data collection.
+          I review sensitive-data products for trust, privacy, and boundary failures that create buyer, legal, and launch risk.
         </p>
         <p className="mt-3 text-sm text-white/75 sm:text-base">
-          Best fit: teams near launch or already live.
+          Best for teams near launch or already live.
         </p>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          You get a prioritized list of what is wrong, what matters now, and what to fix first.
+          You get the real issues, the priority order, and the first fixes.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/70 sm:text-sm">
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">48-hour risk read from CA$250</span>
+          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">48-hour teardown from CA$250</span>
           <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">Full Review from CA$1,200</span>
           <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">Fix Sprint from CA$1,500</span>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href="/contact">Get a 3-point risk read</Button>
-          <Button href="/services" variant="ghost">
-            See services
+          <Button href="/proof" variant="ghost">
+            See proof
           </Button>
         </div>
 
@@ -49,7 +49,7 @@ export default function HomePage() {
             <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you get back</div>
             <div className="mt-2 text-base font-semibold">A short list of issues, fixes, and next moves</div>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
-              No padded report. Just clear problems, priority order, and the smallest useful way forward.
+              Written readout, not a slide deck. Sent within the delivery window for the package you choose.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -119,11 +119,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Button href="/services">See service details</Button>
-          <Button href="/contact" variant="ghost">
-            Start here
-          </Button>
+        <div className="mt-5">
+          <Button href="/contact">Get a 3-point risk read</Button>
         </div>
       </Section>
 
@@ -153,13 +150,8 @@ export default function HomePage() {
           </Panel>
 
           <Panel className="p-7 sm:p-8">
-            <div className="text-sm font-semibold">Start here</div>
-            <ul className="mt-4 space-y-2 text-sm text-white/75">
-              <li>• Review the flagship case study</li>
-              <li>• See the before-and-after outcome</li>
-              <li>• Check one redacted artifact</li>
-              <li>• If it matches your situation, start with the 48-hour teardown</li>
-            </ul>
+            <div className="text-sm font-semibold">See the work</div>
+            <p className="mt-3 text-sm text-white/70">A flagship case study and a redacted artifact from a real engagement.</p>
 
             <div className="mt-6 grid gap-2">
               <Button href="/case-study/pain-tracker">Read flagship case study</Button>
@@ -194,12 +186,9 @@ export default function HomePage() {
           </Panel>
         </div>
 
-        <div className="mt-5 text-sm text-white/65">
-          If you are unsure which package fits, start with the 48-hour teardown.
-        </div>
       </Section>
 
-      <Section id="process" title="How It Starts" kicker="Simple process">
+      <Section id="process" title="How It Starts" kicker="Three steps">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
             <h3 className="text-base font-semibold">1. Send the link, stage, and deadline</h3>
@@ -208,15 +197,15 @@ export default function HomePage() {
             </p>
           </div>
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">2. I identify the highest-risk issues</h3>
+            <h3 className="text-base font-semibold">2. I look for the issues most likely to cause damage</h3>
             <p className="mt-2 text-sm text-white/70">
-              I look for risky defaults, privacy gaps, misleading product behavior, and weak operational assumptions.
+              Not a checklist pass. I prioritize by impact on buyers, legal exposure, and launch risk.
             </p>
           </div>
           <div className="cc-card p-6">
-            <h3 className="text-base font-semibold">3. You get concrete next moves</h3>
+            <h3 className="text-base font-semibold">3. You get a short written readout</h3>
             <p className="mt-2 text-sm text-white/70">
-              You get a short written readout or roadmap with clear fixes, not homework disguised as strategy.
+              Issues ranked by severity, with the first fix for each. No padding, no slide deck.
             </p>
           </div>
         </div>
@@ -226,16 +215,13 @@ export default function HomePage() {
         <Panel className="p-8 sm:p-10">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
           <h2 className="mt-2 text-2xl font-semibold">
-            Need a straight answer on whether your product has a real problem?
+            Send the link, launch stage, and one concern.
           </h2>
           <p className="mt-3 text-sm text-white/70">
-            Send the link, deadline, and main concern. I&apos;ll tell you whether a 48-hour teardown, deeper review, or no engagement makes sense.
+            I&apos;ll tell you whether the 48-hour teardown, a full review, or no engagement makes sense.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6">
             <Button href="/contact">Get a 3-point risk read</Button>
-            <Button href="mailto:crisiscore.systems@proton.me" variant="ghost">
-              Email directly
-            </Button>
           </div>
         </Panel>
       </div>

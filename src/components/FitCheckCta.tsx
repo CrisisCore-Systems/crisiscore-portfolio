@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { SITE } from "@/app/lib/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
@@ -16,24 +15,16 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
   const [concern, setConcern] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const subject = "CrisisCore Systems fit check";
-  const body = `Product URL: ${productUrl.trim()}\nStage + concern: ${concern.trim() || "Not provided"}`;
+  const summary = `Product URL: ${productUrl.trim() || "Not provided"}\nStage + concern: ${concern.trim() || "Not provided"}`;
 
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(body);
+      await navigator.clipboard.writeText(summary);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
     }
-  }
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const mailto = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
   }
 
   return (
@@ -44,11 +35,11 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
 
       <ul className="mt-4 space-y-1.5 text-sm text-white/72">
         <li>• Send URL + stage + one concern.</li>
-        <li>• Get a clear fit call and next step.</li>
-        <li>• Skip decks and long background docs.</li>
+        <li>• Start from contact and send only the basics.</li>
+        <li>• Skip decks and long docs.</li>
       </ul>
 
-      <form className="mt-5 grid gap-3" onSubmit={handleSubmit}>
+      <div className="mt-5 grid gap-3">
         <div>
           <label htmlFor="fit-check-product-url" className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
             Product URL
@@ -81,12 +72,12 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Button type="submit">Draft email</Button>
+          <Button href="/contact">Start here</Button>
           <Button type="button" variant="ghost" onClick={handleCopy}>
             {copied ? "Copied" : "Copy details"}
           </Button>
         </div>
-      </form>
+      </div>
 
       <p className="mt-4 text-xs leading-relaxed text-white/55">
         Usually answered in 1-2 days with fit, first checks, and suggested package.

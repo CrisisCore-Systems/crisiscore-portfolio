@@ -17,27 +17,6 @@ export default function ContactPage() {
         Email-first. Send the product URL, launch stage, and one concrete concern. I&apos;ll reply with fit, recommended package, and next step.
       </p>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best first message</div>
-          <p className="mt-2 text-sm leading-relaxed text-white/70">
-            Keep it short and direct. Product link, stage, and one real concern beat a polished pitch.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/45">What happens next</div>
-          <p className="mt-2 text-sm leading-relaxed text-white/70">
-            I&apos;ll tell you if the fit looks like a fast teardown, full review, fix sprint, or not a fit.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-white/45">Do not send</div>
-          <p className="mt-2 text-sm leading-relaxed text-white/70">
-            Sensitive personal data, production secrets, or anything you would not normally put in email.
-          </p>
-        </div>
-      </div>
-
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Panel className="p-7 sm:p-8">
@@ -55,30 +34,6 @@ export default function ContactPage() {
 
             <div className="mt-5 flex flex-wrap gap-3">
               <Button href={`mailto:${SITE.email}`}>{SITE.email}</Button>
-              <Button href="/services" variant="ghost">
-                Services
-              </Button>
-              <Button href="/proof" variant="ghost">
-                Proof
-              </Button>
-            </div>
-
-            <div className="mt-6">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Typical engagement types</div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {[
-                  "48-hour Teardown",
-                  "Full Review",
-                  "Fix Sprint",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md bg-white/[0.03] px-3 py-1.5 text-xs font-mono tracking-[0.08em] text-white/65"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className="mt-6 text-xs text-white/55">
@@ -132,29 +87,7 @@ export default function ContactPage() {
               <Button href={`mailto:${SITE.email}`} className="w-full justify-center">
                 Email directly
               </Button>
-              <Button href="/proof" variant="ghost" className="w-full justify-center">
-                Review proof first
-              </Button>
             </div>
-          </Panel>
-
-          <Panel className="mt-4 p-7 sm:p-8">
-            <div className="text-sm font-semibold">For operators</div>
-            <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
-              <p>
-                If your environment includes coercion risk, compromised devices, legal exposure, or sensitive health-adjacent data, say so early.
-              </p>
-              <p>
-                I can scope around non-standard constraints and threat boundaries.
-              </p>
-            </div>
-          </Panel>
-
-          <Panel className="mt-4 p-7 sm:p-8">
-            <div className="text-sm font-semibold">If you need more than the quick fit check</div>
-            <p className="mt-3 text-sm leading-relaxed text-white/70">
-              If the situation is unusual, regulated, or operationally sensitive, send a short first note and I&apos;ll tell you what extra context is actually useful. The default path is still the smallest possible first message.
-            </p>
           </Panel>
         </div>
       </div>

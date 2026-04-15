@@ -142,11 +142,12 @@ a:hover { color: var(--acc); }
 
 /* --- “AAA” component classes (plain CSS, no @apply) --- */
 .cc-kicker {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   color: rgba(255,255,255,0.56);
+  font-weight: 600;
 }
 
 .cc-lede {
@@ -192,7 +193,7 @@ a:hover { color: var(--acc); }
   border-radius: 999px;
   border: 1px solid var(--acc-line);
   background: rgba(255, 245, 233, 0.04);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   color: rgba(255,255,255,0.70);
 }

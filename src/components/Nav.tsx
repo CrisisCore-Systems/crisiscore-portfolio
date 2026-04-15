@@ -42,7 +42,7 @@ export function Nav() {
             href="/contact"
             className="ml-1 rounded-full border border-[color:var(--acc-line)] bg-[rgba(207,149,86,0.18)] px-3 py-2 text-white transition hover:bg-[rgba(207,149,86,0.28)]"
           >
-            Start
+            Contact
           </Link>
         </nav>
 
@@ -66,7 +66,7 @@ export function Nav() {
                 aria-hidden={menuOpen ? undefined : true}
                 className="rounded-2xl border border-[color:var(--acc-line)] bg-[rgba(207,149,86,0.18)] px-4 py-3 text-sm font-medium text-white hover:bg-[rgba(207,149,86,0.28)]"
               >
-                Start here
+                Contact
               </Link>
               {links.map((l) => (
                 <Link
