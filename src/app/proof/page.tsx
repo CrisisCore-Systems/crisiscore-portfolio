@@ -46,7 +46,7 @@ export default async function ProofPage() {
         </p>
 
         <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
-          Best path: review the flagship case, inspect one artifact, then check services if the work looks relevant to your product.
+          Best path: review one case, inspect one artifact, then decide if services match your product.
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -73,7 +73,7 @@ export default async function ProofPage() {
         <div className="mt-7 flex flex-wrap gap-3">
           <Button href="/case-study/pain-tracker">Review flagship case</Button>
           <Button href="/services" variant="ghost">See services</Button>
-          <Button href="/contact" variant="ghost">Get a 3-point risk read</Button>
+          <Button href="/contact" variant="ghost">Contact</Button>
         </div>
 
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
@@ -103,31 +103,10 @@ export default async function ProofPage() {
             </Button>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What buyers want to verify</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              That the work is real, technically grounded, and relevant to a live product with meaningful exposure.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What this page shows</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Outcome change, bounded artifacts, public records, and the inspection path behind the claims.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Best next step</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              If this looks like your problem space, go to services or send the product URL and concern.
-            </p>
-          </div>
-        </div>
-
         <FitCheckCta
           className="mt-8"
-          title="If this looks close to your situation, send URL, stage, and concern."
-          description="I can tell you whether your product looks like a teardown, full review, or not a fit before you commit to anything larger."
+          title="If this is close to your situation, send URL and concern."
+          description="I&apos;ll tell you whether this looks like a teardown, full review, or not a fit."
         />
       </Panel>
 
@@ -256,9 +235,6 @@ export default async function ProofPage() {
             </Button>
             <Button href="/projects/pain-tracker" variant="ghost" className="w-full justify-center">
               Open dossier
-            </Button>
-            <Button href="/case-study/pain-tracker" variant="ghost" className="w-full justify-center">
-              Open case study
             </Button>
             <Button href="/artifacts/pain-tracker/architecture" variant="ghost" className="w-full justify-center">
               Open architecture artifact
@@ -445,15 +421,6 @@ export default async function ProofPage() {
             <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost" className="w-full justify-center">
               Open redacted threat model excerpt
             </Button>
-            <Button href="/artifacts/security-and-audits/threat-boundary-map" variant="ghost" className="w-full justify-center">
-              Open threat boundary map
-            </Button>
-            <Button href="/artifacts/security-and-audits/defensibility-packet-flow" variant="ghost" className="w-full justify-center">
-              Open defensibility packet flow
-            </Button>
-            <Button href="https://doi.org/10.5281/zenodo.18783432" variant="ghost" className="w-full justify-center">
-              Open PLS rubric ↗
-            </Button>
             <Button href="/contact" className="w-full justify-center">
               Book a review
             </Button>
@@ -463,13 +430,10 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">If you are comparing options</div>
           <p className="mt-2 text-sm text-white/70">
-            Fastest path: review the flagship case, inspect one redacted artifact, then check services and send your product details.
+            Fastest path: review the flagship case, inspect one redacted artifact, then send your product details.
           </p>
 
           <div className="mt-5 grid gap-2">
-            <Button href="/services" variant="ghost" className="w-full justify-center">
-              See services
-            </Button>
             <Button href="/contact" className="w-full justify-center">
               Send the app, stack, and concern
             </Button>
