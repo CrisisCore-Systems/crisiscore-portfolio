@@ -14,7 +14,7 @@ type LinkProps = CommonProps & {
 };
 
 type ButtonProps = CommonProps & {
-  href?: undefined;
+  href?: never;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
 };
@@ -34,6 +34,21 @@ export function Button({ variant = "solid", className, ...props }: Props) {
   if ("href" in props && typeof props.href === "string") {
     const href = props.href;
     const isExternal = href.startsWith("http");
+    const isProtocolLink = /^[a-zA-Z][a-zA-Z\d+.-]*:/.test(href);
+
+    if (isProtocolLink) {
+      return (
+        <a
+          href={href}
+          className={cls}
+          target={isExternal ? "_blank" : props.target}
+          rel={isExternal ? "noreferrer" : props.rel}
+        >
+          {props.children}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}

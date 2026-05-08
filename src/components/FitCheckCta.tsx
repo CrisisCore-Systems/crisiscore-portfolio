@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { SITE } from "@/app/lib/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
@@ -16,16 +17,49 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
   const [copied, setCopied] = useState(false);
 
   const summary = `Product URL: ${productUrl.trim() || "Not provided"}\nStage + concern: ${concern.trim() || "Not provided"}`;
+  const emailSubject = useMemo(() => {
+    if (!productUrl.trim()) {
+      return "CrisisCore Systems fit check";
+    }
+
+    return `CrisisCore Systems fit check — ${productUrl.trim()}`;
+  }, [productUrl]);
+
+  const emailBody = useMemo(
+    () =>
+      [
+        "Quick fit check",
+        "",
+        `Product URL: ${productUrl.trim() || ""}`,
+        `Stage + concern: ${concern.trim() || ""}`,
+      ].join("\n"),
+    [productUrl, concern]
+  );
+  const gmailHref = useMemo(
+    () =>
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SITE.email)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`,
+    [emailBody, emailSubject]
+  );
 
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(summary);
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      globalThis.setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
     }
   }
+
+  const handleSubmit: NonNullable<React.ComponentProps<"form">["onSubmit"]> = (event) => {
+    event.preventDefault();
+
+    if (!event.currentTarget.reportValidity()) {
+      return;
+    }
+
+    globalThis.open(gmailHref, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className={cn("rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-6", className)}>
@@ -39,7 +73,7 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
         <li>• Skip decks and long docs.</li>
       </ul>
 
-      <div className="mt-5 grid gap-3">
+      <form className="mt-5 grid gap-3" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="fit-check-product-url" className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
             Product URL
@@ -72,12 +106,12 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Button href="/contact">Start here</Button>
+          <Button type="submit">Open in Gmail</Button>
           <Button type="button" variant="ghost" onClick={handleCopy}>
             {copied ? "Copied" : "Copy details"}
           </Button>
         </div>
-      </div>
+      </form>
 
       <p className="mt-4 text-xs leading-relaxed text-white/55">
         Usually answered in 1-2 days with fit, first checks, and suggested package.
