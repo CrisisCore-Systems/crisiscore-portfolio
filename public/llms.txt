@@ -32,11 +32,14 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 
 ## Proof And Evidence
 
+[Case Study](https://crisiscore-systems.ca/case-study)
+> Primary commercial trust route. Start here for the composite-example framing, visible disclaimers, and the first step into the inspection path.
+
 [Proof](https://crisiscore-systems.ca/proof)
 > Central proof surface showing outcome changes, trust-risk reduction, public inspection paths, case studies, and links to artifacts and source records.
 
 [PainTracker Case Study](https://crisiscore-systems.ca/case-study/pain-tracker)
-> Flagship case study on a minimization-first, local-first redesign for a trust-sensitive health workflow.
+> Supporting flagship evidence behind the commercial case-study route: a minimization-first, local-first redesign for a trust-sensitive health workflow.
 
 [ProofVault Case Study](https://crisiscore-systems.ca/case-study/proofvault)
 > Case study showing how broad trust claims were narrowed into release-bound, inspectable evidence.

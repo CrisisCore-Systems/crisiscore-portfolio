@@ -2,7 +2,7 @@
 
 Default proof URL:
 
-- `/case-study/pain-tracker`
+- `/case-study`
 
 Use this page as the primary link for outbound messages. Do not lead with the homepage unless someone asks for the broader service surface.
 
@@ -60,11 +60,11 @@ If the operating constraints look familiar, send repo + context + constraints an
 
 ## How to use it
 
-- Replace `[case-study-url]` with the production URL for `/case-study/pain-tracker`.
+- Replace `[case-study-url]` with the production URL for `/case-study`.
 - Replace `[product/company]` only when you have a real reason to personalize.
 - Keep the first message short. The page should do the heavy lifting.
 - Default to one link only: the case study.
-- Only send the homepage or proof page if the recipient asks for the broader surface.
+- Only send the homepage, PainTracker case study, or proof page if the recipient asks for the broader surface or deeper inspection path.
 
 ## What to watch
 
