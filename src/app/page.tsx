@@ -9,62 +9,59 @@ export const revalidate = 0;
 export default function HomePage() {
   return (
     <div className="py-12">
-      <Panel className="p-8 sm:p-10">
-        <div className="cc-kicker">For health and sensitive-data apps</div>
-        <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
-          Catch risky defaults, weak consent, and data-collection mistakes before launch.
-        </h1>
-        <p className="mt-5 text-lg font-semibold text-white sm:text-xl">
-          I review sensitive-data products for trust, privacy, and boundary failures that create buyer, legal, and launch risk.
-        </p>
-        <p className="mt-3 text-sm text-white/75 sm:text-base">
-          Best for teams near launch or already live.
-        </p>
-        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
-          You get the real issues, the priority order, and the first fixes.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/70 sm:text-sm">
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">48-hour teardown from CA$250</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">Full Review from CA$1,200</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">Fix Sprint from CA$1,500</span>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button href="/contact">Get a 3-point risk read</Button>
-          <Button href="/proof" variant="ghost">
-            See proof
-          </Button>
-        </div>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What this catches</div>
-            <div className="mt-2 text-base font-semibold">Over-collection, weak consent, and brittle flows</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              I focus on the few product choices most likely to create legal, reputational, or buyer-facing trouble.
+      <Panel className="overflow-hidden p-8 sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
+          <div>
+            <div className="cc-kicker">For health and sensitive-data apps</div>
+            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+              Catch risky defaults, weak consent, and data-collection mistakes before launch.
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
+              I review sensitive-data products for trust, privacy, and boundary failures that create buyer, legal, and launch risk.
             </p>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
+              Best for teams near launch or already live. You get the real issues, the priority order, and the first fixes instead of a vague audit deck.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
+              <span className="cc-chip">48-hour teardown from CA$250</span>
+              <span className="cc-chip">Full Review from CA$1,200</span>
+              <span className="cc-chip">Fix Sprint from CA$1,500</span>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href="/contact">Start with the 48-hour teardown</Button>
+              <Button href="/case-study" variant="ghost">
+                See case study
+              </Button>
+            </div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you get back</div>
-            <div className="mt-2 text-base font-semibold">A short list of issues, fixes, and next moves</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Written readout, not a slide deck. Sent within the delivery window for the package you choose.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Why teams use this</div>
-            <div className="mt-2 text-base font-semibold">To avoid expensive cleanup after launch</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              This is for teams that want direct correction, not an audit slide deck with no product change.
-            </p>
+
+          <div className="grid gap-3">
+            <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+              <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">What this catches</div>
+              <div className="mt-2 text-lg font-semibold">Over-collection, weak consent, and brittle flows</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/72">
+                I focus on the few product choices most likely to create legal, reputational, or buyer-facing trouble.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/45">What you get back</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/74">A short list of issues, fixes, and next moves. Written readout, not a slide deck.</p>
+              </div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/45">Why teams use this</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/74">To avoid expensive cleanup after launch and narrow the risk surface before buyers inspect it.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <FitCheckCta
           className="mt-8"
-          title="Start with three details: product URL, launch window, and one concrete concern."
-          description="I reply with a clear fit call, top problem areas to check first, and the package that makes the most sense."
+          title="Start with the smallest useful brief: URL, launch window, and one concrete concern."
+          description="I reply with the fastest sensible entry point, the top areas to inspect first, and whether the 48-hour teardown is enough."
         />
 
         <div className="mt-6 text-sm text-white/65">
@@ -75,6 +72,7 @@ export default function HomePage() {
       <Section id="services" title="Services" kicker="3 engagement paths">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
+            <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Fast signal</div>
             <h3 className="text-base font-semibold">48-hour teardown</h3>
             <p className="mt-2 text-sm text-white/70">A fast first pass for teams that need a clear answer on whether a real product problem exists.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$250</p>
@@ -90,6 +88,7 @@ export default function HomePage() {
           </div>
 
           <div className="cc-card p-6">
+            <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Full picture</div>
             <h3 className="text-base font-semibold">Full review</h3>
             <p className="mt-2 text-sm text-white/70">The deeper audit for products where data handling, product behavior, and buyer scrutiny all matter.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,200</p>
@@ -105,6 +104,7 @@ export default function HomePage() {
           </div>
 
           <div className="cc-card p-6">
+            <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Ship corrections</div>
             <h3 className="text-base font-semibold">Fix Sprint</h3>
             <p className="mt-2 text-sm text-white/70">Implementation support for the highest-value corrections.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,500</p>
@@ -120,7 +120,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5">
-          <Button href="/contact">Get a 3-point risk read</Button>
+          <Button href="/contact">Price the fastest useful start</Button>
         </div>
       </Section>
 
@@ -154,9 +154,9 @@ export default function HomePage() {
             <p className="mt-3 text-sm text-white/70">A flagship case study and a redacted artifact from a real engagement.</p>
 
             <div className="mt-6 grid gap-2">
-              <Button href="/case-study/pain-tracker">Read flagship case study</Button>
-              <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost" className="justify-center">
-                Open redacted artifact
+              <Button href="/case-study">Open commercial case study</Button>
+              <Button href="/proof" variant="ghost" className="justify-center">
+                Inspect proof path
               </Button>
             </div>
           </Panel>
@@ -221,7 +221,7 @@ export default function HomePage() {
             I&apos;ll tell you whether the 48-hour teardown, a full review, or no engagement makes sense.
           </p>
           <div className="mt-6">
-            <Button href="/contact">Get a 3-point risk read</Button>
+            <Button href="/contact">Send the brief</Button>
           </div>
         </Panel>
       </div>

@@ -55,8 +55,8 @@ export default function AboutPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">Services</Button>
-              <Button href="/proof" variant="ghost">
-                Proof
+              <Button href="/case-study" variant="ghost">
+                Case study
               </Button>
               <Button href="/contact" variant="ghost">
                 Contact
@@ -158,16 +158,16 @@ export default function AboutPage() {
             </div>
           </Panel>
 
-          <Link href="/proof" className="group mt-4 block">
+          <Link href="/case-study" className="group mt-4 block">
             <AssetFigure
               src="/assets/founder-banners/about_mission_plate.svg"
               alt="About mission plate graphic for CrisisCore Systems"
               title="Mission plate"
-              body="Open the proof page to inspect artifacts, source records, and operating claims."
+              body="Open the case-study route first, then continue into proof materials, source records, and operating claims."
               className="transition group-hover:border-white/20 group-hover:bg-white/[0.04]"
             />
             <div className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition group-hover:text-white">
-              <span>Open proof surface</span>
+              <span>Open case-study route</span>
               <span className="transition group-hover:translate-x-0.5">→</span>
             </div>
           </Link>
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <ul className="mt-4 space-y-2 text-sm text-white/70">
               {[
                 "Start with Services for package fit and starting prices.",
-                "Go to Proof for artifacts, outcomes, and technical evidence.",
+                "Go to the case-study route first, then Proof for artifacts, outcomes, and technical evidence.",
                 "Use Contact when you are ready to send the app, launch stage, and concern.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
@@ -218,8 +218,8 @@ export default function AboutPage() {
               <Button href="/services" variant="ghost">
                 Services
               </Button>
-              <Button href="/proof" variant="ghost">
-                Proof
+              <Button href="/case-study" variant="ghost">
+                Case study
               </Button>
               <Button href="/contact" variant="ghost">
                 Contact

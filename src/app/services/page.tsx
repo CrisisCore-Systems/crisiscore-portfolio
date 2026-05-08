@@ -1,5 +1,5 @@
 import { absoluteUrl, SITE } from "@/app/lib/site";
-import { BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
+import { PRIMARY_BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { Section } from "@/components/Section";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
@@ -93,45 +93,56 @@ function servicesJsonLd() {
   };
 }
 
+const reviewPathNotes: Record<string, string> = {
+  "privacy-review-for-health-apps": "Also absorbs wellness privacy architecture and mental health trust review requests.",
+  "pre-launch-privacy-audit": "Also covers launch-readiness, AI trust, and pre-launch security review requests.",
+  "local-first-health-app-architecture": "Primary path for local-first, degraded-mode, and explicit-export architecture concerns.",
+  "data-minimization-review-for-apps": "Also absorbs reduce-data-collection-risk requests into one stronger minimization page.",
+};
+
 export default function ServicesPage() {
   return (
     <div className="py-12">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd()) }}
       />
 
       <Panel className="p-8 sm:p-10">
-        <div className="cc-kicker">Services</div>
-        <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Three ways to get a clear read on a sensitive-data product.
-        </h1>
-        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-          Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
-        </p>
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need a quick answer? Start with the 48-hour teardown.
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <div>
+            <div className="cc-kicker">Services</div>
+            <h1 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
+              Three ways to get a clear read on a sensitive-data product.
+            </h1>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
+              Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/contact">Find the right package</Button>
+              <Button href="/case-study" variant="ghost">
+                Review case study first
+              </Button>
+            </div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need the full picture? Choose the full review.
+
+          <div className="grid gap-3">
+            <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
+              <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">How buyers enter</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/75">Need a quick answer? Start with the 48-hour teardown. Need the full picture? Choose the full review. Need help shipping corrections? Move into a fix sprint.</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Fast answer, smaller surface, immediate signal.</div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Deeper read when privacy, trust, and launch risk stack together.</div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4 text-sm text-white/75">Implementation support when the fixes matter more than the presentation.</div>
+            </div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/75">
-            Need help shipping corrections? Move into a fix sprint.
-          </div>
-        </div>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button href="/contact">Get a 3-point risk read</Button>
-          <Button href="/proof" variant="ghost">
-            See outcomes
-          </Button>
         </div>
 
         <FitCheckCta
           className="mt-8"
-          title="Send three details: URL, launch stage, and one concrete concern."
-          description="I will tell you whether this looks like a teardown, full review, or not a fit before you commit to anything larger."
+          title="Send the URL, launch stage, and one concern. I&apos;ll size the engagement from there."
+          description="This page is for package selection: I&apos;ll tell you whether to start small, go straight to the full review, or skip the larger engagement entirely."
         />
       </Panel>
 
@@ -215,16 +226,19 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section title="Start From The Query" kicker="Buyer-intent pages">
+      <Section title="Common Review Paths" kicker="Primary service pages">
         <div className="grid gap-4 md:grid-cols-3">
-          {BUYER_INTENT_PAGES.map((page) => (
+          {PRIMARY_BUYER_INTENT_PAGES.map((page) => (
             <Panel key={page.slug} className="p-7 sm:p-8">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/45">{page.query}</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/45">Review path</div>
               <h2 className="mt-2 text-xl font-semibold">{page.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-white/70">{page.summary}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white/55">
+                {reviewPathNotes[page.slug]}
+              </p>
               <div className="mt-6 grid gap-2">
                 <Button href={`/services/${page.slug}`} variant="ghost" className="w-full justify-center">
-                  Open query page
+                  Open review path
                 </Button>
                 <Button href={page.proofHref} variant="ghost" className="w-full justify-center">
                   See matching proof
@@ -241,9 +255,9 @@ export default function ServicesPage() {
             Send the product URL, launch stage, and main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/contact">Get a 3-point risk read</Button>
-            <Button href="/proof" variant="ghost">
-              Review outcomes first
+            <Button href="/contact">Ask for package fit</Button>
+            <Button href="/case-study" variant="ghost">
+              Review case study first
             </Button>
           </div>
         </Panel>

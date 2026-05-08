@@ -34,46 +34,48 @@ export default async function ProofPage() {
   return (
     <div className="py-12">
       <Panel className="p-7 sm:p-8">
-        <div className="cc-kicker">Proof</div>
-        <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">
-          Evidence from real products, not abstract claims.
-        </h1>
-        <p className="mt-4 cc-lede">
-          Start here if you want to verify the work. This page shows what changed, what got safer or clearer, and where to inspect the source record.
-        </p>
-        <p className="mt-2 text-sm text-white/70">
-          Claims resolve to a public repo, a live system, a redacted artifact, or a DOI-backed record.
-        </p>
-
-        <p className="mt-6 max-w-3xl text-sm font-medium leading-relaxed text-white/85 sm:text-base">
-          Best path: review one case, inspect one artifact, then decide if services match your product.
-        </p>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Health workflow result</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Sensitive workflows stayed usable without forcing extra data collection or unnecessary cloud dependence.
+        <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-start">
+          <div>
+            <div className="cc-kicker">Proof</div>
+            <h1 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
+              Release evidence, trust case materials, and verification receipts.
+            </h1>
+            <p className="mt-4 cc-lede">
+              Start here if you want to verify the work. This page shows what can be inspected, what order to inspect it in, and where the public source record lives.
             </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">Buyer-proof result</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Public claims were narrowed to what could be verified from releases, artifacts, and inspection paths.
+            <p className="mt-2 max-w-3xl rounded-2xl border border-[rgba(212,162,97,0.32)] bg-[rgba(212,162,97,0.08)] px-4 py-3 text-sm leading-relaxed text-white/80">
+              What this page is not: not a claim of perfect security, universal protection, or guaranteed outcomes. It is an inspection surface.
             </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">What you buy</div>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Clearer product risk, fewer hidden failures, and a faster path to the fixes that matter first.
-            </p>
-          </div>
-        </div>
 
-        <div className="mt-7 flex flex-wrap gap-3">
-          <Button href="/case-study/pain-tracker">Review flagship case</Button>
-          <Button href="/services" variant="ghost">See services</Button>
-          <Button href="/contact" variant="ghost">Contact</Button>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button href="/case-study">Review commercial case study</Button>
+              <Button href="/services" variant="ghost">Match proof to service</Button>
+              <Button href="/contact" variant="ghost">Bring me your product</Button>
+            </div>
+          </div>
+
+          <div className="grid gap-3">
+            <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
+              <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What this page is</div>
+              <p className="mt-2 text-sm font-medium leading-relaxed text-white/84">
+                Release evidence, trust case materials, verification receipts, and links into the public proof-of-work behind the commercial claims.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">Verification path</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">Review one case, inspect one artifact, then inspect the public repo and supporting records.</p>
+              </div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">What is out of scope</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">No claim here should be read as perfect security, universal protection, or a substitute for your own review.</p>
+              </div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/45">GitHub org role</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">Public proof-of-work, public docs, and inspectable artifacts that anchor the commercial trust path.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
@@ -105,8 +107,8 @@ export default async function ProofPage() {
 
         <FitCheckCta
           className="mt-8"
-          title="If this is close to your situation, send URL and concern."
-          description="I&apos;ll tell you whether this looks like a teardown, full review, or not a fit."
+          title="If the proof surface feels close to your situation, send the URL and the failure you&apos;re worried about."
+          description="I&apos;ll tell you which proof path is most relevant, what I would inspect first, and whether the service fit is real."
         />
       </Panel>
 
@@ -317,6 +319,28 @@ export default async function ProofPage() {
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
         <Panel className="p-7">
+          <div className="text-sm font-semibold">Artifact index</div>
+          <p className="mt-2 text-sm text-white/70">
+            Start with the bounded materials that directly support commercial trust review.
+          </p>
+
+          <div className="mt-5 grid gap-2">
+            <Button href="/artifacts/security-and-audits/defensibility-packet-preview" variant="ghost" className="justify-start">
+              Defensibility packet
+            </Button>
+            <Button href="/artifacts/security-and-audits/redacted-threat-model-excerpt" variant="ghost" className="justify-start">
+              Threat model
+            </Button>
+            <Button href="/case-study/proofvault" variant="ghost" className="justify-start">
+              Release evidence
+            </Button>
+            <Button href={withBuild("/proof/fetchability.json")} variant="ghost" className="justify-start">
+              Verification policy
+            </Button>
+          </div>
+        </Panel>
+
+        <Panel className="p-7">
           <div className="text-sm font-semibold">Method and sources</div>
           <p className="mt-2 text-sm text-white/70">
             If you want the deeper method behind the service work, the canon shows the operating model behind the artifacts.
@@ -367,15 +391,15 @@ export default async function ProofPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Public source surface</div>
           <p className="mt-2 text-sm text-white/70">
-            Public repositories, commit history, issues, and published artifacts.
+            Public repositories, commit history, public docs, and published artifacts.
           </p>
           <p className="mt-2 text-xs text-white/55">
-            Primary proof is artifact-based: DOIs, repositories, deployments, and bounded deliverables.
+            The GitHub org exists in this trust path as public proof-of-work: a place to inspect code, docs, and artifact history rather than accept marketing claims on faith.
           </p>
 
           <div className="mt-5">
             <Button href="https://github.com/CrisisCore-Systems" variant="ghost" className="w-full justify-center">
-              Open GitHub profile ↗
+              View GitHub org ↗
             </Button>
           </div>
         </Panel>
@@ -474,24 +498,24 @@ export default async function ProofPage() {
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
         <Panel className="p-7">
-          <div className="text-sm font-semibold">How to evaluate the work quickly</div>
+          <div className="text-sm font-semibold">Verification path</div>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/50">Applicable</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/50">1. Case</div>
               <p className="mt-2 text-sm text-white/70">
-                The evidence should look relevant to your product category, threat model, and operating constraints.
+                Start with the commercial case-study route, then confirm the matching PainTracker case surface.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/50">Verifiable</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/50">2. Artifacts</div>
               <p className="mt-2 text-sm text-white/70">
-                Claims should resolve to a repo, DOI, deployment, artifact, or explicit failure-mode analysis.
+                Inspect the defensibility packet, threat model excerpt, and release-bound trust materials.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-white/50">Actionable</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/50">3. Public records</div>
               <p className="mt-2 text-sm text-white/70">
-                The output should suggest how your team would change architecture, operations, and release decisions.
+                Use the GitHub org, live systems, and fetchability diagnostics to confirm the inspection path is real.
               </p>
             </div>
           </div>
@@ -512,11 +536,14 @@ export default async function ProofPage() {
           </div>
 
           <div className="mt-5 grid gap-2">
-            <Button href="/contact" className="w-full justify-center">
-              Book a review
+            <Button href="/artifacts/security-and-audits/defensibility-packet-preview" className="w-full justify-center">
+              Inspect docs
             </Button>
-            <Button href="/services" variant="ghost" className="w-full justify-center">
-              See services
+            <Button href="https://github.com/CrisisCore-Systems" variant="ghost" className="w-full justify-center">
+              View GitHub org ↗
+            </Button>
+            <Button href="/contact" variant="ghost" className="w-full justify-center">
+              Contact for audit work
             </Button>
           </div>
         </Panel>

@@ -64,7 +64,7 @@ export const projects: Project[] = [
     tags: ["Security", "Threat Modeling", "Audit", "Systems"],
     links: [
       { label: "Contact", href: "/contact" },
-      { label: "Proof", href: "/proof" },
+      { label: "Case study", href: "/case-study" },
       { label: "GitHub", href: "https://github.com/CrisisCore-Systems" },
     ],
   },

@@ -4,9 +4,19 @@ export type BuyerIntentPage = {
   title: string;
   description: string;
   summary: string;
+  audience?: string[];
+  riskProfile?: string;
   painPoints: string[];
   reviewIncludes: string[];
   bestFit: string[];
+  exampleFailures?: string[];
+  deliverables?: string[];
+  proofIntro?: string;
+  proofItems?: string[];
+  notFit?: string[];
+  primaryIndexTarget: boolean;
+  parentHref?: string;
+  parentLabel?: string;
   proofHref: string;
   proofLabel: string;
   artifactHref: string;
@@ -19,9 +29,16 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "privacy review for health apps",
     title: "Privacy Review for Health Apps",
     description:
-      "Plain-English privacy review for health and health-adjacent apps before risky defaults, hidden collection, or confusing product behavior reaches users.",
+      "For health and health-adjacent products, this review finds risky collection paths, hidden assumptions, and trust-breaking product behavior before they reach users.",
     summary:
-      "This is for founders with a live or near-launch health app who need a hard look at where the product collects too much, assumes too much, or quietly routes intimate user data through the wrong systems.",
+      "Built for founders with a live or near-launch health product who need a concrete read on where the app collects too much, explains too little, or routes intimate user data through the wrong systems.",
+    audience: [
+      "Founders shipping health, wellness, disability, care coordination, or case-management products.",
+      "Teams with a live beta, near-launch release, or partner review coming up.",
+      "Operators who need product-boundary guidance, not a generic policy rewrite.",
+    ],
+    riskProfile:
+      "The launch risk is a health workflow that quietly normalizes extra collection, background sync, or account-first behavior before the team can explain why those defaults exist.",
     painPoints: [
       "Health-adjacent data is being stored or transmitted by default without a clear reason.",
       "Core workflows depend on sign-up, centralization, or background sync even when they should not.",
@@ -39,6 +56,29 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams close to launch or already live with sensitive workflow exposure.",
       "Founders who want to reduce collection instead of decorating it.",
     ],
+    exampleFailures: [
+      "Symptom, mood, or care data is centralized before the daily workflow proves it needs cloud storage.",
+      "Consent copy promises restraint while analytics, logging, or support tooling still capture intimate detail by default.",
+      "Export, sharing, or recovery paths are so vague that users cannot tell what leaves the device or when.",
+    ],
+    deliverables: [
+      "A ranked list of the collection, retention, and workflow risks that matter first.",
+      "A tighter product boundary for storage, sync, export, and onboarding behavior.",
+      "A launch-facing fix order the team can ship against without turning the review into theater.",
+    ],
+    proofIntro:
+      "This review method comes from live sensitive-data product work rather than generic privacy checklist consulting.",
+    proofItems: [
+      "PainTracker: local-first health logging with explicit export instead of default centralization.",
+      "Privacy-first pain tracking writing: product rationale for narrow collection and clearer user control.",
+      "PainTracker architecture artifact: concrete system boundary decisions for storage, export, and degraded use.",
+    ],
+    notFit: [
+      "Teams looking for a compliance certificate without product changes.",
+      "Products that only need legal document drafting rather than workflow inspection.",
+      "General wellness marketing sites with no sensitive user behavior inside the product.",
+    ],
+    primaryIndexTarget: true,
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker health workflow case study",
     artifactHref: "/artifacts/pain-tracker/architecture",
@@ -49,9 +89,16 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "pre launch privacy audit",
     title: "Pre-Launch Privacy Audit",
     description:
-      "Pre-launch privacy audit for sensitive-data products that need risky defaults, product gaps, and launch-blocking assumptions found before release.",
+      "For sensitive-data products approaching release, this audit finds risky defaults, brittle recovery paths, and trust claims the product cannot yet defend.",
     summary:
-      "A pre-launch privacy audit is useful when the product is nearly ready, but nobody has yet forced the system to justify its collection paths, recovery behavior, and trust claims under real conditions.",
+      "Use this when launch is close and nobody has yet forced the product to justify its collection paths, recovery behavior, logging posture, and trust claims under real operating conditions.",
+    audience: [
+      "Founders with a real launch date, sales pressure, or stakeholder scrutiny.",
+      "Teams that need a diagnostic before deciding whether the work stays small or expands into a full review.",
+      "Products whose privacy posture will be inspected by buyers, partners, or early users immediately after release.",
+    ],
+    riskProfile:
+      "The launch risk is shipping with unresolved collection, fallback, or messaging gaps that become visible the moment a buyer, partner, or skeptical user starts testing the product boundary.",
     painPoints: [
       "Launch is close and the team is uneasy about what the product is collecting or retaining.",
       "Trust and privacy claims exist in copy, but the underlying product boundaries are still fuzzy.",
@@ -69,6 +116,29 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams that need a diagnostic first pass before deciding on a larger engagement.",
       "Founders who want an explicit privacy audit path without compliance theater.",
     ],
+    exampleFailures: [
+      "Marketing or onboarding copy makes calming claims the product cannot support once logging, exports, or support access are inspected.",
+      "Critical recovery flows collapse under bad connectivity or partial setup, leaving sensitive users with no reliable fallback.",
+      "Retention, analytics, or support tooling remain broader than the launch workflow actually needs.",
+    ],
+    deliverables: [
+      "A ranked launch-risk brief focused on the few issues that matter before release.",
+      "A concrete fix order that separates launch-blockers from work that can wait.",
+      "Written notes the team can reuse in product, engineering, and buyer conversations.",
+    ],
+    proofIntro:
+      "The audit path is grounded in redacted review artifacts and release-bound trust work, not abstract launch advice.",
+    proofItems: [
+      "Redacted threat-model excerpt: how risk is scoped without hand-waving.",
+      "Defensibility packet preview: what skeptical buyers can inspect after the review.",
+      "Protective Computing doctrine: the operating standard behind degraded-condition checks.",
+    ],
+    notFit: [
+      "Teams that are still at idea stage with no product boundary to inspect.",
+      "Organizations looking only for infrastructure scanning or a compliance badge.",
+      "Founders who want reassurance without narrowing risky defaults.",
+    ],
+    primaryIndexTarget: true,
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted threat-model excerpt",
     artifactHref: "/artifacts/security-and-audits/defensibility-packet-preview",
@@ -99,6 +169,9 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Founders preparing for launch, pilots, procurement, or public scrutiny.",
       "Teams willing to tighten boundaries instead of hiding them behind marketing language.",
     ],
+    primaryIndexTarget: false,
+    parentHref: "/services/pre-launch-privacy-audit",
+    parentLabel: "Pre-Launch Privacy Audit",
     proofHref: "/case-study/proofvault",
     proofLabel: "Inspect the ProofVault release-bound trust case",
     artifactHref: "/artifacts/security-and-audits/defensibility-packet-preview",
@@ -109,9 +182,16 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "local first health app architecture",
     title: "Local-First Health App Architecture Review",
     description:
-      "Architecture review for health apps that want local-first defaults, explicit export, and fewer dangerous cloud assumptions in the core workflow.",
+      "For health apps that should survive low attention and bad connectivity, this review maps where local-first defaults, explicit export, and narrower cloud assumptions actually belong.",
     summary:
-      "This is for teams building health or wellness products that should stay useful under low attention or partial connectivity, but still need a practical architecture review before launch.",
+      "Built for teams shipping health or wellness products that should remain useful under degraded conditions, but still need a practical architecture review before launch or procurement review.",
+    audience: [
+      "Health and wellness teams deciding whether local-first is a real architectural fit.",
+      "Products where continuity, explicit export, and low-friction recovery matter more than analytics convenience.",
+      "Founders under launch or partner pressure who need fewer cloud assumptions, not a vague rewrite mandate.",
+    ],
+    riskProfile:
+      "The product risk is an intimate workflow that quietly depends on centralized storage, always-on connectivity, or account-first recovery even when the user job should survive without them.",
     painPoints: [
       "The app still assumes always-on connectivity for a workflow that should survive offline or degraded conditions.",
       "Sensitive records are centralized by default even though daily use does not require it.",
@@ -129,6 +209,29 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams deciding whether local-first is a real fit or just a slogan in product copy.",
       "Founders who need fewer cloud assumptions before launch or partner review.",
     ],
+    exampleFailures: [
+      "Daily capture breaks when connectivity drops even though the core workflow should still be available offline.",
+      "Sensitive records sync to the cloud by default before the team has justified why local storage is insufficient.",
+      "Export and sharing depend on account creation or support intervention instead of explicit user action.",
+    ],
+    deliverables: [
+      "A local-first boundary map showing what should stay on device, what can sync, and what should disappear.",
+      "A ranked set of architecture corrections for storage, export, sign-up, and degraded-mode behavior.",
+      "A practical recommendation on whether the next move is a teardown, full review, or implementation sprint.",
+    ],
+    proofIntro:
+      "The architecture review is grounded in a live health workflow built around continuity under degraded conditions.",
+    proofItems: [
+      "PainTracker architecture walkthrough: why local-first mattered to the workflow.",
+      "PainTracker architecture artifact: the concrete storage and export model behind that decision.",
+      "Protective Computing doctrine: the broader operating model for software under low attention and partial failure.",
+    ],
+    notFit: [
+      "Teams that are committed to centralizing everything for analytics convenience.",
+      "Products with no sensitive workflow continuity requirement.",
+      "Organizations asking for an infrastructure migration plan rather than a product-boundary review.",
+    ],
+    primaryIndexTarget: true,
     proofHref: "/writing/paintracker-architecture",
     proofLabel: "Read the PainTracker architecture walkthrough",
     artifactHref: "/artifacts/pain-tracker/architecture",
@@ -159,6 +262,9 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Products handling health, legal, workplace, family, or other sensitive user reality.",
       "Founders who want to remove data risk, not rename it.",
     ],
+    primaryIndexTarget: false,
+    parentHref: "/services/data-minimization-review-for-apps",
+    parentLabel: "Data Minimization Review for Apps",
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the founder-facing article on reducing collection risk",
     artifactHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
@@ -189,6 +295,9 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams before launch, relaunch, or partnership discussions.",
       "Founders who want privacy architecture that matches product reality.",
     ],
+    primaryIndexTarget: false,
+    parentHref: "/services/privacy-review-for-health-apps",
+    parentLabel: "Privacy Review for Health Apps",
     proofHref: "/writing/privacy-first-pain-tracking",
     proofLabel: "Read the privacy-first health workflow article",
     artifactHref: "/case-study/pain-tracker",
@@ -219,8 +328,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams with live users or near-term launch pressure.",
       "Founders who want concrete fixes, not just reassuring language.",
     ],
-    proofHref: "/proof",
-    proofLabel: "Inspect the proof surface for trust-reduction work",
+    primaryIndexTarget: false,
+    parentHref: "/services/privacy-review-for-health-apps",
+    parentLabel: "Privacy Review for Health Apps",
+    proofHref: "/case-study",
+    proofLabel: "Start with the commercial case study, then inspect proof materials",
     artifactHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     artifactLabel: "Inspect a redacted trust artifact",
   },
@@ -249,8 +361,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams that need more than a generic pentest framing.",
       "Founders who want launch-relevant hardening without posturing.",
     ],
-    proofHref: "/proof",
-    proofLabel: "Inspect the proof surface and artifacts",
+    primaryIndexTarget: false,
+    parentHref: "/services/pre-launch-privacy-audit",
+    parentLabel: "Pre-Launch Privacy Audit",
+    proofHref: "/case-study",
+    proofLabel: "Start with the commercial case study, then inspect proof materials",
     artifactHref: "/artifacts/security-and-audits/defensibility-packet-preview",
     artifactLabel: "Open the defensibility packet preview",
   },
@@ -259,9 +374,16 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     query: "data minimization review for apps",
     title: "Data Minimization Review for Apps",
     description:
-      "Data minimization review for apps that need a smaller collection boundary, clearer retention posture, and fewer risky defaults.",
+      "For products collecting more than the core job requires, this review narrows the data boundary, clarifies retention posture, and removes risky defaults before they calcify.",
     summary:
-      "When a product collects more than it needs, every other privacy discussion gets harder. This review is for founders who want a practical minimization pass that reduces risk without flattening the product into nothing.",
+      "Use this when the product collects, logs, or retains more than the core workflow can justify and the team needs a practical minimization pass before launch, procurement, or user scrutiny makes the excess harder to unwind.",
+    audience: [
+      "Founders who can already feel the product collecting too much but need a defensible reduction plan.",
+      "Teams with sensitive workflows, buyer scrutiny, or expanding analytics and support tooling.",
+      "Products nearing launch or relaunch where excess data would be expensive to explain.",
+    ],
+    riskProfile:
+      "The risk is not just over-collection. It is the accumulation of logs, retention, exports, and third-party tooling that silently widen the product boundary until no one can explain what is actually necessary.",
     painPoints: [
       "The current data model grew around convenience instead of necessity.",
       "Retention and export behavior are not obviously justified by the core job.",
@@ -279,6 +401,29 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Teams that need a buyer-defensible minimization story.",
       "Founders who prefer narrower systems over bigger policies.",
     ],
+    exampleFailures: [
+      "The product captures diagnostic, behavioral, or support data by default even though the core job can run without it.",
+      "Retention windows exist because nobody removed them, not because the workflow requires them.",
+      "Exports, analytics, or vendor tooling still receive fields that no longer serve a user-facing purpose.",
+    ],
+    deliverables: [
+      "A minimization-first inventory of what should stay, narrow, or be removed.",
+      "A prioritized fix list for storage, retention, logging, analytics, and sharing defaults.",
+      "A smaller, buyer-defensible data story the team can actually stand behind.",
+    ],
+    proofIntro:
+      "The minimization work is tied to concrete founder guidance and redacted review artifacts, not abstract privacy slogans.",
+    proofItems: [
+      "Founder-facing minimization article: how to reduce collection risk before launch.",
+      "Redacted review artifact: what a narrowed collection boundary looks like in practice.",
+      "PainTracker case study: a live example of reducing default collection while preserving the product job.",
+    ],
+    notFit: [
+      "Teams optimizing for maximal data capture or ad-tech style enrichment.",
+      "Products that only need terms-of-service cleanup.",
+      "Organizations unwilling to remove convenience collection when it is no longer justified.",
+    ],
+    primaryIndexTarget: true,
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the founder-facing minimization article",
     artifactHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
@@ -309,12 +454,22 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Small teams that need ranked findings, not abstract advice.",
       "Products where the cost of being wrong at launch is trust loss, not just bug reports.",
     ],
+    primaryIndexTarget: false,
+    parentHref: "/services/pre-launch-privacy-audit",
+    parentLabel: "Pre-Launch Privacy Audit",
     proofHref: "/services/pre-launch-privacy-audit",
     proofLabel: "See the pre-launch privacy audit page",
     artifactHref: "/proof",
     artifactLabel: "Inspect proof and case studies first",
   },
 ];
+
+export const PRIMARY_BUYER_INTENT_PAGES = BUYER_INTENT_PAGES.filter((page) => page.primaryIndexTarget);
+
+export function getMergedBuyerIntentPages(parentSlug: string) {
+  const parentHref = `/services/${parentSlug}`;
+  return BUYER_INTENT_PAGES.filter((page) => page.parentHref === parentHref);
+}
 
 export function getBuyerIntentPage(slug: string) {
   return BUYER_INTENT_PAGES.find((page) => page.slug === slug);

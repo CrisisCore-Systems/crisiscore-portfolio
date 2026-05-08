@@ -24,7 +24,7 @@ export default function WritingIndexPage() {
       </p>
 
       <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-        This section now does two jobs: plain-English demand capture for founders with an immediate problem, and deeper doctrine for buyers who want to inspect the reasoning. Most visitors should still start with Services or Proof.
+        This section now does two jobs: plain-English demand capture for founders with an immediate problem, and deeper doctrine for buyers who want to inspect the reasoning. Most visitors should still start with the commercial case study or Proof.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
@@ -43,8 +43,8 @@ export default function WritingIndexPage() {
 
       <div className="mt-7 flex flex-wrap gap-3">
         <Button href="/services">Services</Button>
-        <Button href="/proof" variant="ghost">
-          Proof
+        <Button href="/case-study" variant="ghost">
+          Case study
         </Button>
         <Button href="/contact" variant="ghost">
           Book a review
@@ -162,8 +162,8 @@ export default function WritingIndexPage() {
               <Button href="/services" className="w-full justify-center">
                 See services
               </Button>
-              <Button href="/proof" variant="ghost" className="w-full justify-center">
-                Open proof
+              <Button href="/case-study" variant="ghost" className="w-full justify-center">
+                Open case study
               </Button>
               <Button href="/projects" variant="ghost" className="w-full justify-center">
                 Open projects

@@ -41,8 +41,8 @@ export default async function ProjectsPage({
 
       <div className="mt-7 flex flex-wrap gap-3">
         <Button href="/services">Services</Button>
-        <Button href="/proof" variant="ghost">
-          Proof
+        <Button href="/case-study" variant="ghost">
+          Case study
         </Button>
         <Button href="/contact" variant="ghost">
           Book a review
@@ -83,8 +83,8 @@ export default async function ProjectsPage({
               <Button href="/services" className="w-full justify-center">
                 See services
               </Button>
-              <Button href="/proof" variant="ghost" className="w-full justify-center">
-                Open proof
+              <Button href="/case-study" variant="ghost" className="w-full justify-center">
+                Open case study
               </Button>
               <Button href="/contact" variant="ghost" className="w-full justify-center">
                 Send the app, stack, and concern
