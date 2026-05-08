@@ -37,9 +37,15 @@ export function Footer() {
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/40">
-          <span>Technical references:</span>
+          <span>Elsewhere:</span>
           <a className="hover:text-white/70" href={SITE.socials.github} target="_blank" rel="noreferrer">
             GitHub
+          </a>
+          <a className="hover:text-white/70" href={SITE.socials.devto} target="_blank" rel="noreferrer">
+            dev.to
+          </a>
+          <a className="hover:text-white/70" href={SITE.bridges.protectiveComputing} target="_blank" rel="noreferrer">
+            Protective Computing
           </a>
           <a className="hover:text-white/70" href="/site-map">
             Site map
@@ -51,6 +57,10 @@ export function Footer() {
             Version
           </a>
           <span>Build: {commit}</span>
+        </div>
+
+        <div className="mt-3 text-xs text-white/45">
+          Intellectual proof bridge: the Protective Computing canon and specifications live at the dedicated project site and route back to CrisisCore service work.
         </div>
       </div>
     </footer>

@@ -23,7 +23,11 @@ export const SITE = {
   email: "crisiscore.systems@proton.me",
   socials: {
     github: "https://github.com/CrisisCore-Systems",
+    devto: "https://dev.to/crisiscore-systems",
     zenodo: "https://zenodo.org/communities/protective-computing/records",
+  },
+  bridges: {
+    protectiveComputing: "https://protective-computing.github.io",
   },
 };
 
