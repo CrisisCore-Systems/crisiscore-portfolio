@@ -158,7 +158,6 @@ export default async function WritingPostPage({
     <div className="py-12">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
 
@@ -207,6 +206,9 @@ export default async function WritingPostPage({
           </Button>
           <Button href="/projects" variant="ghost">
             Projects
+          </Button>
+          <Button href={SITE.bridges.protectiveComputing} variant="ghost">
+            Protective Computing canon ↗
           </Button>
         </div>
       </Panel>

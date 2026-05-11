@@ -2,9 +2,15 @@
 
 Default proof URL:
 
-- `/case-study`
+- `https://crisiscore-systems.ca/case-study/pain-tracker`
 
-Use this page as the primary link for outbound messages. Do not lead with the homepage unless someone asks for the broader service surface.
+Default bridge URL for doctrine or framework posts:
+
+- `https://protective-computing.github.io`
+
+Use the case-study URL as the primary link for outbound messages. Do not lead with the homepage unless someone asks for the broader service surface.
+
+For public writing and dev.to posts, link to CrisisCore first and add the Protective Computing bridge only when the post is about doctrine, frameworks, measurement, or audit method.
 
 ## Core message
 
@@ -47,6 +53,26 @@ I wrote up one concrete example of the kind of hardening work I mean here:
 It shows the starting condition, trust risks, architectural decisions, hardening moves, and resulting posture.
 ```
 
+## Public post footer
+
+Use this at the end of dev.to posts or cross-posted essays.
+
+```text
+Primary service path:
+https://crisiscore-systems.ca/case-study/pain-tracker
+
+Protective Computing canon:
+https://protective-computing.github.io
+```
+
+Keep the CrisisCore link first. Add the Protective Computing link when the post leans on Overton, the Field Guide, PLS, or adjacent doctrine.
+
+## Cadence
+
+- Publish at least one dev.to post per month.
+- Rotate between one buyer-facing teardown post and one Protective Computing essay.
+- If no new product case is ready, ship a shorter note that extracts one operational pattern from the canon and links back to the case study.
+
 ## Warm intro reply
 
 Use this when someone is already aware of the work and only needs the most direct next step.
@@ -60,11 +86,11 @@ If the operating constraints look familiar, send repo + context + constraints an
 
 ## How to use it
 
-- Replace `[case-study-url]` with the production URL for `/case-study`.
+- Replace `[case-study-url]` with `https://crisiscore-systems.ca/case-study/pain-tracker` unless you have a stronger route for that audience.
 - Replace `[product/company]` only when you have a real reason to personalize.
 - Keep the first message short. The page should do the heavy lifting.
 - Default to one link only: the case study.
-- Only send the homepage, PainTracker case study, or proof page if the recipient asks for the broader surface or deeper inspection path.
+- Only add the homepage, proof page, or Protective Computing canon if the recipient asks for the broader surface or deeper theory.
 
 ## What to watch
 

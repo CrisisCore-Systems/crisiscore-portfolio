@@ -19,14 +19,17 @@ export default function CaseStudyPage() {
               Composite example: reducing paperwork burden, memory fragmentation, and documentation inconsistency in a trust-sensitive workflow.
             </h1>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-              This commercial route explains the kind of product correction CrisisCore Systems sells. The live proof surface behind it is PainTracker, which shows the relevant architecture, artifacts, and public source records.
+              This commercial route explains the kind of product correction CrisisCore Systems sells. Start with the two internal case-study surfaces below, then inspect the matching proof and source records without leaving CrisisCore first.
             </p>
             <p className="mt-4 max-w-3xl rounded-2xl border border-[rgba(212,162,97,0.32)] bg-[rgba(212,162,97,0.08)] px-4 py-3 text-sm leading-relaxed text-white/80">
               Composite-example disclaimer: this page is commercial framing for a representative workflow, not a promise of legal success, claim acceptance, medical efficacy, or any guaranteed outcome.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="https://paintracker.ca/case-study">View PainTracker case study ↗</Button>
+              <Button href="/case-study/pain-tracker">Open PainTracker case study</Button>
+              <Button href="/case-study/proofvault" variant="ghost">
+                Open ProofVault case study
+              </Button>
               <Button href="/proof" variant="ghost">
                 Inspect proof materials
               </Button>
@@ -40,7 +43,7 @@ export default function CaseStudyPage() {
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What this route does</div>
               <p className="mt-2 text-sm leading-relaxed text-white/80">
-                It converts and proves: commercial framing first, then direct links into the existing PainTracker trust surface for inspection.
+                It converts and proves: commercial framing first, then direct links into internal case studies and proof materials for inspection.
               </p>
             </div>
             <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4">
@@ -122,18 +125,18 @@ export default function CaseStudyPage() {
       <Panel className="mt-4 p-7 sm:p-8">
         <div className="text-sm font-semibold">Where to inspect the real proof surface</div>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
-          This route exists so discovery traffic lands on the commercial site first. The stronger trust narrative already lives on PainTracker, so the next step is to inspect that existing case-study and proof surface rather than reading a second weaker version here.
+          This route exists so discovery traffic lands on the commercial site first. The next step is to inspect the internal case-study and proof surfaces here, then open the live product only after the buyer understands the trust boundary.
         </p>
 
         <div className="mt-6 grid gap-2 md:grid-cols-3">
-          <Button href="https://paintracker.ca/case-study" variant="ghost" className="w-full justify-center">
-            View PainTracker case study ↗
+          <Button href="/case-study/pain-tracker" variant="ghost" className="w-full justify-center">
+            Open PainTracker case study
           </Button>
-          <Button href="https://paintracker.ca/proof" variant="ghost" className="w-full justify-center">
-            Inspect PainTracker proof ↗
+          <Button href="/case-study/proofvault" variant="ghost" className="w-full justify-center">
+            Open ProofVault case study
           </Button>
-          <Button href="https://github.com/CrisisCore-Systems" variant="ghost" className="w-full justify-center">
-            View GitHub org ↗
+          <Button href="/proof" variant="ghost" className="w-full justify-center">
+            Inspect proof materials
           </Button>
         </div>
       </Panel>
