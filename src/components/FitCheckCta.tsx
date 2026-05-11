@@ -8,10 +8,11 @@ import { Button } from "@/components/ui/Button";
 type FitCheckCtaProps = {
   title: string;
   description: string;
+  checklistItems?: string[];
   className?: string;
 };
 
-export function FitCheckCta({ title, description, className }: Readonly<FitCheckCtaProps>) {
+export function FitCheckCta({ title, description, checklistItems, className }: Readonly<FitCheckCtaProps>) {
   const [productUrl, setProductUrl] = useState("");
   const [concern, setConcern] = useState("");
   const [copied, setCopied] = useState(false);
@@ -61,6 +62,13 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
     globalThis.open(gmailHref, "_blank", "noopener,noreferrer");
   };
 
+  const checklist =
+    checklistItems ?? [
+      "Send URL + stage + one concern.",
+      "Start from contact and send only the basics.",
+      "Skip decks and long docs.",
+    ];
+
   return (
     <div className={cn("rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-6", className)}>
       <div className="text-xs uppercase tracking-[0.2em] text-white/45">Quick fit check (60 seconds)</div>
@@ -68,9 +76,9 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
       <p className="mt-2 text-sm leading-relaxed text-white/70">{description}</p>
 
       <ul className="mt-4 space-y-1.5 text-sm text-white/72">
-        <li>• Send URL + stage + one concern.</li>
-        <li>• Start from contact and send only the basics.</li>
-        <li>• Skip decks and long docs.</li>
+        {checklist.map((item) => (
+          <li key={item}>• {item}</li>
+        ))}
       </ul>
 
       <form className="mt-5 grid gap-3" onSubmit={handleSubmit}>
@@ -114,7 +122,7 @@ export function FitCheckCta({ title, description, className }: Readonly<FitCheck
       </form>
 
       <p className="mt-4 text-xs leading-relaxed text-white/55">
-        Usually answered in 1-2 days with fit, first checks, and suggested package.
+        Usually answered within 1-3 business days with fit, first checks, and suggested package.
       </p>
     </div>
   );

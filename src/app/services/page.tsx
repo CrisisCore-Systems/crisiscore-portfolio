@@ -155,9 +155,9 @@ export default function ServicesPage() {
               A fast first pass for teams that need to know if a real product problem exists.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
-              <li>• 48 hour turnaround</li>
-              <li>• Top 3 issues to address first</li>
-              <li>• 3 fixes worth making first</li>
+              <li>• Top 3 product trust risks</li>
+              <li>• Why each risk matters</li>
+              <li>• First fix for each issue</li>
               <li>• Recommendation on whether a deeper review is worth it</li>
               <li>• Short written readout</li>
             </ul>
@@ -174,10 +174,11 @@ export default function ServicesPage() {
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
               <li>• Threat model snapshot</li>
-              <li>• Privacy risk review</li>
-              <li>• Structural weakness analysis</li>
-              <li>• Product boundary review</li>
-              <li>• Prioritized roadmap</li>
+              <li>• Data boundary map</li>
+              <li>• Collection and retention review</li>
+              <li>• Product claims review</li>
+              <li>• Risk-ranked fix roadmap</li>
+              <li>• Proof gaps and buyer scrutiny notes</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
               Best for: teams under launch pressure or real user exposure that need a full picture and practical fix order.
@@ -191,10 +192,11 @@ export default function ServicesPage() {
               Implementation support for the highest-value corrections once the problems are already known.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-white/75">
-              <li>• Deploy issues</li>
-              <li>• Data boundary cleanup</li>
-              <li>• Copy and UX fixes</li>
-              <li>• Architectural hardening</li>
+              <li>• Patch privacy or UX copy</li>
+              <li>• Tighten data collection boundaries</li>
+              <li>• Improve export, deletion, recovery, or consent flows</li>
+              <li>• Add verification notes or tests where practical</li>
+              <li>• Ship the highest-leverage corrections first</li>
             </ul>
             <div className="mt-6 text-sm text-white/70">
               Best for: teams that already know the issues and want the hardest fixes shipped quickly.

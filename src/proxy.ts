@@ -1,11 +1,18 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const DUPLICATE_HOST = "crisiscore-portfolio.vercel.app";
+const DUPLICATE_HOSTS = new Set([
+  "crisiscore-portfolio.vercel.app",
+  "www.crisiscore-portfolio.vercel.app",
+]);
 const CANONICAL_ORIGIN = "https://crisiscore-systems.ca";
 
 export function proxy(request: NextRequest) {
-  if (request.nextUrl.hostname !== DUPLICATE_HOST) {
+  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
+  const hostHeader = request.headers.get("host")?.split(":")[0]?.trim();
+  const hostname = forwardedHost || hostHeader || request.nextUrl.hostname;
+
+  if (!hostname || !DUPLICATE_HOSTS.has(hostname)) {
     return NextResponse.next();
   }
 

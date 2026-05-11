@@ -52,7 +52,7 @@ export default function ContactPage() {
 
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <Button href={gmailHref}>Open in Gmail</Button>
-              <div className="cc-chip">Usually answered in 1-2 days</div>
+              <div className="cc-chip">Usually answered within 1-3 business days</div>
             </div>
 
             <div className="mt-6 text-xs text-white/55">
@@ -102,7 +102,7 @@ export default function ContactPage() {
             <div className="text-sm font-semibold">Response expectations</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                I aim to respond within 1-3 days. If you&apos;re in an urgent window,
+                Usually answered within 1-3 business days. If you&apos;re in an urgent window,
                 put <span className="font-mono text-white/80">URGENT</span> in the
                 subject line and include your deadline.
               </p>

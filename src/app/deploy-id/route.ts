@@ -1,20 +1,12 @@
 import { NextResponse } from "next/server";
+import { getBuildCommitFull, getBuildCommitShort } from "@/app/lib/build";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-function readCommit() {
-  return (
-    process.env.NEXT_PUBLIC_BUILD_COMMIT_FULL ??
-    process.env.NEXT_PUBLIC_BUILD_COMMIT ??
-    process.env.VERCEL_GIT_COMMIT_SHA ??
-    "unknown"
-  );
-}
-
 export async function GET(request: Request) {
-  const commit = readCommit();
-  const shortCommit = commit === "unknown" ? commit : commit.slice(0, 7);
+  const commit = getBuildCommitFull();
+  const shortCommit = getBuildCommitShort();
   const env = process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? "unknown";
   const region = process.env.VERCEL_REGION ?? "unknown";
   const url = process.env.VERCEL_URL ?? "unknown";

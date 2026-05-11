@@ -80,6 +80,17 @@ export default async function ProofPage() {
 
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
 
+        <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="text-sm font-semibold">How to inspect CrisisCore in 5 minutes</div>
+          <ol className="mt-3 space-y-2 text-sm text-white/75">
+            <li>1. Read the PainTracker case.</li>
+            <li>2. Inspect the redacted threat model excerpt.</li>
+            <li>3. Review the ProofVault trust case.</li>
+            <li>4. Check public source records.</li>
+            <li>5. Send your product URL if the failure pattern looks familiar.</li>
+          </ol>
+        </div>
+
         <div className="mt-3 flex flex-wrap gap-2.5">
             <Button
               href="/artifacts/security-and-audits/defensibility-packet-preview"

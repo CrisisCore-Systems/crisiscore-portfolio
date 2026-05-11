@@ -104,6 +104,7 @@ export default async function BuyerIntentServicePage({
       "Written notes the team can keep using after the first call.",
     ];
   const mergedPages = getMergedBuyerIntentPages(page.slug);
+  const fitCheckPrompt = page.fitCheckPrompt ?? "the one problem that makes this review path feel relevant";
 
   return (
     <div className="py-12">
@@ -130,8 +131,13 @@ export default async function BuyerIntentServicePage({
 
         <FitCheckCta
           className="mt-8"
-          title="Send the product URL, current stage, and the one problem that makes this review path feel relevant."
+          title={`Send the product URL and ${fitCheckPrompt}.`}
           description="That is enough for a first pass. I&apos;ll tell you whether this exact review path is right, whether a broader review is smarter, or whether the issue stays small."
+          checklistItems={[
+            `Send URL + ${fitCheckPrompt}.`,
+            "Use contact if you want the shortest path to a recommendation.",
+            "Skip decks and long docs for the first pass.",
+          ]}
         />
       </Panel>
 

@@ -26,6 +26,9 @@ export const SITE = {
     devto: "https://dev.to/crisiscore-systems",
     zenodo: "https://zenodo.org/communities/protective-computing/records",
   },
+  products: {
+    painTracker: "https://paintracker.ca",
+  },
   bridges: {
     protectiveComputing: "https://protective-computing.github.io",
   },
