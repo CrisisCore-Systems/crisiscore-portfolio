@@ -3,6 +3,7 @@ export type BuyerIntentPage = {
   title: string;
   description: string;
   summary: string;
+  useThisWhen?: string[];
   audience?: string[];
   riskProfile?: string;
   painPoints: string[];
@@ -31,6 +32,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For health and health-adjacent products, this review finds risky collection paths, hidden assumptions, and trust-breaking product behavior before they reach users.",
     summary:
       "Built for founders with a live or near-launch health product who need a concrete read on where the app collects too much, explains too little, or routes intimate user data through the wrong systems.",
+    useThisWhen: [
+      "The product handles symptoms, mood, disability, care coordination, or wellness behavior.",
+      "The team is unsure whether collection, consent, storage, or sharing defaults are too broad.",
+      "You need a health-specific product boundary review before launch, partner review, or wider rollout.",
+    ],
     audience: [
       "Founders shipping health, wellness, disability, care coordination, or case-management products.",
       "Teams with a live beta, near-launch release, or partner review coming up.",
@@ -91,6 +97,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For sensitive-data products approaching release, this audit finds risky defaults, brittle recovery paths, and trust claims the product cannot yet defend.",
     summary:
       "Use this when launch is close and nobody has yet forced the product to justify its collection paths, recovery behavior, logging posture, and trust claims under real operating conditions.",
+    useThisWhen: [
+      "Launch is close and the team cannot clearly defend its privacy claims.",
+      "Logging behavior, recovery flows, and data boundaries have not been tested as one product surface.",
+      "You need a ranked launch-risk picture before shipping, sales exposure, or stakeholder review.",
+    ],
     audience: [
       "Founders with a real launch date, sales pressure, or stakeholder scrutiny.",
       "Teams that need a diagnostic before deciding whether the work stays small or expands into a full review.",
@@ -183,6 +194,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For health apps that should survive low attention and bad connectivity, this review maps where local-first defaults, explicit export, and narrower cloud assumptions actually belong.",
     summary:
       "Built for teams shipping health or wellness products that should remain useful under degraded conditions, but still need a practical architecture review before launch or procurement review.",
+    useThisWhen: [
+      "The workflow should keep working under low bandwidth, low attention, or low trust.",
+      "The architecture still assumes accounts, sync, or cloud authority too early.",
+      "You need to know what should stay local, what can sync, and what should disappear before launch.",
+    ],
     audience: [
       "Health and wellness teams deciding whether local-first is a real architectural fit.",
       "Products where continuity, explicit export, and low-friction recovery matter more than analytics convenience.",
@@ -371,6 +387,11 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For products collecting more than the core job requires, this review narrows the data boundary, clarifies retention posture, and removes risky defaults before they calcify.",
     summary:
       "Use this when the product collects, logs, or retains more than the core workflow can justify and the team needs a practical minimization pass before launch, procurement, or user scrutiny makes the excess harder to unwind.",
+    useThisWhen: [
+      "The product collects, logs, exports, or retains more than the core workflow can justify.",
+      "The team can feel the excess but has not separated required collection from convenience collection.",
+      "You need a buyer-defensible minimization story before launch, procurement, or user scrutiny.",
+    ],
     audience: [
       "Founders who can already feel the product collecting too much but need a defensible reduction plan.",
       "Teams with sensitive workflows, buyer scrutiny, or expanding analytics and support tooling.",

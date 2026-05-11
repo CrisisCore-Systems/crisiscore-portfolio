@@ -81,13 +81,37 @@ export default async function ProofPage() {
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
 
         <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="text-sm font-semibold">The proof path has three layers</div>
+          <div className="mt-4 grid gap-3 lg:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div className="text-xs uppercase tracking-[0.18em] text-white/45">1. Working product case</div>
+              <p className="mt-2 text-sm text-white/75">
+                PainTracker shows minimization-first health logging with local default storage, no account requirement for core use, and explicit export.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div className="text-xs uppercase tracking-[0.18em] text-white/45">2. Release-bound trust case</div>
+              <p className="mt-2 text-sm text-white/75">
+                ProofVault shows how claims were narrowed to what the release process could actually prove through pinned specimens, verifier paths, CI, and drift checks.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div className="text-xs uppercase tracking-[0.18em] text-white/45">3. Public method</div>
+              <p className="mt-2 text-sm text-white/75">
+                Protective Computing and the Overton Framework provide the doctrine, DOI-backed records, and audit vocabulary behind the work.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
           <div className="text-sm font-semibold">How to inspect CrisisCore in 5 minutes</div>
           <ol className="mt-3 space-y-2 text-sm text-white/75">
-            <li>1. Read the PainTracker case.</li>
-            <li>2. Inspect the redacted threat model excerpt.</li>
-            <li>3. Review the ProofVault trust case.</li>
-            <li>4. Check public source records.</li>
-            <li>5. Send your product URL if the failure pattern looks familiar.</li>
+            <li>Read the PainTracker case.</li>
+            <li>Inspect the redacted threat model excerpt.</li>
+            <li>Review the ProofVault trust case.</li>
+            <li>Check public source records.</li>
+            <li>Send your product URL if the failure pattern looks familiar.</li>
           </ol>
         </div>
 
@@ -105,6 +129,13 @@ export default async function ProofPage() {
               className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
             >
               Open redacted audit artifact
+            </Button>
+            <Button
+              href="/artifacts/security-and-audits/sample-48-hour-teardown"
+              variant="ghost"
+              className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+            >
+              View sample teardown
             </Button>
             <Button
               href={canonPrimary?.href ?? "https://doi.org/10.5281/zenodo.18688516"}

@@ -63,6 +63,15 @@ export const ARTIFACTS: ArtifactEntry[] = [
       "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/assets/proof-cards/defensibility_packet_preview_wide_16x9.svg",
   },
   {
+    slug: "security-and-audits/sample-48-hour-teardown",
+    title: "Sample 48-hour teardown",
+    summary: "Redacted sample showing how a fast teardown frames top risks, why they matter, and the first fixes.",
+    kind: "markdown",
+    rawPath: "/projects/security-and-audits/sample-48-hour-teardown.md",
+    githubMirror:
+      "https://github.com/CrisisCore-Systems/crisiscore-portfolio/blob/main/public/projects/security-and-audits/sample-48-hour-teardown.md",
+  },
+  {
     slug: "overton-framework/protective-computing-lifecycle",
     title: "Protective computing lifecycle diagram",
     summary: "Diagram plate showing the discipline from baseline doctrine through operational translation and audit measurement.",

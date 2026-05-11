@@ -164,6 +164,11 @@ export default function ServicesPage() {
             <div className="mt-6 text-sm text-white/70">
               Best for: teams that want a quick signal without starting a larger engagement.
             </div>
+            <div className="mt-5">
+              <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
+                View sample teardown
+              </Button>
+            </div>
           </Panel>
 
           <Panel className="p-7 sm:p-8">

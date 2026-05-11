@@ -16,6 +16,7 @@ export async function GET(request: Request) {
           : "unknown";
   const runtimeCommit = process.env.VERCEL_GIT_COMMIT_SHA ?? null;
   const env = process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? null;
+  const requestHost = request.headers.get("host");
 
   const payload = {
     reportedCommit: runtimeCommit,
@@ -25,13 +26,8 @@ export async function GET(request: Request) {
     matchesFooterBuild: runtimeCommit ? runtimeCommit.startsWith(footerBuild) : false,
     branch: process.env.VERCEL_GIT_COMMIT_REF ?? null,
     environment: env,
-    env,
-    region: process.env.VERCEL_REGION ?? null,
-    url: process.env.VERCEL_URL ?? null,
-    requestHost: request.headers.get("host"),
-    requestForwardedHost: request.headers.get("x-forwarded-host"),
-    requestVercelId: request.headers.get("x-vercel-id"),
-    requestVercelDeploymentUrl: request.headers.get("x-vercel-deployment-url"),
+    host: requestHost,
+    requestHost,
     generatedAt: new Date().toISOString(),
   };
 

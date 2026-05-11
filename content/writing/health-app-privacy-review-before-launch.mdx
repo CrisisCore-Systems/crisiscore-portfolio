@@ -1,0 +1,113 @@
+---
+title: "Health app privacy review before launch: what founders should check first"
+description: "A founder-facing guide to the collection, consent, storage, export, recovery, and claim checks worth doing before a health app launches."
+date: "2026-05-11"
+---
+
+Before a health or wellness app asks users for intimate data, the team should be able to defend what it collects, where it stores it, how long it keeps it, and what happens when the user wants out.
+
+That is the real purpose of a health app privacy review before launch.
+
+Not to decorate the product with better language.
+To force the product boundary into the open while the team can still change it cheaply.
+
+## 1. The collection boundary
+
+Start with the blunt question:
+
+What data does the core workflow actually need?
+
+Then separate that from what the team collects because it is convenient, inherited, or useful later.
+
+For health products, the most common failure is treating intimate user data as normal product exhaust.
+
+That usually shows up as:
+
+- symptom, mood, or care data captured by default instead of by explicit choice
+- analytics that inherit more user context than the product job requires
+- support or logging systems that can see intimate payloads they do not need
+
+If the team cannot explain why a field exists, it is already a risk surface.
+
+## 2. The consent boundary
+
+Consent copy is not a trust boundary by itself.
+
+The actual trust boundary is the combination of:
+
+- what the user is told
+- what the interface implies
+- what the system really does in the background
+
+If the product says the app is private or minimal, but still centralizes sensitive data before the user understands why, that is not a documentation issue.
+It is a product issue.
+
+## 3. The storage boundary
+
+Health teams often centralize too early.
+
+The practical question is not whether cloud storage is allowed.
+It is whether the daily job requires it.
+
+If core capture, review, or personal reference could stay local by default, then account-first or sync-first architecture creates extra trust debt.
+
+Review:
+
+- what must stay on device
+- what can be exported explicitly
+- what truly needs centralized persistence
+
+## 4. The export boundary
+
+Users should be able to tell when data leaves the device and why.
+
+If export, sharing, or backup happens as a hidden assumption, the app is asking for more trust than it has earned.
+
+This is especially important for products dealing with symptoms, disability, chronic pain, medication, or emotionally sensitive health patterns.
+
+## 5. The recovery boundary
+
+Health apps are often used under low attention, low energy, bad connectivity, or high stress.
+
+That means privacy review should include recovery review.
+
+Ask:
+
+- What happens when the app loses connection?
+- What happens when account setup is incomplete?
+- What happens when a user tries to leave, delete, or export?
+- Does failure preserve progress or punish the user?
+
+An app that only works under perfect conditions is carrying hidden trust failures already.
+
+## 6. The claim boundary
+
+The public claim should match what the release can actually defend.
+
+If the site, onboarding flow, or sales copy promises privacy more strongly than the product boundary can prove, that gap will eventually be noticed by users, buyers, or partners.
+
+This is where many founders lose time.
+
+They try to soften the language when the real problem is that the product still needs a smaller, clearer boundary.
+
+## What a 48-hour teardown checks
+
+A useful fast review should answer:
+
+- where the product collects too much
+- where consent is weaker than the copy suggests
+- where storage or export assumptions are too broad
+- which recovery paths are fragile
+- what to fix first before launch
+
+That is enough to decide whether the next move is a quick patch, a full review, or a larger architecture correction.
+
+## If you need the next step
+
+If a health or wellness product is near launch and the trust boundary still feels loose, start with the smallest useful review before the product ships with defaults nobody can defend clearly.
+
+Related links:
+
+- [Privacy review for health apps](/services/privacy-review-for-health-apps)
+- [PainTracker case study](/case-study/pain-tracker)
+- [Proof surface](/proof)

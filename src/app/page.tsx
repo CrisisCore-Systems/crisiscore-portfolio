@@ -14,13 +14,13 @@ export default function HomePage() {
           <div>
             <div className="cc-kicker">For health and sensitive-data apps</div>
             <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              Catch privacy and trust failures before launch.
+              Find the trust failures buyers will question after launch.
             </h1>
             <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
-              CrisisCore reviews health, wellness, legal, and other sensitive-data products before launch, buyer review, or public scrutiny.
+              CrisisCore reviews health, wellness, legal, AI, and other sensitive-data products before launch, procurement review, or public scrutiny.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
-              I look for risky defaults, weak consent, over-collection, brittle recovery paths, and claims the product cannot yet defend. You get a short written readout with the real issues, the fix order, and the smallest useful next step.
+              I inspect product behavior itself: collection defaults, consent flows, recovery paths, logging, export, retention, and privacy claims the system cannot yet defend. You get a short written readout with the real risks, the fix order, and the smallest useful next step.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
@@ -32,7 +32,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/contact">Get a 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
-                Inspect the proof path
+                Inspect proof
               </Button>
             </div>
           </div>
@@ -83,6 +83,11 @@ export default function HomePage() {
               <li>• Recommendation: stop here, full review, or fix sprint</li>
               <li>• Short written readout</li>
             </ul>
+            <div className="mt-4">
+              <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
+                View sample teardown
+              </Button>
+            </div>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when you need signal quickly and do not want to start with a full engagement.
             </p>

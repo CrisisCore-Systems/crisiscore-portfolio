@@ -54,7 +54,7 @@ export default function SiteMapPage() {
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {PRIMARY_BUYER_INTENT_PAGES.map((page) => (
               <li key={page.slug}>
-                <Link className="hover:text-white" href={withBuild(`/services/${page.slug}`)}>
+                <Link className="font-mono hover:text-white" href={withBuild(`/services/${page.slug}`)}>
                   /services/{page.slug}
                 </Link>
               </li>

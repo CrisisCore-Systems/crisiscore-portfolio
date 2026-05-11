@@ -1,0 +1,90 @@
+---
+title: "AI health app privacy audit: what to check before launch"
+description: "A launch-focused guide to reviewing prompts, outputs, logging, retention, and claim boundaries for AI health products handling sensitive user data."
+date: "2026-05-11"
+---
+
+If an AI health product handles sensitive user data, the risk is usually not the model alone.
+
+The risk is the surrounding product surface:
+
+- what gets logged
+- what gets retained
+- who can inspect prompts or outputs
+- what the system claims to do safely
+- what happens when the workflow drifts or fails
+
+That is why an AI health app privacy audit should start at the product boundary, not at the model marketing.
+
+## 1. Prompt and output handling
+
+Ask where prompts and outputs go after the interaction ends.
+
+Can they be:
+
+- retained in logs by default
+- exposed to tooling the user never sees
+- routed into support, analytics, or debugging systems
+- reused beyond the immediate job without explicit user understanding
+
+If the answer is fuzzy, the trust boundary is already weak.
+
+## 2. Claim narrowing
+
+Many AI products make broader safety or privacy claims than the release can defend.
+
+That shows up as language like:
+
+- private by design
+- secure by default
+- clinician-ready
+- safe and confidential
+
+If the product cannot prove those claims through the actual release boundary, the claim should narrow before launch.
+
+## 3. Retention and review paths
+
+Sensitive AI systems often keep too much for too long because teams want observability.
+
+That may help operations.
+It also widens the product boundary far beyond what the user thinks they are consenting to.
+
+Review:
+
+- prompt retention
+- output retention
+- support access
+- evaluation datasets
+- traces, telemetry, and vendor visibility
+
+## 4. Recovery and degraded conditions
+
+AI products still need to survive ordinary failure.
+
+What happens when:
+
+- the model output is unavailable
+- the user has low connectivity
+- the service times out
+- an answer cannot be trusted enough to act on
+
+If the only fallback is silence or generic error handling, the product is not ready to ask for sensitive trust.
+
+## 5. What a useful audit leaves behind
+
+A useful AI health app audit should produce:
+
+- a tighter trust boundary for prompts, outputs, storage, and logs
+- narrower public claims
+- a ranked list of the highest-leverage launch fixes
+- an inspection path the team can show to a skeptical buyer without hand-waving
+
+## If you need the next step
+
+If the product is close to launch, pilot, procurement, or public scrutiny, start with the product boundary before trying to reassure buyers with broader AI promises.
+
+Related links:
+
+- [Pre-launch privacy audit](/services/pre-launch-privacy-audit)
+- [ProofVault case study](/case-study/proofvault)
+- [Proof surface](/proof)

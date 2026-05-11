@@ -96,6 +96,7 @@ export default async function BuyerIntentServicePage({
   };
 
   const audience = page.audience ?? page.bestFit;
+  const useThisWhen = page.useThisWhen ?? audience.slice(0, 3);
   const exampleFailures = page.exampleFailures ?? page.painPoints;
   const deliverables =
     page.deliverables ?? [
@@ -143,6 +144,13 @@ export default async function BuyerIntentServicePage({
 
       <div className="mt-10 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
         <Panel className="p-7 sm:p-8">
+          <div className="text-sm font-semibold">Use this review when</div>
+          <ul className="mt-4 space-y-2 text-sm text-white/75">
+            {useThisWhen.map((item) => (
+              <li key={item}>• {item}</li>
+            ))}
+          </ul>
+
           <div className="text-sm font-semibold">Who this is for</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
             {audience.map((item) => (
