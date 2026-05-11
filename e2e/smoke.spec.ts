@@ -6,7 +6,7 @@ const isLocalBaseUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(base
 
 const homepageCtas = [
   { name: "Get a 3-point risk read", href: "/contact" },
-  { name: "Inspect the proof path", href: "/proof" },
+  { name: "Inspect proof", href: "/proof" },
   { name: "Open PainTracker case study", href: "/case-study/pain-tracker" },
 ] as const;
 
@@ -34,7 +34,7 @@ test("Homepage proof CTAs resolve to live internal routes", async ({ page, reque
   }
 
   await expect(page.getByRole("link", { name: "Open PainTracker case study" }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: "Inspect the proof path" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Inspect proof" }).first()).toBeVisible();
 });
 
 test("Footer build marker matches /version.json on core routes", async ({ page, request }) => {
