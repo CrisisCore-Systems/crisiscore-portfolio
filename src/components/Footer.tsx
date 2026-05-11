@@ -1,7 +1,8 @@
 import { SITE } from "@/app/lib/site";
+import { getBuildCommitShort } from "@/app/lib/build";
 
 export function Footer() {
-  const commit = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
+  const commit = getBuildCommitShort();
 
   return (
     <footer className="border-t border-[color:var(--line)] bg-[rgba(8,13,20,0.96)]" data-build={commit}>
@@ -45,7 +46,10 @@ export function Footer() {
             dev.to
           </a>
           <a className="hover:text-white/70" href={SITE.bridges.protectiveComputing} target="_blank" rel="noreferrer">
-            Protective Computing
+            Protective Computing canon
+          </a>
+          <a className="hover:text-white/70" href={SITE.products.painTracker} target="_blank" rel="noreferrer">
+            PainTracker
           </a>
           <a className="hover:text-white/70" href="/site-map">
             Site map

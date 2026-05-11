@@ -1,10 +1,19 @@
+import { getBuildCommitFull, getBuildCommitShort } from "@/app/lib/build";
+
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  const footerBuild = process.env.NEXT_PUBLIC_BUILD_COMMIT ?? "unknown";
-  const footerBuildFull = process.env.NEXT_PUBLIC_BUILD_COMMIT_FULL ?? "unknown";
-  const footerBuildSource = process.env.NEXT_PUBLIC_BUILD_COMMIT_SOURCE ?? "unknown";
+  const footerBuild = getBuildCommitShort();
+  const footerBuildFull = getBuildCommitFull();
+  const footerBuildSource =
+    process.env.VERCEL_GIT_COMMIT_SHA
+      ? "vercel_runtime"
+      : process.env.NEXT_PUBLIC_BUILD_COMMIT_FULL
+        ? "next_public_full"
+        : process.env.NEXT_PUBLIC_BUILD_COMMIT
+          ? "next_public_short"
+          : "unknown";
   const runtimeCommit = process.env.VERCEL_GIT_COMMIT_SHA ?? null;
   const env = process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? null;
 

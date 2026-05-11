@@ -1,6 +1,5 @@
 export type BuyerIntentPage = {
   slug: string;
-  query: string;
   title: string;
   description: string;
   summary: string;
@@ -14,6 +13,7 @@ export type BuyerIntentPage = {
   proofIntro?: string;
   proofItems?: string[];
   notFit?: string[];
+  fitCheckPrompt?: string;
   primaryIndexTarget: boolean;
   parentHref?: string;
   parentLabel?: string;
@@ -26,7 +26,6 @@ export type BuyerIntentPage = {
 export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   {
     slug: "privacy-review-for-health-apps",
-    query: "privacy review for health apps",
     title: "Privacy Review for Health Apps",
     description:
       "For health and health-adjacent products, this review finds risky collection paths, hidden assumptions, and trust-breaking product behavior before they reach users.",
@@ -78,6 +77,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Products that only need legal document drafting rather than workflow inspection.",
       "General wellness marketing sites with no sensitive user behavior inside the product.",
     ],
+    fitCheckPrompt: "the flow where trust or consent feels most fragile",
     primaryIndexTarget: true,
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker health workflow case study",
@@ -86,7 +86,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "pre-launch-privacy-audit",
-    query: "pre launch privacy audit",
     title: "Pre-Launch Privacy Audit",
     description:
       "For sensitive-data products approaching release, this audit finds risky defaults, brittle recovery paths, and trust claims the product cannot yet defend.",
@@ -138,6 +137,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Organizations looking only for infrastructure scanning or a compliance badge.",
       "Founders who want reassurance without narrowing risky defaults.",
     ],
+    fitCheckPrompt: "the launch date and the privacy claim you are least confident defending",
     primaryIndexTarget: true,
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted threat-model excerpt",
@@ -146,7 +146,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "ai-trust-review-sensitive-data-products",
-    query: "trust review for AI products handling sensitive data",
     title: "Trust Review for AI Products Handling Sensitive Data",
     description:
       "Trust review for AI products that handle sensitive user data and need clearer boundaries, narrower claims, and inspectable proof before launch or sales exposure.",
@@ -179,7 +178,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "local-first-health-app-architecture",
-    query: "local first health app architecture",
     title: "Local-First Health App Architecture Review",
     description:
       "For health apps that should survive low attention and bad connectivity, this review maps where local-first defaults, explicit export, and narrower cloud assumptions actually belong.",
@@ -231,6 +229,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Products with no sensitive workflow continuity requirement.",
       "Organizations asking for an infrastructure migration plan rather than a product-boundary review.",
     ],
+    fitCheckPrompt: "the workflow that must keep working when connectivity, attention, or trust fails",
     primaryIndexTarget: true,
     proofHref: "/writing/paintracker-architecture",
     proofLabel: "Read the PainTracker architecture walkthrough",
@@ -239,7 +238,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "reduce-data-collection-risk-before-launch",
-    query: "how to reduce data collection risk before launch",
     title: "How to Reduce Data Collection Risk Before Launch",
     description:
       "Pre-launch review for products collecting more user data than they need, with a concrete plan to reduce risky defaults before launch exposure grows.",
@@ -272,7 +270,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "privacy-architecture-for-wellness-apps",
-    query: "privacy architecture for wellness apps",
     title: "Privacy Architecture for Wellness Apps",
     description:
       "Privacy architecture review for wellness apps that need safer defaults, clearer product boundaries, and fewer silent assumptions before growth adds exposure.",
@@ -305,7 +302,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "trust-review-for-mental-health-apps",
-    query: "trust review for mental health apps",
     title: "Trust Review for Mental Health Apps",
     description:
       "Review for mental health apps that need safer defaults, clearer boundaries, and fewer harmful assumptions around sensitive user states.",
@@ -338,7 +334,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "security-review-before-launch-sensitive-apps",
-    query: "security review before launch for sensitive apps",
     title: "Security Review Before Launch for Sensitive Apps",
     description:
       "Pre-launch security and product review for sensitive apps that need risky defaults, weak boundaries, and misleading claim surfaces identified before release.",
@@ -371,7 +366,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "data-minimization-review-for-apps",
-    query: "data minimization review for apps",
     title: "Data Minimization Review for Apps",
     description:
       "For products collecting more than the core job requires, this review narrows the data boundary, clarifies retention posture, and removes risky defaults before they calcify.",
@@ -423,6 +417,7 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "Products that only need terms-of-service cleanup.",
       "Organizations unwilling to remove convenience collection when it is no longer justified.",
     ],
+    fitCheckPrompt: "the one data flow that feels hardest to justify",
     primaryIndexTarget: true,
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the founder-facing minimization article",
@@ -431,7 +426,6 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "launch-readiness-review-for-sensitive-data-products",
-    query: "launch readiness review for sensitive data products",
     title: "Launch Readiness Review for Sensitive-Data Products",
     description:
       "Launch readiness review for sensitive-data products that need a clear view of product risk, privacy gaps, and boundary failures before going live.",

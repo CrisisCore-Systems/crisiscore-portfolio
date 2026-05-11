@@ -14,13 +14,13 @@ export default function HomePage() {
           <div>
             <div className="cc-kicker">For health and sensitive-data apps</div>
             <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              Catch risky defaults, weak consent, and data-collection mistakes before launch.
+              Catch privacy and trust failures before launch.
             </h1>
             <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
-              I review sensitive-data products for trust, privacy, and boundary failures that create buyer, legal, and launch risk.
+              CrisisCore reviews health, wellness, legal, and other sensitive-data products before launch, buyer review, or public scrutiny.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
-              Best for teams near launch or already live. You get the real issues, the priority order, and the first fixes instead of a vague audit deck.
+              I look for risky defaults, weak consent, over-collection, brittle recovery paths, and claims the product cannot yet defend. You get a short written readout with the real issues, the fix order, and the smallest useful next step.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
@@ -30,9 +30,9 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/contact">Start with the 48-hour teardown</Button>
-              <Button href="/case-study" variant="ghost">
-                See case study
+              <Button href="/contact">Get a 3-point risk read</Button>
+              <Button href="/proof" variant="ghost">
+                Inspect the proof path
               </Button>
             </div>
           </div>
@@ -77,9 +77,10 @@ export default function HomePage() {
             <p className="mt-2 text-sm text-white/70">A fast first pass for teams that need a clear answer on whether a real product problem exists.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$250</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• 48 hour turnaround</li>
-              <li>• Top 3 issues to address first</li>
-              <li>• Concrete fixes you can act on</li>
+              <li>• Top 3 product trust risks</li>
+              <li>• Why each risk matters</li>
+              <li>• First fix for each issue</li>
+              <li>• Recommendation: stop here, full review, or fix sprint</li>
               <li>• Short written readout</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
@@ -94,9 +95,11 @@ export default function HomePage() {
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,200</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>• Threat model snapshot</li>
-              <li>• Privacy risk review</li>
-              <li>• Product boundary review</li>
-              <li>• Prioritized roadmap</li>
+              <li>• Data boundary map</li>
+              <li>• Collection and retention review</li>
+              <li>• Product claims review</li>
+              <li>• Risk-ranked fix roadmap</li>
+              <li>• Proof gaps and buyer scrutiny notes</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when you need the full map of what is risky, what is sloppy, and what to fix first.
@@ -109,9 +112,11 @@ export default function HomePage() {
             <p className="mt-2 text-sm text-white/70">Implementation support for the highest-value corrections.</p>
             <p className="mt-4 text-sm font-semibold text-white">Starting at CA$1,500</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• Deploy issues</li>
-              <li>• Data boundary cleanup</li>
-              <li>• Copy and UX fixes</li>
+              <li>• Patch privacy or UX copy</li>
+              <li>• Tighten data collection boundaries</li>
+              <li>• Improve export, deletion, recovery, or consent flows</li>
+              <li>• Add verification notes or tests where practical</li>
+              <li>• Ship the highest-leverage corrections first</li>
             </ul>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when the problems are already known and you want them fixed fast.
@@ -154,7 +159,7 @@ export default function HomePage() {
             <p className="mt-3 text-sm text-white/70">A flagship case study and a redacted artifact from a real engagement.</p>
 
             <div className="mt-6 grid gap-2">
-              <Button href="/case-study">Open commercial case study</Button>
+              <Button href="/case-study/pain-tracker">Open PainTracker case study</Button>
               <Button href="/proof" variant="ghost" className="justify-center">
                 Inspect proof path
               </Button>
