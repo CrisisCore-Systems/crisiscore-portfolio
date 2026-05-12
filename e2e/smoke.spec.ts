@@ -41,12 +41,9 @@ test("Footer build marker matches /version.json on core routes", async ({ page, 
   const versionResponse = await request.get("/version.json");
   expect(versionResponse.status()).toBe(200);
   const versionPayload = await versionResponse.json();
-  const expectedBuild = versionPayload.footerBuild as string;
+  const expectedBuild = versionPayload.commit as string;
   expect(expectedBuild).toBeTruthy();
-
-  if (versionPayload.reportedCommit || versionPayload.footerBuildFull !== "unknown") {
-    expect(expectedBuild).not.toBe("unknown");
-  }
+  expect(versionPayload.matchesFooterBuild).toBe(true);
 
   for (const route of ["/", "/services", "/proof", "/contact"] as const) {
     await page.goto(route);
