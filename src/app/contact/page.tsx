@@ -46,8 +46,15 @@ export default function ContactPage() {
 
             <FitCheckCta
               className="mt-6"
-              title="Send the URL, launch stage, and one specific issue."
-              description="No deck or long brief required. This is the fastest way to get a useful first answer."
+              title="Send the product URL, launch stage, one concern, and a reply email."
+              description="No deck or long brief required. This is the shortest privacy-preserving intake path if you do not want to start by opening a mail client."
+              includeReplyEmail
+              splitStageAndConcern
+              checklistItems={[
+                "Send product URL, launch stage, one concern, and a reply email.",
+                "Do not include sensitive personal data in the first note.",
+                'If safer intake is needed, write "secure channel needed."',
+              ]}
             />
 
             <div className="mt-5 flex flex-wrap items-center gap-3">
