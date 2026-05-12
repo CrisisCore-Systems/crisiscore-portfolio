@@ -102,6 +102,22 @@ export default async function PainTrackerCaseStudyPage() {
         description="I&apos;ll tell you whether your situation looks like a 48-hour teardown, a deeper review, or something else entirely."
       />
 
+      <Panel className="mt-8 p-7 sm:p-8">
+        <div className="text-sm font-semibold">What this proves commercially</div>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          PainTracker is not only a product case study. It shows the review criteria CrisisCore applies to sensitive-data products: collection boundaries, local-first defaults, export control, consent clarity, degraded use, and privacy claims the system can actually defend.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          If you are building a health or wellness app, this is the same lens used in a Privacy Review for Health Apps.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Button href="/services/privacy-review-for-health-apps">Privacy Review for Health Apps</Button>
+          <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
+          <Button href="/services/data-minimization-review-for-apps" variant="ghost">Data Minimization Review for Apps</Button>
+          <Button href="/services/local-first-health-app-architecture" variant="ghost">Local-First Health App Architecture Review</Button>
+        </div>
+      </Panel>
+
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <Panel className="p-7 sm:p-8">

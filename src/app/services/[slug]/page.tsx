@@ -259,6 +259,20 @@ export default async function BuyerIntentServicePage({
               </ul>
             </>
           ) : null}
+
+          {page.faqs?.length ? (
+            <>
+              <div className="mt-8 text-sm font-semibold">FAQ</div>
+              <div className="mt-4 grid gap-3">
+                {page.faqs.map((item) => (
+                  <div key={item.question} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                    <div className="text-sm font-semibold text-white">{item.question}</div>
+                    <p className="mt-2 text-sm leading-relaxed text-white/72">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : null}
         </Panel>
       </div>
     </div>

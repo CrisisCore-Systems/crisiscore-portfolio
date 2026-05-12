@@ -152,6 +152,19 @@ export default async function ProofPage() {
           title="If the proof surface feels close to your situation, send the URL and the failure you&apos;re worried about."
           description="I&apos;ll tell you which proof path is most relevant, what I would inspect first, and whether the service fit is real."
         />
+
+        <div className="mt-8 rounded-2xl border border-[rgba(212,162,97,0.28)] bg-[rgba(212,162,97,0.08)] p-5">
+          <div className="text-sm font-semibold">Want this inspection applied to your product?</div>
+          <p className="mt-3 text-sm leading-relaxed text-white/78">
+            Start with a 48-hour teardown if you need the first risks fast. Use a full review if you need a deeper buyer-ready risk map.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button href="/artifacts/security-and-audits/sample-48-hour-teardown">48 Hour Trust Teardown Sample</Button>
+            <Button href="/services/privacy-review-for-health-apps" variant="ghost">Privacy Review for Health Apps</Button>
+            <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
+            <Button href="/contact" variant="ghost">Contact</Button>
+          </div>
+        </div>
       </Panel>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">

@@ -67,6 +67,22 @@ export default function ProofVaultCaseStudyPage() {
         </Button>
       </div>
 
+      <Panel className="mt-8 p-7 sm:p-8">
+        <div className="text-sm font-semibold">What this proves commercially</div>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          ProofVault is not only a trust-case artifact. It shows how CrisisCore reviews release claims, narrows guarantee surface, and ties buyer-facing assurances to evidence a skeptical reviewer can actually inspect.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          If your product is close to launch, under procurement pressure, or making claims that still feel broader than the evidence, this is the same lens used in a pre-launch privacy audit.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Button href="/services/pre-launch-privacy-audit">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
+          <Button href="/services/data-minimization-review-for-apps" variant="ghost">Data Minimization Review for Apps</Button>
+          <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">48 Hour Trust Teardown Sample</Button>
+          <Button href="/contact" variant="ghost">Get a 3-point risk read</Button>
+        </div>
+      </Panel>
+
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <Panel className="p-7 sm:p-8">

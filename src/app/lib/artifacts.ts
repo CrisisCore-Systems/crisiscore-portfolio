@@ -64,7 +64,7 @@ export const ARTIFACTS: ArtifactEntry[] = [
   },
   {
     slug: "security-and-audits/sample-48-hour-teardown",
-    title: "Sample 48-hour teardown",
+    title: "48 Hour Trust Teardown Sample",
     summary: "Redacted sample showing how a fast teardown frames top risks, why they matter, and the first fixes.",
     kind: "markdown",
     rawPath: "/projects/security-and-audits/sample-48-hour-teardown.md",

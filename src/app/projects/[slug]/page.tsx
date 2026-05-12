@@ -16,6 +16,42 @@ const caseStudyPathBySlug: Record<string, string> = {
   proofvault: "/case-study/proofvault",
 };
 
+const bridgeContentBySlug: Record<string, {
+  eyebrow: string;
+  title: string;
+  body: string[];
+  links: Array<{ href: string; label: string }>;
+}> = {
+  "pain-tracker": {
+    eyebrow: "Commercial bridge",
+    title: "Use PainTracker as the reference path for health product review",
+    body: [
+      "Building a health, wellness, or symptom-tracking app? PainTracker is the reference implementation behind CrisisCore's privacy review method for sensitive health products.",
+      "If your app collects symptoms, mood, disability, medication, location, notes, exports, or clinician-ready summaries, this is the same inspection lens used to review the product boundary before launch.",
+    ],
+    links: [
+      { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
+      { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
+      { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
+      { href: "/services/local-first-health-app-architecture", label: "Local-First Health App Architecture Review" },
+    ],
+  },
+  proofvault: {
+    eyebrow: "Commercial bridge",
+    title: "Use ProofVault as the release-evidence bridge into service work",
+    body: [
+      "ProofVault shows how CrisisCore narrows trust claims until the release can actually defend them through specimens, verifier paths, hosted CI, and drift checks.",
+      "If your product has launch claims, procurement pressure, or release evidence that feels too loose, this is the same review lens used for pre-launch audit and trust hardening work.",
+    ],
+    links: [
+      { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
+      { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
+      { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
+      { href: "/contact", label: "Get a 3-point risk read" },
+    ],
+  },
+};
+
 type ParamsLike = { slug: string } | Promise<{ slug: string }>;
 
 async function getSlug(params: ParamsLike) {
@@ -82,6 +118,7 @@ export default async function ProjectPage({
   }
 
   const dossier = loadDossier(slug);
+  const bridgeContent = bridgeContentBySlug[slug];
   const gh = p.links.find((l) => l.href.includes("github.com/"));
   const repoMatch = gh?.href.match(/github\.com\/([^/]+)\/([^/]+)/i);
   const repo = repoMatch ? await getRepo(repoMatch[1], repoMatch[2]) : null;
@@ -127,6 +164,25 @@ export default async function ProjectPage({
           <Button href="/services" variant="ghost">See services</Button>
           <Button href="/contact" variant="ghost">Book a review</Button>
         </div>
+      ) : null}
+
+      {bridgeContent ? (
+        <Panel className="mt-6 p-7 sm:p-8">
+          <div className="text-xs uppercase tracking-[0.2em] text-white/45">{bridgeContent.eyebrow}</div>
+          <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em]">{bridgeContent.title}</h2>
+          <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/72">
+            {bridgeContent.body.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {bridgeContent.links.map((link) => (
+              <Button key={link.href} href={link.href} variant="ghost">
+                {link.label}
+              </Button>
+            ))}
+          </div>
+        </Panel>
       ) : null}
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
