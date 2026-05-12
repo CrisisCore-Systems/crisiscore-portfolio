@@ -38,3 +38,8 @@ Evidence checked
 Recommended next step
 - If these patterns are live or close to launch, continue into a full review.
 - If the team only needs the first corrections, stop here and patch the consent, account-default, and recovery flows first.
+
+What this teardown is not
+- Not a full audit, certification, or line-by-line compliance review.
+- Not a guarantee that every trust, privacy, or security issue has been found.
+- Not implementation support for the fixes unless the work continues into a deeper review or fix sprint.
