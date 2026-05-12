@@ -1,0 +1,101 @@
+---
+title: "Pre launch privacy audit checklist for sensitive-data apps"
+description: "A founder-facing checklist for sensitive-data apps approaching launch, buyer review, or procurement scrutiny that need a clearer privacy boundary before release."
+date: "2026-05-11"
+---
+
+When a sensitive-data app is close to launch, the wrong question is:
+
+Are we saying the right reassuring things?
+
+The useful question is:
+
+What will a skeptical buyer, reviewer, or user find indefensible once they inspect the real product behavior?
+
+That is what a pre launch privacy audit checklist should force into the open.
+
+## 1. Collection boundary
+
+Start with the core job.
+
+Ask:
+
+- what data the workflow actually requires
+- what data exists because the team inherited it from analytics, support tooling, or account-first product patterns
+- what data leaves the device or browser by default
+
+If those answers are not plain, the release boundary is still being set by inertia.
+
+## 2. Consent and claim boundary
+
+The product claim should match the release behavior.
+
+Review:
+
+- what onboarding says
+- what the interface implies
+- what the system really does in the background
+
+If the site says privacy-first, minimal, or secure by default while the workflow still centralizes too early, that is not a copy problem.
+It is an audit problem.
+
+## 3. Storage and retention boundary
+
+Before launch, the team should be able to explain:
+
+- what stays local
+- what must sync
+- what gets retained and for how long
+- which staff, vendors, or systems can still see more than the user expects
+
+Sensitive-data apps often keep broad retention or support visibility because nobody narrowed it yet.
+
+## 4. Export, deletion, and recovery boundary
+
+Users and buyers will test whether the product behaves clearly under stress.
+
+Ask:
+
+- when export is explicit versus assumed
+- whether deletion actually closes the loop
+- what happens when connectivity fails or account setup is incomplete
+- whether the user can tell what happened to their data after interruption
+
+If recovery only works under ideal conditions, trust failure is already present.
+
+## 5. Third-party and AI boundary
+
+If the release uses analytics, crash tooling, support tooling, LLM services, or vendor APIs, the team should know exactly what sensitive context those systems can receive.
+
+Do not wait until procurement or buyer review to discover that a third party is seeing more than the core job requires.
+
+## 6. Evidence boundary
+
+Before launch, gather the smallest proof set that defends the product story:
+
+- what the product collects
+- why each category exists
+- what is local versus centralized
+- how export and deletion work
+- what the strongest privacy claim can honestly be
+
+That proof set is usually more useful than polishing another generic reassurance page.
+
+## What this checklist should help you decide
+
+By the end of the checklist, the team should be able to answer three practical questions:
+
+- Is a fast teardown enough to expose the first risks?
+- Does launch need a deeper full review before claims harden?
+- Which defaults must narrow before buyer scrutiny starts?
+
+## If you need the next step
+
+If launch is close and the trust boundary still feels loose, start with the smallest review that forces the real risk picture into the open.
+
+Related links:
+
+- [Pre-launch privacy audit for sensitive-data apps](/services/pre-launch-privacy-audit)
+- [Sample 48-hour teardown](/artifacts/security-and-audits/sample-48-hour-teardown)
+- [How to prepare for buyer privacy review](/writing/how-to-prepare-for-buyer-privacy-review)
+- [Proof surface](/proof)
