@@ -55,7 +55,7 @@ export default function SiteMapPage() {
             {PRIMARY_BUYER_INTENT_PAGES.map((page) => (
               <li key={page.slug}>
                 <Link className="font-mono hover:text-white" href={withBuild(`/services/${page.slug}`)}>
-                  /services/{page.slug}
+                  {`/services/${page.slug}`}
                 </Link>
               </li>
             ))}
@@ -68,7 +68,7 @@ export default function SiteMapPage() {
             {projects.map((project) => (
               <li key={project.slug}>
                 <Link className="hover:text-white" href={withBuild(`/projects/${project.slug}`)}>
-                  /projects/{project.slug}
+                  {`/projects/${project.slug}`}
                 </Link>
               </li>
             ))}
@@ -81,7 +81,7 @@ export default function SiteMapPage() {
             {writing.map((post) => (
               <li key={post.slug}>
                 <Link className="hover:text-white" href={withBuild(`/writing/${post.slug}`)}>
-                  /writing/{post.slug}
+                  {`/writing/${post.slug}`}
                 </Link>
               </li>
             ))}
@@ -94,7 +94,7 @@ export default function SiteMapPage() {
             {ARTIFACTS.map((artifact) => (
               <li key={artifact.slug}>
                 <Link className="hover:text-white" href={withBuild(`/artifacts/${artifact.slug}`)}>
-                  /artifacts/{artifact.slug}
+                  {`/artifacts/${artifact.slug}`}
                 </Link>
               </li>
             ))}

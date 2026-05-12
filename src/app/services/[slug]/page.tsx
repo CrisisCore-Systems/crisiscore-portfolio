@@ -230,6 +230,9 @@ export default async function BuyerIntentServicePage({
             <Button href={page.artifactHref} variant="ghost" className="justify-center">
               {page.artifactLabel}
             </Button>
+            <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost" className="justify-center">
+              View sample teardown
+            </Button>
             <Button href="/contact" className="justify-center">
               Ask whether this path fits
             </Button>
