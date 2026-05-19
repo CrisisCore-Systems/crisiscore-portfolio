@@ -32,7 +32,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/contact">Get a 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
-                Inspect proof
+                See verifiable proof
               </Button>
             </div>
           </div>
@@ -64,8 +64,11 @@ export default function HomePage() {
           description="I reply with the fastest sensible entry point, the top areas to inspect first, and whether the 48-hour teardown is enough."
         />
 
-        <div className="mt-6 text-sm text-white/65">
-          Founder of CrisisCore Systems. I review fragile software systems for trust, privacy, and structural risk.
+        <div className="mt-6 text-sm leading-relaxed text-white/65">
+          I&apos;m the founder of CrisisCore Systems. I review fragile software systems for trust, privacy, and structural risk, with a focus on how real users experience consent, recovery, collection defaults, and boundary failures under launch pressure.
+          <br />
+          <br />
+          The same method used in client work is visible in public: PainTracker (a minimization-first production app), ProofVault (release-bound trust evidence), and the Overton Framework canon.
         </div>
       </Panel>
 
@@ -130,7 +133,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5">
-          <Button href="/contact">Price the fastest useful start</Button>
+          <Button href="/contact">Get the 3-point risk read</Button>
         </div>
       </Section>
 
@@ -153,7 +156,7 @@ export default function HomePage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Security claims were narrowed to what the release process could actually prove, making the product easier to defend to skeptical buyers.
+                  Internal R&amp;D trust case showing how security claims were narrowed to what the release process could actually prove, then used to strengthen external client-facing review method.
                 </p>
               </div>
             </div>
@@ -166,7 +169,7 @@ export default function HomePage() {
             <div className="mt-6 grid gap-2">
               <Button href="/case-study/pain-tracker">Open PainTracker case study</Button>
               <Button href="/proof" variant="ghost" className="justify-center">
-                Inspect proof path
+                See proof surface
               </Button>
             </div>
           </Panel>
@@ -224,18 +227,17 @@ export default function HomePage() {
       <div id="contact" className="scroll-mt-28">
         <Panel className="p-8 sm:p-10">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
-          <h2 className="mt-2 text-2xl font-semibold">
-            Send the link, launch stage, and one concern.
-          </h2>
+            <h2 className="mt-2 text-2xl font-semibold">
+              Get your 3-point risk read.
+            </h2>
           <p className="mt-3 text-sm text-white/70">
             I&apos;ll tell you whether the 48-hour teardown, a full review, or no engagement makes sense.
           </p>
           <div className="mt-6">
-            <Button href="/contact">Send the brief</Button>
-          </div>
+              <Button href="/contact">Get the 3-point risk read</Button>
+            </div>
         </Panel>
       </div>
     </div>
   );
 }
-
