@@ -184,7 +184,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/contact">Contact</Button>
+              <Button href="/contact">Get the 3-point risk read</Button>
               <Button href={mailto} variant="ghost">
                 {SITE.email}
               </Button>

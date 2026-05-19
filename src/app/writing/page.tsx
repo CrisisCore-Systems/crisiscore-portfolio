@@ -104,7 +104,7 @@ export default function WritingIndexPage() {
           Case study
         </Button>
         <Button href="/contact" variant="ghost">
-          Book a review
+          Get the 3-point risk read
         </Button>
       </div>
 

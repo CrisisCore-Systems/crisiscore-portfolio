@@ -77,7 +77,6 @@ export default async function ArtifactPage({
             <div
               className="h-auto w-full"
               aria-label={artifact.title}
-              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{ __html: svgSource }}
             />
           </div>
