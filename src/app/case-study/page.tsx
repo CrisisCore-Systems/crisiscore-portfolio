@@ -34,7 +34,7 @@ export default function CaseStudyPage() {
                 Inspect proof materials
               </Button>
               <Button href="/contact" variant="ghost">
-                Contact CrisisCore
+                Get the 3-point risk read
               </Button>
             </div>
           </div>

@@ -200,7 +200,7 @@ export function FitCheckCta({
       </p>
       {includeReplyEmail ? (
         <p className="mt-2 text-xs leading-relaxed text-white/50">
-          Do not include sensitive personal data. If safer intake is needed, write "secure channel needed."
+          Do not include sensitive personal data. If safer intake is needed, write &quot;secure channel needed.&quot;
         </p>
       ) : null}
     </div>

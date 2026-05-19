@@ -50,8 +50,9 @@ export default async function ProofPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href="/case-study">Review commercial case study</Button>
               <Button href="/services" variant="ghost">Match proof to service</Button>
-              <Button href="/contact" variant="ghost">Bring me your product</Button>
+              <Button href="/contact" variant="ghost">Get the 3-point risk read</Button>
             </div>
+            <div className="mt-4 text-xs text-white/55">Last reviewed: 2026-05-19</div>
           </div>
 
           <div className="grid gap-3">
@@ -162,7 +163,7 @@ export default async function ProofPage() {
             <Button href="/artifacts/security-and-audits/sample-48-hour-teardown">48 Hour Trust Teardown Sample</Button>
             <Button href="/services/privacy-review-for-health-apps" variant="ghost">Privacy Review for Health Apps</Button>
             <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
-            <Button href="/contact" variant="ghost">Contact</Button>
+            <Button href="/contact" variant="ghost">Get the 3-point risk read</Button>
           </div>
         </div>
       </Panel>
@@ -389,8 +390,8 @@ export default async function ProofPage() {
             <Button href="/case-study/proofvault" variant="ghost" className="justify-start">
               Release evidence
             </Button>
-            <Button href={withBuild("/proof/fetchability.json")} variant="ghost" className="justify-start">
-              Verification policy
+            <Button href={withBuild("/site-map")} variant="ghost" className="justify-start">
+              Human sitemap
             </Button>
           </div>
         </Panel>
@@ -501,7 +502,7 @@ export default async function ProofPage() {
               Open redacted threat model excerpt
             </Button>
             <Button href="/contact" className="w-full justify-center">
-              Book a review
+              Get the 3-point risk read
             </Button>
           </div>
         </Panel>
@@ -514,7 +515,7 @@ export default async function ProofPage() {
 
           <div className="mt-5 grid gap-2">
             <Button href="/contact" className="w-full justify-center">
-              Send the app, stack, and concern
+              Get the 3-point risk read
             </Button>
             <Button
               href="https://github.com/CrisisCore-Systems/overton-framework"
@@ -570,7 +571,7 @@ export default async function ProofPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div className="text-xs uppercase tracking-[0.2em] text-white/50">3. Public records</div>
               <p className="mt-2 text-sm text-white/70">
-                Use the GitHub org, live systems, and fetchability diagnostics to confirm the inspection path is real.
+                Use the GitHub org, live systems, and public source records to confirm the inspection path is real.
               </p>
             </div>
           </div>
@@ -598,78 +599,12 @@ export default async function ProofPage() {
               View GitHub org ↗
             </Button>
             <Button href="/contact" variant="ghost" className="w-full justify-center">
-              Contact for audit work
+              Get the 3-point risk read
             </Button>
           </div>
         </Panel>
       </div>
 
-      <Panel className="mt-4 p-7">
-        <div className="text-sm font-semibold">Fetchability diagnostics</div>
-        <p className="mt-2 text-sm text-white/70">
-          Quick verifier for non-browser clients. Primary checks are HTML-first; mirror checks cover XML, RSS, and raw mirrors that should also be verified from a second network.
-        </p>
-
-        <div className="mt-4 text-xs uppercase tracking-[0.2em] text-white/50">Primary checks</div>
-        <ul className="mt-4 space-y-2 text-sm text-white/75">
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/proof/fetchability.json")}>/proof/fetchability.json</a>
-            <span className="text-white/55"> — machine-readable verification targets</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/deploy-id")}>/deploy-id</a>
-            <span className="text-white/55"> — plaintext no-store deployment canary</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/site-map")}>/site-map</a>
-            <span className="text-white/55"> — HTML sitemap (primary)</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/architecture")}>/artifacts/pain-tracker/architecture</a>
-            <span className="text-white/55"> — HTML artifact viewer</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
-            <span className="text-white/55"> — HTML artifact viewer</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/defensibility-packet-preview")}>/artifacts/security-and-audits/defensibility-packet-preview</a>
-            <span className="text-white/55"> — HTML artifact viewer</span>
-          </li>
-        </ul>
-
-        <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/50">Mirror checks</div>
-        <ul className="mt-3 space-y-2 text-sm text-white/75">
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/sitemap.xml")}>/sitemap.xml</a>
-            <span className="text-white/55"> — XML mirror for crawlers</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/rss.xml")}>/rss.xml</a>
-            <span className="text-white/55"> — RSS mirror for non-browser readers</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/architecture")}>/artifacts/pain-tracker/architecture</a>
-            <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/architecture.svg)</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/pain-tracker/ui-01-fastlog")}>/artifacts/pain-tracker/ui-01-fastlog</a>
-            <span className="text-white/55"> — HTML viewer (raw: /projects/pain-tracker/ui-01.svg)</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/redacted-threat-model-excerpt")}>/artifacts/security-and-audits/redacted-threat-model-excerpt</a>
-            <span className="text-white/55"> — HTML viewer (raw: /projects/security-and-audits/redacted-threat-model-excerpt.md)</span>
-          </li>
-          <li>
-            • <a className="underline decoration-white/20 underline-offset-4 hover:text-white" href={withBuild("/artifacts/security-and-audits/defensibility-packet-preview")}>/artifacts/security-and-audits/defensibility-packet-preview</a>
-            <span className="text-white/55"> — HTML viewer (raw: /assets/proof-cards/defensibility_packet_preview_wide_16x9.svg)</span>
-          </li>
-        </ul>
-
-        <div className="mt-4 text-xs text-white/50">
-          Command check (GET, primary): curl -sS -D - -o NUL -A &quot;python-requests/2.31.0&quot; https://crisiscore-systems.ca/site-map
-        </div>
-      </Panel>
     </div>
   );
 }

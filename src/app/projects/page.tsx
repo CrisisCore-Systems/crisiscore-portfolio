@@ -87,7 +87,7 @@ export default async function ProjectsPage({
                 Open case study
               </Button>
               <Button href="/contact" variant="ghost" className="w-full justify-center">
-                Send the app, stack, and concern
+                Get the 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -96,4 +96,3 @@ export default async function ProjectsPage({
     </div>
   );
 }
-
