@@ -30,7 +30,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/contact">Get a 3-point risk read</Button>
+              <Button href="/contact">Get the 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
                 See verifiable proof
               </Button>

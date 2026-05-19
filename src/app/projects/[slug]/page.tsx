@@ -47,7 +47,7 @@ const bridgeContentBySlug: Record<string, {
       { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
       { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
       { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
-      { href: "/contact", label: "Get a 3-point risk read" },
+      { href: "/contact", label: "Get the 3-point risk read" },
     ],
   },
 };
@@ -343,7 +343,7 @@ export default async function ProjectPage({
                 See services
               </Button>
               <Button href="/contact" variant="ghost" className="w-full justify-center">
-                Send the app, stack, and concern
+                Get the 3-point risk read
               </Button>
             </div>
           </Panel>

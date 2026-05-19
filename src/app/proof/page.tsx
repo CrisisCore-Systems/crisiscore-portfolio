@@ -163,7 +163,7 @@ export default async function ProofPage() {
             <Button href="/artifacts/security-and-audits/sample-48-hour-teardown">48 Hour Trust Teardown Sample</Button>
             <Button href="/services/privacy-review-for-health-apps" variant="ghost">Privacy Review for Health Apps</Button>
             <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
-            <Button href="/contact" variant="ghost">Contact</Button>
+            <Button href="/contact" variant="ghost">Get the 3-point risk read</Button>
           </div>
         </div>
       </Panel>
@@ -515,7 +515,7 @@ export default async function ProofPage() {
 
           <div className="mt-5 grid gap-2">
             <Button href="/contact" className="w-full justify-center">
-              Send the app, stack, and concern
+              Get the 3-point risk read
             </Button>
             <Button
               href="https://github.com/CrisisCore-Systems/overton-framework"
@@ -599,7 +599,7 @@ export default async function ProofPage() {
               View GitHub org ↗
             </Button>
             <Button href="/contact" variant="ghost" className="w-full justify-center">
-              Contact for audit work
+              Get the 3-point risk read
             </Button>
           </div>
         </Panel>

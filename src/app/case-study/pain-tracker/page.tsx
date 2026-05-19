@@ -92,7 +92,7 @@ export default async function PainTrackerCaseStudyPage() {
           See services
         </Button>
         <Button href="/contact" variant="ghost">
-          Get a 3-point risk read
+          Get the 3-point risk read
         </Button>
       </div>
 
