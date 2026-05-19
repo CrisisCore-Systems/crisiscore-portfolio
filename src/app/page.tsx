@@ -227,15 +227,15 @@ export default function HomePage() {
       <div id="contact" className="scroll-mt-28">
         <Panel className="p-8 sm:p-10">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
-            <h2 className="mt-2 text-2xl font-semibold">
-              Get your 3-point risk read.
-            </h2>
+          <h2 className="mt-2 text-2xl font-semibold">
+            Get your 3-point risk read.
+          </h2>
           <p className="mt-3 text-sm text-white/70">
             I&apos;ll tell you whether the 48-hour teardown, a full review, or no engagement makes sense.
           </p>
           <div className="mt-6">
-              <Button href="/contact">Get the 3-point risk read</Button>
-            </div>
+            <Button href="/contact">Get the 3-point risk read</Button>
+          </div>
         </Panel>
       </div>
     </div>
