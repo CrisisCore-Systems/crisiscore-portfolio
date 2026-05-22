@@ -35,7 +35,7 @@
   "proof": {
     "title": "Proof",
     "links": [
-      { "label": "Contact", "href": "/contact", "kind": "internal" },
+      { "label": "Trust risk read", "href": "/trust-risk-read", "kind": "internal" },
       { "label": "Proof page", "href": "/proof", "kind": "internal" },
       {
         "label": "GitHub",

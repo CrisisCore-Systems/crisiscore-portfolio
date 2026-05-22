@@ -91,8 +91,8 @@ export default async function PainTrackerCaseStudyPage() {
         <Button href="/services" variant="ghost">
           See services
         </Button>
-        <Button href="/contact" variant="ghost">
-          Get the 3-point risk read
+        <Button href="/trust-risk-read" variant="ghost">
+          Get a 3-point risk read
         </Button>
       </div>
 
@@ -240,8 +240,8 @@ export default async function PainTrackerCaseStudyPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">See services</Button>
-              <Button href="/contact" variant="ghost">
-                Send your product URL
+              <Button href="/trust-risk-read" variant="ghost">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>
@@ -316,8 +316,8 @@ export default async function PainTrackerCaseStudyPage() {
               <Button href="/services" variant="ghost" className="w-full justify-center">
                 See matching services
               </Button>
-              <Button href="/contact" className="w-full justify-center">
-                Send the product URL, stage, and concern
+              <Button href="/trust-risk-read" className="w-full justify-center">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>

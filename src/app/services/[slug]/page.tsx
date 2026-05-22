@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { absoluteUrl, SITE } from "@/app/lib/site";
 import { BUYER_INTENT_PAGES, getBuyerIntentPage, getMergedBuyerIntentPages } from "@/app/lib/buyer-intent";
@@ -60,7 +60,7 @@ export default async function BuyerIntentServicePage({
   }
 
   if (!page.primaryIndexTarget && page.parentHref) {
-    redirect(page.parentHref);
+    permanentRedirect(page.parentHref);
   }
 
   const jsonLd = {
@@ -121,7 +121,7 @@ export default async function BuyerIntentServicePage({
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">{page.description}</p>
 
         <div className="mt-7 flex flex-wrap gap-3">
-          <Button href="/contact">Check fit for this review path</Button>
+          <Button href="/trust-risk-read">Check fit for this review path</Button>
           <Button href="/services" variant="ghost">
             See service packages
           </Button>
@@ -136,7 +136,7 @@ export default async function BuyerIntentServicePage({
           description="That is enough for a first pass. I&apos;ll tell you whether this exact review path is right, whether a broader review is smarter, or whether the issue stays small."
           checklistItems={[
             `Send URL + ${fitCheckPrompt}.`,
-            "Use contact if you want the shortest path to a recommendation.",
+            "Use the 3-point trust risk read if you want the shortest path to a recommendation.",
             "Skip decks and long docs for the first pass.",
           ]}
         />
@@ -181,9 +181,9 @@ export default async function BuyerIntentServicePage({
 
           {mergedPages.length ? (
             <>
-              <div className="mt-8 text-sm font-semibold">Merged review paths now covered here</div>
+              <div className="mt-8 text-sm font-semibold">Related concerns this path can cover</div>
               <p className="mt-4 text-sm leading-relaxed text-white/75">
-                This page is the primary entry point for adjacent review requests that were previously split into near-duplicate service pages. The subtopics below now live under this stronger review path.
+                Use this same review path when the product pressure shows up through one of these adjacent concerns. The inspection stays focused on the real behavior buyers, users, and reviewers will question.
               </p>
               <div className="mt-4 grid gap-3">
                 {mergedPages.map((mergedPage) => (
@@ -233,7 +233,7 @@ export default async function BuyerIntentServicePage({
             <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost" className="justify-center">
               View sample teardown
             </Button>
-            <Button href="/contact" className="justify-center">
+            <Button href="/trust-risk-read" className="justify-center">
               Ask whether this path fits
             </Button>
           </div>
@@ -251,7 +251,7 @@ export default async function BuyerIntentServicePage({
 
           {mergedPages.length ? (
             <>
-              <div className="mt-8 text-sm font-semibold">What this merged scope adds</div>
+              <div className="mt-8 text-sm font-semibold">Additional checks often included</div>
               <ul className="mt-4 space-y-2 text-sm text-white/75">
                 {mergedPages.flatMap((mergedPage) => mergedPage.reviewIncludes.slice(0, 1)).map((item) => (
                   <li key={item}>• {item}</li>

@@ -103,8 +103,8 @@ export default function WritingIndexPage() {
         <Button href="/case-study" variant="ghost">
           Case study
         </Button>
-        <Button href="/contact" variant="ghost">
-          Get the 3-point risk read
+        <Button href="/trust-risk-read" variant="ghost">
+          Get a 3-point trust risk read
         </Button>
       </div>
 
@@ -251,7 +251,7 @@ export default function WritingIndexPage() {
                 "If you are close to launch or buyer review, start with the first writing cluster.",
                 "Read the canon if you want the method and vocabulary behind the work.",
                 "Use Projects for dossiers and implementation-facing evidence.",
-                "If the thinking matches your product risk, go to Services or Contact.",
+                "If the thinking matches your product risk, go to Services or the trust risk read.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>

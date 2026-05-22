@@ -5,8 +5,9 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { href: "/trust-hardening-review", label: "Trust Review" },
   { href: "/services", label: "Services" },
-  { href: "/case-study", label: "Case Study" },
+  { href: "/case-study", label: "Case Studies" },
   { href: "/proof", label: "Proof" },
   { href: "/about", label: "About" },
 ];
@@ -40,10 +41,10 @@ export function Nav() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/trust-hardening-review"
             className="ml-1 rounded-full border border-[rgba(212,162,97,0.52)] bg-[linear-gradient(180deg,rgba(212,162,97,0.34),rgba(85,59,29,0.52))] px-3 py-2 text-white transition hover:bg-[linear-gradient(180deg,rgba(226,178,114,0.42),rgba(95,67,35,0.62))]"
           >
-            Contact
+            Request Review
           </Link>
         </nav>
 
@@ -62,12 +63,12 @@ export function Nav() {
           <div className="absolute left-0 right-0 top-full border-t border-[color:var(--line)] bg-[rgba(7,12,18,0.94)] backdrop-blur-xl">
             <div className="mx-auto grid max-w-6xl gap-2 px-4 py-3">
               <Link
-                href="/contact"
+                href="/trust-hardening-review"
                 tabIndex={menuOpen ? 0 : -1}
                 aria-hidden={menuOpen ? undefined : true}
                 className="rounded-2xl border border-[rgba(212,162,97,0.52)] bg-[linear-gradient(180deg,rgba(212,162,97,0.34),rgba(85,59,29,0.52))] px-4 py-3 text-sm font-medium text-white hover:bg-[linear-gradient(180deg,rgba(226,178,114,0.42),rgba(95,67,35,0.62))]"
               >
-                Contact
+                Request a Trust Hardening Review
               </Link>
               {links.map((l) => (
                 <Link

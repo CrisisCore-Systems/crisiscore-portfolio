@@ -88,8 +88,8 @@ export function FitCheckCta({
 
   const checklist =
     checklistItems ?? [
-      "Send URL + stage + one concern.",
-      "Start from contact and send only the basics.",
+      "Send app URL, launch stage, and biggest concern.",
+      "Use this when you need the first trust risks without starting a larger engagement.",
       "Skip decks and long docs.",
     ];
 

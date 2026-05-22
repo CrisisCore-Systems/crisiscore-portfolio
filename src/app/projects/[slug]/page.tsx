@@ -47,7 +47,7 @@ const bridgeContentBySlug: Record<string, {
       { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
       { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
       { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
-      { href: "/contact", label: "Get the 3-point risk read" },
+      { href: "/trust-risk-read", label: "Get a 3-point trust risk read" },
     ],
   },
 };
@@ -162,7 +162,7 @@ export default async function ProjectPage({
         <div className="mt-6 flex flex-wrap gap-3">
           <Button href={caseStudyPathBySlug[p.slug]}>Read the case study</Button>
           <Button href="/services" variant="ghost">See services</Button>
-          <Button href="/contact" variant="ghost">Book a review</Button>
+          <Button href="/trust-risk-read" variant="ghost">Get a 3-point trust risk read</Button>
         </div>
       ) : null}
 
@@ -342,8 +342,8 @@ export default async function ProjectPage({
               <Button href="/services" className="w-full justify-center">
                 See services
               </Button>
-              <Button href="/contact" variant="ghost" className="w-full justify-center">
-                Get the 3-point risk read
+              <Button href="/trust-risk-read" variant="ghost" className="w-full justify-center">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>

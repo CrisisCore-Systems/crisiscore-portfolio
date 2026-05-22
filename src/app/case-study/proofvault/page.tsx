@@ -79,7 +79,7 @@ export default function ProofVaultCaseStudyPage() {
           <Button href="/services/pre-launch-privacy-audit">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
           <Button href="/services/data-minimization-review-for-apps" variant="ghost">Data Minimization Review for Apps</Button>
           <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">48 Hour Trust Teardown Sample</Button>
-          <Button href="/contact" variant="ghost">Get the 3-point risk read</Button>
+          <Button href="/trust-risk-read" variant="ghost">Get a 3-point trust risk read</Button>
         </div>
       </Panel>
 
@@ -241,8 +241,8 @@ export default function ProofVaultCaseStudyPage() {
               <Button href="/services" variant="ghost" className="w-full justify-center">
                 See services
               </Button>
-              <Button href="/contact" className="w-full justify-center">
-                Send your product URL
+              <Button href="/trust-risk-read" className="w-full justify-center">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>

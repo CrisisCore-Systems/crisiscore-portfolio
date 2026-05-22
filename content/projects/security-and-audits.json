@@ -6,7 +6,7 @@
   "description": "Security review for systems operating under low trust: exploitability, incentives, and failure surfaces. Output is actionable: clear risk boundaries, reproduction steps, and prioritized remediation.",
   "tags": ["Security", "Threat Modeling", "Audit", "Systems"],
   "links": [
-    { "label": "Contact", "href": "/contact", "kind": "internal" },
+    { "label": "Trust risk read", "href": "/trust-risk-read", "kind": "internal" },
     { "label": "Proof", "href": "/proof", "kind": "internal" },
     {
       "label": "Redacted audit artifact",

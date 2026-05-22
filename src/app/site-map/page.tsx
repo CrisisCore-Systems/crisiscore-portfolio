@@ -26,11 +26,12 @@ export default function SiteMapPage() {
       <div className="cc-kicker">Navigation map</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Sitemap</h1>
       <p className="mt-3 max-w-3xl text-sm text-white/70">
-        Human-readable route map for buyers, auditors, and operators. The main trust path is home, case study, proof, services, and contact; the rest supports evaluation.
+        Human-readable route map for buyers, auditors, and operators. The main trust path is home, trust hardening review, trust-risk-read, case study, proof, and services; the rest supports evaluation.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button href={withBuild("/case-study")}>Case study</Button>
+        <Button href={withBuild("/trust-hardening-review")}>Trust hardening review</Button>
+        <Button href={withBuild("/case-study")}>Case studies</Button>
         <Button href={withBuild("/services")}>Services</Button>
         <Button href={withBuild("/sitemap.xml")} variant="ghost">XML sitemap</Button>
         <Button href={withBuild("/proof/fetchability.json")} variant="ghost">Fetchability JSON</Button>
@@ -41,7 +42,7 @@ export default function SiteMapPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Core routes</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            {["/", "/case-study", "/proof", "/services", "/about", "/contact", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
+            {["/", "/trust-hardening-review", "/start-here", "/trust-risk-read", "/case-study", "/proof", "/services", "/about", "/privacy", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
                 <Link className="hover:text-white" href={withBuild(route)}>{route}</Link>
               </li>

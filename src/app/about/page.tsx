@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { absoluteUrl, SITE } from "@/app/lib/site";
+import { absoluteUrl, CAMPAIGN_LINKS, SITE } from "@/app/lib/site";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
@@ -7,7 +7,7 @@ import { Panel } from "@/components/ui/Panel";
 export const metadata = {
   title: "About",
   description:
-    "About CrisisCore Systems: founder-led privacy and product risk reviews for sensitive-data products.",
+    "About CrisisCore Systems: founder-led pre-compliance trust hardening for sensitive-data products.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/founder-banners/about_mission_plate.svg") }],
   },
@@ -33,7 +33,7 @@ export default function AboutPage() {
       </p>
 
       <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-        I work with founders and technical owners who need a clear read of the product itself: architecture, defaults, privacy behavior, recovery paths, and operational risk.
+        I work with founders and technical owners who need a clear read of the product itself before compliance tooling, legal review, or buyer pressure starts steering the conversation: architecture, defaults, privacy behavior, recovery paths, and operational risk.
       </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
@@ -49,7 +49,7 @@ export default function AboutPage() {
                 I find those weaknesses early, explain them plainly, and turn them into fixes a team can ship.
               </p>
               <p className="text-white/60">
-                This is service work first: review, correction, and implementation support.
+                This is service work first: pre-compliance trust review, correction, and implementation support.
               </p>
             </div>
 
@@ -58,8 +58,8 @@ export default function AboutPage() {
               <Button href="/case-study" variant="ghost">
                 Case study
               </Button>
-              <Button href="/contact" variant="ghost">
-                Contact
+              <Button href="/trust-risk-read" variant="ghost">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 </div>
                 <ul className="mt-3 space-y-2 text-sm text-white/70">
                   {[
-                    "Privacy and product risk reviews for live or near-launch products.",
+                    "Pre-launch and pre-procurement trust reviews for live or near-launch products.",
                     "Threat modeling and risk framing that matches real constraints.",
                     "Architecture review with explicit boundary and minimization decisions.",
                     "Implementation guidance and fix support when changes need to ship.",
@@ -110,8 +110,9 @@ export default function AboutPage() {
                 <ul className="mt-3 space-y-2 text-sm text-white/70">
                   {[
                     "Sell compliance checklists as proof of product safety.",
+                    "Act as a law firm, auditor, or certification authority.",
                     "Hide weak decisions behind vague language.",
-                    "Treat policy or marketing copy as a substitute for product behavior.",
+                    "Treat a pentest, policy page, or marketing copy as a substitute for product behavior.",
                     "Take on work where nobody can act on the findings.",
                   ].map((item) => (
                     <li key={item} className="flex gap-2">
@@ -158,6 +159,25 @@ export default function AboutPage() {
             </div>
           </Panel>
 
+          <Panel className="mt-4 p-7 sm:p-8">
+            <div className="text-sm font-semibold">Profile destination links</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              These are the tracked destination links I use in profile surfaces so GitHub, DEV, and Hashnode clicks land on the measured trust-review entry point instead of a generic homepage visit.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={CAMPAIGN_LINKS.profileDestinations.github} variant="ghost">
+                GitHub destination
+              </Button>
+              <Button href={CAMPAIGN_LINKS.profileDestinations.devto} variant="ghost">
+                DEV destination
+              </Button>
+              <Button href={CAMPAIGN_LINKS.profileDestinations.hashnode} variant="ghost">
+                Hashnode destination
+              </Button>
+            </div>
+          </Panel>
+
           <Link href="/case-study" className="group mt-4 block">
             <AssetFigure
               src="/assets/founder-banners/about_mission_plate.svg"
@@ -181,10 +201,13 @@ export default function AboutPage() {
               <p>
                 If coercion risk, compromised devices, legal exposure, or health-adjacent data are in play, say so early. That changes the review from the start.
               </p>
+              <p>
+                If you are deciding between compliance automation, a lawyer, a pentest, or a product trust review, send the product URL and one concern first. I&apos;ll point to the right lane.
+              </p>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/contact">Get the 3-point risk read</Button>
+              <Button href="/trust-risk-read">Get a 3-point trust risk read</Button>
               <Button href={mailto} variant="ghost">
                 {SITE.email}
               </Button>
@@ -205,7 +228,7 @@ export default function AboutPage() {
               {[
                 "Start with Services for package fit and starting prices.",
                 "Go to the case-study route first, then Proof for artifacts, outcomes, and technical evidence.",
-                "Use Contact when you are ready to send the app, launch stage, and concern.",
+                "Use the 3-point trust risk read when you are ready to send the app, launch stage, and concern.",
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-[2px] text-white/40">•</span>
@@ -219,10 +242,10 @@ export default function AboutPage() {
                 Services
               </Button>
               <Button href="/case-study" variant="ghost">
-                Case study
+                Case studies
               </Button>
-              <Button href="/contact" variant="ghost">
-                Contact
+              <Button href="/trust-risk-read" variant="ghost">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>
