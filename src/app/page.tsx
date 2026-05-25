@@ -23,27 +23,26 @@ export default function HomePage() {
         <div className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
           <div>
             <div className="cc-kicker">Pre-compliance trust hardening for sensitive-data products</div>
-            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              Find the trust failures buyers will question after launch.
+            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl cc-hero-title">
+              Your product may pass launch and still fail trust review.
             </h1>
             <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
-              CrisisCore reviews health, AI, legal, wellness, and other sensitive-data products before launch, procurement review, or public scrutiny.
-            </p>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
-              I inspect the product behavior itself: what it collects, what it stores, what it logs, what breaks under pressure, and which privacy claims the system cannot yet defend. You get a short written readout with the first risks, the fix order, and the smallest useful next step.
+              I find the collection, consent, logging, export, recovery, and privacy-claim gaps buyers will question before they become expensive.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
-              <span className="cc-chip">48-hour teardown from CA$250</span>
-              <span className="cc-chip">Full Review from CA$1,200</span>
-              <span className="cc-chip">Fix Sprint from CA$1,500</span>
+            <div className="mt-6">
+              <FitCheckCta
+                title="Send your product URL. Get the first 3 trust risks."
+                description="Free fit check — I&apos;ll reply with the top 3 issues and the smallest useful next step."
+                className="cc-hero"
+                splitStageAndConcern
+              />
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
-              <Button href="/proof" variant="ghost">
-                See proof
-              </Button>
+            <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
+              <span className="cc-chip">48-Hour Trust Risk Brief — from CA$250</span>
+              <span className="cc-chip">Full Review — from CA$1,200</span>
+              <span className="cc-chip">Fix Sprint — from CA$1,500</span>
             </div>
             <div className="mt-5 rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.04)] p-5 text-sm leading-relaxed text-white/75">
               <p className="font-semibold text-white">Small business website trust cleanup</p>
