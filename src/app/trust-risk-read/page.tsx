@@ -3,6 +3,7 @@ import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 import { Section } from "@/components/Section";
+import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
 import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
@@ -46,6 +47,10 @@ export default function TrustRiskReadPage() {
               Outdated, templated, or generic pages make your business feel weaker than it is. I call out the must-fix trust issues that make your site look more professional and real.
             </p>
           </div>
+        </div>
+
+        <div className="mt-6">
+          <CrisisCoreVisualStrip />
         </div>
 
         <div className="mt-6 rounded-3xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-6">
