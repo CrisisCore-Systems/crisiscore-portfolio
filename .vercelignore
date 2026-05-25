@@ -1,0 +1,14 @@
+generated_assets/
+crisiscore_web_png_suite.zip
+*.log
+node_modules/
+.DS_Store
+.env*
+.venv/
+.pytest_cache/
+.mypy_cache/
+.cache/
+dist/
+build/
+__pycache__/
+.git

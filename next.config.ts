@@ -33,22 +33,11 @@ const nextConfig: NextConfig = {
         source: "/artifacts/:path*",
         headers: noStoreHeaders,
       },
-        source: "/(.*)",
-        headers: securityHeaders,
+      {
+        source: "/proof",
         headers: noStoreHeaders,
-      {
-        // Long-cache generated image assets (immutable filenames / fingerprints)
-        source: "/assets/crisiscore/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
       },
       {
-  images: {
-    // Enable modern formats so Next/Image can optimize appropriately
-    formats: ["image/avif", "image/webp"],
-  },
         source: "/proof/:path*",
         headers: noStoreHeaders,
       },
@@ -65,10 +54,21 @@ const nextConfig: NextConfig = {
         headers: noStoreHeaders,
       },
       {
+        // Long-cache generated image assets (immutable filenames / fingerprints)
+        source: "/assets/crisiscore/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: securityHeaders,
       },
     ];
+  },
+  images: {
+    // Enable modern formats so Next/Image can optimize appropriately
+    formats: ["image/avif", "image/webp"],
   },
   experimental: {
     optimizePackageImports: ["lucide-react"],
