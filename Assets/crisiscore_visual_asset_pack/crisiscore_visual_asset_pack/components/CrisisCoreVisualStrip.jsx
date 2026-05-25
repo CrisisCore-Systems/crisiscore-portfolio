@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 
 const assets = [
-  ["Trust Failure Radar", "/assets/crisiscore/trust-failure-radar.svg"],
-  ["3 Point Risk Read", "/assets/crisiscore/three-point-risk-read.svg"],
-  ["Small Business Trust Cleanup", "/assets/crisiscore/small-business-trust-cleanup.svg"],
-  ["Buyer Proof Ladder", "/assets/crisiscore/buyer-proof-ladder.svg"],
+  ["Trust Failure Radar", "/assets/crisiscore/trust-failure-radar.png"],
+  ["3 Point Risk Read", "/assets/crisiscore/three-point-risk-read.png"],
+  ["Small Business Trust Cleanup", "/assets/crisiscore/small-business-trust-cleanup.png"],
+  ["Buyer Proof Ladder", "/assets/crisiscore/buyer-proof-ladder.png"],
 ];
 
 export default function CrisisCoreVisualStrip() {
@@ -19,12 +18,11 @@ export default function CrisisCoreVisualStrip() {
         </p>
       </div>
       <div className="grid gap-5 md:grid-cols-2">
-        {assets.map(([title, src]) => (
+        {assets.map(([title]) => (
           <figure key={title} className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-xl">
-            <div className="relative h-52 w-full">
-              <Image src={src} alt={title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-contain" />
+            <div className="h-52 w-full flex items-center justify-center">
+              <div className="text-sm font-medium text-slate-300">{title}</div>
             </div>
-            <figcaption className="border-t border-slate-800 px-4 py-3 text-sm font-semibold text-slate-300">{title}</figcaption>
           </figure>
         ))}
       </div>

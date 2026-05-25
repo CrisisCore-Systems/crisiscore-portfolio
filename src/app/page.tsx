@@ -63,6 +63,14 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-3">
+            <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.04)]">
+              <img
+                src="/assets/crisiscore/01_trust_surface_radar.png"
+                alt="Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity."
+                className="w-full h-auto block"
+              />
+              <div className="p-4 text-sm text-white/75">Trust surface radar — get a 3-point trust risk read.</div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">Where this fits</div>
               <div className="mt-2 text-lg font-semibold">Before SOC 2 evidence, HIPAA hosting, or audit cleanup</div>

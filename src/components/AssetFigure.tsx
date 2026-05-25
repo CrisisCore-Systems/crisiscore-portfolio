@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 type AssetFigureProps = {
@@ -22,6 +21,12 @@ export function AssetFigure({
   imageClassName,
   sizes,
 }: AssetFigureProps) {
+  // Preserve API: props intentionally unused after image removal
+  void src;
+  void alt;
+  void mediaClassName;
+  void imageClassName;
+  void sizes;
   return (
     <div
       className={cn(
@@ -30,20 +35,7 @@ export function AssetFigure({
       )}
     >
       <div className="border-b border-white/10 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_55%)] p-3">
-        <div
-          className={cn(
-            "relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-black/20",
-            mediaClassName
-          )}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            sizes={sizes ?? "(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw"}
-            className={cn("object-contain p-3", imageClassName)}
-          />
-        </div>
+        {/* image removed by request; media markup intentionally omitted */}
       </div>
 
       {title || body ? (
