@@ -70,6 +70,26 @@ const nextConfig: NextConfig = {
     // Enable modern formats so Next/Image can optimize appropriately
     formats: ["image/avif", "image/webp"],
   },
+  async rewrites() {
+    return [
+      {
+        // If client accepts AVIF, rewrite png requests to .avif
+        source: "/assets/crisiscore/:path*.png",
+        has: [
+          { type: "header", key: "accept", value: "image/avif" },
+        ],
+        destination: "/assets/crisiscore/:path*.avif",
+      },
+      {
+        // If client accepts WebP, rewrite png requests to .webp
+        source: "/assets/crisiscore/:path*.png",
+        has: [
+          { type: "header", key: "accept", value: "image/webp" },
+        ],
+        destination: "/assets/crisiscore/:path*.webp",
+      },
+    ];
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
