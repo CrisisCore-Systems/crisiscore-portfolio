@@ -91,7 +91,7 @@ export default async function PainTrackerCaseStudyPage() {
         <Button href="/services" variant="ghost">
           See services
         </Button>
-        <Button href="/contact" variant="ghost">
+        <Button href="/trust-risk-read" variant="ghost">
           Get a 3-point risk read
         </Button>
       </div>
@@ -101,6 +101,22 @@ export default async function PainTrackerCaseStudyPage() {
         title="If your product has a similar exposure, send the URL and stage."
         description="I&apos;ll tell you whether your situation looks like a 48-hour teardown, a deeper review, or something else entirely."
       />
+
+      <Panel className="mt-8 p-7 sm:p-8">
+        <div className="text-sm font-semibold">What this proves commercially</div>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          PainTracker is not only a product case study. It shows the review criteria CrisisCore applies to sensitive-data products: collection boundaries, local-first defaults, export control, consent clarity, degraded use, and privacy claims the system can actually defend.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          If you are building a health or wellness app, this is the same lens used in a Privacy Review for Health Apps.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Button href="/services/privacy-review-for-health-apps">Privacy Review for Health Apps</Button>
+          <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
+          <Button href="/services/data-minimization-review-for-apps" variant="ghost">Data Minimization Review for Apps</Button>
+          <Button href="/services/local-first-health-app-architecture" variant="ghost">Local-First Health App Architecture Review</Button>
+        </div>
+      </Panel>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-8">
@@ -224,8 +240,8 @@ export default async function PainTrackerCaseStudyPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">See services</Button>
-              <Button href="/contact" variant="ghost">
-                Send your product URL
+              <Button href="/trust-risk-read" variant="ghost">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>
@@ -300,8 +316,8 @@ export default async function PainTrackerCaseStudyPage() {
               <Button href="/services" variant="ghost" className="w-full justify-center">
                 See matching services
               </Button>
-              <Button href="/contact" className="w-full justify-center">
-                Send the product URL, stage, and concern
+              <Button href="/trust-risk-read" className="w-full justify-center">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>

@@ -3,6 +3,11 @@ export type BuyerIntentPage = {
   title: string;
   description: string;
   summary: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  useThisWhen?: string[];
   audience?: string[];
   riskProfile?: string;
   painPoints: string[];
@@ -31,6 +36,33 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For health and health-adjacent products, this review finds risky collection paths, hidden assumptions, and trust-breaking product behavior before they reach users.",
     summary:
       "Built for founders with a live or near-launch health product who need a concrete read on where the app collects too much, explains too little, or routes intimate user data through the wrong systems.",
+    faqs: [
+      {
+        question: "What does a health app privacy review check?",
+        answer:
+          "It checks whether the product can defend its collection, consent, storage, sharing, retention, export, recovery, and deletion choices.",
+      },
+      {
+        question: "Is this a legal compliance audit?",
+        answer:
+          "No. It is a product trust and architecture review. It can support compliance preparation, but it does not replace legal advice.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "Before launch, before buyer review, before adding analytics or AI features, or before making claims about privacy, security, or sensitive data handling.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A written review identifying the highest-risk trust failures, why they matter, and what to fix first.",
+      },
+    ],
+    useThisWhen: [
+      "The product handles symptoms, mood, disability, care coordination, or wellness behavior.",
+      "The team is unsure whether collection, consent, storage, or sharing defaults are too broad.",
+      "You need a health-specific product boundary review before launch, partner review, or wider rollout.",
+    ],
     audience: [
       "Founders shipping health, wellness, disability, care coordination, or case-management products.",
       "Teams with a live beta, near-launch release, or partner review coming up.",
@@ -86,11 +118,38 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
   },
   {
     slug: "pre-launch-privacy-audit",
-    title: "Pre-Launch Privacy Audit",
+    title: "Pre-Launch Privacy Audit for Sensitive Data Apps",
     description:
       "For sensitive-data products approaching release, this audit finds risky defaults, brittle recovery paths, and trust claims the product cannot yet defend.",
     summary:
       "Use this when launch is close and nobody has yet forced the product to justify its collection paths, recovery behavior, logging posture, and trust claims under real operating conditions.",
+    faqs: [
+      {
+        question: "What does a pre-launch privacy audit check?",
+        answer:
+          "It checks the risky defaults, brittle recovery paths, logging posture, retention choices, and privacy claims most likely to fail under real launch conditions.",
+      },
+      {
+        question: "Is this a compliance certification?",
+        answer:
+          "No. It is a launch-facing product review that helps the team narrow risky defaults and fix the most important issues before release.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "When launch is close, partner review is coming, or the team is not confident it can defend the current privacy posture.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A ranked launch-risk brief, a practical fix order, and written notes the team can use across product, engineering, and buyer conversations.",
+      },
+    ],
+    useThisWhen: [
+      "Launch is close and the team cannot clearly defend its privacy claims.",
+      "Logging behavior, recovery flows, and data boundaries have not been tested as one product surface.",
+      "You need a ranked launch-risk picture before shipping, sales exposure, or stakeholder review.",
+    ],
     audience: [
       "Founders with a real launch date, sales pressure, or stakeholder scrutiny.",
       "Teams that need a diagnostic before deciding whether the work stays small or expands into a full review.",
@@ -183,6 +242,33 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For health apps that should survive low attention and bad connectivity, this review maps where local-first defaults, explicit export, and narrower cloud assumptions actually belong.",
     summary:
       "Built for teams shipping health or wellness products that should remain useful under degraded conditions, but still need a practical architecture review before launch or procurement review.",
+    faqs: [
+      {
+        question: "What does a local-first health app architecture review check?",
+        answer:
+          "It checks what should stay on device, what can sync, how export should work, and where account-first or cloud-first assumptions are creating unnecessary risk.",
+      },
+      {
+        question: "Is this a request to rebuild the whole product?",
+        answer:
+          "No. The goal is to find the highest-leverage architecture corrections that reduce risk without breaking the core workflow.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "Before launch, before procurement review, or when a health workflow should survive low bandwidth, low attention, or low trust conditions.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A local-first boundary map, ranked architecture corrections, and a practical recommendation on whether the next move is a teardown, full review, or implementation sprint.",
+      },
+    ],
+    useThisWhen: [
+      "The workflow should keep working under low bandwidth, low attention, or low trust.",
+      "The architecture still assumes accounts, sync, or cloud authority too early.",
+      "You need to know what should stay local, what can sync, and what should disappear before launch.",
+    ],
     audience: [
       "Health and wellness teams deciding whether local-first is a real architectural fit.",
       "Products where continuity, explicit export, and low-friction recovery matter more than analytics convenience.",
@@ -371,6 +457,33 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
       "For products collecting more than the core job requires, this review narrows the data boundary, clarifies retention posture, and removes risky defaults before they calcify.",
     summary:
       "Use this when the product collects, logs, or retains more than the core workflow can justify and the team needs a practical minimization pass before launch, procurement, or user scrutiny makes the excess harder to unwind.",
+    faqs: [
+      {
+        question: "What does a data minimization review check?",
+        answer:
+          "It checks which fields, logs, exports, retention windows, analytics paths, and third-party tools are necessary for the core job and which ones should narrow or disappear.",
+      },
+      {
+        question: "Is this only about policy language?",
+        answer:
+          "No. It is a product-boundary review of what the system actually collects, stores, retains, and shares by default.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "Before launch, before procurement scrutiny, or when the team already feels the product is collecting more than it can justify cleanly.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A minimization-first inventory, a prioritized fix list for storage and logging defaults, and a smaller data story the team can defend.",
+      },
+    ],
+    useThisWhen: [
+      "The product collects, logs, exports, or retains more than the core workflow can justify.",
+      "The team can feel the excess but has not separated required collection from convenience collection.",
+      "You need a buyer-defensible minimization story before launch, procurement, or user scrutiny.",
+    ],
     audience: [
       "Founders who can already feel the product collecting too much but need a defensible reduction plan.",
       "Teams with sensitive workflows, buyer scrutiny, or expanding analytics and support tooling.",

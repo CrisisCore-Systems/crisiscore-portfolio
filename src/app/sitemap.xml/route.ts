@@ -63,7 +63,9 @@ export async function GET() {
     { path: "/case-study", lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "case-study", "page.tsx")) },
     { path: "/proof", lastmod: toIsoOrNow() },
     { path: "/about", lastmod: toIsoOrNow() },
-    { path: "/contact", lastmod: toIsoOrNow() },
+    { path: "/privacy", lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "privacy", "page.tsx")) },
+    { path: "/trust-hardening-review", lastmod: toIsoOrNow() },
+    { path: "/trust-risk-read", lastmod: toIsoOrNow() },
     { path: "/site-map", lastmod: toIsoOrNow() },
     { path: "/rss.xml", lastmod: toIsoOrNow() },
     {

@@ -4,6 +4,12 @@ import { NextResponse } from "next/server";
 const DUPLICATE_HOSTS = new Set([
   "crisiscore-portfolio.vercel.app",
   "www.crisiscore-portfolio.vercel.app",
+  "www.crisiscore-systems.ca",
+  "crisiscore.systems.ca",
+  "crisiscoresystems.ca",
+  "www.crisiscoresystems.ca",
+  "crisiscore.ca",
+  "www.crisiscore.ca",
 ]);
 const CANONICAL_ORIGIN = "https://crisiscore-systems.ca";
 

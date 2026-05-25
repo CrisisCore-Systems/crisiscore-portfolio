@@ -44,8 +44,8 @@ export default async function ProjectsPage({
         <Button href="/case-study" variant="ghost">
           Case study
         </Button>
-        <Button href="/contact" variant="ghost">
-          Book a review
+        <Button href="/trust-risk-read" variant="ghost">
+          Get a 3-point trust risk read
         </Button>
       </div>
 
@@ -86,8 +86,8 @@ export default async function ProjectsPage({
               <Button href="/case-study" variant="ghost" className="w-full justify-center">
                 Open case study
               </Button>
-              <Button href="/contact" variant="ghost" className="w-full justify-center">
-                Send the app, stack, and concern
+              <Button href="/trust-risk-read" variant="ghost" className="w-full justify-center">
+                Get a 3-point trust risk read
               </Button>
             </div>
           </Panel>
@@ -96,4 +96,3 @@ export default async function ProjectsPage({
     </div>
   );
 }
-

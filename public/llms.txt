@@ -18,14 +18,8 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 [Pre-Launch Privacy Audit](https://crisiscore-systems.ca/services/pre-launch-privacy-audit)
 > Launch-focused privacy audit content for sensitive-data products that need ranked findings, boundary review, and a concrete pre-launch fix order.
 
-[Trust Review for AI Products Handling Sensitive Data](https://crisiscore-systems.ca/services/ai-trust-review-sensitive-data-products)
-> Review framework for AI-assisted products where prompts, logs, outputs, retention, and public claims create trust exposure.
-
 [Local-First Health App Architecture Review](https://crisiscore-systems.ca/services/local-first-health-app-architecture)
 > Guidance on local-first defaults, explicit export, degraded-mode resilience, and reducing dangerous cloud assumptions in health workflows.
-
-[Security Review Before Launch for Sensitive Apps](https://crisiscore-systems.ca/services/security-review-before-launch-sensitive-apps)
-> Product-level security and trust review focused on launch-relevant failures, weak boundaries, misleading copy, and fragile defaults.
 
 [Data Minimization Review for Apps](https://crisiscore-systems.ca/services/data-minimization-review-for-apps)
 > Review content for reducing unnecessary collection, narrowing retention and logging, and producing a buyer-defensible minimization story.
@@ -75,7 +69,7 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 [About](https://crisiscore-systems.ca/about)
 > Background on the founder, review posture, and the kind of structural product risk this work is designed to address.
 
-[Contact](https://crisiscore-systems.ca/contact)
+[Trust Risk Read](https://crisiscore-systems.ca/trust-risk-read)
 > Intake guidance for founders seeking a quick fit check, recommended package, and next step.
 
 [Sitemap](https://crisiscore-systems.ca/site-map)

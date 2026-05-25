@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Props = { className?: string };
 
@@ -13,7 +14,14 @@ export default function CrisisCoreVisualStrip({ className = "" }: Props) {
   return (
     <div className={className + " cc-visual-strip"} style={{ display: "flex", gap: 12, alignItems: "center" }}>
       {images.map((img) => (
-        <img key={img} src={`${base}/${img}`} alt={img.replace(/[-.]/g, " ")} style={{ height: 84 }} />
+        <Image
+          key={img}
+          src={`${base}/${img}`}
+          alt={img.replace(/[-.]/g, " ")}
+          width={84}
+          height={84}
+          style={{ height: 84 }}
+        />
       ))}
     </div>
   );

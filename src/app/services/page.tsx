@@ -7,7 +7,7 @@ import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
   title: "Services",
-  description: "48-hour teardowns, full reviews, and fix sprints for sensitive-data products.",
+  description: "Pre-compliance trust hardening for sensitive-data products: 48-hour teardowns, full reviews, and fix sprints.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/service-panels/trust_hardening_review.svg") }],
   },
@@ -94,10 +94,10 @@ function servicesJsonLd() {
 }
 
 const reviewPathNotes: Record<string, string> = {
-  "privacy-review-for-health-apps": "Also absorbs wellness privacy architecture and mental health trust review requests.",
-  "pre-launch-privacy-audit": "Also covers launch-readiness, AI trust, and pre-launch security review requests.",
+  "privacy-review-for-health-apps": "For health, wellness, and mental-health workflows where sensitive context is part of the product.",
+  "pre-launch-privacy-audit": "For launch-readiness, AI trust, and security-relevant behavior when sensitive-data exposure is near.",
   "local-first-health-app-architecture": "Primary path for local-first, degraded-mode, and explicit-export architecture concerns.",
-  "data-minimization-review-for-apps": "Also absorbs reduce-data-collection-risk requests into one stronger minimization page.",
+  "data-minimization-review-for-apps": "For collection, retention, logging, analytics, and sharing defaults that need a narrower boundary.",
 };
 
 export default function ServicesPage() {
@@ -116,10 +116,10 @@ export default function ServicesPage() {
               Three ways to get a clear read on a sensitive-data product.
             </h1>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-              Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
+              This work sits before compliance automation, pentest cleanup, or legal document review. Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/contact">Find the right package</Button>
+              <Button href="/trust-risk-read">Find the right package</Button>
               <Button href="/case-study" variant="ghost">
                 Review case study first
               </Button>
@@ -128,13 +128,13 @@ export default function ServicesPage() {
 
           <div className="grid gap-3">
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
-              <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">How buyers enter</div>
-              <p className="mt-2 text-sm leading-relaxed text-white/75">Need a quick answer? Start with the 48-hour teardown. Need the full picture? Choose the full review. Need help shipping corrections? Move into a fix sprint.</p>
+              <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What these packages are for</div>
+              <p className="mt-2 text-sm leading-relaxed text-white/75">Need to know whether the product itself is defensible before you buy more machinery? Start with the 48-hour teardown. Need the full picture? Choose the full review. Need help shipping corrections? Move into a fix sprint.</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Fast answer, smaller surface, immediate signal.</div>
-              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Deeper read when privacy, trust, and launch risk stack together.</div>
-              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4 text-sm text-white/75">Implementation support when the fixes matter more than the presentation.</div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Fast answer when something about the product feels risky but the failure is not clear yet.</div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-white/75">Deeper read when privacy, trust, buyer scrutiny, and launch risk stack together.</div>
+              <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4 text-sm text-white/75">Implementation support when the fixes matter more than another report.</div>
             </div>
           </div>
         </div>
@@ -145,6 +145,44 @@ export default function ServicesPage() {
           description="This page is for package selection: I&apos;ll tell you whether to start small, go straight to the full review, or skip the larger engagement entirely."
         />
       </Panel>
+
+      <Section title="Where This Sits" kicker="Not another category clone">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">CrisisCore is for product trust hardening</div>
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <li>• Before SOC 2 evidence collection and trust-center workflows</li>
+              <li>• Before HIPAA-ready hosting becomes a shelter for bad product decisions</li>
+              <li>• Before buyers force the team to defend weak consent, recovery, or retention flows</li>
+              <li>• Before a pentest or lawyer sees the downstream mess</li>
+            </ul>
+          </Panel>
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">This is not</div>
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <li>• Not a compliance certification</li>
+              <li>• Not a law firm or regulatory opinion service</li>
+              <li>• Not a generic pentest replacement</li>
+              <li>• Not policy-only rewriting or security theater</li>
+            </ul>
+          </Panel>
+        </div>
+      </Section>
+
+      <Section title="Who Buys This" kicker="Common pressure points">
+        <div className="grid gap-4 md:grid-cols-4">
+          {[
+            "Health app founder before launch",
+            "AI tool handling sensitive prompts",
+            "Legal-tech product under buyer review",
+            "Wellness app collecting intimate behavior",
+          ].map((item) => (
+            <Panel key={item} className="p-5">
+              <p className="text-sm font-semibold leading-relaxed text-white">{item}</p>
+            </Panel>
+          ))}
+        </div>
+      </Section>
 
       <Section title="Packages" kicker="Starting points">
         <div className="grid gap-4 lg:grid-cols-3">
@@ -163,6 +201,11 @@ export default function ServicesPage() {
             </ul>
             <div className="mt-6 text-sm text-white/70">
               Best for: teams that want a quick signal without starting a larger engagement.
+            </div>
+            <div className="mt-5">
+              <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
+                View sample teardown
+              </Button>
             </div>
           </Panel>
 
@@ -257,7 +300,7 @@ export default function ServicesPage() {
             Send the product URL, launch stage, and main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/contact">Ask for package fit</Button>
+            <Button href="/trust-risk-read">Ask for package fit</Button>
             <Button href="/case-study" variant="ghost">
               Review case study first
             </Button>

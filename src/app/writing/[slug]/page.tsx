@@ -14,8 +14,8 @@ const DEFAULT_CTA = {
   serviceLabel: "See the review options for sensitive-data products",
   proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
   proofLabel: "Inspect a redacted review artifact",
-  contactHref: "/contact",
-  contactLabel: "Send your product URL, stage, and concern",
+  contactHref: "/trust-risk-read",
+  contactLabel: "Get a 3-point trust risk read",
 };
 
 const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
@@ -26,8 +26,8 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     serviceLabel: "See the health app privacy review path",
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
-    contactHref: "/contact",
-    contactLabel: "Send your health product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "paintracker-architecture": {
     prompt:
@@ -36,28 +36,28 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     serviceLabel: "See the health app privacy review path",
     proofHref: "/artifacts/pain-tracker/architecture",
     proofLabel: "Open the PainTracker architecture artifact",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "proofvault-trust-case-v1-0-1": {
     prompt:
       "If your team is making security, privacy, or AI trust claims that are broader than the release evidence, start by narrowing the guarantee surface.",
-    serviceHref: "/services/ai-trust-review-sensitive-data-products",
-    serviceLabel: "See the trust review path for sensitive-data AI products",
+    serviceHref: "/services/pre-launch-privacy-audit",
+    serviceLabel: "See the pre-launch privacy audit path",
     proofHref: "/case-study/proofvault",
     proofLabel: "Inspect the ProofVault trust case",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "reduce-data-collection-risk-before-launch": {
     prompt:
       "If your product is collecting more than it needs, the fastest useful next move is a minimization review and a smaller default boundary before launch hardens the mistake.",
-    serviceHref: "/services/reduce-data-collection-risk-before-launch",
-    serviceLabel: "See the pre-launch data-risk reduction review",
+    serviceHref: "/services/data-minimization-review-for-apps",
+    serviceLabel: "See the data minimization review path",
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted review artifact",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "pre-launch-privacy-review-checklist-health-wellness-apps": {
     prompt:
@@ -66,18 +66,18 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     serviceLabel: "See the pre-launch privacy audit path",
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "what-founders-miss-before-launching-sensitive-data-products": {
     prompt:
       "If launch is close and the concern is still vague, use a launch-readiness review to force the trust, privacy, and failure-state risks into a ranked list before users do it for you.",
-    serviceHref: "/services/launch-readiness-review-for-sensitive-data-products",
-    serviceLabel: "See the launch-readiness review path",
+    serviceHref: "/services/pre-launch-privacy-audit",
+    serviceLabel: "See the pre-launch privacy audit path",
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted trust artifact",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
   "data-minimization-checklist-sensitive-apps": {
     prompt:
@@ -86,8 +86,8 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     serviceLabel: "See the data minimization review path",
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the collection-risk article",
-    contactHref: "/contact",
-    contactLabel: "Send your product URL, stage, and concern",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point trust risk read",
   },
 };
 
@@ -158,7 +158,6 @@ export default async function WritingPostPage({
     <div className="py-12">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
 
@@ -198,7 +197,7 @@ export default async function WritingPostPage({
         </div>
 
         <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/68">
-          Start with the shortest useful note: product URL, launch stage, and the main concern.
+          Start with the shortest useful note: app URL, launch stage, and the biggest concern.
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -207,6 +206,9 @@ export default async function WritingPostPage({
           </Button>
           <Button href="/projects" variant="ghost">
             Projects
+          </Button>
+          <Button href={SITE.bridges.protectiveComputing} variant="ghost">
+            Protective Computing canon ↗
           </Button>
         </div>
       </Panel>

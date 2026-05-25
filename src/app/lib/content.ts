@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "Security review for systems operating under low trust: exploitability, incentives, and failure surfaces. Output is actionable: clear risk boundaries, reproduction steps, and prioritized remediation.",
     tags: ["Security", "Threat Modeling", "Audit", "Systems"],
     links: [
-      { label: "Contact", href: "/contact" },
+      { label: "3-point trust risk read", href: "/trust-risk-read" },
       { label: "Case study", href: "/case-study" },
       { label: "GitHub", href: "https://github.com/CrisisCore-Systems" },
     ],

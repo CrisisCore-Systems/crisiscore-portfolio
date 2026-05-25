@@ -1,0 +1,78 @@
+---
+title: "What to show buyers during sensitive-data procurement"
+description: "A practical guide to the artifacts, claims, and product-boundary explanations that help buyers evaluate a sensitive-data product during procurement."
+date: "2026-05-11"
+---
+
+When a buyer reviews a sensitive-data product, too much information can be nearly as bad as too little.
+
+If the team throws policy language, architecture diagrams, and marketing claims at the buyer without a clear inspection path, the buyer has to guess what matters.
+
+That creates hesitation.
+
+## Show the product boundary first
+
+Start with the simple explanation:
+
+- what the product does
+- what data it needs for that job
+- what stays local versus what is centralized
+- where the user keeps authority and where the system takes over
+
+If that part is unclear, every other artifact becomes harder to trust.
+
+## Show one concrete proof artifact
+
+Do not start with a large evidence pile.
+
+Start with one artifact that proves the team has inspected the boundary seriously.
+
+Examples:
+
+- a redacted threat model excerpt
+- a sample teardown showing top risks and first fixes
+- a release-bound packet or trust-case preview
+
+The goal is to make the work legible, not exhaustive.
+
+## Show the narrowed public claim
+
+Buyers notice when a company says more than the release can prove.
+
+So one of the most persuasive things to show is not a grand promise.
+It is a narrow claim the team can defend cleanly.
+
+That might mean explaining:
+
+- what the product does not do
+- what it does not collect
+- what is still out of scope
+- what conditions the current release assumes
+
+## Show the fix order if gaps remain
+
+If the product still has open issues, do not hide that behind softer language.
+
+Show the ranked fix order.
+
+That signals that the team understands the product boundary and is actively managing it, instead of improvising under buyer pressure.
+
+## What buyers do not need first
+
+They usually do not need:
+
+- a giant wall of doctrine
+- a full architecture history
+- every internal note the team has ever written
+
+They need the shortest believable path from claim to evidence.
+
+## If you need the next step
+
+If a buyer or procurement review is near, prepare the proof path around one clear product-boundary explanation, one real artifact, and one defensible claim surface.
+
+Related links:
+
+- [Proof surface](/proof)
+- [Sample 48-hour teardown](/artifacts/security-and-audits/sample-48-hour-teardown)
+- [ProofVault case study](/case-study/proofvault)
