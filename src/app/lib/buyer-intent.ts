@@ -117,6 +117,93 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     artifactLabel: "Open the PainTracker architecture artifact",
   },
   {
+    slug: "privacy-first-health-app-architecture",
+    title: "Privacy-First Health App Architecture",
+    description:
+      "Architecture review for health apps that need local-first defaults, offline use, explicit export, and less risky health data collection before launch or buyer review.",
+    summary:
+      "Built for teams shipping health, wellness, disability, or symptom-tracking apps that need the product architecture to match the privacy promise: local-first where it matters, cloud use only when justified, and export paths users can understand.",
+    faqs: [
+      {
+        question: "What is privacy-first health app architecture?",
+        answer:
+          "It is the product and technical boundary that decides what stays local, what syncs, what gets collected, how export works, and which privacy claims the system can actually defend.",
+      },
+      {
+        question: "Is this only for local-first apps?",
+        answer:
+          "No. Local-first is often the safer default for sensitive workflows, but the review also maps justified cloud use, sync boundaries, account requirements, and recovery behavior.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "Before launch, before partner review, before adding analytics or AI features, or when the health data flow feels broader than the user job requires.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A privacy architecture map, ranked correction list, and practical recommendation on whether the next step is a teardown, full review, or implementation sprint.",
+      },
+    ],
+    useThisWhen: [
+      "The app handles symptoms, pain, mood, disability, care notes, medication context, or other intimate health data.",
+      "Core use should work offline or under low attention, but the current system assumes accounts, sync, or cloud storage too early.",
+      "You need a health app privacy architecture review before launch, buyer review, or a partner conversation.",
+    ],
+    audience: [
+      "Health and wellness founders who need architecture that supports the privacy story.",
+      "Teams deciding what should stay local, what can sync, and what should never be collected by default.",
+      "Product and engineering leads preparing for launch, procurement, or investor diligence.",
+    ],
+    riskProfile:
+      "The product risk is a sensitive health workflow where cloud-first storage, vague export behavior, and over-broad collection quietly contradict the privacy promise.",
+    painPoints: [
+      "The app says privacy-first, but the architecture still centralizes intimate records by default.",
+      "Offline use, local storage, explicit export, deletion, and recovery have not been reviewed as one system.",
+      "Analytics, support tooling, account creation, or AI features widen the health data boundary before anyone can defend it.",
+      "The team needs a plain architecture decision map before buyers or users ask sharper questions.",
+    ],
+    reviewIncludes: [
+      "A health data boundary map covering storage, sync, export, retention, deletion, and recovery.",
+      "A review of local-first defaults, offline behavior, and the points where cloud authority is justified or excessive.",
+      "A ranked correction list for the privacy architecture failures most likely to matter first.",
+      "A plain-language story the team can use to explain what the product collects, avoids, and exports.",
+    ],
+    bestFit: [
+      "Health, wellness, chronic condition, disability, care coordination, and symptom-tracking products.",
+      "Teams that want privacy-first app architecture, not only policy language.",
+      "Founders who need the product to survive trust scrutiny without pretending every cloud dependency is harmless.",
+    ],
+    exampleFailures: [
+      "A chronic pain or symptom app requires an account before the core daily record can exist.",
+      "Health notes sync to a cloud account by default even though daily use only needs local storage and explicit export.",
+      "The privacy page says user control, but export, deletion, and recovery are hidden behind support or account flows.",
+    ],
+    deliverables: [
+      "A privacy-first health app architecture map for local storage, sync, export, and account boundaries.",
+      "A ranked list of fixes that reduce health data exposure before launch or buyer review.",
+      "A recommendation on whether this needs a focused teardown, full review, or fix sprint.",
+    ],
+    proofIntro:
+      "This path is grounded in PainTracker, a working privacy-first chronic pain tracking app that uses offline logging, local storage, and explicit export as the reference implementation.",
+    proofItems: [
+      "PainTracker case study: chronic pain tracking without forced cloud accounts for core use.",
+      "PainTracker architecture artifact: local-first storage, offline behavior, and explicit export boundaries.",
+      "Privacy-first health app architecture article: the buyer-intent framing for this review path.",
+    ],
+    notFit: [
+      "Teams that want to maximize health data collection for analytics before defining the user job.",
+      "Products with no sensitive health workflow or offline continuity requirement.",
+      "Organizations looking only for legal policy drafting without product architecture changes.",
+    ],
+    fitCheckPrompt: "the health data flow that feels hardest to defend",
+    primaryIndexTarget: true,
+    proofHref: "/writing/privacy-first-health-app-architecture",
+    proofLabel: "Read the privacy-first health app architecture article",
+    artifactHref: "/artifacts/pain-tracker/architecture",
+    artifactLabel: "Inspect the PainTracker architecture artifact",
+  },
+  {
     slug: "pre-launch-privacy-audit",
     title: "Pre-Launch Privacy Audit for Sensitive Data Apps",
     description:

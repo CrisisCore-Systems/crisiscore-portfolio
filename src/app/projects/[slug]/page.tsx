@@ -30,10 +30,22 @@ const bridgeContentBySlug: Record<string, {
       "If your app collects symptoms, mood, disability, medication, location, notes, exports, or clinician-ready summaries, this is the same inspection lens used to review the product boundary before launch.",
     ],
     links: [
+      { href: "https://paintracker.ca", label: "Open PainTracker" },
+      {
+        href: "https://www.paintracker.ca/resources/daily-pain-tracker-printable",
+        label: "Daily pain tracker printable",
+      },
+      { href: "/case-study/pain-tracker", label: "PainTracker case study" },
+      { href: "/proof", label: "CrisisCore proof hub" },
       { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
+      {
+        href: "/services/privacy-first-health-app-architecture",
+        label: "Privacy-First Health App Architecture",
+      },
       { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
       { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
       { href: "/services/local-first-health-app-architecture", label: "Local-First Health App Architecture Review" },
+      { href: "/writing/the-overton-framework", label: "Overton Framework writing" },
     ],
   },
   proofvault: {
@@ -47,8 +59,21 @@ const bridgeContentBySlug: Record<string, {
       { href: "/services/pre-launch-privacy-audit", label: "Pre-Launch Privacy Audit for Sensitive Data Apps" },
       { href: "/services/data-minimization-review-for-apps", label: "Data Minimization Review for Apps" },
       { href: "/services/privacy-review-for-health-apps", label: "Privacy Review for Health Apps" },
-      { href: "/trust-risk-read", label: "Get a 3-point trust risk read" },
+      { href: "/trust-risk-read", label: "Get a 3-point risk read" },
     ],
+  },
+};
+
+const intentIntroBySlug: Record<string, string> = {
+  "pain-tracker":
+    "PainTracker is a privacy-first chronic pain tracking app built by CrisisCore Systems. It works offline, stores data locally, and gives users exportable records without forcing health data into a cloud account.",
+};
+
+const metadataBySlug: Record<string, { title: string; description: string }> = {
+  "pain-tracker": {
+    title: "PainTracker Case Project | Offline Private Pain Tracking App",
+    description:
+      "PainTracker is a privacy-first chronic pain tracking app with offline logging, local-first storage, explicit export, and no forced cloud account for core use.",
   },
 };
 
@@ -68,14 +93,15 @@ export async function generateMetadata({ params }: { params: ParamsLike }) {
   try {
     const p = loadProject(slug);
     const dossier = loadDossier(slug);
+    const metadataOverride = metadataBySlug[slug];
     const socialImage =
       slug === "proofvault"
         ? "/assets/proof-cards/trust_case_excerpt_wide_16x9.svg"
         : dossier?.architecture.diagram?.src ?? dossier?.images?.items?.[0]?.src;
 
     return {
-      title: p.title,
-      description: p.summary,
+      title: metadataOverride ? { absolute: metadataOverride.title } : p.title,
+      description: metadataOverride?.description ?? p.summary,
       openGraph: socialImage ? { images: [{ url: absoluteUrl(socialImage) }] } : undefined,
       twitter: socialImage ? { images: [absoluteUrl(socialImage)] } : undefined,
     };
@@ -119,6 +145,7 @@ export default async function ProjectPage({
 
   const dossier = loadDossier(slug);
   const bridgeContent = bridgeContentBySlug[slug];
+  const intentIntro = intentIntroBySlug[slug];
   const gh = p.links.find((l) => l.href.includes("github.com/"));
   const repoMatch = gh?.href.match(/github\.com\/([^/]+)\/([^/]+)/i);
   const repo = repoMatch ? await getRepo(repoMatch[1], repoMatch[2]) : null;
@@ -142,6 +169,11 @@ export default async function ProjectPage({
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
           {dossier?.tagline ?? p.description}
         </p>
+        {intentIntro ? (
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/76">
+            {intentIntro}
+          </p>
+        ) : null}
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">
           Use this dossier as supporting evidence for the service work on this site: problem, constraints, proof surface, and outputs.
         </p>
@@ -162,7 +194,7 @@ export default async function ProjectPage({
         <div className="mt-6 flex flex-wrap gap-3">
           <Button href={caseStudyPathBySlug[p.slug]}>Read the case study</Button>
           <Button href="/services" variant="ghost">See services</Button>
-          <Button href="/trust-risk-read" variant="ghost">Get a 3-point trust risk read</Button>
+          <Button href="/trust-risk-read" variant="ghost">Get a 3-point risk read</Button>
         </div>
       ) : null}
 
@@ -343,7 +375,7 @@ export default async function ProjectPage({
                 See services
               </Button>
               <Button href="/trust-risk-read" variant="ghost" className="w-full justify-center">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>

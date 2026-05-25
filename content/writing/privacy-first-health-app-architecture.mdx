@@ -1,0 +1,75 @@
+---
+title: "Privacy-first health app architecture"
+description: "How to turn health data privacy promises into local-first storage, explicit export, offline use, and defendable product boundaries."
+date: "2026-05-23"
+---
+
+Privacy-first health app architecture is not a slogan. It is the set of product and technical decisions that decide what stays local, what syncs, what gets collected, what gets exported, and what the team can defend when a buyer asks how the system actually behaves.
+
+For a health, wellness, disability, chronic-condition, or symptom-tracking product, the default architecture should reduce exposure before policy language tries to explain it.
+
+## The buyer question
+
+A skeptical buyer is not only asking whether the app has a privacy page.
+
+They are asking:
+
+- What health data is collected by default?
+- What can the core workflow do offline?
+- What stays on the device?
+- What requires an account?
+- What syncs to the cloud?
+- What can the user export, delete, or recover without support?
+- Which privacy claims are backed by product behavior?
+
+If those answers are vague, the product is not privacy-first yet. It is privacy-branded.
+
+## Architecture choices that matter first
+
+The first pass is usually not a total rebuild. It is a boundary review.
+
+Start with these decisions:
+
+- Keep the daily working record local when cloud storage is not required for the core job.
+- Make export explicit and user-initiated instead of ambient.
+- Avoid forced account creation before a user can perform the primary health workflow.
+- Keep offline logging usable under low bandwidth, low battery, low attention, or interrupted sessions.
+- Treat analytics, support tooling, AI features, and sync as separate claims that need their own justification.
+
+The goal is not to ban every server. The goal is to stop default centralization from becoming the hidden architecture of a sensitive health workflow.
+
+## Why local-first matters
+
+Local-first architecture gives the user a stronger default authority over intimate records. In a chronic pain tracker, mood tool, disability journal, or care coordination app, that matters because the user may need the product while connectivity, energy, trust, or attention is low.
+
+An offline pain tracker app is not only more convenient. It can be less coercive because basic use does not require handing over the entire working record before the user gets value.
+
+That is the architecture standard PainTracker is meant to demonstrate:
+
+- Offline-capable logging
+- Local storage for the working record
+- No forced cloud account for core use
+- Explicit export for clinicians, records, or advocacy
+- A narrow data boundary that can be inspected
+
+## What a review should produce
+
+A useful health app privacy architecture review should leave the team with more than general advice.
+
+It should produce:
+
+- A map of what stays local, what syncs, and what should not be collected by default
+- A ranked list of storage, export, retention, deletion, and recovery risks
+- A short explanation of which privacy claims the system can currently defend
+- A fix order that separates launch blockers from later hardening work
+
+That is how privacy-first language becomes architecture a buyer can evaluate.
+
+## Related evidence
+
+- [Privacy-First Health App Architecture service](/services/privacy-first-health-app-architecture)
+- [PainTracker case study](/case-study/pain-tracker)
+- [PainTracker reference implementation](/projects/pain-tracker)
+- [PainTracker architecture artifact](/artifacts/pain-tracker/architecture)
+- [Proof surface](/proof)
+- [The Overton Framework](/writing/the-overton-framework)

@@ -45,7 +45,7 @@ export default async function ProjectsPage({
           Case study
         </Button>
         <Button href="/trust-risk-read" variant="ghost">
-          Get a 3-point trust risk read
+          Get a 3-point risk read
         </Button>
       </div>
 
@@ -87,7 +87,7 @@ export default async function ProjectsPage({
                 Open case study
               </Button>
               <Button href="/trust-risk-read" variant="ghost" className="w-full justify-center">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>

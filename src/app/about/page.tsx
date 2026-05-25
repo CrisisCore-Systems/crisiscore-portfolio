@@ -59,7 +59,7 @@ export default function AboutPage() {
                 Case study
               </Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -207,7 +207,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point trust risk read</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
               <Button href={mailto} variant="ghost">
                 {SITE.email}
               </Button>
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 Case studies
               </Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>

@@ -37,9 +37,9 @@ export default function TrustHardeningReviewPage() {
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Request a Trust Hardening Review</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
-                Inspect proof first
+                See proof
               </Button>
             </div>
           </div>
@@ -70,11 +70,11 @@ export default function TrustHardeningReviewPage() {
 
         <FitCheckCta
           className="mt-8"
-          title="Request a Trust Hardening Review."
-          description="Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top trust risks I see, the smallest sensible engagement path, and whether CrisisCore is the right category of help."
+          title="Get a 3-point risk read."
+          description="Free fit check, not an audit. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top trust risks I see, the smallest sensible engagement path, and whether CrisisCore is the right category of help."
           splitStageAndConcern
           checklistItems={[
-            "Send app URL, launch stage, and biggest concern.",
+            "Send app URL, launch stage, and one concern.",
             "Get the top trust risks and the recommended entry point.",
             "Use this before a larger review, a pentest, or compliance tooling spend.",
           ]}
