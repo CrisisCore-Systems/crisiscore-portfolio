@@ -2,6 +2,7 @@ import { SITE } from "@/app/lib/site";
 import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
+import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
 
 export const metadata = {
@@ -18,13 +19,50 @@ export default function TrustRiskReadPage() {
       <div className="cc-kicker">3-point trust risk read</div>
       <h1 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">3-Point Trust Risk Read</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72 sm:text-base">
-        Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a product trust review, pentest, legal review, or something else, and the smallest useful next step.
+        Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-hour teardown, full review, fix sprint, another specialist, or no engagement.
       </p>
+
+      <Section id="small-business-trust-surface" title="Small Business Website Trust Cleanup" kicker="Local service site trust gaps">
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/72 sm:text-base">
+          If your website is the first proof customers see, a hidden booking path, unclear phone invite, or templated page can make people stop before they call. I review the public site as a customer would and flag the first trust gaps that matter for motels, plumbers, contractors, salons, clinics, and other local service businesses.
+        </p>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">Booking + contact clarity</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/72">
+              I check whether customers can tell how to book, request service, or call without guessing. Hidden or weak contact cues are the fastest way to lose local leads.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">Privacy + contact reassurance</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/72">
+              Customers need to feel safe sharing their details. I flag contact signals, trust cues, and simple reassurance language that reduces hesitation and keeps visitors on the page.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">Credibility cleanup</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/72">
+              Outdated, templated, or generic pages make your business feel weaker than it is. I call out the must-fix trust issues that make your site look more professional and real.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-3xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-6">
+          <p className="text-base font-semibold text-white">Send me your website and I’ll identify the top 3 public trust issues.</p>
+          <div className="mt-4">
+            <Button href={gmailHref}>Open in Gmail</Button>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-white/70">
+            Email-first, fast first look. Send one website URL and one sentence about what you want to fix, and I’ll reply with the first public trust gaps and the simplest next move.
+          </p>
+        </div>
+      </Section>
 
       <div className="mt-6 grid gap-3 md:grid-cols-3">
         <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(120,167,181,0.08)] p-4">
-          <div className="text-xs uppercase tracking-[0.18em] text-white/45">Fastest path</div>
-          <p className="mt-2 text-sm leading-relaxed text-white/78">Use Gmail-first compose if you just need a draft open right now.</p>
+          <div className="text-xs uppercase tracking-[0.18em] text-white/45">Free fit check</div>
+          <p className="mt-2 text-sm leading-relaxed text-white/78">This is a presales fit read, not an audit report or certification.</p>
         </div>
         <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4">
           <div className="text-xs uppercase tracking-[0.18em] text-white/45">Send only basics</div>
@@ -47,12 +85,13 @@ export default function TrustRiskReadPage() {
 
             <FitCheckCta
               className="mt-6"
-              title="Get a 3-point trust risk read."
-              description="Send the app URL, launch stage, one concern, and a reply email. No deck or long brief required."
+              title="Get a 3-point risk read."
+              description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I’ll reply with the first 3 risks and the smallest useful next move."
               includeReplyEmail
               splitStageAndConcern
               checklistItems={[
-                "Send app URL, launch stage, biggest concern, and a reply email.",
+                "Send app URL, launch stage, one concern, and a reply email.",
+                "I reply with whether this looks like a 48-hour teardown, full review, fix sprint, or no-fit.",
                 "Do not include sensitive personal data in the first note.",
                 'If safer intake is needed, write "secure channel needed."',
               ]}
@@ -110,7 +149,7 @@ export default function TrustRiskReadPage() {
             <div className="text-sm font-semibold">What you get back</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                Usually answered within 1-3 business days. If you&apos;re in an urgent window,
+                The first reply is usually answered within 1-3 business days and is only fit guidance. Paid 48-hour teardown delivery starts after scope is agreed. If you&apos;re in an urgent window,
                 put <span className="font-mono text-white/80">URGENT</span> in the
                 subject line and include your deadline.
               </p>
