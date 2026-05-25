@@ -59,7 +59,7 @@ export default async function PainTrackerCaseStudyPage() {
           This is the clearest public example of the kind of product review, privacy correction, and boundary work sold through CrisisCore Systems.
         </p>
         <div className="mt-6 rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-          <Image src="/assets/crisiscore/03_boundary_shift.png" alt="Boundary shift diagram comparing cloud-assumption data flow against local-first control with explicit export and consent boundaries." width={1200} height={700} className="w-full h-auto block" />
+          <Image src="/assets/crisiscore/03_boundary_shift.png" alt="Boundary shift diagram comparing cloud-assumption data flow against local-first control with explicit export and consent boundaries." width={1200} height={700} sizes="(min-width:1024px) 50vw, 100vw" className="w-full h-auto block" />
           <div className="p-3 text-sm text-white/75">Boundary shift — local-first vs cloud-assumption.</div>
         </div>
       </div>

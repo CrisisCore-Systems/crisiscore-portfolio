@@ -101,7 +101,7 @@ export default async function ProofPage() {
 
           <div className="grid gap-3">
             <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.03)]">
-              <Image src="/assets/crisiscore/07_proof_wall.png" alt="Proof wall showing CrisisCore evidence surfaces including PainTracker, ProofVault, Protective Computing, and sample teardown artifacts." width={900} height={600} className="w-full h-auto block" />
+              <Image src="/assets/crisiscore/07_proof_wall.png" alt="Proof wall showing CrisisCore evidence surfaces including PainTracker, ProofVault, Protective Computing, and sample teardown artifacts." width={900} height={600} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
               <div className="p-3 text-sm text-white/75">Proof wall — credible, inspectable artifacts.</div>
             </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">

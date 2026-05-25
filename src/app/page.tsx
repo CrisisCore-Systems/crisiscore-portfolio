@@ -70,6 +70,7 @@ export default function HomePage() {
                 alt="Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity."
                 width={1800}
                 height={1100}
+                sizes="(min-width:1024px) 45vw, 100vw"
                 className="w-full h-auto block"
                 priority
               />

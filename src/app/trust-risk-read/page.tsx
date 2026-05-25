@@ -26,15 +26,15 @@ export default function TrustRiskReadPage() {
 
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-          <Image src="/assets/crisiscore/08_intake_flow.png" alt="Intake flow diagram showing product URL submission leading to no-fit, 48-hour brief, full review, or fix sprint routing." width={900} height={520} className="w-full h-auto block" />
+          <Image src="/assets/crisiscore/08_intake_flow.png" alt="Intake flow diagram showing product URL submission leading to no-fit, 48-hour brief, full review, or fix sprint routing." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
           <div className="p-3 text-sm text-white/75">Intake flow — submit URL, get routing recommendation.</div>
         </div>
         <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} className="w-full h-auto block" />
+          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
           <div className="p-3 text-sm text-white/75">48-hour brief mockup — what you receive.</div>
         </div>
         <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-          <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} className="w-full h-auto block" />
+          <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
           <div className="p-3 text-sm text-white/75">Buyer scrutiny ladder — questions buyers ask.</div>
         </div>
       </div>

@@ -48,15 +48,15 @@ export default function TrustHardeningReviewPage() {
           <div className="grid gap-3">
             <div className="grid gap-3">
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-                <Image src="/assets/crisiscore/02_evidence_chain.png" alt="Evidence chain diagram showing the path from product claim to product behavior, evidence, verification, and buyer confidence." width={900} height={520} className="w-full h-auto block" />
+                <Image src="/assets/crisiscore/02_evidence_chain.png" alt="Evidence chain diagram showing the path from product claim to product behavior, evidence, verification, and buyer confidence." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
                 <div className="p-3 text-sm text-white/75">Evidence chain — how claims become verifiable.</div>
               </div>
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-                <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} className="w-full h-auto block" />
+                <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
                 <div className="p-3 text-sm text-white/75">48-hour brief mockup — deliverable preview.</div>
               </div>
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
-                <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} className="w-full h-auto block" />
+                <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
                 <div className="p-3 text-sm text-white/75">Buyer scrutiny ladder — buyer questions mapped.</div>
               </div>
             </div>

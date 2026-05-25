@@ -234,18 +234,32 @@ assets = [
 ]
 
 saved = []
+variants = [1, 2]
 for name, fn in assets:
-    img = fn().convert("RGB")
-    path = OUT / name
-    img.save(path, "PNG", optimize=True)
-    saved.append(path)
+    base_img = fn().convert("RGB")
+    stem = Path(name).stem
+    # write base and 2x PNG + WebP
+    for scale in variants:
+        if scale == 1:
+            out_name = f"{stem}.png"
+        else:
+            out_name = f"{stem}@2x.png"
+        path = OUT / out_name
+        img = base_img.resize((W * scale, H * scale), resample=Image.LANCZOS)
+        img.save(path, "PNG", optimize=True)
+        saved.append(path)
+        # also save webp
+        webp_name = out_name.replace('.png', '.webp')
+        webp_path = OUT / webp_name
+        img.save(webp_path, "WEBP", quality=85, method=6)
+        saved.append(webp_path)
 
 zip_path = Path(__file__).resolve().parent.parent / "crisiscore_web_png_suite.zip"
 with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as z:
     for p in saved:
         z.write(p, arcname=p.name)
 
-print(f"Created {len(saved)} PNG assets:")
+print(f"Created {len(saved)} asset files ({len(assets)} base assets, PNG+WebP variants):")
 for p in saved:
     print(f"- {p.name}")
 print(f"\nZIP: {zip_path}")

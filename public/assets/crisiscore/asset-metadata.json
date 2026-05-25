@@ -1,0 +1,64 @@
+{
+  "assets": [
+    {
+      "file": "01_trust_surface_radar.png",
+      "alt": "Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity.",
+      "placement": ["homepage_hero","trust-hardening-review","pre-launch-privacy-audit","linkedIn_banner","dev_article_header"],
+      "caption": "Trust surface radar — a repeatable inspection system for product trust failures."
+    },
+    {
+      "file": "02_evidence_chain.png",
+      "alt": "Evidence chain diagram showing the path from product claim to product behavior, evidence, verification, and buyer confidence.",
+      "placement": ["homepage_proof_section","/proof","trust-hardening-review","artifacts"],
+      "caption": "Evidence chain — how claims become verifiable proof."
+    },
+    {
+      "file": "03_boundary_shift.png",
+      "alt": "Boundary shift diagram comparing cloud-assumption data flow against local-first control with explicit export and consent boundaries.",
+      "placement": ["local-first-architecture","pain-tracker_case_study"],
+      "caption": "Boundary shift — design choices that keep data local by default."
+    },
+    {
+      "file": "04_service_fit_matrix.png",
+      "alt": "Service fit matrix mapping buyer situations such as pre-launch risk, health app privacy, local-first architecture, and procurement scrutiny to the appropriate CrisisCore service path.",
+      "placement": ["services","homepage"],
+      "caption": "Service fit matrix — choose the smallest useful next step."
+    },
+    {
+      "file": "05_offer_ladder.png",
+      "alt": "Offer ladder showing progression from free signal to 48-hour trust risk brief, full trust hardening review, and fix sprint.",
+      "placement": ["pricing","homepage"],
+      "caption": "Offer ladder — start small, escalate when evidence justifies it."
+    },
+    {
+      "file": "06_risk_brief_mockup.png",
+      "alt": "Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step.",
+      "placement": ["services","trust-risk-read","homepage"],
+      "caption": "48-hour Trust Risk Brief mockup — what you actually receive."
+    },
+    {
+      "file": "07_proof_wall.png",
+      "alt": "Proof wall showing CrisisCore evidence surfaces including PainTracker, ProofVault, Protective Computing, and sample teardown artifacts.",
+      "placement": ["proof","homepage"],
+      "caption": "Proof wall — credible artifacts and evidence surfaces."
+    },
+    {
+      "file": "08_intake_flow.png",
+      "alt": "Intake flow diagram showing product URL submission leading to no-fit, 48-hour brief, full review, or fix sprint routing.",
+      "placement": ["trust-risk-read","homepage"],
+      "caption": "Intake flow — send URL, get the first three trust risks."
+    },
+    {
+      "file": "09_trust_risk_taxonomy.png",
+      "alt": "Trust risk taxonomy diagram showing six recurring inspection categories: collection, consent, retention, export, recovery, and claims.",
+      "placement": ["methodology","homepage","blog"],
+      "caption": "Trust risk taxonomy — the six recurring failure classes."
+    },
+    {
+      "file": "10_buyer_scrutiny_ladder.png",
+      "alt": "Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof.",
+      "placement": ["trust-risk-read","pricing","homepage"],
+      "caption": "Buyer scrutiny ladder — the questions buyers ask as interest deepens."
+    }
+  ]
+}
