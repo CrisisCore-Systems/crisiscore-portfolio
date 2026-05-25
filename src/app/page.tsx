@@ -3,6 +3,7 @@ import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
+import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
 
 export const metadata: Metadata = {
   title: {
@@ -51,6 +52,9 @@ export default function HomePage() {
                 <Button href="/trust-risk-read#small-business-trust-surface" variant="ghost">
                   Open Gmail and send your website
                 </Button>
+              </div>
+              <div className="mt-4">
+                <CrisisCoreVisualStrip />
               </div>
             </div>
             <p className="mt-4 max-w-2xl text-xs leading-relaxed text-white/55">
