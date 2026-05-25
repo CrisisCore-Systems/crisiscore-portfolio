@@ -20,7 +20,7 @@ export default function TrustRiskReadPage() {
       <div className="cc-kicker">3-point trust risk read</div>
       <h1 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">3-Point Trust Risk Read</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72 sm:text-base">
-        Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-hour teardown, full review, fix sprint, another specialist, or no engagement.
+        Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, another specialist, or no engagement.
       </p>
 
       <Section id="small-business-trust-surface" title="Small Business Website Trust Cleanup" kicker="Local service site trust gaps">
@@ -88,7 +88,7 @@ export default function TrustRiskReadPage() {
               Fastest path: send the app URL, launch stage, and the issue you want checked first. I&apos;ll reply with the top 3 trust risks I see and whether this looks like a fit for a 48-hour teardown, deeper review, another specialist, or no engagement.
             </p>
 
-            <FitCheckCta
+              <FitCheckCta
               className="mt-6"
               title="Get a 3-point risk read."
               description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I’ll reply with the first 3 risks and the smallest useful next move."
@@ -96,7 +96,7 @@ export default function TrustRiskReadPage() {
               splitStageAndConcern
               checklistItems={[
                 "Send app URL, launch stage, one concern, and a reply email.",
-                "I reply with whether this looks like a 48-hour teardown, full review, fix sprint, or no-fit.",
+                "I reply with whether this looks like a 48-Hour Trust Risk Brief, full review, fix sprint, or no-fit.",
                 "Do not include sensitive personal data in the first note.",
                 'If safer intake is needed, write "secure channel needed."',
               ]}
@@ -154,7 +154,7 @@ export default function TrustRiskReadPage() {
             <div className="text-sm font-semibold">What you get back</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                The first reply is usually answered within 1-3 business days and is only fit guidance. Paid 48-hour teardown delivery starts after scope is agreed. If you&apos;re in an urgent window,
+                The first reply is usually answered within 1-3 business days and is only fit guidance. Paid 48-Hour Trust Risk Brief delivery starts after scope is agreed. If you&apos;re in an urgent window,
                 put <span className="font-mono text-white/80">URGENT</span> in the
                 subject line and include your deadline.
               </p>

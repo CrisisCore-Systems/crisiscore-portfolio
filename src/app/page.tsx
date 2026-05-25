@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
+import SampleTeardownPreview from "@/components/SampleTeardownPreview";
 
 export const metadata: Metadata = {
   title: {
@@ -142,26 +143,29 @@ export default function HomePage() {
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
             <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Fast signal</div>
-            <h3 className="text-base font-semibold">48-hour teardown</h3>
-            <p className="mt-2 text-sm text-white/70">A fast first pass for teams that need a clear answer on whether a real product problem exists.</p>
-            <p className="mt-4 text-sm font-semibold text-white">Starting at CA$250</p>
+            <h3 className="text-base font-semibold">48-Hour Trust Risk Brief</h3>
+            <p className="mt-2 text-sm text-white/70">A ranked 3-risk teardown of your product’s public trust surface, privacy claims, collection defaults, and launch-risk gaps.</p>
+            <p className="mt-4 text-sm font-semibold text-white">CA$250 — 48-hour delivery</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• Top 3 product trust risks</li>
-              <li>• Why each risk matters</li>
-              <li>• First fix for each issue</li>
-              <li>• Recommendation: stop here, full review, or fix sprint</li>
-              <li>• Short written readout</li>
+              <li>• Executive verdict and top 3 trust risks</li>
+              <li>• Evidence references or screenshots</li>
+              <li>• Why each risk matters and buyer-facing consequence</li>
+              <li>• First fix and recommended next path (stop / full review / fix sprint)</li>
+              <li>• Packaged as a polished brief (PDF/Markdown) with one-line quote</li>
             </ul>
             <div className="mt-4">
               <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
-                View sample teardown
+                View sample brief
               </Button>
             </div>
+            <div className="mt-4">
+              <SampleTeardownPreview />
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-white/64">
-              See a redacted sample teardown: top risks, why they matter, first fixes, evidence checked, and what the teardown is not.
+              The brief is a delivery artifact, not informal notes — ready to share with buyers or internal stakeholders.
             </p>
             <p className="mt-4 text-sm font-medium text-white">
-              Use this when you need signal quickly and do not want to start with a full engagement.
+              Use this when you need signal quickly and a shareable artifact to move the conversation forward.
             </p>
           </div>
 

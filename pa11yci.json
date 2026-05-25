@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "timeout": 30000
+  },
+  "urls": [
+    "http://localhost:3000/",
+    "http://localhost:3000/trust-risk-read",
+    "http://localhost:3000/proof"
+  ],
+  "standard": "WCAG2AA",
+  "ignore": []
+}
