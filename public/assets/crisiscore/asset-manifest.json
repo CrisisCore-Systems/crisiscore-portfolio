@@ -1,10 +1,10 @@
 {
   "assets": [
-    "trust-failure-radar.svg",
+    "trust-failure-radar.png",
     "data-boundary-map.svg",
-    "three-point-risk-read.svg",
-    "buyer-proof-ladder.svg",
-    "small-business-trust-cleanup.svg",
+    "three-point-risk-read.png",
+    "buyer-proof-ladder.png",
+    "small-business-trust-cleanup.png",
     "defensibility-packet-flow.svg",
     "social-card-trust-failure.svg",
     "outreach-header-local-trust-cleanup.svg"

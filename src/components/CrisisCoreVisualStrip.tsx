@@ -6,9 +6,9 @@ type Props = { className?: string };
 export default function CrisisCoreVisualStrip({ className = "" }: Props) {
   const base = "/assets/crisiscore";
   const images = [
-    "small-business-trust-cleanup.svg",
-    "three-point-risk-read.svg",
-    "trust-failure-radar.svg",
+    "small-business-trust-cleanup.png",
+    "three-point-risk-read.png",
+    "trust-failure-radar.png",
   ];
 
   return (
