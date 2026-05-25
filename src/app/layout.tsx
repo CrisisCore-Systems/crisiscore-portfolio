@@ -28,7 +28,6 @@ export const metadata: Metadata = {
   verification: {
     google: "4eHlyB9okddZukiL9tsUhCxTp2aE9E0atJhSA9xaVcM",
   },
-  alternates: { canonical: "/" },
   openGraph: {
     title: SITE.name,
     description: SITE.socialSubline,
@@ -43,7 +42,9 @@ export const metadata: Metadata = {
     description: SITE.socialSubline,
     images: ["/twitter-image"],
   },
-  robots: { index: true, follow: true },
+  // leave `alternates` and `robots` unset here so pages (and 404)
+  // can provide per-route metadata without inheriting a homepage
+  // canonical or global index/follow directives.
 };
 
 function jsonLd() {
