@@ -85,7 +85,7 @@ export default function TrustRiskReadPage() {
             <div className="cc-kicker">Start here</div>
             <h2 className="mt-2 text-xl font-semibold">Get the shortest useful answer first</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72">
-              Fastest path: send the app URL, launch stage, and the issue you want checked first. I&apos;ll reply with the top 3 trust risks I see and whether this looks like a fit for a 48-hour teardown, deeper review, another specialist, or no engagement.
+              Fastest path: send the app URL, launch stage, and the issue you want checked first. I&apos;ll reply with the top 3 trust risks I see and whether this looks like a fit for a 48-Hour Trust Risk Brief, deeper review, another specialist, or no engagement.
             </p>
 
             <FitCheckCta
@@ -96,6 +96,7 @@ export default function TrustRiskReadPage() {
               splitStageAndConcern
               checklistItems={[
                 "Send app URL, launch stage, biggest concern, and a reply email.",
+                "I&apos;ll say whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, or another lane.",
                 "Do not include sensitive personal data in the first note.",
                 'If safer intake is needed, write "secure channel needed."',
               ]}
