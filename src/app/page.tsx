@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Panel } from "@/components/ui/Panel";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
@@ -64,10 +65,13 @@ export default function HomePage() {
 
           <div className="grid gap-3">
             <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.04)]">
-              <img
+              <Image
                 src="/assets/crisiscore/01_trust_surface_radar.png"
                 alt="Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity."
+                width={1800}
+                height={1100}
                 className="w-full h-auto block"
+                priority
               />
               <div className="p-4 text-sm text-white/75">Trust surface radar — get a 3-point trust risk read.</div>
             </div>

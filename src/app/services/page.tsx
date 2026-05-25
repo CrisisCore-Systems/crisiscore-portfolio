@@ -2,6 +2,7 @@ import Link from "next/link";
 import { absoluteUrl, SITE } from "@/app/lib/site";
 import { PRIMARY_BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { Section } from "@/components/Section";
+import Image from "next/image";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { FitCheckCta } from "@/components/FitCheckCta";
@@ -175,6 +176,21 @@ export default function ServicesPage() {
           description="Free fit check, not an audit. Send the product URL, launch stage, and one concern. I&apos;ll reply with whether to start with a 48-hour teardown, go straight to the full review, use a fix sprint, or skip the engagement."
         />
       </Panel>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-3">
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/04_service_fit_matrix.png" alt="Service fit matrix mapping buyer situations such as pre-launch risk, health app privacy, local-first architecture, and procurement scrutiny to the appropriate CrisisCore service path." width={1200} height={700} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Service fit matrix — choose the smallest useful next step.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/05_offer_ladder.png" alt="Offer ladder showing progression from free signal to 48-hour trust risk brief, full trust hardening review, and fix sprint." width={1200} height={700} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Offer ladder — progressive, ethical pricing.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={1200} height={700} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">48-hour brief mockup — what you receive.</div>
+        </div>
+      </div>
 
       <Section title="Where This Sits" kicker="Not another category clone">
         <div className="grid gap-4 md:grid-cols-2">

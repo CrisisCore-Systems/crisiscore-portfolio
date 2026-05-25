@@ -1,5 +1,6 @@
 import { absoluteUrl } from "@/app/lib/site";
 import { FitCheckCta } from "@/components/FitCheckCta";
+import Image from "next/image";
 import { Section } from "@/components/Section";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
@@ -45,6 +46,20 @@ export default function TrustHardeningReviewPage() {
           </div>
 
           <div className="grid gap-3">
+            <div className="grid gap-3">
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                <Image src="/assets/crisiscore/02_evidence_chain.png" alt="Evidence chain diagram showing the path from product claim to product behavior, evidence, verification, and buyer confidence." width={900} height={520} className="w-full h-auto block" />
+                <div className="p-3 text-sm text-white/75">Evidence chain — how claims become verifiable.</div>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} className="w-full h-auto block" />
+                <div className="p-3 text-sm text-white/75">48-hour brief mockup — deliverable preview.</div>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} className="w-full h-auto block" />
+                <div className="p-3 text-sm text-white/75">Buyer scrutiny ladder — buyer questions mapped.</div>
+              </div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What this is for</div>
               <p className="mt-2 text-sm font-medium leading-relaxed text-white/84">

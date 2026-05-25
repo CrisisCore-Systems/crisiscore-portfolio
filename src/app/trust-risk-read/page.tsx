@@ -1,6 +1,7 @@
 import { SITE } from "@/app/lib/site";
 import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import { Panel } from "@/components/ui/Panel";
 import { Section } from "@/components/Section";
 import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
@@ -22,6 +23,21 @@ export default function TrustRiskReadPage() {
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72 sm:text-base">
         Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, another specialist, or no engagement.
       </p>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/08_intake_flow.png" alt="Intake flow diagram showing product URL submission leading to no-fit, 48-hour brief, full review, or fix sprint routing." width={900} height={520} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Intake flow — submit URL, get routing recommendation.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">48-hour brief mockup — what you receive.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Buyer scrutiny ladder — questions buyers ask.</div>
+        </div>
+      </div>
 
       <Section id="small-business-trust-surface" title="Small Business Website Trust Cleanup" kicker="Local service site trust gaps">
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/72 sm:text-base">

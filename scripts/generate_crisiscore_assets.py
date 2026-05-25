@@ -187,10 +187,50 @@ def asset_boundary_shift():
     d.text((W//2,120),"BOUNDARY SHIFT",font=F_TITLE,fill=WHITE,anchor="mm")
     return img
 
+# Additional simple asset generators (consistent style, centered title & subtitle)
+def simple_tile(title, subtitle=None):
+    img = Image.new("RGBA", (W, H), (*BG, 255))
+    add_bg(img)
+    d = ImageDraw.Draw(img, "RGBA")
+    d.text((W//2, 120), title.upper(), font=F_TITLE, fill=WHITE, anchor="mm")
+    if subtitle:
+        wrapped = textwrap.wrap(subtitle, 48)
+        for i, line in enumerate(wrapped[:4]):
+            d.text((W//2, 220 + i * 34), line, font=F_H2, fill=MUTED, anchor="mm")
+    return img
+
+def asset_service_fit_matrix():
+    return simple_tile("Service Fit Matrix", "Map buyer situations to the right service path")
+
+def asset_offer_ladder():
+    return simple_tile("Offer Ladder", "From signal to brief, review, and fix sprint")
+
+def asset_risk_brief_mockup():
+    return simple_tile("48-hour Trust Risk Brief", "Executive verdict, top risks, first fixes")
+
+def asset_proof_wall():
+    return simple_tile("Proof Wall", "PainTracker, ProofVault, canon, and sample artifacts")
+
+def asset_intake_flow():
+    return simple_tile("Intake Flow", "Submit URL → Get first 3 trust risks → Route recommendation")
+
+def asset_trust_risk_taxonomy():
+    return simple_tile("Trust Risk Taxonomy", "Collection • Consent • Retention • Export • Recovery • Claims")
+
+def asset_buyer_scrutiny_ladder():
+    return simple_tile("Buyer Scrutiny Ladder", "Questions buyers ask as interest becomes serious")
+
 assets = [
     ("01_trust_surface_radar.png", asset_trust_surface),
     ("02_evidence_chain.png", asset_evidence_chain),
     ("03_boundary_shift.png", asset_boundary_shift),
+    ("04_service_fit_matrix.png", asset_service_fit_matrix),
+    ("05_offer_ladder.png", asset_offer_ladder),
+    ("06_risk_brief_mockup.png", asset_risk_brief_mockup),
+    ("07_proof_wall.png", asset_proof_wall),
+    ("08_intake_flow.png", asset_intake_flow),
+    ("09_trust_risk_taxonomy.png", asset_trust_risk_taxonomy),
+    ("10_buyer_scrutiny_ladder.png", asset_buyer_scrutiny_ladder),
 ]
 
 saved = []

@@ -1,6 +1,7 @@
 import { absoluteUrl } from "@/app/lib/site";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Panel } from "@/components/ui/Panel";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import { loadCanon, loadDossier } from "@/content/load";
@@ -99,6 +100,10 @@ export default async function ProofPage() {
           </div>
 
           <div className="grid gap-3">
+            <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.03)]">
+              <Image src="/assets/crisiscore/07_proof_wall.png" alt="Proof wall showing CrisisCore evidence surfaces including PainTracker, ProofVault, Protective Computing, and sample teardown artifacts." width={900} height={600} className="w-full h-auto block" />
+              <div className="p-3 text-sm text-white/75">Proof wall — credible, inspectable artifacts.</div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What this page is</div>
               <p className="mt-2 text-sm font-medium leading-relaxed text-white/84">
