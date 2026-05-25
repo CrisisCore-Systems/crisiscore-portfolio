@@ -1,10 +1,14 @@
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from pathlib import Path
-import math, random, zipfile, os, textwrap
+import math, random, zipfile, os, textwrap, shutil
 
 # Output inside the repository so artifacts are easy to find
 OUT = Path(__file__).resolve().parent.parent / "generated_assets"
 OUT.mkdir(parents=True, exist_ok=True)
+
+# Also copy generated assets into the public folder for immediate use by the site
+PUBLIC = Path(__file__).resolve().parent.parent / "public" / "assets" / "crisiscore"
+PUBLIC.mkdir(parents=True, exist_ok=True)
 
 # ---------- Style ----------
 W, H = 1800, 1100
@@ -248,11 +252,33 @@ for name, fn in assets:
         img = base_img.resize((W * scale, H * scale), resample=Image.LANCZOS)
         img.save(path, "PNG", optimize=True)
         saved.append(path)
+        # copy PNG to public folder
+        try:
+            shutil.copy2(path, PUBLIC / out_name)
+        except Exception:
+            pass
         # also save webp
         webp_name = out_name.replace('.png', '.webp')
         webp_path = OUT / webp_name
         img.save(webp_path, "WEBP", quality=85, method=6)
         saved.append(webp_path)
+        try:
+            shutil.copy2(webp_path, PUBLIC / webp_name)
+        except Exception:
+            pass
+        # try to also write AVIF (if Pillow build supports it); fail gracefully
+        avif_name = out_name.replace('.png', '.avif')
+        avif_path = OUT / avif_name
+        try:
+            img.save(avif_path, "AVIF", quality=80)
+            saved.append(avif_path)
+            try:
+                shutil.copy2(avif_path, PUBLIC / avif_name)
+            except Exception:
+                pass
+        except Exception:
+            # AVIF not supported in this Pillow build; continue
+            pass
 
 zip_path = Path(__file__).resolve().parent.parent / "crisiscore_web_png_suite.zip"
 with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as z:
