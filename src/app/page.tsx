@@ -12,15 +12,15 @@ export default function HomePage() {
       <Panel className="overflow-hidden p-8 sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
           <div>
-            <div className="cc-kicker">For health and sensitive-data apps</div>
+            <div className="cc-kicker">Pre-compliance trust hardening for sensitive-data products</div>
             <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              Catch privacy and trust failures before launch.
+              Find the trust failures buyers will question after launch.
             </h1>
             <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
-              CrisisCore reviews health, wellness, legal, and other sensitive-data products before launch, buyer review, or public scrutiny.
+              CrisisCore reviews health, AI, legal, wellness, and other sensitive-data products before launch, procurement review, or public scrutiny.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
-              I look for risky defaults, weak consent, over-collection, brittle recovery paths, and claims the product cannot yet defend. You get a short written readout with the real issues, the fix order, and the smallest useful next step.
+              I inspect the product behavior itself: what it collects, what it stores, what it logs, what breaks under pressure, and which privacy claims the system cannot yet defend. You get a short written readout with the first risks, the fix order, and the smallest useful next step.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
@@ -30,42 +30,99 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/contact">Get a 3-point risk read</Button>
+              <Button href="/trust-risk-read">Send a product URL. Get first 3 gaps.</Button>
               <Button href="/proof" variant="ghost">
-                Inspect the proof path
+                See verifiable proof
               </Button>
             </div>
+            <div className="mt-5 rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.04)] p-5 text-sm leading-relaxed text-white/75">
+              <p className="font-semibold text-white">Small business website trust cleanup</p>
+              <p className="mt-2">A fast first look for motels, plumbers, contractors, clinics, salons, and other local services. Send your website and I’ll identify the top 3 trust issues that keep customers from calling or booking.</p>
+              <div className="mt-4">
+                <Button href="/trust-risk-read#small-business-trust-surface" variant="ghost">
+                  Open Gmail and send your website
+                </Button>
+              </div>
+            </div>
+            <p className="mt-4 max-w-2xl text-xs leading-relaxed text-white/55">
+              Direct email: <span className="font-mono text-white/78">crisiscore.systems@proton.me</span>. Do not include sensitive personal data in the first note. If safer intake is needed, write &quot;secure channel needed.&quot;
+            </p>
           </div>
 
           <div className="grid gap-3">
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-              <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">What this catches</div>
-              <div className="mt-2 text-lg font-semibold">Over-collection, weak consent, and brittle flows</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">Where this fits</div>
+              <div className="mt-2 text-lg font-semibold">Before SOC 2 evidence, HIPAA hosting, or audit cleanup</div>
               <p className="mt-2 text-sm leading-relaxed text-white/72">
-                I focus on the few product choices most likely to create legal, reputational, or buyer-facing trouble.
+                Compliance automation proves controls exist. This work checks whether the product behavior is worth defending in the first place.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-4">
-                <div className="text-xs uppercase tracking-[0.18em] text-white/45">What you get back</div>
-                <p className="mt-2 text-sm leading-relaxed text-white/74">A short list of issues, fixes, and next moves. Written readout, not a slide deck.</p>
+                <div className="text-xs uppercase tracking-[0.18em] text-white/45">What this catches</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/74">Over-collection, weak consent, brittle recovery, and risky defaults buyers, users, auditors, or regulators will question first.</p>
               </div>
               <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-4">
-                <div className="text-xs uppercase tracking-[0.18em] text-white/45">Why teams use this</div>
-                <p className="mt-2 text-sm leading-relaxed text-white/74">To avoid expensive cleanup after launch and narrow the risk surface before buyers inspect it.</p>
+                <div className="text-xs uppercase tracking-[0.18em] text-white/45">What you get back</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/74">A short list of issues, fixes, and next moves. Written readout, not a slide deck and not a generic compliance checklist.</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">Need trust review for your product</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/74">
+              Start with the dedicated offer page if you need to know what gets reviewed, what comes back, and how to request the work.
+            </p>
+            <div className="mt-4">
+              <Button href="/trust-hardening-review" variant="ghost">
+                Open trust hardening review
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.03)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">Read the Protective Computing doctrine</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/74">
+              Use the broader route if you want the explanatory layer, product ecosystem, and doctrine behind the service work.
+            </p>
+            <div className="mt-4">
+              <Button href="/start-here" variant="ghost">
+                Open start here
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[color:var(--line)] bg-[rgba(212,162,97,0.08)] p-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-white/45">View proof artifacts and case studies</div>
+            <p className="mt-3 text-sm leading-relaxed text-white/74">
+              Inspect the evidence path first if you need proof before you care about the pitch.
+            </p>
+            <div className="mt-4">
+              <Button href="/proof" variant="ghost">
+                Open proof path
+              </Button>
             </div>
           </div>
         </div>
 
         <FitCheckCta
           className="mt-8"
-          title="Start with the smallest useful brief: URL, launch window, and one concrete concern."
-          description="I reply with the fastest sensible entry point, the top areas to inspect first, and whether the 48-hour teardown is enough."
+          title="Send a product URL. Get the first 3 defensibility gaps."
+          description="Send the app URL, launch window, and biggest concern. I reply with the first trust failures I would expect buyers to question, the fastest sensible entry point, and whether the 48-hour teardown is enough."
+          splitStageAndConcern
+          checklistItems={[
+            "Send app URL, launch stage, and biggest concern.",
+            "Expect the first 3 defensibility gaps and the recommended next step.",
+            "Use this before buying a larger review path.",
+          ]}
         />
 
-        <div className="mt-6 text-sm text-white/65">
-          Founder of CrisisCore Systems. I review fragile software systems for trust, privacy, and structural risk.
+        <div className="mt-6 text-sm leading-relaxed text-white/65">
+          I&apos;m the founder of CrisisCore Systems. I review fragile software systems for trust, privacy, and structural risk, with a focus on how real users experience consent, recovery, collection defaults, and boundary failures under launch pressure.
+          <br />
+          <br />
+          The same method used in client work is visible in public: PainTracker (a minimization-first production app), ProofVault (release-bound trust evidence), and the Overton Framework canon.
         </div>
       </Panel>
 
@@ -83,6 +140,11 @@ export default function HomePage() {
               <li>• Recommendation: stop here, full review, or fix sprint</li>
               <li>• Short written readout</li>
             </ul>
+            <div className="mt-4">
+              <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
+                View sample teardown
+              </Button>
+            </div>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when you need signal quickly and do not want to start with a full engagement.
             </p>
@@ -125,7 +187,43 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5">
-          <Button href="/contact">Price the fastest useful start</Button>
+          <Button href="/trust-risk-read">Price the fastest useful start</Button>
+        </div>
+      </Section>
+
+      <Section id="fit-layer" title="Where CrisisCore Fits" kicker="Category boundary">
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+          <Panel className="p-7 sm:p-8">
+            <div className="cc-kicker">Earlier than most trust vendors</div>
+            <h3 className="mt-2 text-xl font-semibold">This is the pre-audit product risk layer.</h3>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-white/72">
+              <p>
+                CrisisCore is not a compliance automation platform, law firm, or pentest replacement.
+              </p>
+              <p>
+                It sits earlier: before SOC 2 evidence collection, before HIPAA hosting decisions, before enterprise questionnaires, and before risky defaults harden into expensive architecture.
+              </p>
+              <p>
+                I review the product itself: what it collects, what it assumes, what it stores, what it shares, what breaks under pressure, and what a skeptical buyer will question first.
+              </p>
+            </div>
+          </Panel>
+
+          <Panel className="p-7 sm:p-8">
+            <div className="text-sm font-semibold">Use CrisisCore when</div>
+            <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <li>• The product works, but the trust model feels wrong</li>
+              <li>• You are unsure whether collection, consent, export, deletion, or recovery flows are defensible</li>
+              <li>• You need to know whether to fix the product before buying compliance machinery</li>
+              <li>• You want product behavior reviewed, not just paperwork</li>
+            </ul>
+            <div className="mt-6 rounded-2xl border border-[rgba(212,162,97,0.28)] bg-[rgba(212,162,97,0.08)] p-4 text-sm leading-relaxed text-white/76">
+              Not sure if you need compliance automation, a lawyer, a pentest, or a product trust review? Send the URL, launch stage, and one concern. I&apos;ll tell you where the risk actually points.
+            </div>
+            <div className="mt-6">
+              <Button href="/trust-hardening-review">Request a Trust Hardening Review</Button>
+            </div>
+          </Panel>
         </div>
       </Section>
 
@@ -148,7 +246,7 @@ export default function HomePage() {
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-white/45">ProofVault result</div>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
-                  Security claims were narrowed to what the release process could actually prove, making the product easier to defend to skeptical buyers.
+                  Internal R&amp;D trust case showing how security claims were narrowed to what the release process could actually prove, then used to strengthen external client-facing review method.
                 </p>
               </div>
             </div>
@@ -161,7 +259,7 @@ export default function HomePage() {
             <div className="mt-6 grid gap-2">
               <Button href="/case-study/pain-tracker">Open PainTracker case study</Button>
               <Button href="/proof" variant="ghost" className="justify-center">
-                Inspect proof path
+                See proof surface
               </Button>
             </div>
           </Panel>
@@ -171,12 +269,12 @@ export default function HomePage() {
       <Section id="fit" title="Who This Fits" kicker="Sharp qualification">
         <div className="grid gap-4 md:grid-cols-2">
           <Panel className="p-7 sm:p-8">
-            <div className="text-sm font-semibold">Good fit</div>
+            <div className="text-sm font-semibold">Who buys this</div>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
-              <li>• Post-MVP products with live users or a near-term launch</li>
-              <li>• Sensitive personal, legal, health, or operator data</li>
-              <li>• Founders who want concrete fixes instead of vague reassurance</li>
-              <li>• Teams willing to reduce collection and tighten boundaries</li>
+              <li>• Health app founders before launch or partner review</li>
+              <li>• AI tools handling sensitive prompts, outputs, or logs</li>
+              <li>• Legal-tech products facing buyer or procurement scrutiny</li>
+              <li>• Wellness apps collecting intimate behavioral data</li>
             </ul>
           </Panel>
 
@@ -220,17 +318,16 @@ export default function HomePage() {
         <Panel className="p-8 sm:p-10">
           <div className="text-xs uppercase tracking-[0.2em] text-white/45">Get started</div>
           <h2 className="mt-2 text-2xl font-semibold">
-            Send the link, launch stage, and one concern.
+            Get your 3-point risk read.
           </h2>
           <p className="mt-3 text-sm text-white/70">
-            I&apos;ll tell you whether the 48-hour teardown, a full review, or no engagement makes sense.
+            I&apos;ll tell you whether the 48-hour teardown, a full review, or another path makes sense.
           </p>
           <div className="mt-6">
-            <Button href="/contact">Send the brief</Button>
+            <Button href="/trust-risk-read">Send URL for first 3 gaps</Button>
           </div>
         </Panel>
       </div>
     </div>
   );
 }
-
