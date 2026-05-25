@@ -3,24 +3,32 @@
 :root {
   color-scheme: dark;
 
-  --acc: #d4a261;
-  --acc2: #78a7b5;
+  /* Primary accents */
+  --acc: #d4a261; /* warm accent */
+  --acc2: #78a7b5; /* cool accent */
   --acc-soft: rgba(120, 167, 181, 0.18);
   --acc-line: rgba(120, 167, 181, 0.32);
   --acc-hard: rgba(212, 162, 97, 0.62);
 
+  /* Accessible tokens (high contrast variants) */
   --bg: #0c1218;
-  --panel: rgba(18, 26, 36, 0.86);
-  --panel-strong: rgba(24, 34, 46, 0.94);
-  --text: rgba(244, 247, 251, 0.96);
+  --panel: rgba(18, 26, 36, 0.92);
+  --panel-strong: rgba(10, 14, 18, 1);
+  --text: #f6fafc; /* high contrast body text */
+  --text-weak: rgba(208, 217, 228, 0.72);
   --muted: rgba(208, 217, 228, 0.78);
   --line: rgba(145, 168, 191, 0.18);
+
+  /* Contrast helpers for AAAA scenarios */
+  --acc-contrast: #f5e6c8; /* accent tuned for contrast when needed */
+  --focus-ring: rgba(212,162,97,0.94);
 }
 
 html, body { height: 100%; }
 
 html {
-  font-size: 16px;
+  /* Responsive base type: scales gently between devices */
+  font-size: clamp(15px, 1.15vw + 0.2rem, 18px);
 }
 
 body {
@@ -35,6 +43,37 @@ body {
     var(--bg);
   color: var(--text);
   letter-spacing: -0.005em;
+}
+
+/* Skip link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-to-content:focus,
+.skip-to-content:active {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--panel-strong);
+  color: var(--text);
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+/* Utility: visually hidden */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
 }
 
 .site-noise::before{
@@ -53,9 +92,14 @@ a { color: inherit; text-decoration: none; }
 a:hover { color: var(--acc); }
 
 :focus-visible {
-  outline: 2px solid var(--acc-hard);
-  outline-offset: 3px;
-  border-radius: 12px;
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
 
 .prose {
