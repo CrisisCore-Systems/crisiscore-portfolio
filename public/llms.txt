@@ -78,5 +78,8 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 [Trust Risk Read](https://crisiscore-systems.ca/trust-risk-read)
 > Intake guidance for founders seeking a quick fit check, recommended package, and next step.
 
+[Small Business Website Trust Cleanup](https://crisiscore-systems.ca/small-business-trust-cleanup)
+> Fast first look for local service websites where booking clarity, contact reassurance, and credibility cleanup affect customer calls or bookings.
+
 [Sitemap](https://crisiscore-systems.ca/site-map)
 > Human-readable route map for core pages, buyer-intent service pages, dossiers, writing, and artifacts.

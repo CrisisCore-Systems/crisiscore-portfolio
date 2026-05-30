@@ -8,6 +8,7 @@ const routes = [
   "/services",
   "/writing",
   "/start-here",
+  "/small-business-trust-cleanup",
   "/trust-hardening-review",
   "/trust-risk-read",
   "/privacy",
@@ -22,10 +23,11 @@ const isLocalBaseUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(base
 
 const homepageCtas = [
   { name: "Get a 3-point risk read", href: "/trust-risk-read" },
+  { name: "Open small business cleanup", href: "/small-business-trust-cleanup" },
   { name: "View services", href: "/services" },
   { name: "Read method", href: "/writing" },
   { name: "See proof", href: "/proof" },
-  { name: "View sample teardown", href: "/artifacts/security-and-audits/sample-48-hour-teardown" },
+  { name: "View sample brief", href: "/artifacts/security-and-audits/sample-48-hour-teardown" },
   { name: "Open PainTracker case study", href: "/case-study/pain-tracker" },
 ] as const;
 
@@ -134,7 +136,7 @@ test("Footer version data matches /version.json on core routes", async ({ page, 
   expect(expectedBuild).toBeTruthy();
   expect(versionPayload.matchesFooterBuild).toBe(true);
 
-  for (const route of ["/", "/services", "/proof", "/start-here", "/trust-hardening-review", "/trust-risk-read"] as const) {
+  for (const route of ["/", "/services", "/proof", "/start-here", "/small-business-trust-cleanup", "/trust-hardening-review", "/trust-risk-read"] as const) {
     await page.goto(route);
     await expect(page.locator("footer")).toHaveAttribute("data-build", expectedBuild);
     await expect(page.getByRole("link", { name: "Version" }).first()).toHaveAttribute("href", "/version.json");

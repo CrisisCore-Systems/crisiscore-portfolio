@@ -73,6 +73,9 @@ export default function TrustRiskReadPage() {
           <p className="text-base font-semibold text-white">Send me your website and I’ll identify the top 3 public trust issues.</p>
           <div className="mt-4">
             <Button href={gmailHref}>Open in Gmail</Button>
+            <Button href="/small-business-trust-cleanup" variant="ghost" className="ml-3">
+              Open cleanup page
+            </Button>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
             Email-first, fast first look. Send one website URL and one sentence about what you want to fix, and I’ll reply with the first public trust gaps and the simplest next move.

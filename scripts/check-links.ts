@@ -217,6 +217,7 @@ function knownInternalPaths() {
     "/services",
     "/site-map",
     "/sitemap.xml",
+    "/small-business-trust-cleanup",
     "/start-here",
     "/trust-hardening-review",
     "/trust-risk-read",

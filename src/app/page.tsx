@@ -50,8 +50,8 @@ export default function HomePage() {
               <p className="font-semibold text-white">Small business website trust cleanup</p>
               <p className="mt-2">A fast first look for motels, plumbers, contractors, clinics, salons, and other local services. Send your website and I’ll identify the top 3 trust issues that keep customers from calling or booking.</p>
               <div className="mt-4">
-                <Button href="/trust-risk-read#small-business-trust-surface" variant="ghost">
-                  Open Gmail and send your website
+                <Button href="/small-business-trust-cleanup" variant="ghost">
+                  Open small business cleanup
                 </Button>
               </div>
               <div className="mt-4">
