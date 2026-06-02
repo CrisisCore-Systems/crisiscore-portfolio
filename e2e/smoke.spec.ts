@@ -17,6 +17,12 @@ const routes = [
   "/services/pre-launch-privacy-audit",
   "/services/data-minimization-review-for-apps",
   "/services/local-first-health-app-architecture",
+  "/security-tools",
+  "/security-tools/trust-surface-audit",
+  "/security-tools/privacy-risk-review",
+  "/security-tools/failure-mode-analysis",
+  "/security-tools/protective-computing-review",
+  "/security-tools/local-first-security-audit",
 ] as const;
 const baseUrl = process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:3000";
 const isLocalBaseUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(baseUrl);

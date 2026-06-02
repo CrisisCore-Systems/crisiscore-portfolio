@@ -151,13 +151,15 @@ export default function ServicesPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/trust-risk-read">Get a 3-point risk read</Button>
+              <Button href="/security-tools" variant="ghost">
+                Browse security tools
+              </Button>
               <Button href="/proof" variant="ghost">
                 See proof
               </Button>
             </div>
-          </div>
-
-          <div className="grid gap-3">
+        </div>
+        <div className="grid gap-3">
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What these packages are for</div>
               <p className="mt-2 text-sm leading-relaxed text-white/75">Need to know whether the product itself is defensible before you buy more machinery? Start with the 48-hour teardown. Need the full picture? Choose the full review. Need help shipping corrections? Move into a fix sprint.</p>
