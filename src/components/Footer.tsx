@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SITE } from "@/app/lib/site";
 import { getBuildCommitShort } from "@/app/lib/build";
 
@@ -15,28 +16,36 @@ export function Footer() {
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4">
-            <a className="hover:text-white" href="/trust-hardening-review">
-              Trust Review
-            </a>
-            <a className="hover:text-white" href="/about">
-              About
-            </a>
-            <a className="hover:text-white" href="/case-study">
+            <Link className="hover:text-white" href="/services">
+              Services
+            </Link>
+            <Link className="hover:text-white" href="/case-study">
               Case Studies
-            </a>
-            <a className="hover:text-white" href="/proof">
+            </Link>
+            <Link className="hover:text-white" href="/proof">
               Proof
-            </a>
+            </Link>
+            <Link className="hover:text-white" href="/writing">
+              Writing
+            </Link>
+            <Link className="hover:text-white" href="/about">
+              About
+            </Link>
+            <Link className="hover:text-white" href="/trust-risk-read">
+              Contact
+            </Link>
           </div>
         </div>
 
         <div className="mt-5 rounded-3xl border border-[color:var(--line)] bg-[rgba(120,167,181,0.10)] px-5 py-4 shadow-[0_16px_38px_rgba(0,0,0,0.18)]">
           <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Primary action</div>
-          <div className="mt-2 text-sm text-white/78">Send the app URL, launch stage, and biggest concern. Get the first 3 defensibility gaps.</div>
+          <div className="mt-2 text-sm text-white/78">
+            Free fit check. Not an audit. Send the product URL, launch stage, and one concern. I&apos;ll reply with whether this looks like a 48-hour teardown, full review, fix sprint, or no-fit.
+          </div>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            <a className="rounded-full border border-[rgba(212,162,97,0.42)] bg-[rgba(212,162,97,0.22)] px-4 py-2 text-white transition hover:text-white" href="/trust-risk-read">
-              Send URL for first 3 gaps
-            </a>
+            <Link className="rounded-full border border-[rgba(212,162,97,0.42)] bg-[rgba(212,162,97,0.22)] px-4 py-2 text-white transition hover:text-white" href="/trust-risk-read">
+              Get a 3-point risk read
+            </Link>
           </div>
         </div>
 
@@ -54,18 +63,18 @@ export function Footer() {
           <a className="hover:text-white/70" href={SITE.products.painTracker} target="_blank" rel="noreferrer">
             PainTracker
           </a>
-          <a className="hover:text-white/70" href="/site-map">
+          <Link className="hover:text-white/70" href="/site-map">
             Site map
-          </a>
-          <a className="hover:text-white/70" href="/privacy">
+          </Link>
+          <Link className="hover:text-white/70" href="/privacy">
             Privacy
-          </a>
-          <a className="hover:text-white/70" href="/sitemap.xml">
+          </Link>
+          <Link className="hover:text-white/70" href="/sitemap.xml">
             XML sitemap
-          </a>
-          <a className="hover:text-white/70" href="/version.json">
+          </Link>
+          <Link className="hover:text-white/70" href="/version.json">
             Version
-          </a>
+          </Link>
           <span>Canonical: crisiscore-systems.ca</span>
         </div>
 

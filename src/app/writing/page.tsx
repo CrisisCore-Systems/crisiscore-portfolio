@@ -22,6 +22,7 @@ const WRITING_CLUSTERS = [
     description:
       "Health, wellness, and mental-health-focused review paths for teams trying to narrow trust boundaries before launch or wider exposure.",
     slugs: [
+      "privacy-first-health-app-architecture",
       "health-app-privacy-review-before-launch",
       "mental-health-app-privacy-review",
       "pre-launch-privacy-review-checklist-health-wellness-apps",
@@ -104,7 +105,7 @@ export default function WritingIndexPage() {
           Case study
         </Button>
         <Button href="/trust-risk-read" variant="ghost">
-          Get a 3-point trust risk read
+          Get a 3-point risk read
         </Button>
       </div>
 

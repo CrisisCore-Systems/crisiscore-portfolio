@@ -34,7 +34,7 @@ export default function StartHerePage() {
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point trust risk read</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
                 Inspect the proof path
               </Button>
@@ -67,7 +67,7 @@ export default function StartHerePage() {
 
         <FitCheckCta
           className="mt-8"
-          title="Get a 3-point trust risk read."
+          title="Get a 3-point risk read."
           description="Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see and the right next lane."
           splitStageAndConcern
           checklistItems={[
@@ -110,7 +110,7 @@ export default function StartHerePage() {
               Start with the trust risk read if the product works but collection, consent, recovery, export, deletion, or failure behavior may not be defensible.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point trust risk read</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
             </div>
           </Panel>
 

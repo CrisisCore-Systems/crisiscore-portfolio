@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { getRepo } from "@/app/lib/github";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import { Panel } from "@/components/ui/Panel";
 import { loadDossier, loadProject } from "@/content/load";
 
 export const metadata = {
-  title: "PainTracker Case Study",
-  description: "Flagship case study: how PainTracker reduced dangerous data collection with minimization-first redesign, local-first architecture, and explicit proof surfaces.",
+  title: {
+    absolute: "PainTracker Case Study | Local First Health App Architecture",
+  },
+  description:
+    "How PainTracker uses local-first health app architecture, offline logging, local storage, explicit export, and minimization-first design for private chronic pain tracking.",
 };
 
 export const revalidate = 21600;
@@ -48,9 +52,16 @@ export default async function PainTrackerCaseStudyPage() {
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           {dossier?.tagline ?? project.description}
         </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/76 sm:text-base">
+          PainTracker is a privacy-first chronic pain tracking app built by CrisisCore Systems. It works offline, stores data locally, and gives users exportable records without forcing health data into a cloud account.
+        </p>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
           This is the clearest public example of the kind of product review, privacy correction, and boundary work sold through CrisisCore Systems.
         </p>
+        <div className="mt-6 rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/03_boundary_shift.png" alt="Boundary shift diagram comparing cloud-assumption data flow against local-first control with explicit export and consent boundaries." width={1200} height={700} sizes="(min-width:1024px) 50vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Boundary shift — local-first vs cloud-assumption.</div>
+        </div>
       </div>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -115,6 +126,23 @@ export default async function PainTrackerCaseStudyPage() {
           <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
           <Button href="/services/data-minimization-review-for-apps" variant="ghost">Data Minimization Review for Apps</Button>
           <Button href="/services/local-first-health-app-architecture" variant="ghost">Local-First Health App Architecture Review</Button>
+        </div>
+      </Panel>
+
+      <Panel className="mt-4 p-7 sm:p-8">
+        <div className="text-sm font-semibold">Related evidence</div>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          Use these surfaces together: proof first if you need trust evidence, the project dossier if you need implementation detail, the Overton Framework if you need method, and the service page if you are mapping this to a buyer problem.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Button href="/projects/pain-tracker" variant="ghost">PainTracker reference implementation</Button>
+          <Button href="/proof" variant="ghost">CrisisCore proof hub</Button>
+          <Button href="/writing/the-overton-framework" variant="ghost">Overton Framework</Button>
+          <Button href="/writing/protective-computing-doctrine" variant="ghost">Protective Computing canon</Button>
+          <Button href="/services/privacy-first-health-app-architecture" variant="ghost">Privacy-first health app architecture</Button>
+          <Button href="https://www.paintracker.ca/resources/daily-pain-tracker-printable" variant="ghost">
+            Daily pain tracker printable
+          </Button>
         </div>
       </Panel>
 
@@ -241,7 +269,7 @@ export default async function PainTrackerCaseStudyPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/services">See services</Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -317,7 +345,7 @@ export default async function PainTrackerCaseStudyPage() {
                 See matching services
               </Button>
               <Button href="/trust-risk-read" className="w-full justify-center">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>

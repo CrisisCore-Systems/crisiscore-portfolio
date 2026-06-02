@@ -15,10 +15,20 @@ const DEFAULT_CTA = {
   proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
   proofLabel: "Inspect a redacted review artifact",
   contactHref: "/trust-risk-read",
-  contactLabel: "Get a 3-point trust risk read",
+  contactLabel: "Get a 3-point risk read",
 };
 
 const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
+  "privacy-first-health-app-architecture": {
+    prompt:
+      "If your health app says privacy-first, the useful next move is to prove that claim through storage, sync, export, deletion, and recovery decisions.",
+    serviceHref: "/services/privacy-first-health-app-architecture",
+    serviceLabel: "See the privacy-first health architecture path",
+    proofHref: "/case-study/pain-tracker",
+    proofLabel: "Inspect the PainTracker case study",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point risk read",
+  },
   "privacy-first-pain-tracking": {
     prompt:
       "This is the health-app version of the problem: too much collection, too much centralization, and too little user control in the default path.",
@@ -27,7 +37,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "paintracker-architecture": {
     prompt:
@@ -37,7 +47,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/pain-tracker/architecture",
     proofLabel: "Open the PainTracker architecture artifact",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "proofvault-trust-case-v1-0-1": {
     prompt:
@@ -47,7 +57,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/proofvault",
     proofLabel: "Inspect the ProofVault trust case",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "reduce-data-collection-risk-before-launch": {
     prompt:
@@ -57,7 +67,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted review artifact",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "pre-launch-privacy-review-checklist-health-wellness-apps": {
     prompt:
@@ -67,7 +77,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/case-study/pain-tracker",
     proofLabel: "Inspect the PainTracker case study",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "what-founders-miss-before-launching-sensitive-data-products": {
     prompt:
@@ -77,7 +87,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/artifacts/security-and-audits/redacted-threat-model-excerpt",
     proofLabel: "Inspect a redacted trust artifact",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
   "data-minimization-checklist-sensitive-apps": {
     prompt:
@@ -87,7 +97,7 @@ const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
     proofHref: "/writing/reduce-data-collection-risk-before-launch",
     proofLabel: "Read the collection-risk article",
     contactHref: "/trust-risk-read",
-    contactLabel: "Get a 3-point trust risk read",
+    contactLabel: "Get a 3-point risk read",
   },
 };
 
@@ -107,14 +117,18 @@ export async function generateMetadata({ params }: { params: ParamsLike }) {
     const slug = await getSlug(params);
     const p = loadWritingPost(slug);
     const socialImageBySlug: Record<string, string> = {
+      "privacy-first-health-app-architecture": "/projects/pain-tracker/architecture.svg",
       "proofvault-trust-case-v1-0-1": "/assets/proof-cards/release_bound_artifact_hash_wide_16x9.svg",
       "protective-computing-doctrine": "/assets/diagram_plates/diagram_04_local_authority_vs_cloud_dependence.svg",
       "overton-doi": "/assets/diagram_plates/diagram_02_protective_computing_lifecycle.svg",
     };
+    const titleBySlug: Record<string, string> = {
+      "the-overton-framework": "The Overton Framework | Protective Computing for AI Assisted Software Design",
+    };
     const socialImage = socialImageBySlug[slug];
 
     return {
-      title: p.frontmatter.title,
+      title: titleBySlug[slug] ? { absolute: titleBySlug[slug] } : p.frontmatter.title,
       description: p.frontmatter.description,
       openGraph: socialImage ? { images: [{ url: absoluteUrl(socialImage) }] } : undefined,
       twitter: socialImage ? { images: [absoluteUrl(socialImage)] } : undefined,

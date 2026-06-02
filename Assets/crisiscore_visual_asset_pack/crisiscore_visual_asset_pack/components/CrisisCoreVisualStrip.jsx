@@ -1,0 +1,31 @@
+import React from "react";
+
+const assets = [
+  ["Trust Failure Radar", "/assets/crisiscore/trust-failure-radar.png"],
+  ["3 Point Risk Read", "/assets/crisiscore/three-point-risk-read.png"],
+  ["Small Business Trust Cleanup", "/assets/crisiscore/small-business-trust-cleanup.png"],
+  ["Buyer Proof Ladder", "/assets/crisiscore/buyer-proof-ladder.png"],
+];
+
+export default function CrisisCoreVisualStrip() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 py-12">
+      <div className="mb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-300">CrisisCore Systems</p>
+        <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-50">Trust failures made visible.</h2>
+        <p className="mt-3 max-w-2xl text-slate-400">
+          Visual proof surfaces for product trust review, small business cleanup, and defensibility packets.
+        </p>
+      </div>
+      <div className="grid gap-5 md:grid-cols-2">
+        {assets.map(([title]) => (
+          <figure key={title} className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-xl">
+            <div className="h-52 w-full flex items-center justify-center">
+              <div className="text-sm font-medium text-slate-300">{title}</div>
+            </div>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}

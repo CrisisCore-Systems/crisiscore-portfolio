@@ -1,9 +1,19 @@
+import type { Metadata } from "next";
 import { Panel } from "@/components/ui/Panel";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
 import SampleTeardownPreview from "@/components/SampleTeardownPreview";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "CrisisCore Systems | Protective Computing for Privacy First Health Software",
+  },
+  description:
+    "Protective Computing, privacy-first health app architecture, and trust hardening for teams building sensitive-data software before launch or buyer review.",
+};
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -40,8 +50,8 @@ export default function HomePage() {
               <p className="font-semibold text-white">Small business website trust cleanup</p>
               <p className="mt-2">A fast first look for motels, plumbers, contractors, clinics, salons, and other local services. Send your website and I’ll identify the top 3 trust issues that keep customers from calling or booking.</p>
               <div className="mt-4">
-                <Button href="/trust-risk-read#small-business-trust-surface" variant="ghost">
-                  Open Gmail and send your website
+                <Button href="/small-business-trust-cleanup" variant="ghost">
+                  Open small business cleanup
                 </Button>
               </div>
               <div className="mt-4">
@@ -49,11 +59,23 @@ export default function HomePage() {
               </div>
             </div>
             <p className="mt-4 max-w-2xl text-xs leading-relaxed text-white/55">
-              Direct email: <span className="font-mono text-white/78">crisiscore.systems@proton.me</span>. Do not include sensitive personal data in the first note. If safer intake is needed, write &quot;secure channel needed.&quot;
+              Free fit check, not an audit. Direct email: <span className="font-mono text-white/78">crisiscore.systems@proton.me</span>. Do not include sensitive personal data in the first note. If safer intake is needed, write &quot;secure channel needed.&quot;
             </p>
           </div>
 
           <div className="grid gap-3">
+            <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.04)]">
+              <Image
+                src="/assets/crisiscore/01_trust_surface_radar.png"
+                alt="Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity."
+                width={1800}
+                height={1100}
+                sizes="(min-width:1024px) 45vw, 100vw"
+                className="w-full h-auto block"
+                priority
+              />
+              <div className="p-4 text-sm text-white/75">Trust surface radar — get a 3-point trust risk read.</div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">Where this fits</div>
               <div className="mt-2 text-lg font-semibold">Before SOC 2 evidence, HIPAA hosting, or audit cleanup</div>
@@ -81,8 +103,8 @@ export default function HomePage() {
               Start with the dedicated offer page if you need to know what gets reviewed, what comes back, and how to request the work.
             </p>
             <div className="mt-4">
-              <Button href="/trust-hardening-review" variant="ghost">
-                Open trust hardening review
+              <Button href="/services" variant="ghost">
+                View services
               </Button>
             </div>
           </div>
@@ -92,8 +114,8 @@ export default function HomePage() {
               Use the broader route if you want the explanatory layer, product ecosystem, and doctrine behind the service work.
             </p>
             <div className="mt-4">
-              <Button href="/start-here" variant="ghost">
-                Open start here
+              <Button href="/writing" variant="ghost">
+                Read method
               </Button>
             </div>
           </div>
@@ -104,7 +126,7 @@ export default function HomePage() {
             </p>
             <div className="mt-4">
               <Button href="/proof" variant="ghost">
-                Open proof path
+                See proof
               </Button>
             </div>
           </div>
@@ -112,12 +134,12 @@ export default function HomePage() {
 
         <FitCheckCta
           className="mt-8"
-          title="Send a product URL. Get the first 3 defensibility gaps."
-          description="Send the app URL, launch window, and biggest concern. I reply with the first trust failures I would expect buyers to question, the fastest sensible entry point, and whether the 48-hour teardown is enough."
+          title="Get a 3-point risk read."
+          description="Free fit check, not an audit. Send the product URL, launch stage, and one concern. I&apos;ll reply with whether this looks like a 48-hour teardown, full review, fix sprint, or no-fit."
           splitStageAndConcern
           checklistItems={[
-            "Send app URL, launch stage, and biggest concern.",
-            "Expect the first 3 defensibility gaps and the recommended next step.",
+            "Send product URL, launch stage, and one concern.",
+            "Get the first 3 defensibility gaps and the recommended next step.",
             "Use this before buying a larger review path.",
           ]}
         />
@@ -152,6 +174,9 @@ export default function HomePage() {
             <div className="mt-4">
               <SampleTeardownPreview />
             </div>
+            <p className="mt-3 text-sm leading-relaxed text-white/64">
+              The brief is a delivery artifact, not informal notes — ready to share with buyers or internal stakeholders.
+            </p>
             <p className="mt-4 text-sm font-medium text-white">
               Use this when you need signal quickly and a shareable artifact to move the conversation forward.
             </p>
@@ -194,7 +219,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5">
-          <Button href="/trust-risk-read">Price the fastest useful start</Button>
+          <Button href="/trust-risk-read">Get a 3-point risk read</Button>
         </div>
       </Section>
 
@@ -228,7 +253,7 @@ export default function HomePage() {
               Not sure if you need compliance automation, a lawyer, a pentest, or a product trust review? Send the URL, launch stage, and one concern. I&apos;ll tell you where the risk actually points.
             </div>
             <div className="mt-6">
-              <Button href="/trust-hardening-review">Request a Trust Hardening Review</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
             </div>
           </Panel>
         </div>
@@ -266,8 +291,29 @@ export default function HomePage() {
             <div className="mt-6 grid gap-2">
               <Button href="/case-study/pain-tracker">Open PainTracker case study</Button>
               <Button href="/proof" variant="ghost" className="justify-center">
-                See proof surface
+                See proof
               </Button>
+            </div>
+
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <div className="text-sm font-semibold">Related evidence</div>
+              <div className="mt-3 grid gap-2">
+                <Button href="/projects/pain-tracker" variant="ghost" className="justify-center">
+                  PainTracker reference implementation
+                </Button>
+                <Button href="/case-study/proofvault" variant="ghost" className="justify-center">
+                  ProofVault trust case
+                </Button>
+                <Button href="/writing/the-overton-framework" variant="ghost" className="justify-center">
+                  Overton Framework
+                </Button>
+                <Button href="/writing/protective-computing-doctrine" variant="ghost" className="justify-center">
+                  Protective Computing canon
+                </Button>
+                <Button href="/writing" variant="ghost" className="justify-center">
+                  Public writing archive
+                </Button>
+              </div>
             </div>
           </Panel>
         </div>
@@ -328,10 +374,10 @@ export default function HomePage() {
             Get your 3-point risk read.
           </h2>
           <p className="mt-3 text-sm text-white/70">
-            I&apos;ll tell you whether the 48-hour teardown, a full review, or another path makes sense.
+            Free fit check. Not an audit. I&apos;ll tell you whether the 48-hour teardown, a full review, a fix sprint, or no engagement makes sense.
           </p>
           <div className="mt-6">
-            <Button href="/trust-risk-read">Send URL for first 3 gaps</Button>
+            <Button href="/trust-risk-read">Get a 3-point risk read</Button>
           </div>
         </Panel>
       </div>

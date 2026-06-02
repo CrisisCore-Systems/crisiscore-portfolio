@@ -37,13 +37,13 @@ export function FitCheckCta(props: Readonly<FitCheckCtaProps>) {
       return "CrisisCore Systems fit check";
     }
 
-    return `CrisisCore Systems fit check — ${productUrl.trim()}`;
+    return `CrisisCore Systems fit check - ${productUrl.trim()}`;
   }, [productUrl]);
 
   const emailBody = useMemo(
     () =>
       [
-        "Quick fit check",
+        "Free fit check (not an audit)",
         "",
         `Product URL: ${productUrl.trim() || ""}`,
         splitStageAndConcern
@@ -82,14 +82,14 @@ export function FitCheckCta(props: Readonly<FitCheckCtaProps>) {
 
   const checklist =
     checklistItems ?? [
-      "Send app URL, launch stage, and biggest concern.",
-      "Use this when you need the first trust risks without starting a larger engagement.",
-      "Skip decks and long docs.",
+      "Free fit check, not an audit.",
+      "Send product URL, launch stage, and one concern.",
+      "I reply with whether a 48-hour teardown, full review, fix sprint, or no-fit makes sense.",
     ];
 
   return (
     <div className={cn("rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-6", className)}>
-      <div className="text-xs uppercase tracking-[0.2em] text-white/45">Quick fit check (60 seconds)</div>
+      <div className="text-xs uppercase tracking-[0.2em] text-white/45">Free fit check (not an audit)</div>
       <h3 className="mt-2 text-lg font-semibold text-white">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-white/70">{description}</p>
 
@@ -190,7 +190,7 @@ export function FitCheckCta(props: Readonly<FitCheckCtaProps>) {
       </form>
 
       <p className="mt-4 text-xs leading-relaxed text-white/55">
-        Usually answered within 1-3 business days with fit, first checks, and suggested package.
+        Usually answered within 1-3 business days. That first reply is fit guidance; paid 48-hour teardown delivery starts after scope is agreed.
       </p>
       {includeReplyEmail ? (
         <p className="mt-2 text-xs leading-relaxed text-white/50">

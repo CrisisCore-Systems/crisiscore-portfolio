@@ -54,8 +54,39 @@ const nextConfig: NextConfig = {
         headers: noStoreHeaders,
       },
       {
+        // Long-cache generated image assets (immutable filenames / fingerprints)
+        source: "/assets/crisiscore/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: securityHeaders,
+      },
+    ];
+  },
+  images: {
+    // Enable modern formats so Next/Image can optimize appropriately
+    formats: ["image/avif", "image/webp"],
+  },
+  async rewrites() {
+    return [
+      {
+        // If client accepts AVIF, rewrite png requests to .avif
+        source: "/assets/crisiscore/:path*.png",
+        has: [
+          { type: "header", key: "accept", value: "image/avif" },
+        ],
+        destination: "/assets/crisiscore/:path*.avif",
+      },
+      {
+        // If client accepts WebP, rewrite png requests to .webp
+        source: "/assets/crisiscore/:path*.png",
+        has: [
+          { type: "header", key: "accept", value: "image/webp" },
+        ],
+        destination: "/assets/crisiscore/:path*.webp",
       },
     ];
   },

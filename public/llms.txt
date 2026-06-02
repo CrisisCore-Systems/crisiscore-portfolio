@@ -15,6 +15,9 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 [Privacy Review for Health Apps](https://crisiscore-systems.ca/services/privacy-review-for-health-apps)
 > Buyer-intent page for founders who need a plain-English review of collection paths, risky defaults, trust boundaries, and minimization opportunities in health or health-adjacent apps.
 
+[Privacy-First Health App Architecture](https://crisiscore-systems.ca/services/privacy-first-health-app-architecture)
+> Buyer-intent page for teams that need local-first defaults, offline use, explicit export, and a defensible privacy architecture for health or symptom-tracking apps.
+
 [Pre-Launch Privacy Audit](https://crisiscore-systems.ca/services/pre-launch-privacy-audit)
 > Launch-focused privacy audit content for sensitive-data products that need ranked findings, boundary review, and a concrete pre-launch fix order.
 
@@ -58,6 +61,9 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 [Privacy-First Pain Tracking](https://crisiscore-systems.ca/writing/privacy-first-pain-tracking)
 > Writing on health-adjacent product design, privacy-first defaults, and trust-sensitive workflow architecture.
 
+[Privacy-First Health App Architecture](https://crisiscore-systems.ca/writing/privacy-first-health-app-architecture)
+> Article targeting the health app privacy architecture problem: local-first storage, offline use, explicit export, and buyer-defensible product boundaries.
+
 [PainTracker Architecture](https://crisiscore-systems.ca/writing/paintracker-architecture)
 > Technical walkthrough of local-first architecture decisions, explicit export, and degraded-condition support.
 
@@ -71,6 +77,9 @@ CrisisCore Systems specializes in pre-launch privacy teardown, trust hardening, 
 
 [Trust Risk Read](https://crisiscore-systems.ca/trust-risk-read)
 > Intake guidance for founders seeking a quick fit check, recommended package, and next step.
+
+[Small Business Website Trust Cleanup](https://crisiscore-systems.ca/small-business-trust-cleanup)
+> Fast first look for local service websites where booking clarity, contact reassurance, and credibility cleanup affect customer calls or bookings.
 
 [Sitemap](https://crisiscore-systems.ca/site-map)
 > Human-readable route map for core pages, buyer-intent service pages, dossiers, writing, and artifacts.

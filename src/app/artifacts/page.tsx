@@ -40,7 +40,7 @@ export default function ArtifactsIndexPage() {
           Open case study route
         </Button>
         <Button href="/trust-risk-read" variant="ghost">
-          Get a 3-point trust risk read
+          Get a 3-point risk read
         </Button>
       </div>
 

@@ -1,13 +1,11 @@
-import Link from "next/link";
-import { absoluteUrl, CAMPAIGN_LINKS, SITE } from "@/app/lib/site";
-import { AssetFigure } from "@/components/AssetFigure";
+import { absoluteUrl, SITE } from "@/app/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Panel } from "@/components/ui/Panel";
 
 export const metadata = {
   title: "About",
   description:
-    "About CrisisCore Systems: founder-led pre-compliance trust hardening for sensitive-data products.",
+    "About K Overton: founder-led systems design for people who cannot afford to be failed by software.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/founder-banners/about_mission_plate.svg") }],
   },
@@ -26,15 +24,72 @@ export default function AboutPage() {
         About
       </h1>
       <p className="mt-3 cc-lede">
-        Founder-led product review for teams handling health and other sensitive user data.
+        I build systems for people who cannot afford to be failed by systems.
       </p>
       <p className="mt-2 text-sm text-white/70">
-        Independent systems designer. Based in Vernon, BC.
+        Founder, CrisisCore Systems. Creator of PainTracker. Author of Protective Computing.
       </p>
 
-      <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/75 sm:text-base">
-        I work with founders and technical owners who need a clear read of the product itself before compliance tooling, legal review, or buyer pressure starts steering the conversation: architecture, defaults, privacy behavior, recovery paths, and operational risk.
-      </p>
+      <div className="mt-6 max-w-3xl space-y-6 text-sm leading-relaxed text-white/75 sm:text-base">
+        <p>
+          My work began in collapse, not comfort. Before CrisisCore Systems, before Protective Computing, before PainTracker, there was a simple problem: most software assumes the user is stable, resourced, regulated, housed, calm, and supported.
+        </p>
+        <p>
+          I was not.
+        </p>
+        <p>
+          I came from a trade background as a Red Seal HVAC/R technician, where failure was physical, immediate, and expensive. A bad installation did not become a vague user inconvenience. It became heat loss, pressure failure, safety risk, downtime, and real-world consequence.
+        </p>
+        <p>
+          That shaped how I see technology.
+        </p>
+        <p>
+          Software should not just function when everything goes right. It should protect people when everything goes wrong.
+        </p>
+        <p>
+          After years of injury, instability, legal pressure, housing collapse, chronic pain, and trying to rebuild under conditions most systems are not designed to understand, I started building tools from the failure edge inward. Not wellness apps for ideal users. Not productivity dashboards for people already in control. Tools for the moment where memory breaks, pressure spikes, trust collapses, and the user still needs something that does not betray them.
+        </p>
+        <p>
+          That became PainTracker.
+        </p>
+        <p>
+          PainTracker is a privacy-first, offline-capable chronic pain documentation tool designed to help people record symptoms, patterns, flares, medication effects, and reports without forcing their most vulnerable data into someone else’s cloud. It was built around a principle that now defines my work:
+        </p>
+        <p className="font-semibold text-white">
+          The user should remain the authority over their own data, especially when they are under pressure.
+        </p>
+        <p>
+          From there, I developed the broader framework I call Protective Computing.
+        </p>
+        <p>
+          Protective Computing is the discipline of designing software that fails safely. It focuses on local authority, reduced exposure, reversible states, clear degradation modes, and trust surfaces that do not collapse the moment a user is stressed, poor, injured, offline, locked out, or dealing with institutional power.
+        </p>
+        <p>
+          CrisisCore Systems is the studio built around that doctrine.
+        </p>
+        <p>
+          The work is part engineering, part research, part survival architecture. I build privacy-first tools, audit trust surfaces, document failure modes, and design systems that treat vulnerable users as real users, not edge cases.
+        </p>
+        <p>
+          I do not come from the clean side of technology. I come from the underside, where systems are tested by poverty, pain, bureaucracy, device loss, unstable housing, legal pressure, and the quiet violence of being told to “just use the app” when the app was never designed for your reality.
+        </p>
+        <p>
+          That is the origin.
+        </p>
+        <p>
+          Not a startup fantasy.
+          <br />
+          A field report.
+        </p>
+        <p>
+          My goal is simple: build tools that preserve agency when people are already close to losing it.
+        </p>
+        <p>
+          Because humane software is not software that looks kind.
+          <br />
+          It is software that does not abandon the user at the exact moment protection matters most.
+        </p>
+      </div>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-7">
@@ -59,7 +114,7 @@ export default function AboutPage() {
                 Case study
               </Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>
@@ -207,7 +262,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point trust risk read</Button>
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
               <Button href={mailto} variant="ghost">
                 {SITE.email}
               </Button>
@@ -245,7 +300,7 @@ export default function AboutPage() {
                 Case studies
               </Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </Panel>

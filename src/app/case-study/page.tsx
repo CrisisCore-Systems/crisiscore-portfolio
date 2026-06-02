@@ -34,7 +34,7 @@ export default function CaseStudyPage() {
                 Inspect proof materials
               </Button>
               <Button href="/trust-risk-read" variant="ghost">
-                Get a 3-point trust risk read
+                Get a 3-point risk read
               </Button>
             </div>
           </div>
