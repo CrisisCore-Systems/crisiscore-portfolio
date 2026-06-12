@@ -12,6 +12,14 @@ This site is the commercial and proof surface for a founder-led consulting pract
 - Protective Computing explains the doctrine behind the work.
 - GitHub verifies the artifacts and source record.
 
+## PainTracker deep links
+
+- [Download PainTracker](https://paintracker.ca/download)
+- [Privacy architecture](https://paintracker.ca/privacy-architecture)
+- [Tracking data policy](https://paintracker.ca/tracking-data-policy)
+- [How to track pain for doctors](https://paintracker.ca/resources/how-to-track-pain-for-doctors)
+- [What to include in a pain journal](https://paintracker.ca/resources/what-to-include-in-pain-journal)
+
 ## Core routes
 
 - `/start-here`: ecosystem router and primary commercial entry point.
