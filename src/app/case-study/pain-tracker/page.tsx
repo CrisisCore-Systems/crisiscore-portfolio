@@ -94,6 +94,12 @@ export default async function PainTrackerCaseStudyPage() {
         <Button href="/trust-risk-read" variant="ghost">
           Get a 3-point risk read
         </Button>
+        <Button href="https://paintracker.ca/privacy-architecture" variant="ghost">
+          Privacy architecture
+        </Button>
+        <Button href="https://paintracker.ca/tracking-data-policy" variant="ghost">
+          Tracking data policy
+        </Button>
       </div>
 
       <FitCheckCta
