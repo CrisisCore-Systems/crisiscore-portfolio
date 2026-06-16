@@ -111,6 +111,16 @@ export default function WritingIndexPage() {
 
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="order-2 lg:order-1 lg:col-span-7">
+          <Panel className="mb-6 p-5 sm:p-6">
+            <div className="text-sm font-semibold text-[rgba(212,162,97,0.95)]">Reading because you are close to launch?</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/75">
+              Skip the archive. Start with the 3-point trust risk read. Send your product URL, launch stage, and one concern — I&apos;ll tell you the top 3 trust risks I see and the smallest useful next step.
+            </p>
+            <div className="mt-4">
+              <Button href="/trust-risk-read" variant="ghost">Get a 3-point risk read</Button>
+            </div>
+          </Panel>
+
           <Panel className="p-7 sm:p-8">
             <div className="text-sm font-semibold">Writing clusters</div>
             <p className="mt-3 text-sm leading-relaxed text-white/70">

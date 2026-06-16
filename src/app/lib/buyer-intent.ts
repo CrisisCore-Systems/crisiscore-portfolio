@@ -656,6 +656,99 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     artifactHref: "/proof",
     artifactLabel: "Inspect proof and case studies first",
   },
+  {
+    slug: "crisiscore-defensibility-packet",
+    title: "CrisisCore Defensibility Packet",
+    description:
+      "A focused trust-surface review that checks whether your product claims, documentation, data boundaries, and public story can survive buyer, user, or regulator scrutiny before pressure arrives.",
+    summary:
+      "This is a structured review of whether your product can defend what it says about itself — across claims, data handling, AI boundaries, failure modes, and evidence gaps.",
+    faqs: [
+      {
+        question: "What is the Defensibility Packet?",
+        answer:
+          "It is a focused trust-surface review: a structured pass over your public claims, data boundaries, AI and automation risk, failure modes, and documentation gaps to find where your story is weaker than it looks.",
+      },
+      {
+        question: "Is this a penetration test or compliance audit?",
+        answer:
+          "No. It is not a penetration test, compliance theatre, or generic UX audit. It is a practical review of whether your product's claims and behavior line up before a customer, investor, reviewer, or user starts asking sharper questions.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A written report that may include a Trust Surface Map, Public Claims Audit, Data Boundary Review, Failure Mode Register, Evidence Gap Report, and a prioritized Fix Path with safer language where appropriate.",
+      },
+      {
+        question: "Who is this for?",
+        answer:
+          "Teams working on privacy-first apps, health-adjacent tools, legal-tech, AI workflows, local-first software, or any product preparing for launch, funding, pilots, partnerships, or public review.",
+      },
+    ],
+    useThisWhen: [
+      "Your product claims (secure, private-first, encrypted, offline) may not match the technical reality.",
+      "You are preparing for buyer review, investor diligence, public launch, or regulator scrutiny.",
+      "AI, analytics, payments, storage, or third-party tools create hidden trust debt.",
+      "Your privacy policy, security page, or landing page overstates certainty or misses boundaries.",
+    ],
+    audience: [
+      "Founders preparing for launch, funding, pilots, or public review.",
+      "Teams with privacy-first, health-adjacent, legal, or AI-assisted products.",
+      "Products where vague trust language, missing warnings, or silent dependencies create exposure.",
+    ],
+    riskProfile:
+      "The risk is not a broken feature. It is a trust story that drifts from technical reality — vague claims, unclear boundaries, missing warnings, silent third-party exposure, AI features without review points, or failure states nobody documented.",
+    painPoints: [
+      "Privacy or security language sounds safer than the product behavior.",
+      "AI workflows ship fast but nobody can explain what they touched, stored, exposed, or changed.",
+      "The landing page promises 'secure' while logs tell a different story.",
+      "Users may misunderstand risk because claims are broad, unsupported, or missing boundaries.",
+    ],
+    reviewIncludes: [
+      "Public claims audit: homepage, docs, privacy language, security statements, and onboarding copy.",
+      "Data boundary review: local storage, databases, cloud services, analytics, logs, third-party APIs, AI providers.",
+      "AI and automation risk: prompt injection, hidden disclosure paths, unsafe permissions, vague claims, retention language.",
+      "Degradation and failure modes: offline behavior, sync breaks, export failures, auth expiry, third-party outages.",
+      "Documentation and proof gaps: architecture notes, data flow diagrams, test evidence, known limitations, risk registers.",
+    ],
+    bestFit: [
+      "Products with public trust claims that need to survive inspection.",
+      "Teams that care about whether their privacy story is precise, evidenced, and bounded.",
+      "Founders who want to find seams before pressure arrives, not after.",
+    ],
+    exampleFailures: [
+      "A privacy statement says one thing while the database does another.",
+      "An AI workflow has no human review boundary or clear retention language.",
+      "An export feature creates a new exposure surface the user does not understand.",
+      "The product says it works offline but does not explain which features are unavailable without a connection.",
+    ],
+    deliverables: [
+      "Trust Surface Map: plain-language map of visible trust points and hidden technical surfaces.",
+      "Public Claims Audit: flagged claims with risk levels, safer replacement language, and evidence needed.",
+      "Data Boundary Review: practical map of what data is handled, where it moves, and where exposure is hidden.",
+      "Failure Mode Register: structured list of product states that may fail, confuse, or expose under pressure.",
+      "Evidence Gap Report: claims and workflows that need stronger proof.",
+      "Prioritized Fix Path: immediate copy fixes, documentation fixes, product/UX fixes, architecture questions, and escalation points.",
+    ],
+    proofIntro:
+      "This review is grounded in the same Protective Computing principles used in client work: local authority, exposure surface minimization, reversible state, and explicit degradation modes.",
+    proofItems: [
+      "PainTracker case study: concrete privacy-first product changes under pressure.",
+      "ProofVault trust case: release-bound evidence and narrower product claims.",
+      "Protective Computing doctrine: the operating standard behind degraded-condition checks.",
+    ],
+    notFit: [
+      "Teams looking for a rubber stamp or compliance certification.",
+      "Products that want vague security language while avoiding documentation.",
+      "Teams expecting legal opinions, regulatory approval, or guaranteed compliance.",
+    ],
+    fitCheckPrompt: "the claim or boundary you are least confident defending under scrutiny",
+    primaryIndexTarget: true,
+    proofHref: "/case-study",
+    proofLabel: "Inspect case studies and proof artifacts",
+    artifactHref: "/proof",
+    artifactLabel: "See proof and evidence path",
+  },
 ];
 
 export const PRIMARY_BUYER_INTENT_PAGES = BUYER_INTENT_PAGES.filter((page) => page.primaryIndexTarget);

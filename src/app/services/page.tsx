@@ -96,6 +96,7 @@ function servicesJsonLd() {
 }
 
 const reviewPathNotes: Record<string, string> = {
+  "crisiscore-defensibility-packet": "For products where public claims, data boundaries, AI workflows, failure modes, and documentation need a structured defensibility review before pressure arrives.",
   "privacy-review-for-health-apps": "For health, wellness, and mental-health workflows where sensitive context is part of the product.",
   "privacy-first-health-app-architecture": "For health apps where privacy-first claims need local-first defaults, explicit export, and a defensible architecture map.",
   "pre-launch-privacy-audit": "For launch-readiness, AI trust, and security-relevant behavior when sensitive-data exposure is near.",
@@ -104,6 +105,11 @@ const reviewPathNotes: Record<string, string> = {
 };
 
 const serviceComparisonRows = [
+  {
+    problem: "Our claims, documentation, and data boundaries may not survive buyer or user scrutiny.",
+    label: "Defensibility Packet",
+    href: "/services/crisiscore-defensibility-packet",
+  },
   {
     problem: "We collect health data and may be overreaching.",
     label: "Health App Privacy Review",

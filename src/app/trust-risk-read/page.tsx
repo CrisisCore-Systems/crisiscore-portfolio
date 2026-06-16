@@ -101,48 +101,52 @@ export default function TrustRiskReadPage() {
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Panel className="overflow-hidden p-7 sm:p-8">
-            <div className="cc-kicker">Start here</div>
-            <h2 className="mt-2 text-xl font-semibold">Get the shortest useful answer first</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72">
-              Fastest path: send the app URL, launch stage, and the issue you want checked first. I&apos;ll reply with the top 3 trust risks I see and whether this looks like a fit for a 48-hour teardown, deeper review, another specialist, or no engagement.
+            <div className="cc-kicker">Primary contact</div>
+            <h2 className="mt-2 text-xl font-semibold">Get a 3-point risk read</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/72">
+              Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, another specialist, or no engagement.
             </p>
 
-              <FitCheckCta
+            <FitCheckCta
               className="mt-6"
               title="Get a 3-point risk read."
-              description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I’ll reply with the first 3 risks and the smallest useful next move."
+              description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I&apos;ll reply with the first 3 risks and the smallest useful next move."
               includeReplyEmail
               splitStageAndConcern
               checklistItems={[
                 "Send app URL, launch stage, one concern, and a reply email.",
-                "I reply with whether this looks like a 48-Hour Trust Risk Brief, full review, fix sprint, or no-fit.",
+                "I&apos;ll map the closest proof path and the top 3 trust risks I see.",
                 "Do not include sensitive personal data in the first note.",
                 'If safer intake is needed, write "secure channel needed."',
               ]}
             />
 
-            <div className="mt-5 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={gmailHref}>Open in Gmail</Button>
               <div className="cc-chip">Usually answered within 1-3 business days</div>
             </div>
 
-            <div className="mt-6 text-xs text-white/55">
-              Operational note: avoid sending sensitive personal data by email.
-              If you need a safer channel, say so in the first message.
-            </div>
-
-            <div className="mt-5 text-xs text-white/55">
-              Direct email: <span className="font-mono text-white/80">{SITE.email}</span>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm text-white/75">
+              <div className="font-semibold">Direct email:</div>
+              <span className="font-mono text-white/90">{SITE.email}</span>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Use this address if Gmail is blocked or you prefer another email client.
+              </p>
             </div>
 
             <div className="mt-6 border-t border-white/10 pt-6">
-              <div className="text-sm font-semibold">Need another path?</div>
+              <div className="text-sm font-semibold">Fallback options</div>
               <p className="mt-2 text-sm leading-relaxed text-white/70">
-                Gmail is the primary path here. If you prefer another route, use the fallback composer below to copy the inquiry text or open a draft in Outlook, Yahoo, AOL, or Proton.
+                If your email app is blocked, use the provider grid or copy the inquiry text.
               </p>
               <div className="mt-4">
                 <ContactFallbackForm to={SITE.email} />
               </div>
+            </div>
+
+            <div className="mt-5 text-xs text-white/55">
+              Operational note: avoid sending sensitive personal data by email.
+              If you need a safer channel, say so in the first message.
             </div>
           </Panel>
 

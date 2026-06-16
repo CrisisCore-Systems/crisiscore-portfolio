@@ -19,6 +19,16 @@ const DEFAULT_CTA = {
 };
 
 const CTA_BY_SLUG: Record<string, typeof DEFAULT_CTA> = {
+  "sensitive-data-product-launch-checklist": {
+    prompt:
+      "Launching a sensitive-data product? Use the 3-point read before the privacy claim hardens into product debt.",
+    serviceHref: "/services/pre-launch-privacy-audit",
+    serviceLabel: "See the pre-launch privacy audit path",
+    proofHref: "/artifacts/security-and-audits/sample-48-hour-teardown",
+    proofLabel: "View sample teardown",
+    contactHref: "/trust-risk-read",
+    contactLabel: "Get a 3-point risk read",
+  },
   "privacy-first-health-app-architecture": {
     prompt:
       "If your health app says privacy-first, the useful next move is to prove that claim through storage, sync, export, deletion, and recovery decisions.",

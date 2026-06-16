@@ -96,7 +96,7 @@ export default async function ProofPage() {
               <Button href="/services" variant="ghost">Match proof to service</Button>
               <Button href="/trust-risk-read" variant="ghost">Get a 3-point risk read</Button>
             </div>
-            <div className="mt-4 text-xs text-white/55">Last reviewed: 2026-05-19</div>
+            <div className="mt-4 text-xs text-white/55">Last reviewed: 2026-06-15</div>
           </div>
 
           <div className="grid gap-3">
