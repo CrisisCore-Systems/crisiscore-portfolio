@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ARTIFACTS } from "@/app/lib/artifacts";
 import { PRIMARY_BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
+import { SECURITY_TOOL_PAGES } from "@/app/security-tools/data";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { loadProjects, loadWriting } from "@/content/load";
@@ -26,11 +27,12 @@ export default function SiteMapPage() {
       <div className="cc-kicker">Navigation map</div>
       <h1 className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Sitemap</h1>
       <p className="mt-3 max-w-3xl text-sm text-white/70">
-        Human-readable route map for buyers, auditors, and operators. The main trust path is home, trust hardening review, trust-risk-read, case study, proof, and services; the rest supports evaluation.
+        Human-readable route map for buyers, auditors, and operators. The main trust path is home, trust hardening review, trust-risk-read, small business trust cleanup, case study, proof, and services; the rest supports evaluation.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
         <Button href={withBuild("/trust-hardening-review")}>Trust hardening review</Button>
+        <Button href={withBuild("/small-business-trust-cleanup")}>Small business cleanup</Button>
         <Button href={withBuild("/case-study")}>Case studies</Button>
         <Button href={withBuild("/services")}>Services</Button>
         <Button href={withBuild("/sitemap.xml")} variant="ghost">XML sitemap</Button>
@@ -42,7 +44,7 @@ export default function SiteMapPage() {
         <Panel className="p-7">
           <div className="text-sm font-semibold">Core routes</div>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            {["/", "/trust-hardening-review", "/start-here", "/trust-risk-read", "/case-study", "/proof", "/services", "/about", "/privacy", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
+            {["/", "/trust-hardening-review", "/start-here", "/trust-risk-read", "/small-business-trust-cleanup", "/case-study", "/proof", "/services", "/security-tools", "/about", "/privacy", "/projects", "/writing", "/rss.xml", "/version.json", "/deploy-id"].map((route) => (
               <li key={route}>
                 <Link className="hover:text-white" href={withBuild(route)}>{route}</Link>
               </li>
@@ -57,6 +59,19 @@ export default function SiteMapPage() {
               <li key={page.slug}>
                 <Link className="font-mono hover:text-white" href={withBuild(`/services/${page.slug}`)}>
                   {`/services/${page.slug}`}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Panel>
+
+        <Panel className="p-7">
+          <div className="text-sm font-semibold">Security tools</div>
+          <ul className="mt-4 space-y-2 text-sm text-white/75">
+            {SECURITY_TOOL_PAGES.map((page) => (
+              <li key={page.slug}>
+                <Link className="font-mono hover:text-white" href={withBuild(`/security-tools/${page.slug}`)}>
+                  {`/security-tools/${page.slug}`}
                 </Link>
               </li>
             ))}

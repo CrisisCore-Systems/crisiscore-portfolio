@@ -3,6 +3,7 @@ import path from "node:path";
 import { SITE } from "@/app/lib/site";
 import { ARTIFACTS } from "@/app/lib/artifacts";
 import { PRIMARY_BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
+import { SECURITY_TOOL_PAGES } from "@/app/security-tools/data";
 import { loadProjects, loadWriting } from "@/content/load";
 
 export const runtime = "nodejs";
@@ -64,6 +65,7 @@ export async function GET() {
     { path: "/proof", lastmod: toIsoOrNow() },
     { path: "/about", lastmod: toIsoOrNow() },
     { path: "/privacy", lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "privacy", "page.tsx")) },
+    { path: "/small-business-trust-cleanup", lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "small-business-trust-cleanup", "page.tsx")) },
     { path: "/trust-hardening-review", lastmod: toIsoOrNow() },
     { path: "/trust-risk-read", lastmod: toIsoOrNow() },
     { path: "/site-map", lastmod: toIsoOrNow() },
@@ -76,6 +78,11 @@ export async function GET() {
       path: "/case-study/proofvault",
       lastmod: toIsoOrNow(contentPath("dossiers", "proofvault.json")),
     },
+    { path: "/security-tools", lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "security-tools", "page.tsx")) },
+    ...SECURITY_TOOL_PAGES.map((page) => ({
+      path: `/security-tools/${page.slug}`,
+      lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "security-tools", "[slug]", "page.tsx")),
+    })),
     ...PRIMARY_BUYER_INTENT_PAGES.map((page) => ({
       path: `/services/${page.slug}`,
       lastmod: toIsoOrNow(path.join(process.cwd(), "src", "app", "services", "[slug]", "page.tsx")),

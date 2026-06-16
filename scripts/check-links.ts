@@ -5,6 +5,7 @@ import {
   BUYER_INTENT_PAGES,
   PRIMARY_BUYER_INTENT_PAGES,
 } from "../src/app/lib/buyer-intent";
+import { SECURITY_TOOL_PAGES } from "../src/app/security-tools/data";
 import { loadProjects, loadWriting } from "../src/content/load";
 
 const ROOT = process.cwd();
@@ -217,11 +218,14 @@ function knownInternalPaths() {
     "/services",
     "/site-map",
     "/sitemap.xml",
+    "/small-business-trust-cleanup",
     "/start-here",
     "/trust-hardening-review",
     "/trust-risk-read",
     "/version.json",
     "/writing",
+    "/security-tools",
+    ...SECURITY_TOOL_PAGES.map((page) => `/security-tools/${page.slug}`),
     ...PRIMARY_BUYER_INTENT_PAGES.map((page) => `/services/${page.slug}`),
     ...loadProjects().map((project) => `/projects/${project.slug}`),
     ...loadWriting().map((post) => `/writing/${post.slug}`),

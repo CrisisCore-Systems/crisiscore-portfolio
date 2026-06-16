@@ -60,7 +60,7 @@ export const SITE = {
   name: "CrisisCore Systems",
   tagline: "CrisisCore helps sensitive-data products find trust-breaking defaults before launch.",
   socialHeadline: "Pre-launch trust hardening for sensitive-data products.",
-  socialSubline: "Get a 3-point trust risk read, then move into a 48-hour teardown, full trust review, or fix sprint before risky defaults harden into architecture.",
+  socialSubline: "Get a 3-point risk read, then move into a 48-hour teardown, full trust review, or fix sprint before risky defaults harden into architecture.",
   url: inferred,
   email: "crisiscore.systems@proton.me",
   socials: {

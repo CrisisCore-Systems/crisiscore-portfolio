@@ -117,6 +117,93 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     artifactLabel: "Open the PainTracker architecture artifact",
   },
   {
+    slug: "privacy-first-health-app-architecture",
+    title: "Privacy-First Health App Architecture",
+    description:
+      "Architecture review for health apps that need local-first defaults, offline use, explicit export, and less risky health data collection before launch or buyer review.",
+    summary:
+      "Built for teams shipping health, wellness, disability, or symptom-tracking apps that need the product architecture to match the privacy promise: local-first where it matters, cloud use only when justified, and export paths users can understand.",
+    faqs: [
+      {
+        question: "What is privacy-first health app architecture?",
+        answer:
+          "It is the product and technical boundary that decides what stays local, what syncs, what gets collected, how export works, and which privacy claims the system can actually defend.",
+      },
+      {
+        question: "Is this only for local-first apps?",
+        answer:
+          "No. Local-first is often the safer default for sensitive workflows, but the review also maps justified cloud use, sync boundaries, account requirements, and recovery behavior.",
+      },
+      {
+        question: "When should a founder use this?",
+        answer:
+          "Before launch, before partner review, before adding analytics or AI features, or when the health data flow feels broader than the user job requires.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A privacy architecture map, ranked correction list, and practical recommendation on whether the next step is a teardown, full review, or implementation sprint.",
+      },
+    ],
+    useThisWhen: [
+      "The app handles symptoms, pain, mood, disability, care notes, medication context, or other intimate health data.",
+      "Core use should work offline or under low attention, but the current system assumes accounts, sync, or cloud storage too early.",
+      "You need a health app privacy architecture review before launch, buyer review, or a partner conversation.",
+    ],
+    audience: [
+      "Health and wellness founders who need architecture that supports the privacy story.",
+      "Teams deciding what should stay local, what can sync, and what should never be collected by default.",
+      "Product and engineering leads preparing for launch, procurement, or investor diligence.",
+    ],
+    riskProfile:
+      "The product risk is a sensitive health workflow where cloud-first storage, vague export behavior, and over-broad collection quietly contradict the privacy promise.",
+    painPoints: [
+      "The app says privacy-first, but the architecture still centralizes intimate records by default.",
+      "Offline use, local storage, explicit export, deletion, and recovery have not been reviewed as one system.",
+      "Analytics, support tooling, account creation, or AI features widen the health data boundary before anyone can defend it.",
+      "The team needs a plain architecture decision map before buyers or users ask sharper questions.",
+    ],
+    reviewIncludes: [
+      "A health data boundary map covering storage, sync, export, retention, deletion, and recovery.",
+      "A review of local-first defaults, offline behavior, and the points where cloud authority is justified or excessive.",
+      "A ranked correction list for the privacy architecture failures most likely to matter first.",
+      "A plain-language story the team can use to explain what the product collects, avoids, and exports.",
+    ],
+    bestFit: [
+      "Health, wellness, chronic condition, disability, care coordination, and symptom-tracking products.",
+      "Teams that want privacy-first app architecture, not only policy language.",
+      "Founders who need the product to survive trust scrutiny without pretending every cloud dependency is harmless.",
+    ],
+    exampleFailures: [
+      "A chronic pain or symptom app requires an account before the core daily record can exist.",
+      "Health notes sync to a cloud account by default even though daily use only needs local storage and explicit export.",
+      "The privacy page says user control, but export, deletion, and recovery are hidden behind support or account flows.",
+    ],
+    deliverables: [
+      "A privacy-first health app architecture map for local storage, sync, export, and account boundaries.",
+      "A ranked list of fixes that reduce health data exposure before launch or buyer review.",
+      "A recommendation on whether this needs a focused teardown, full review, or fix sprint.",
+    ],
+    proofIntro:
+      "This path is grounded in PainTracker, a working privacy-first chronic pain tracking app that uses offline logging, local storage, and explicit export as the reference implementation.",
+    proofItems: [
+      "PainTracker case study: chronic pain tracking without forced cloud accounts for core use.",
+      "PainTracker architecture artifact: local-first storage, offline behavior, and explicit export boundaries.",
+      "Privacy-first health app architecture article: the buyer-intent framing for this review path.",
+    ],
+    notFit: [
+      "Teams that want to maximize health data collection for analytics before defining the user job.",
+      "Products with no sensitive health workflow or offline continuity requirement.",
+      "Organizations looking only for legal policy drafting without product architecture changes.",
+    ],
+    fitCheckPrompt: "the health data flow that feels hardest to defend",
+    primaryIndexTarget: true,
+    proofHref: "/writing/privacy-first-health-app-architecture",
+    proofLabel: "Read the privacy-first health app architecture article",
+    artifactHref: "/artifacts/pain-tracker/architecture",
+    artifactLabel: "Inspect the PainTracker architecture artifact",
+  },
+  {
     slug: "pre-launch-privacy-audit",
     title: "Pre-Launch Privacy Audit for Sensitive Data Apps",
     description:
@@ -568,6 +655,99 @@ export const BUYER_INTENT_PAGES: BuyerIntentPage[] = [
     proofLabel: "See the pre-launch privacy audit page",
     artifactHref: "/proof",
     artifactLabel: "Inspect proof and case studies first",
+  },
+  {
+    slug: "crisiscore-defensibility-packet",
+    title: "CrisisCore Defensibility Packet",
+    description:
+      "A focused trust-surface review that checks whether your product claims, documentation, data boundaries, and public story can survive buyer, user, or regulator scrutiny before pressure arrives.",
+    summary:
+      "This is a structured review of whether your product can defend what it says about itself — across claims, data handling, AI boundaries, failure modes, and evidence gaps.",
+    faqs: [
+      {
+        question: "What is the Defensibility Packet?",
+        answer:
+          "It is a focused trust-surface review: a structured pass over your public claims, data boundaries, AI and automation risk, failure modes, and documentation gaps to find where your story is weaker than it looks.",
+      },
+      {
+        question: "Is this a penetration test or compliance audit?",
+        answer:
+          "No. It is not a penetration test, compliance theatre, or generic UX audit. It is a practical review of whether your product's claims and behavior line up before a customer, investor, reviewer, or user starts asking sharper questions.",
+      },
+      {
+        question: "What do I receive?",
+        answer:
+          "A written report that may include a Trust Surface Map, Public Claims Audit, Data Boundary Review, Failure Mode Register, Evidence Gap Report, and a prioritized Fix Path with safer language where appropriate.",
+      },
+      {
+        question: "Who is this for?",
+        answer:
+          "Teams working on privacy-first apps, health-adjacent tools, legal-tech, AI workflows, local-first software, or any product preparing for launch, funding, pilots, partnerships, or public review.",
+      },
+    ],
+    useThisWhen: [
+      "Your product claims (secure, private-first, encrypted, offline) may not match the technical reality.",
+      "You are preparing for buyer review, investor diligence, public launch, or regulator scrutiny.",
+      "AI, analytics, payments, storage, or third-party tools create hidden trust debt.",
+      "Your privacy policy, security page, or landing page overstates certainty or misses boundaries.",
+    ],
+    audience: [
+      "Founders preparing for launch, funding, pilots, or public review.",
+      "Teams with privacy-first, health-adjacent, legal, or AI-assisted products.",
+      "Products where vague trust language, missing warnings, or silent dependencies create exposure.",
+    ],
+    riskProfile:
+      "The risk is not a broken feature. It is a trust story that drifts from technical reality — vague claims, unclear boundaries, missing warnings, silent third-party exposure, AI features without review points, or failure states nobody documented.",
+    painPoints: [
+      "Privacy or security language sounds safer than the product behavior.",
+      "AI workflows ship fast but nobody can explain what they touched, stored, exposed, or changed.",
+      "The landing page promises 'secure' while logs tell a different story.",
+      "Users may misunderstand risk because claims are broad, unsupported, or missing boundaries.",
+    ],
+    reviewIncludes: [
+      "Public claims audit: homepage, docs, privacy language, security statements, and onboarding copy.",
+      "Data boundary review: local storage, databases, cloud services, analytics, logs, third-party APIs, AI providers.",
+      "AI and automation risk: prompt injection, hidden disclosure paths, unsafe permissions, vague claims, retention language.",
+      "Degradation and failure modes: offline behavior, sync breaks, export failures, auth expiry, third-party outages.",
+      "Documentation and proof gaps: architecture notes, data flow diagrams, test evidence, known limitations, risk registers.",
+    ],
+    bestFit: [
+      "Products with public trust claims that need to survive inspection.",
+      "Teams that care about whether their privacy story is precise, evidenced, and bounded.",
+      "Founders who want to find seams before pressure arrives, not after.",
+    ],
+    exampleFailures: [
+      "A privacy statement says one thing while the database does another.",
+      "An AI workflow has no human review boundary or clear retention language.",
+      "An export feature creates a new exposure surface the user does not understand.",
+      "The product says it works offline but does not explain which features are unavailable without a connection.",
+    ],
+    deliverables: [
+      "Trust Surface Map: plain-language map of visible trust points and hidden technical surfaces.",
+      "Public Claims Audit: flagged claims with risk levels, safer replacement language, and evidence needed.",
+      "Data Boundary Review: practical map of what data is handled, where it moves, and where exposure is hidden.",
+      "Failure Mode Register: structured list of product states that may fail, confuse, or expose under pressure.",
+      "Evidence Gap Report: claims and workflows that need stronger proof.",
+      "Prioritized Fix Path: immediate copy fixes, documentation fixes, product/UX fixes, architecture questions, and escalation points.",
+    ],
+    proofIntro:
+      "This review is grounded in the same Protective Computing principles used in client work: local authority, exposure surface minimization, reversible state, and explicit degradation modes.",
+    proofItems: [
+      "PainTracker case study: concrete privacy-first product changes under pressure.",
+      "ProofVault trust case: release-bound evidence and narrower product claims.",
+      "Protective Computing doctrine: the operating standard behind degraded-condition checks.",
+    ],
+    notFit: [
+      "Teams looking for a rubber stamp or compliance certification.",
+      "Products that want vague security language while avoiding documentation.",
+      "Teams expecting legal opinions, regulatory approval, or guaranteed compliance.",
+    ],
+    fitCheckPrompt: "the claim or boundary you are least confident defending under scrutiny",
+    primaryIndexTarget: true,
+    proofHref: "/case-study",
+    proofLabel: "Inspect case studies and proof artifacts",
+    artifactHref: "/proof",
+    artifactLabel: "See proof and evidence path",
   },
 ];
 

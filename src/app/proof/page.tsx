@@ -1,13 +1,17 @@
 import { absoluteUrl } from "@/app/lib/site";
 import { AssetFigure } from "@/components/AssetFigure";
 import { Panel } from "@/components/ui/Panel";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import { loadCanon, loadDossier } from "@/content/load";
 
 export const metadata = {
-  title: "Proof",
-  description: "Evidence-backed work: case studies, redacted audit artifacts, source records, and public proof buyers can inspect.",
+  title: {
+    absolute: "Proof of Work | CrisisCore Systems Trust Evidence and Public Artifacts",
+  },
+  description:
+    "Verified implementation evidence, public repositories, release-bound artifacts, CI-backed checks, and Protective Computing proof surfaces buyers can inspect.",
   openGraph: {
     images: [{ url: absoluteUrl("/assets/proof-cards/trust_case_excerpt_wide_16x9.svg") }],
   },
@@ -18,6 +22,46 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+const proofInventory = [
+  {
+    title: "Verified implementation evidence",
+    body: "Live routes, product behavior, artifacts, and case studies connect claims to inspectable implementation.",
+  },
+  {
+    title: "Public repositories",
+    body: "GitHub records give buyers a source surface for code, docs, issue shape, and artifact history.",
+  },
+  {
+    title: "Release-bound artifacts",
+    body: "ProofVault shows how trust claims are tied to specimens, verifier paths, and hosted-green release evidence.",
+  },
+  {
+    title: "CI-backed checks",
+    body: "Content, link, build, and smoke checks keep the public proof surface from becoming loose marketing copy.",
+  },
+  {
+    title: "Protective Computing conformance",
+    body: "The canon gives the vocabulary for local authority, degraded-mode resilience, coercion resistance, and disclosure quality.",
+  },
+  {
+    title: "PainTracker reference implementation",
+    body: "A working local-first health workflow demonstrates offline use, local storage, explicit export, and no forced account for core logging.",
+  },
+  {
+    title: "ProofVault trust case",
+    body: "A bounded trust case shows how broad security claims are narrowed to what the release can prove.",
+  },
+];
+
+const relatedEvidence = [
+  { href: "/projects/pain-tracker", label: "PainTracker reference implementation" },
+  { href: "/case-study/pain-tracker", label: "PainTracker case study" },
+  { href: "/case-study/proofvault", label: "ProofVault trust case" },
+  { href: "/writing/the-overton-framework", label: "Overton Framework" },
+  { href: "/writing/protective-computing-doctrine", label: "Protective Computing canon" },
+  { href: "/writing", label: "Public writing archive" },
+];
 
 export default async function ProofPage() {
   const buildStamp = process.env.NEXT_PUBLIC_BUILD_COMMIT;
@@ -50,12 +94,16 @@ export default async function ProofPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href="/case-study">Review commercial case study</Button>
               <Button href="/services" variant="ghost">Match proof to service</Button>
-              <Button href="/trust-risk-read" variant="ghost">Get a 3-point trust risk read</Button>
+              <Button href="/trust-risk-read" variant="ghost">Get a 3-point risk read</Button>
             </div>
-            <div className="mt-4 text-xs text-white/55">Last reviewed: 2026-05-19</div>
+            <div className="mt-4 text-xs text-white/55">Last reviewed: 2026-06-15</div>
           </div>
 
           <div className="grid gap-3">
+            <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.03)]">
+              <Image src="/assets/crisiscore/07_proof_wall.png" alt="Proof wall showing CrisisCore evidence surfaces including PainTracker, ProofVault, Protective Computing, and sample teardown artifacts." width={900} height={600} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+              <div className="p-3 text-sm text-white/75">Proof wall — credible, inspectable artifacts.</div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What this page is</div>
               <p className="mt-2 text-sm font-medium leading-relaxed text-white/84">
@@ -80,6 +128,37 @@ export default async function ProofPage() {
         </div>
 
         <div className="mt-5 text-xs uppercase tracking-[0.2em] text-white/45">Deeper inspection</div>
+
+        <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="text-sm font-semibold">What proof exists that CrisisCore Systems builds what it claims?</div>
+          <p className="mt-3 text-sm leading-relaxed text-white/72">
+            The proof surface is intentionally concrete: implementation evidence, public source records, release-bound artifacts, CI-backed checks, conformance language, and reference systems that can be inspected without a long sales call.
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {proofInventory.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/45">{item.title}</div>
+                <p className="mt-2 text-sm leading-relaxed text-white/72">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="text-sm font-semibold">Related evidence</div>
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            {relatedEvidence.map((item) => (
+              <Button
+                key={item.href}
+                href={item.href}
+                variant="ghost"
+                className="border-white/10 px-3 py-1.5 text-xs text-white/70 hover:text-white"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
           <div className="text-sm font-semibold">Buyer-facing proof ladder</div>
@@ -178,7 +257,7 @@ export default async function ProofPage() {
             <Button href="/artifacts/security-and-audits/sample-48-hour-teardown">48 Hour Trust Teardown Sample</Button>
             <Button href="/services/privacy-review-for-health-apps" variant="ghost">Privacy Review for Health Apps</Button>
             <Button href="/services/pre-launch-privacy-audit" variant="ghost">Pre-Launch Privacy Audit for Sensitive Data Apps</Button>
-            <Button href="/trust-risk-read" variant="ghost">Get a 3-point trust risk read</Button>
+            <Button href="/trust-risk-read" variant="ghost">Get a 3-point risk read</Button>
           </div>
         </div>
       </Panel>
@@ -517,7 +596,7 @@ export default async function ProofPage() {
               Open redacted threat model excerpt
             </Button>
             <Button href="/trust-risk-read" className="w-full justify-center">
-              Get a 3-point trust risk read
+              Get a 3-point risk read
             </Button>
           </div>
         </Panel>
@@ -530,7 +609,7 @@ export default async function ProofPage() {
 
           <div className="mt-5 grid gap-2">
             <Button href="/trust-risk-read" className="w-full justify-center">
-              Get a 3-point trust risk read
+              Get a 3-point risk read
             </Button>
             <Button
               href="https://github.com/CrisisCore-Systems/overton-framework"
@@ -614,7 +693,7 @@ export default async function ProofPage() {
               View GitHub org ↗
             </Button>
             <Button href="/trust-risk-read" variant="ghost" className="w-full justify-center">
-              Get a 3-point trust risk read
+              Get a 3-point risk read
             </Button>
           </div>
         </Panel>

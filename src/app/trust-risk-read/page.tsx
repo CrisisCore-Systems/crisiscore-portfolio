@@ -1,6 +1,7 @@
 import { SITE } from "@/app/lib/site";
 import { ContactFallbackForm } from "@/components/ContactFallbackForm";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import { Panel } from "@/components/ui/Panel";
 import { Section } from "@/components/Section";
 import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
@@ -20,8 +21,23 @@ export default function TrustRiskReadPage() {
       <div className="cc-kicker">3-point trust risk read</div>
       <h1 className="text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">3-Point Trust Risk Read</h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72 sm:text-base">
-        Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-hour teardown, full review, fix sprint, another specialist, or no engagement.
+        Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, another specialist, or no engagement.
       </p>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/08_intake_flow.png" alt="Intake flow diagram showing product URL submission leading to no-fit, 48-hour brief, full review, or fix sprint routing." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Intake flow — submit URL, get routing recommendation.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">48-hour brief mockup — what you receive.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/10_buyer_scrutiny_ladder.png" alt="Buyer scrutiny ladder showing escalating trust questions about collection, purpose, data flow, retention, user exit, and proof." width={900} height={520} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Buyer scrutiny ladder — questions buyers ask.</div>
+        </div>
+      </div>
 
       <Section id="small-business-trust-surface" title="Small Business Website Trust Cleanup" kicker="Local service site trust gaps">
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/72 sm:text-base">
@@ -57,6 +73,9 @@ export default function TrustRiskReadPage() {
           <p className="text-base font-semibold text-white">Send me your website and I’ll identify the top 3 public trust issues.</p>
           <div className="mt-4">
             <Button href={gmailHref}>Open in Gmail</Button>
+            <Button href="/small-business-trust-cleanup" variant="ghost" className="ml-3">
+              Open cleanup page
+            </Button>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
             Email-first, fast first look. Send one website URL and one sentence about what you want to fix, and I’ll reply with the first public trust gaps and the simplest next move.
@@ -82,48 +101,52 @@ export default function TrustRiskReadPage() {
       <div className="mt-10 grid gap-4 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Panel className="overflow-hidden p-7 sm:p-8">
-            <div className="cc-kicker">Start here</div>
-            <h2 className="mt-2 text-xl font-semibold">Get the shortest useful answer first</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/72">
-              Fastest path: send the app URL, launch stage, and the issue you want checked first. I&apos;ll reply with the top 3 trust risks I see and whether this looks like a fit for a 48-hour teardown, deeper review, another specialist, or no engagement.
+            <div className="cc-kicker">Primary contact</div>
+            <h2 className="mt-2 text-xl font-semibold">Get a 3-point risk read</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/72">
+              Free fit check, not an audit. Email-first. Send the app URL, launch stage, and biggest concern. I&apos;ll reply with the top 3 trust risks I see, whether this points to a 48-Hour Trust Risk Brief, full review, fix sprint, another specialist, or no engagement.
             </p>
 
             <FitCheckCta
               className="mt-6"
               title="Get a 3-point risk read."
-              description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I’ll reply with the first 3 risks and the smallest useful next move."
+              description="Free fit check, not an audit. Send the app URL, launch stage, one concern, and a reply email. I&apos;ll reply with the first 3 risks and the smallest useful next move."
               includeReplyEmail
               splitStageAndConcern
               checklistItems={[
                 "Send app URL, launch stage, one concern, and a reply email.",
-                "I reply with whether this looks like a 48-hour teardown, full review, fix sprint, or no-fit.",
+                "I&apos;ll map the closest proof path and the top 3 trust risks I see.",
                 "Do not include sensitive personal data in the first note.",
                 'If safer intake is needed, write "secure channel needed."',
               ]}
             />
 
-            <div className="mt-5 flex flex-wrap items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={gmailHref}>Open in Gmail</Button>
               <div className="cc-chip">Usually answered within 1-3 business days</div>
             </div>
 
-            <div className="mt-6 text-xs text-white/55">
-              Operational note: avoid sending sensitive personal data by email.
-              If you need a safer channel, say so in the first message.
-            </div>
-
-            <div className="mt-5 text-xs text-white/55">
-              Direct email: <span className="font-mono text-white/80">{SITE.email}</span>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm text-white/75">
+              <div className="font-semibold">Direct email:</div>
+              <span className="font-mono text-white/90">{SITE.email}</span>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                Use this address if Gmail is blocked or you prefer another email client.
+              </p>
             </div>
 
             <div className="mt-6 border-t border-white/10 pt-6">
-              <div className="text-sm font-semibold">Need another path?</div>
+              <div className="text-sm font-semibold">Fallback options</div>
               <p className="mt-2 text-sm leading-relaxed text-white/70">
-                Gmail is the primary path here. If you prefer another route, use the fallback composer below to copy the inquiry text or open a draft in Outlook, Yahoo, AOL, or Proton.
+                If your email app is blocked, use the provider grid or copy the inquiry text.
               </p>
               <div className="mt-4">
                 <ContactFallbackForm to={SITE.email} />
               </div>
+            </div>
+
+            <div className="mt-5 text-xs text-white/55">
+              Operational note: avoid sending sensitive personal data by email.
+              If you need a safer channel, say so in the first message.
             </div>
           </Panel>
 
@@ -154,7 +177,7 @@ export default function TrustRiskReadPage() {
             <div className="text-sm font-semibold">What you get back</div>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/70">
               <p>
-                The first reply is usually answered within 1-3 business days and is only fit guidance. Paid 48-hour teardown delivery starts after scope is agreed. If you&apos;re in an urgent window,
+                The first reply is usually answered within 1-3 business days and is only fit guidance. Paid 48-Hour Trust Risk Brief delivery starts after scope is agreed. If you&apos;re in an urgent window,
                 put <span className="font-mono text-white/80">URGENT</span> in the
                 subject line and include your deadline.
               </p>

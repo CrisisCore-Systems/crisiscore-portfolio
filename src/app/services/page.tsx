@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { absoluteUrl, SITE } from "@/app/lib/site";
 import { PRIMARY_BUYER_INTENT_PAGES } from "@/app/lib/buyer-intent";
 import { Section } from "@/components/Section";
+import Image from "next/image";
 import { Panel } from "@/components/ui/Panel";
 import { Button } from "@/components/ui/Button";
 import { FitCheckCta } from "@/components/FitCheckCta";
@@ -94,11 +96,46 @@ function servicesJsonLd() {
 }
 
 const reviewPathNotes: Record<string, string> = {
+  "crisiscore-defensibility-packet": "For products where public claims, data boundaries, AI workflows, failure modes, and documentation need a structured defensibility review before pressure arrives.",
   "privacy-review-for-health-apps": "For health, wellness, and mental-health workflows where sensitive context is part of the product.",
+  "privacy-first-health-app-architecture": "For health apps where privacy-first claims need local-first defaults, explicit export, and a defensible architecture map.",
   "pre-launch-privacy-audit": "For launch-readiness, AI trust, and security-relevant behavior when sensitive-data exposure is near.",
   "local-first-health-app-architecture": "Primary path for local-first, degraded-mode, and explicit-export architecture concerns.",
   "data-minimization-review-for-apps": "For collection, retention, logging, analytics, and sharing defaults that need a narrower boundary.",
 };
+
+const serviceComparisonRows = [
+  {
+    problem: "Our claims, documentation, and data boundaries may not survive buyer or user scrutiny.",
+    label: "Defensibility Packet",
+    href: "/services/crisiscore-defensibility-packet",
+  },
+  {
+    problem: "We collect health data and may be overreaching.",
+    label: "Health App Privacy Review",
+    href: "/services/privacy-review-for-health-apps",
+  },
+  {
+    problem: "We launch soon and our claims may not hold.",
+    label: "Pre-Launch Privacy Audit",
+    href: "/services/pre-launch-privacy-audit",
+  },
+  {
+    problem: "We collect too much and need to cut scope.",
+    label: "Data Minimization Review",
+    href: "/services/data-minimization-review-for-apps",
+  },
+  {
+    problem: "The app should work without cloud-first assumptions.",
+    label: "Local-First Architecture Review",
+    href: "/services/local-first-health-app-architecture",
+  },
+  {
+    problem: "Our health app says privacy-first but the architecture may not prove it.",
+    label: "Privacy-First Health App Architecture",
+    href: "/services/privacy-first-health-app-architecture",
+  },
+];
 
 export default function ServicesPage() {
   return (
@@ -119,14 +156,16 @@ export default function ServicesPage() {
               This work sits before compliance automation, pentest cleanup, or legal document review. Start with a fast teardown, move to a full review if needed, or use a fix sprint when issues are already known.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Find the right package</Button>
-              <Button href="/case-study" variant="ghost">
-                Review case study first
+              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
+              <Button href="/security-tools" variant="ghost">
+                Browse security tools
+              </Button>
+              <Button href="/proof" variant="ghost">
+                See proof
               </Button>
             </div>
-          </div>
-
-          <div className="grid gap-3">
+        </div>
+        <div className="grid gap-3">
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">What these packages are for</div>
               <p className="mt-2 text-sm leading-relaxed text-white/75">Need to know whether the product itself is defensible before you buy more machinery? Start with the 48-hour teardown. Need the full picture? Choose the full review. Need help shipping corrections? Move into a fix sprint.</p>
@@ -141,10 +180,25 @@ export default function ServicesPage() {
 
         <FitCheckCta
           className="mt-8"
-          title="Send the URL, launch stage, and one concern. I&apos;ll size the engagement from there."
-          description="This page is for package selection: I&apos;ll tell you whether to start small, go straight to the full review, or skip the larger engagement entirely."
+          title="Get a 3-point risk read."
+          description="Free fit check, not an audit. Send the product URL, launch stage, and one concern. I&apos;ll reply with whether to start with a 48-hour teardown, go straight to the full review, use a fix sprint, or skip the engagement."
         />
       </Panel>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-3">
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/04_service_fit_matrix.png" alt="Service fit matrix mapping buyer situations such as pre-launch risk, health app privacy, local-first architecture, and procurement scrutiny to the appropriate CrisisCore service path." width={1200} height={700} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Service fit matrix — choose the smallest useful next step.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/05_offer_ladder.png" alt="Offer ladder showing progression from free signal to 48-hour trust risk brief, full trust hardening review, and fix sprint." width={1200} height={700} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">Offer ladder — progressive, ethical pricing.</div>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]">
+          <Image src="/assets/crisiscore/06_risk_brief_mockup.png" alt="Mockup of a 48-hour Trust Risk Brief showing executive verdict, ranked risks, first fix order, and recommended next step." width={1200} height={700} sizes="(min-width:1024px) 33vw, 100vw" className="w-full h-auto block" />
+          <div className="p-3 text-sm text-white/75">48-hour brief mockup — what you receive.</div>
+        </div>
+      </div>
 
       <Section title="Where This Sits" kicker="Not another category clone">
         <div className="grid gap-4 md:grid-cols-2">
@@ -184,6 +238,25 @@ export default function ServicesPage() {
         </div>
       </Section>
 
+      <Section title="Which Review Do I Need?" kicker="Service fit">
+        <Panel className="overflow-hidden p-0">
+          <div className="grid border-b border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/45 sm:grid-cols-[1.3fr_0.9fr]">
+            <div>Problem</div>
+            <div className="hidden sm:block">Best page</div>
+          </div>
+          <div className="divide-y divide-white/10">
+            {serviceComparisonRows.map((row) => (
+              <div key={row.href} className="grid gap-2 px-5 py-4 text-sm sm:grid-cols-[1.3fr_0.9fr] sm:items-center">
+                <div className="text-white/76">{row.problem}</div>
+                <Link className="font-medium text-white hover:text-[color:var(--acc)]" href={row.href}>
+                  {row.label}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      </Section>
+
       <Section title="Packages" kicker="Starting points">
         <div className="grid gap-4 lg:grid-cols-3">
           <Panel className="p-7 sm:p-8">
@@ -207,6 +280,9 @@ export default function ServicesPage() {
                 View sample teardown
               </Button>
             </div>
+            <p className="mt-3 text-sm leading-relaxed text-white/64">
+              See a redacted sample teardown: top risks, why they matter, first fixes, evidence checked, and what the teardown is not.
+            </p>
           </Panel>
 
           <Panel className="p-7 sm:p-8">
@@ -272,7 +348,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section title="Common Review Paths" kicker="Primary service pages">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {PRIMARY_BUYER_INTENT_PAGES.map((page) => (
             <Panel key={page.slug} className="p-7 sm:p-8">
               <div className="text-xs uppercase tracking-[0.2em] text-white/45">Review path</div>
@@ -300,9 +376,9 @@ export default function ServicesPage() {
             Send the product URL, launch stage, and main concern. Add a deadline only if timing matters. I&apos;ll reply with fit, likely package, and next step.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/trust-risk-read">Ask for package fit</Button>
-            <Button href="/case-study" variant="ghost">
-              Review case study first
+            <Button href="/trust-risk-read">Get a 3-point risk read</Button>
+            <Button href="/proof" variant="ghost">
+              See proof
             </Button>
           </div>
         </Panel>

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/trust-hardening-review", label: "Trust Review" },
   { href: "/services", label: "Services" },
   { href: "/case-study", label: "Case Studies" },
   { href: "/proof", label: "Proof" },
+  { href: "/writing", label: "Writing" },
   { href: "/about", label: "About" },
+  { href: "/trust-risk-read", label: "Contact" },
 ];
 
 export function Nav() {
@@ -30,21 +31,21 @@ export function Nav() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-2 rounded-full border border-[color:var(--line)] bg-[rgba(120,167,181,0.06)] px-2 py-1 text-sm text-white/75 shadow-[0_8px_24px_rgba(0,0,0,0.16)] md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-[color:var(--line)] bg-[rgba(120,167,181,0.06)] px-2 py-1 text-sm text-white/75 shadow-[0_8px_24px_rgba(0,0,0,0.16)] md:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-2 transition hover:bg-[rgba(120,167,181,0.12)] hover:text-white"
+              className="whitespace-nowrap rounded-full px-2.5 py-2 transition hover:bg-[rgba(120,167,181,0.12)] hover:text-white"
             >
               {l.label}
             </Link>
           ))}
           <Link
-            href="/trust-hardening-review"
-            className="ml-1 rounded-full border border-[rgba(212,162,97,0.52)] bg-[linear-gradient(180deg,rgba(212,162,97,0.34),rgba(85,59,29,0.52))] px-3 py-2 text-white transition hover:bg-[linear-gradient(180deg,rgba(226,178,114,0.42),rgba(95,67,35,0.62))]"
+            href="/trust-risk-read"
+            className="ml-1 whitespace-nowrap rounded-full border border-[rgba(212,162,97,0.52)] bg-[linear-gradient(180deg,rgba(212,162,97,0.34),rgba(85,59,29,0.52))] px-3 py-2 text-white transition hover:bg-[linear-gradient(180deg,rgba(226,178,114,0.42),rgba(95,67,35,0.62))]"
           >
-            Request Review
+            Get a 3-point risk read
           </Link>
         </nav>
 
@@ -63,12 +64,12 @@ export function Nav() {
           <div className="absolute left-0 right-0 top-full border-t border-[color:var(--line)] bg-[rgba(7,12,18,0.94)] backdrop-blur-xl">
             <div className="mx-auto grid max-w-6xl gap-2 px-4 py-3">
               <Link
-                href="/trust-hardening-review"
+                href="/trust-risk-read"
                 tabIndex={menuOpen ? 0 : -1}
                 aria-hidden={menuOpen ? undefined : true}
                 className="rounded-2xl border border-[rgba(212,162,97,0.52)] bg-[linear-gradient(180deg,rgba(212,162,97,0.34),rgba(85,59,29,0.52))] px-4 py-3 text-sm font-medium text-white hover:bg-[linear-gradient(180deg,rgba(226,178,114,0.42),rgba(95,67,35,0.62))]"
               >
-                Request a Trust Hardening Review
+                Get a 3-point risk read
               </Link>
               {links.map((l) => (
                 <Link

@@ -96,6 +96,32 @@ export default async function ArtifactPage({
         </div>
       </Panel>
 
+      <Panel className="mt-4 p-6 sm:p-8">
+        <div className="text-sm font-semibold">What this artifact proves</div>
+        <p className="mt-2 text-sm leading-relaxed text-white/72">
+          This artifact shows how CrisisCore turns an abstract trust claim into a reviewable product boundary.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-white/72">
+          Use this when your product has to explain:
+        </p>
+        <ul className="mt-2 space-y-1.5 text-sm text-white/68">
+          <li>• what data crosses a boundary</li>
+          <li>• what stays local</li>
+          <li>• what fails under pressure</li>
+          <li>• what evidence a buyer can inspect</li>
+          <li>• what should be fixed before launch</li>
+        </ul>
+        <div className="mt-5 rounded-2xl border border-[rgba(212,162,97,0.28)] bg-[rgba(212,162,97,0.08)] p-4">
+          <p className="text-sm font-medium text-white">Need this mapped for your product?</p>
+          <p className="mt-2 text-sm leading-relaxed text-white/75">
+            Send the URL, launch stage, and one concern. I&apos;ll return the first 3 trust risks and the smallest useful next step.
+          </p>
+          <div className="mt-3">
+            <Button href="/trust-risk-read">Get a 3-point risk read</Button>
+          </div>
+        </div>
+      </Panel>
+
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <Panel className="p-6 sm:p-8">
           <div className="text-sm font-semibold">Continue inspection</div>

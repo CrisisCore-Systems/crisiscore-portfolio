@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Panel } from "@/components/ui/Panel";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/Section";
 import { FitCheckCta } from "@/components/FitCheckCta";
 import CrisisCoreVisualStrip from "@/components/CrisisCoreVisualStrip";
+import SampleTeardownPreview from "@/components/SampleTeardownPreview";
 
 export const metadata: Metadata = {
   title: {
@@ -23,34 +25,33 @@ export default function HomePage() {
         <div className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
           <div>
             <div className="cc-kicker">Pre-compliance trust hardening for sensitive-data products</div>
-            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-              Find the trust failures buyers will question after launch.
+            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl cc-hero-title">
+              Your product may pass launch and still fail trust review.
             </h1>
             <p className="mt-5 max-w-3xl text-lg font-semibold text-white sm:text-xl">
-              CrisisCore reviews health, AI, legal, wellness, and other sensitive-data products before launch, procurement review, or public scrutiny.
-            </p>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/74 sm:text-base">
-              I inspect the product behavior itself: what it collects, what it stores, what it logs, what breaks under pressure, and which privacy claims the system cannot yet defend. You get a short written readout with the first risks, the fix order, and the smallest useful next step.
+              I find the collection, consent, logging, export, recovery, and privacy-claim gaps buyers will question before they become expensive.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
-              <span className="cc-chip">48-hour teardown from CA$250</span>
-              <span className="cc-chip">Full Review from CA$1,200</span>
-              <span className="cc-chip">Fix Sprint from CA$1,500</span>
+            <div className="mt-6">
+              <FitCheckCta
+                title="Send your product URL. Get the first 3 trust risks."
+                description="Free fit check — I&apos;ll reply with the top 3 issues and the smallest useful next step."
+                className="cc-hero"
+                splitStageAndConcern
+              />
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
-              <Button href="/proof" variant="ghost">
-                See proof
-              </Button>
+            <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/78 sm:text-sm">
+              <span className="cc-chip">48-Hour Trust Risk Brief — from CA$250</span>
+              <span className="cc-chip">Full Review — from CA$1,200</span>
+              <span className="cc-chip">Fix Sprint — from CA$1,500</span>
             </div>
             <div className="mt-5 rounded-3xl border border-[color:var(--line)] bg-[rgba(255,255,255,0.04)] p-5 text-sm leading-relaxed text-white/75">
               <p className="font-semibold text-white">Small business website trust cleanup</p>
               <p className="mt-2">A fast first look for motels, plumbers, contractors, clinics, salons, and other local services. Send your website and I’ll identify the top 3 trust issues that keep customers from calling or booking.</p>
               <div className="mt-4">
-                <Button href="/trust-risk-read#small-business-trust-surface" variant="ghost">
-                  Open Gmail and send your website
+                <Button href="/small-business-trust-cleanup" variant="ghost">
+                  Open small business cleanup
                 </Button>
               </div>
               <div className="mt-4">
@@ -63,6 +64,18 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-3">
+            <div className="rounded-3xl overflow-hidden border border-[color:var(--line)] bg-[rgba(0,0,0,0.04)]">
+              <Image
+                src="/assets/crisiscore/01_trust_surface_radar.png"
+                alt="Trust surface radar diagram showing six product trust risk areas: collection defaults, consent mismatch, logging and retention, export and deletion, recovery failure, and claim integrity."
+                width={1800}
+                height={1100}
+                sizes="(min-width:1024px) 45vw, 100vw"
+                className="w-full h-auto block"
+                priority
+              />
+              <div className="p-4 text-sm text-white/75">Trust surface radar — get a 3-point trust risk read.</div>
+            </div>
             <div className="rounded-3xl border border-[color:var(--line)] bg-[linear-gradient(180deg,rgba(120,167,181,0.14),rgba(10,17,24,0.92))] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               <div className="text-xs uppercase tracking-[0.2em] text-[rgba(180,207,219,0.72)]">Where this fits</div>
               <div className="mt-2 text-lg font-semibold">Before SOC 2 evidence, HIPAA hosting, or audit cleanup</div>
@@ -143,26 +156,29 @@ export default function HomePage() {
         <div className="grid gap-4 md:grid-cols-3">
           <div className="cc-card p-6">
             <div className="text-xs uppercase tracking-[0.18em] text-[rgba(180,207,219,0.72)]">Fast signal</div>
-            <h3 className="text-base font-semibold">48-hour teardown</h3>
-            <p className="mt-2 text-sm text-white/70">A fast first pass for teams that need a clear answer on whether a real product problem exists.</p>
-            <p className="mt-4 text-sm font-semibold text-white">Starting at CA$250</p>
+            <h3 className="text-base font-semibold">48-Hour Trust Risk Brief</h3>
+            <p className="mt-2 text-sm text-white/70">A ranked 3-risk teardown of your product’s public trust surface, privacy claims, collection defaults, and launch-risk gaps.</p>
+            <p className="mt-4 text-sm font-semibold text-white">CA$250 — 48-hour delivery</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
-              <li>• Top 3 product trust risks</li>
-              <li>• Why each risk matters</li>
-              <li>• First fix for each issue</li>
-              <li>• Recommendation: stop here, full review, or fix sprint</li>
-              <li>• Short written readout</li>
+              <li>• Executive verdict and top 3 trust risks</li>
+              <li>• Evidence references or screenshots</li>
+              <li>• Why each risk matters and buyer-facing consequence</li>
+              <li>• First fix and recommended next path (stop / full review / fix sprint)</li>
+              <li>• Packaged as a polished brief (PDF/Markdown) with one-line quote</li>
             </ul>
             <div className="mt-4">
               <Button href="/artifacts/security-and-audits/sample-48-hour-teardown" variant="ghost">
-                View sample teardown
+                View sample brief
               </Button>
             </div>
+            <div className="mt-4">
+              <SampleTeardownPreview />
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-white/64">
-              See a redacted sample teardown: top risks, why they matter, first fixes, evidence checked, and what the teardown is not.
+              The brief is a delivery artifact, not informal notes — ready to share with buyers or internal stakeholders.
             </p>
             <p className="mt-4 text-sm font-medium text-white">
-              Use this when you need signal quickly and do not want to start with a full engagement.
+              Use this when you need signal quickly and a shareable artifact to move the conversation forward.
             </p>
           </div>
 

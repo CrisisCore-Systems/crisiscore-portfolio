@@ -1,0 +1,26 @@
+name: Accessibility checks
+
+on:
+  push:
+    branches: [ main, feature/** ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start server
+        run: nohup npm run start &>/dev/null &
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000/
+      - name: Run pa11y-ci
+        run: npx pa11y-ci --config ./pa11yci.json
