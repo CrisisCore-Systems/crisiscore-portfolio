@@ -44,17 +44,17 @@ export default async function ArtifactPage({
     (entry) => entry.slug !== artifact.slug && entry.slug.startsWith(`${projectSlug}/`)
   ).slice(0, 4);
 
-  let markdownSource = "";
-  let svgSource = "";
+  const SLUG_SOURCE_MAP: Record<string, string> = {
+  "security-and-audits/defensibility-packet-flow": "defensibility-flow",
+  "security-and-audits/threat-boundary-map": "threat-boundary-map",
+  "security-and-audits/audit-pipeline": "audit-pipeline",
+  "overton-framework/local-authority-vs-cloud-dependence": "local-authority",
+};
   const diskPath = path.join(process.cwd(), "public", artifact.rawPath.replace(/^\//, ""));
 
-  if (artifact.kind === "markdown") {
-    markdownSource = fs.readFileSync(diskPath, "utf8");
-  }
-
-  if (artifact.kind === "svg") {
-    svgSource = fs.readFileSync(diskPath, "utf8");
-  }
+  const markdownSource =
+    artifact.kind === "markdown" ? fs.readFileSync(diskPath, "utf8") : "";
+  const svgSource = artifact.kind === "svg" ? fs.readFileSync(diskPath, "utf8") : "";
 
   return (
     <div className="py-12">
@@ -120,6 +120,17 @@ export default async function ArtifactPage({
             <Button href="/trust-risk-read">Get a 3-point risk read</Button>
           </div>
         </div>
+        {["security-and-audits/defensibility-packet-flow", "security-and-audits/threat-boundary-map", "security-and-audits/audit-pipeline", "overton-framework/local-authority-vs-cloud-dependence"].includes(slug) ? (
+          <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <p className="text-sm font-medium text-white">Need this packaged for buyer review?</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/75">
+              See the CrisisCore Defensibility Packet.
+            </p>
+            <div className="mt-3">
+              <Button href={`/services/crisiscore-defensibility-packet?source=${SLUG_SOURCE_MAP[slug] ?? "artifact-generic"}`}>Open Defensibility Packet</Button>
+            </div>
+          </div>
+        ) : null}
       </Panel>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">

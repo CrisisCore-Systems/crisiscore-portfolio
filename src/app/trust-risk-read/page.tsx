@@ -151,23 +151,21 @@ export default function TrustRiskReadPage() {
           </Panel>
 
           <Panel className="mt-4 p-7 sm:p-8">
-            <div className="text-sm font-semibold">What to include</div>
-            <ul className="mt-4 space-y-2 text-sm text-white/70">
-              {[
-                "Product URL.",
-                "Launch stage or deadline.",
-                "The biggest trust, privacy, product, or launch concern.",
-                "Optional: repo, stack, or constraints if they change the answer.",
-              ].map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-[2px] text-white/40">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
+            <div className="text-sm font-semibold">How to ask</div>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Send these four things and I&apos;ll reply with the top 3 trust risks and the smallest useful next step. Keep it short. I&apos;ll ask for more if needed.
+            </p>
+            <ol className="mt-4 space-y-2 text-sm text-white/70">
+              <li className="flex gap-2"><span className="text-white/40">1.</span><span>Your product URL or repo.</span></li>
+              <li className="flex gap-2"><span className="text-white/40">2.</span><span>What you are about to launch or sell.</span></li>
+              <li className="flex gap-2"><span className="text-white/40">3.</span><span>The trust claim you are worried about.</span></li>
+              <li className="flex gap-2"><span className="text-white/40">4.</span><span>Any sensitive data involved.</span></li>
+            </ol>
+            <div className="mt-3">
+              <Button href={`mailto:${SITE.email}?subject=3-point%20trust%20risk%20read&body=Product%20URL%20or%20repo%3A%0A%0AWhat%20I%20am%20launching%20or%20selling%3A%0A%0ATrust%20claim%20I%20am%20worried%20about%3A%0A%0ASensitive%20data%20involved%3A%0A`}>Start the 3-point risk read email</Button>
+            </div>
             <div className="mt-5 text-xs text-white/55">
-              Keep the first note short. If it looks like a fit, I&apos;ll ask for the next layer of detail.
+              No long docs required. A short first message is better than a polished one. If you are unsure, just send the link and the concern.
             </div>
           </Panel>
         </div>

@@ -76,7 +76,7 @@ export default async function DefensibilityPacketPage() {
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/trust-risk-read">Get a 3-point risk read</Button>
+              <Button href="/trust-risk-read?source=defensibility-packet">Get a 3-point risk read</Button>
               <Button href="/proof" variant="ghost">
                 See proof
               </Button>
@@ -268,6 +268,16 @@ export default async function DefensibilityPacketPage() {
               A defensible system should not only work for ideal users in ideal conditions. It should preserve clarity when conditions degrade: fewer hidden assumptions, clearer trust boundaries, safer claims, reversible actions, explicit failure states, evidence-backed documentation.
             </p>
           </Panel>
+        </div>
+      </Section>
+
+      <Section title="Related proof surfaces" kicker="Backing material">
+        <p className="mb-3 text-sm leading-relaxed text-white/75">Use these proof surfaces to inspect how CrisisCore turns abstract trust claims into reviewable evidence before a buyer, funder, partner, or security reviewer asks for it.</p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Button href="/artifacts/security-and-audits/defensibility-packet-flow" variant="ghost" className="justify-start">Defensibility packet flow</Button>
+          <Button href="/artifacts/security-and-audits/threat-boundary-map" variant="ghost" className="justify-start">Threat boundary map</Button>
+          <Button href="/artifacts/security-and-audits/audit-pipeline" variant="ghost" className="justify-start">Audit pipeline</Button>
+          <Button href="/case-study/pain-tracker" variant="ghost" className="justify-start">PainTracker dossier</Button>
         </div>
       </Section>
 
